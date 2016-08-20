@@ -4,13 +4,14 @@ var camara=new THREE.PerspectiveCamera();
 var renderizador=new THREE.WebGLRenderer();
   renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
   document.body.appendChild(renderizador.domElement);
-var forma1=new THREE.SphereGeometry(1,32,32);
+var forma1=new THREE.SphereGeometry(1.3,32,32);
 var material1=new THREE.MeshBasicMaterial({color:0x0C6E15});
 var esfera=new THREE.Mesh(forma1,material1);
 var forma2=new THREE.CylinderGeometry(0.5,0.5,3,64);
 var material2=new THREE.MeshBasicMaterial({color:0x61380B});
 var cilindro=new THREE.Mesh(forma2,material2);
 cilindro.rotateX(-Math.PI/8);
+esfera.position.set(0,1,3);
 cilindro.position.set(0,-1,3);
 escena.add(esfera)
 escena.add(cilindro)
