@@ -4,7 +4,7 @@ var camara=new THREE.PerspectiveCamera();
 var renderizador=new THREE.WebGLRenderer();
   renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
   document.body.appendChild(renderizador.domElement);
-var forma1=new THREE.SphereGeometry(2,32,32);
+var forma1=new THREE.SphereGeometry(1,32,32);
 var material1=new THREE.MeshBasicMaterial({color:0x34C621});
 var esfera=new THREE.Mesh(forma1,material1);
 var forma2=new THREE.CylinderGeometry(0.5,0.5,3,64);
