@@ -11,7 +11,7 @@ var forma2=new THREE.CylinderGeometry(0.5,0.5,3,64);
 var material2=new THREE.MeshNormalMaterial();
 var cilindro=new THREE.Mesh(forma2,material2);
 cilindro.rotateX(-Math.PI/8);
-cilindro.position.set(2,1,3);
+cilindro.position.set(1,1,3);
 escena.add(esfera)
 escena.add(cilindro)
 renderizador.render(escena,camara)
