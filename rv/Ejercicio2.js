@@ -7,10 +7,10 @@ var renderizador=new THREE.WebGLRenderer();
 var forma1=new THREE.SphereGeometry(0.8,32,32);
 var material1=new THREE.MeshNormalMaterial();
 var esfera=new THREE.Mesh(forma1,material1);
-var forma2=new THREE.CylinderGeometry(0.2,0.2,3,64);
+var forma2=new THREE.CylinderGeometry(0.4,0.4,3,64);
 var material2=new THREE.MeshNormalMaterial();
 var cilindro=new THREE.Mesh(forma2,material2);
-cilindro.rotateX(Math.PI/4);
+
 escena.add(esfera)
 escena.add(cilindro)
 renderizador.render(escena,camara)
