@@ -11,7 +11,7 @@ forma.vertices.push(new THREE.Vector3(-1,1,1),
 
 forma.faces.push(//new THREE.Face3(0,1,2),
                 //new THREE.Face3(0,2,3),
-                new THREE.Face3(4,0,3),
+                new THREE.Face3(0,3,4),
                 new THREE.Face3(7,3,4),
                 new THREE.Face3(7,4,5),
                 new THREE.Face3(6,7,5),
