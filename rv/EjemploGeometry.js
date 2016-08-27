@@ -13,7 +13,7 @@ forma.faces.push(new THREE.Face3(3,2,1),
                 new THREE.Face3(1,2,4),
                 new THREE.Face3(2,3,4));
 
-//forma.computeBoundingSphere();
+forma.computeBoundingSphere(); //¿¿¿Para qué funciona ésta esfera???
 
 forma.computeFaceNormals();
 
