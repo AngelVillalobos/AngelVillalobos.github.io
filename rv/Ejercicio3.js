@@ -9,10 +9,10 @@ forma.vertices.push(new THREE.Vector3(-1,1,1),
                     new THREE.Vector3(1,-1,-1),
                     new THREE.Vector3(1,-1,1));
 
-forma.faces.push(new THREE.Face3(0,1,2)
-                );
+forma.faces.push(new THREE.Face3(0,1,2),
+                new THREE.Face3(2,3,0));
 
-forma.computeBoundingSphere(); //¿¿¿Para qué funciona ésta esfera???
+//forma.computeBoundingSphere(); //¿¿¿Para qué funciona ésta esfera???
 
 forma.computeFaceNormals();
 
