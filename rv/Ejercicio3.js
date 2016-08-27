@@ -15,7 +15,7 @@ forma.faces.push(new THREE.Face3(0,1,2),
                 new THREE.Face3(7,3,4),
                 new THREE.Face3(7,4,5),
                 new THREE.Face3(6,7,5),
-                new THREE.Face3(5,2,6),
+                new THREE.Face3(2,5,6),
                 new THREE.Face3(1,6,2));
 
 forma.computeBoundingSphere(); //¿¿¿Para qué funciona ésta esfera???
@@ -26,6 +26,7 @@ var material = new THREE.MeshNormalMaterial();
 var malla = new THREE.Mesh(forma,material);
 malla.rotateX(-Math.PI/6);
 malla.rotateY(Math.PI/4);
+malla.rotateZ(Math.PI/8);
 
 var escena = new THREE.Scene();
 escena.add(malla);
