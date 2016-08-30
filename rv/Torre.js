@@ -1,7 +1,7 @@
 var BaseForma = new THREE.CylinderGeometry(0.5,0.5,0.2);
 var TorreForma = new THREE.CylinderGeometry(0.3,0.4,1);
 
-TorreForma.translate(0,0.4,0);
+TorreForma.translate(0,0.2,0);
 
 var BaseMalla = new THREE.Mesh(BaseForma);
 var TorreMalla = new THREE.Mesh(TorreForma);
