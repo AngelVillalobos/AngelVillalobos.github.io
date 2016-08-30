@@ -1,5 +1,5 @@
-var Base = new THREE.CylinderGeometry(0.5,0.5,0.2);
-var Torre = new THREE.CylinderGeometry(0.4,0.3,0.5);
+var BaseForma = new THREE.CylinderGeometry(0.5,0.5,0.2);
+var TorreForma = new THREE.CylinderGeometry(0.4,0.3,0.5);
 
 TorreForma.translate(0,0.2,0);
 
