@@ -5,7 +5,7 @@ var Base2Forma = new THREE.TorusGeometry(0.6,0.05,30,200);
 
 CoronaForma.translate(0,1.3,0);
 TorreForma.translate(0,0.6,0);
-Base2Forma.translate(0,0,0.3);
+Base2Forma.translate(0,0,0.13);
 
 Base2Forma.rotateX(Math.PI/2);
 
