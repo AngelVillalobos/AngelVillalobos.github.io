@@ -14,8 +14,6 @@ var TorreMalla = new THREE.Mesh(TorreForma);
 var CoronaMalla = new THREE.Mesh(CoronaForma);
 var Base2Malla = new THREE.Mesh(Base2Forma);
 
-//Base2Malla.rotateY(Math.PI/2);
-
 var TorrefForma = new THREE.Geometry();
 
 TorrefForma.merge(BaseMalla.geometry,BaseMalla.matrix);
@@ -27,8 +25,6 @@ TorrefForma.rotateX(-Math.PI/8);
 
 var material = new THREE.MeshNormalMaterial();
 var TorrefMalla = new THREE.Mesh(TorrefForma,material);
-
-
 
 var escena = new THREE.Scene();
 escena.add(TorrefMalla);
