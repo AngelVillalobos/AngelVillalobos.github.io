@@ -4,7 +4,7 @@ var CoronaForma = new THREE.CylinderGeometry(0.5,0.5,0.4,64,64);
 var Base2Forma = new THREE.TorusGeometry(0.4,0.1,30,200);
 
 CoronaForma.translate(0,1.3,0);
-TorreForma.translate(0,0.6,0);
+TorreForma.translate(0,0.55,0);
 Base2Forma.translate(0,0,-0.1);
 
 Base2Forma.rotateX(Math.PI/2);
