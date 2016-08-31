@@ -23,10 +23,12 @@ TorrefForma.merge(TorreMalla.geometry,TorreMalla.matrix);
 TorrefForma.merge(CoronaMalla.geometry,CoronaMalla.matrix);
 TorrefForma.merge(Base2Malla.geometry,Base2Malla.matrix);
 
+TorrefForma.rotateX(Math.PI/8);
+
 var material = new THREE.MeshNormalMaterial();
 var TorrefMalla = new THREE.Mesh(TorrefForma,material);
 
-TorrefMalla.rotateX(Math.PI/8);
+
 
 var escena = new THREE.Scene();
 escena.add(TorrefMalla);
