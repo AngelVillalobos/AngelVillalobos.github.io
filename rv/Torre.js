@@ -26,6 +26,8 @@ TorrefForma.merge(Base2Malla.geometry,Base2Malla.matrix);
 var material = new THREE.MeshNormalMaterial();
 var TorrefMalla = new THREE.Mesh(TorrefForma,material);
 
+TorrefMalla.rotateX(Math.PI/8);
+
 var escena = new THREE.Scene();
 escena.add(TorrefMalla);
 var camara = new THREE.PerspectiveCamera();
