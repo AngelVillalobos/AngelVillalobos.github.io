@@ -5,6 +5,20 @@ var Base2Forma = new THREE.TorusGeometry(0.4,0.1,30,200);
 var Base3Forma = new THREE.TorusGeometry(0.3,0.1,30,200);
 var Corona1Forma = new THREE.RingGeometry(1,2,30,30,0,0.78);
 
+var curve = new THREE.EllipseCurve(
+	0,  0,            // ax, aY
+	1, 2,           // xRadius, yRadius
+	0,  2 * Math.PI,  // aStartAngle, aEndAngle
+	false,            // aClockwise
+	0                 // aRotation 
+);
+var path = new THREE.Path( curve.getPoints( 50 ) );
+var geometry = path.createPointsGeometry( 50 );
+var material = new THREE.LineBasicMaterial( { color : 0xff0000 } );
+
+// Create the final Object3d to add to the scene
+var ellipse = new THREE.Line( geometry, material );
+
 CoronaForma.translate(0,1.2,0);
 TorreForma.translate(0,0.6,0);
 Base2Forma.translate(0,0,-0.1);
