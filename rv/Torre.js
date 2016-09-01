@@ -3,7 +3,7 @@ var TorreForma = new THREE.CylinderGeometry(0.3,0.4,1,64,64);
 var CoronaForma = new THREE.CylinderGeometry(0.5,0.5,0.2,64,64);
 var Base2Forma = new THREE.TorusGeometry(0.4,0.1,30,200);
 var Base3Forma = new THREE.TorusGeometry(0.3,0.1,30,200);
-var Corona1Forma = new THREE.RingGeometry(1,5,30,30,0,0.6);
+var Corona1Forma = new THREE.RingGeometry(1,5,30,30,6,6.3);
 
 CoronaForma.translate(0,1.2,0);
 TorreForma.translate(0,0.6,0);
@@ -32,7 +32,6 @@ TorrefForma.merge(Base3Malla.geometry,Base3Malla.matrix);
 TorrefForma.merge(Corona1Malla.geometry,Corona1Malla.matrix);
 
 TorrefForma.translate(0,-0.6,0);
-//TorrefForma.rotateX(Math.PI/8);
 
 var material = new THREE.MeshNormalMaterial();
 var TorrefMalla = new THREE.Mesh(TorrefForma,material);
