@@ -23,7 +23,7 @@ var Base3Malla = new THREE.Mesh(Base3Forma);
 var Corona1Malla = new THREE.Mesh(Corona1Forma);
 
 var TorrefForma = new THREE.Geometry();
-
+//
 TorrefForma.merge(BaseMalla.geometry,BaseMalla.matrix);
 TorrefForma.merge(TorreMalla.geometry,TorreMalla.matrix);
 TorrefForma.merge(CoronaMalla.geometry,CoronaMalla.matrix);
