@@ -5,7 +5,7 @@ var Base2Forma = new THREE.TorusGeometry(0.4,0.1,30,200);
 var Base3Forma = new THREE.TorusGeometry(0.3,0.1,30,200);
 var Corona1Forma = new THREE.RingGeometry(1,5,30,30,0,0.6);
 
-CoronaForma.translate(0,0.95,0);
+CoronaForma.translate(0,1.1,0);
 TorreForma.translate(0,0.6,0);
 Base2Forma.translate(0,0,-0.1);
 Base3Forma.translate(0,0,-1.1);
