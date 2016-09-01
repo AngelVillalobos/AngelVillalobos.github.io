@@ -9,7 +9,7 @@ CoronaForma.translate(0,1.3,0);
 TorreForma.translate(0,0.6,0);
 Base2Forma.translate(0,0,-0.1);
 Base3Forma.translate(0,0,-1.1);
-Corona1Forma.translate(0,1.3,0);
+Corona1Forma.translate(0,2,0);
 
 Base3Forma.rotateX(Math.PI/2);
 Base2Forma.rotateX(Math.PI/2);
