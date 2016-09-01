@@ -22,7 +22,7 @@ var TorreMalla = new THREE.Mesh(TorreForma);
 var CoronaMalla = new THREE.Mesh(CoronaForma);
 var Base2Malla = new THREE.Mesh(Base2Forma);
 var Base3Malla = new THREE.Mesh(Base3Forma);
-var Corona1MallaE = new THREE.Mesh(Corona1FormaE);
+var Corona1Malla = new THREE.Mesh(Corona1Forma);
 
 var TorrefForma = new THREE.Geometry();
 
@@ -31,7 +31,7 @@ TorrefForma.merge(TorreMalla.geometry,TorreMalla.matrix);
 TorrefForma.merge(CoronaMalla.geometry,CoronaMalla.matrix);
 TorrefForma.merge(Base2Malla.geometry,Base2Malla.matrix);
 TorrefForma.merge(Base3Malla.geometry,Base3Malla.matrix);
-TorrefForma.merge(Corona1MallaE.geometry,Corona1MallaE.matrix);
+TorrefForma.merge(Corona1Malla.geometry,Corona1Malla.matrix);
 
 TorrefForma.translate(0,-0.6,0);
 
