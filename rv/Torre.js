@@ -39,7 +39,7 @@ var TorrefMalla = new THREE.Mesh(TorrefForma,material);
 var escena = new THREE.Scene();
 escena.add(TorrefMalla);
 var camara = new THREE.PerspectiveCamera();
-camara.position.z=3;
+camara.position.z=30;
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
 document.body.appendChild(renderizador.domElement);
