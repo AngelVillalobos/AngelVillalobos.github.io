@@ -6,7 +6,7 @@ var Base3Forma = new THREE.TorusGeometry(0.3,0.1,30,200);
 var Corona1Forma = new THREE.RingGeometry(1,2,30,30,0,0.78);
 
 var curve = new THREE.EllipseCurve(
-	0,  0,            // ax, aY
+	1,  1,            // ax, aY
 	1, 2,           // xRadius, yRadius
 	0,  2 * Math.PI,  // aStartAngle, aEndAngle
 	false,            // aClockwise
