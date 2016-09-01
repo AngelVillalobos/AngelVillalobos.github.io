@@ -15,7 +15,8 @@ Base3Forma.rotateX(Math.PI/2);
 Base2Forma.rotateX(Math.PI/2);
 Corona1Forma.rotateX(Math.PI/2);
 
-var Corona1FormaE = new THREE.ExtrudeGeometry(Corona1Forma,{amount:10});
+Corona1FormaE.ExtrudeGeometry(Corona1Forma,{amount:3});
+//var Corona1FormaE = new THREE.ExtrudeGeometry(Corona1Forma,{amount:10});
 //
 var BaseMalla = new THREE.Mesh(BaseForma);
 var TorreMalla = new THREE.Mesh(TorreForma);
