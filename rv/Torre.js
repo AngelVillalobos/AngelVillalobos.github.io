@@ -14,7 +14,7 @@ Corona1Forma.translate(0,2,0);
 Base3Forma.rotateX(Math.PI/2);
 Base2Forma.rotateX(Math.PI/2);
 Corona1Forma.rotateX(Math.PI/2);
-//
+
 var BaseMalla = new THREE.Mesh(BaseForma);
 var TorreMalla = new THREE.Mesh(TorreForma);
 var CoronaMalla = new THREE.Mesh(CoronaForma);
