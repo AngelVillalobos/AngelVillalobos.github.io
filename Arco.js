@@ -11,7 +11,7 @@ arco2.absarc(0,0,0.35,Math.PI*(17/18),Math.PI*(5/9),true);
 arco3.absarc(0,0,0.5,Math.PI(19/18),Math.PI*(13/9),false);
 arco3.absarc(0,0,0.35,Math.PI*(13/9),Math.PI*(19/18),true);
 arco4.absarc(0,0,0.5,Math.PI(14/9),Math.PI*(35/18),false);
-arco5.absarc(0,0,0.35,Math.PI*(35/18),Math.PI*(14/9),true);
+arco4.absarc(0,0,0.35,Math.PI*(35/18),Math.PI*(14/9),true);
 
 var forma1 = new THREE.ShapeGeometry(arco1);
 var malla1 = new THREE.Mesh(forma1);
