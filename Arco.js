@@ -4,7 +4,7 @@ arco.moveTo(0.06,0.34);
 //arco.lineTo(0.09,0.49);
 arco.absarc(0,0,0.5,0,Math.PI*2,true);
 //arco.lineTo(0.34,0.06);
-arco.absarc(0,0,0.35,0,Math.PI2,false);
+arco.absarc(0,0,0.35,0,Math.PI2,true);
 
 var forma = new THREE.ShapeGeometry(arco);
 var malla = new THREE.Mesh(forma);
