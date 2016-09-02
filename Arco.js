@@ -24,7 +24,7 @@ var malla4 = new THREE.Mesh(forma4);
 
 var forma1 = new THREE.ExtrudeGeometry(arco1,{amount:10});
 var material1 = new THREE.MeshNormalMaterial();
-var malla1 = new THREE.Mesh(forma1,material);
+var malla1 = new THREE.Mesh(forma1,material1);
 
 
 //malla.rotateZ(Math.PI/4);
