@@ -1,4 +1,7 @@
-var arco = new THREE.EllipseCurve(0,0,3,3,0,Math.PI/4,false);
+
+var arco = new THREE.Shape();
+arco.moveTo(0,0);
+arco.absarc( 2, 2, 8, 0, Math.PI/2, false );
 
 var forma = new THREE.ShapeGeometry(arco);
 var malla = new THREE.Mesh(forma);
