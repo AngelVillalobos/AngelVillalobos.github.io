@@ -3,7 +3,7 @@ var arco = new THREE.Shape();
 arco.moveTo(0,0);
 arco.lineTo(0.09,0.49);
 arco.absarc(0,0,0.5,0,Math.PI*(4/9),false);
-arco.lineTo(0.34,0.06);
+//arco.lineTo(0.34,0.06);
 //arco.absarc(0,0,0.35,0,Math.PI*(4/9),true);
 
 var forma = new THREE.ShapeGeometry(arco);
