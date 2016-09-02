@@ -36,7 +36,7 @@ var malla1 = new THREE.Mesh(forma1,material1);
 //var forma4 = new THREE.ExtrudeGeometry(arco4,{steps:500,amount:0.01,bevelEnabled:true,bevelSegments:500,bevelSize:0.7,bevelThickness:0.7});
 //var material4 = new THREE.MeshNormalMaterial();
 //var malla4 = new THREE.Mesh(forma4,material4);
-//
+
 //malla1.rotateX(Math.PI/6);
 //malla2.rotateX(Math.PI/6);
 //malla3.rotateX(Math.PI/6);
