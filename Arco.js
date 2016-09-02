@@ -1,7 +1,7 @@
 var arco = new THREE.Shape();
 
 figura.moveTo(5.8,0);
-figura.arc100,75,50,0,2*Math.PI);
+figura.arc(100,75,50,0,2*Math.PI);
 
 var forma = new THREE.ShapeGeometry(figura);
 var malla = new THREE.Mesh(forma);
