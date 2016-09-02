@@ -24,7 +24,7 @@ var Base3Malla = new THREE.Mesh(Base3Forma);
 var TorreMalla = new THREE.Mesh(TorreForma);
 var CoronaMalla = new THREE.Mesh(CoronaForma);
 var Corona1Malla = new THREE.Mesh(Corona1Forma);
-var Corona2Malla = new THREE.Mesh(Corona1Forma);
+var Corona2Malla = new THREE.Mesh(Corona2Forma);
 
 
 var TorrefForma = new THREE.Geometry();
