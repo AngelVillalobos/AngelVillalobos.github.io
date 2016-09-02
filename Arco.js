@@ -1,4 +1,3 @@
-
 var arco1 = new THREE.Shape();
 var arco2 = new THREE.Shape();
 var arco3 = new THREE.Shape();
