@@ -9,8 +9,8 @@ var Corona3Forma = new THREE.SphereGeometry(0.1,32,32,6,6.3,6,6.3);
 
 CoronaForma.translate(0,1.2,0);
 Corona1Forma.translate(0,0,-1.3);
-Corona2Forma.translate(0,-1.1,0);
-Corona3Forma.translate(0,-1.55,0);
+Corona2Forma.translate(0,-1.2,0);
+Corona3Forma.translate(0,-1.6,0);
 TorreForma.translate(0,0.6,0);
 Base2Forma.translate(0,0,-0.1);
 Base3Forma.translate(0,0,-1.1);
