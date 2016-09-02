@@ -25,22 +25,22 @@ var forma1 = new THREE.ExtrudeGeometry(arco1,{steps:500,amount:0.01,bevelEnabled
 var material1 = new THREE.MeshNormalMaterial();
 var malla1 = new THREE.Mesh(forma1,material1);
 
-var forma2 = new THREE.ExtrudeGeometry(arco2,{steps:500,amount:0.01,bevelEnabled:true,bevelSegments:500,bevelSize:0.7,bevelThickness:0.7});
-var material2 = new THREE.MeshNormalMaterial();
-var malla2 = new THREE.Mesh(forma2,material2);
+//var forma2 = new THREE.ExtrudeGeometry(arco2,{steps:500,amount:0.01,bevelEnabled:true,bevelSegments:500,bevelSize:0.7,bevelThickness:0.7});
+//var material2 = new THREE.MeshNormalMaterial();
+//var malla2 = new THREE.Mesh(forma2,material2);
 
-var forma3 = new THREE.ExtrudeGeometry(arco3,{steps:500,amount:0.01,bevelEnabled:true,bevelSegments:500,bevelSize:0.7,bevelThickness:0.7});
-var material3 = new THREE.MeshNormalMaterial();
-var malla3 = new THREE.Mesh(forma3,material3);
+//var forma3 = new THREE.ExtrudeGeometry(arco3,{steps:500,amount:0.01,bevelEnabled:true,bevelSegments:500,bevelSize:0.7,bevelThickness:0.7});
+//var material3 = new THREE.MeshNormalMaterial();
+//var malla3 = new THREE.Mesh(forma3,material3);
 
-var forma4 = new THREE.ExtrudeGeometry(arco4,{steps:500,amount:0.01,bevelEnabled:true,bevelSegments:500,bevelSize:0.7,bevelThickness:0.7});
-var material4 = new THREE.MeshNormalMaterial();
-var malla4 = new THREE.Mesh(forma4,material4);
+//var forma4 = new THREE.ExtrudeGeometry(arco4,{steps:500,amount:0.01,bevelEnabled:true,bevelSegments:500,bevelSize:0.7,bevelThickness:0.7});
+//var material4 = new THREE.MeshNormalMaterial();
+//var malla4 = new THREE.Mesh(forma4,material4);
 
 malla1.rotateX(Math.PI/6);
-malla2.rotateX(Math.PI/6);
-malla3.rotateX(Math.PI/6);
-malla4.rotateX(Math.PI/6);
+//malla2.rotateX(Math.PI/6);
+//malla3.rotateX(Math.PI/6);
+//malla4.rotateX(Math.PI/6);
 var escena = new THREE.Scene();
 escena.add(malla1);
 escena.add(malla2);
