@@ -6,12 +6,25 @@ var arco4 = new THREE.Shape();
 
 arco1.absarc(0,0,0.5,Math.PI/18,Math.PI*(4/9),false);
 arco1.absarc(0,0,0.35,Math.PI*(4/9),Math.PI/18,true);
+arco2.absarc(0,0,0.5,Math.PI*(5/9),Math.PI*(17/18),false);
+arco2.absarc(0,0,0.35,Math.PI*(17/18),Math.PI*(5/9),true);
+arco3.absarc(0,0,0.5,Math.PI(19/18),Math.PI*(13/9),false);
+arco3.absarc(0,0,0.35,Math.PI*(13/9),Math.PI*(19/18),true);
+arco4.absarc(0,0,0.5,Math.PI(14/9),Math.PI*(35/18),false);
+arco5.absarc(0,0,0.35,Math.PI*(35/18),Math.PI*(14/9),true);
 
-var forma = new THREE.ShapeGeometry(arco1);
-var malla = new THREE.Mesh(forma);
+var forma1 = new THREE.ShapeGeometry(arco1);
+var malla1 = new THREE.Mesh(forma1);
+var forma2 = new THREE.ShapeGeometry(arco2);
+var malla2 = new THREE.Mesh(forma2);
+var forma3 = new THREE.ShapeGeometry(arco3);
+var malla3 = new THREE.Mesh(forma3);
+var forma4 = new THREE.ShapeGeometry(arco4);
+var malla5 = new THREE.Mesh(forma4);
+
 //malla.rotateZ(Math.PI/4);
 var escena = new THREE.Scene();
-escena.add(malla);
+escena.add(malla1);
 var camara = new THREE.PerspectiveCamera();
 camara.position.z=3;
 var renderizador = new THREE.WebGLRenderer();
