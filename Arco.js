@@ -12,7 +12,6 @@ arco3.absarc(0,0,0.35,Math.PI*(13/9),Math.PI*(19/18),true);
 arco4.absarc(0,0,0.5,Math.PI*(14/9),Math.PI*(35/18),false);
 arco4.absarc(0,0,0.35,Math.PI*(35/18),Math.PI*(14/9),true);
 
-
 //var malla1 = new THREE.Mesh(forma1);
 var forma2 = new THREE.ShapeGeometry(arco2);
 var malla2 = new THREE.Mesh(forma2);
