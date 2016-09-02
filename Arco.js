@@ -7,7 +7,7 @@ var arco4 = new THREE.Shape();
 arco1.absarc(0,0,0.5,Math.PI/18,Math.PI*(4/9),false);
 arco1.absarc(0,0,0.35,Math.PI*(4/9),Math.PI/18,true);
 
-var forma = new THREE.ShapeGeometry(arco);
+var forma = new THREE.ShapeGeometry(arco1);
 var malla = new THREE.Mesh(forma);
 //malla.rotateZ(Math.PI/4);
 var escena = new THREE.Scene();
