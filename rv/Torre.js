@@ -6,7 +6,7 @@ var CoronaForma = new THREE.CylinderGeometry(0.5,0.5,0.2,64,64);
 var Corona1Forma = new THREE.TorusGeometry(0.4,0.1,30,200);
 
 CoronaForma.translate(0,1.2,0);
-Corona1Forma.translate(0,0,-1.3);
+Corona1Forma.translate(0,0,-1.35);
 TorreForma.translate(0,0.6,0);
 Base2Forma.translate(0,0,-0.1);
 Base3Forma.translate(0,0,-1.1);
@@ -38,7 +38,7 @@ TorrefForma.translate(0,-0.6,0);
 
 var material = new THREE.MeshNormalMaterial();
 var TorrefMalla = new THREE.Mesh(TorrefForma,material);
-
+TorrefMalla.rotateX(Math.PI/6);
 var escena = new THREE.Scene();
 escena.add(TorrefMalla);
 var camara = new THREE.PerspectiveCamera();
