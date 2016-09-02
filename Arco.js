@@ -4,7 +4,7 @@ var arco3 = new THREE.Shape();
 var arco4 = new THREE.Shape();
 
 arco1.absarc(0,0,0.5,Math.PI/18,Math.PI*(4/9),false);
-arco1.absarc(0,0,0.25,Math.PI*(4/9),Math.PI/18,true);
+arco1.absarc(0,0,0.45,Math.PI*(4/9),Math.PI/18,true);
 arco2.absarc(0,0,0.5,Math.PI*(5/9),Math.PI*(17/18),false);
 arco2.absarc(0,0,0.35,Math.PI*(17/18),Math.PI*(5/9),true);
 arco3.absarc(0,0,0.5,Math.PI*(19/18),Math.PI*(13/9),false);
