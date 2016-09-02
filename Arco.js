@@ -20,7 +20,7 @@ var malla2 = new THREE.MeshNormalMaterial(forma2);
 var forma3 = new THREE.ShapeGeometry(arco3);
 var malla3 = new THREE.Mesh(forma3);
 var forma4 = new THREE.ShapeGeometry(arco4);
-var malla4 = new THREE.Mesh(forma4);
+var malla4 = new THREE.MeshNormalMaterial(forma4);
 
 //malla.rotateZ(Math.PI/4);
 var escena = new THREE.Scene();
