@@ -43,7 +43,7 @@ TorrefForma.translate(0,-0.6,0);
 
 var material = new THREE.MeshNormalMaterial();
 var TorrefMalla = new THREE.Mesh(TorrefForma,material);
-TorrefMalla.rotateX(Math.PI/6);
+//TorrefMalla.rotateX(Math.PI/6);
 var escena = new THREE.Scene();
 escena.add(TorrefMalla);
 var camara = new THREE.PerspectiveCamera();
