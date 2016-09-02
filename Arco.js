@@ -1,10 +1,11 @@
 
-var arco = new THREE.Shape();
-arco.moveTo(0.06,0.34);
-//arco.lineTo(0.09,0.49);
-arco.absarc(0,0,0.5,Math.PI/18,Math.PI*(4/9),false);
-//arco.lineTo(0.34,0.06);
-arco.absarc(0,0,0.35,Math.PI*(4/9),Math.PI/18,true);
+var arco1 = new THREE.Shape();
+var arco2 = new THREE.Shape();
+var arco3 = new THREE.Shape();
+var arco4 = new THREE.Shape();
+
+arco1.absarc(0,0,0.5,Math.PI/18,Math.PI*(4/9),false);
+arco1.absarc(0,0,0.35,Math.PI*(4/9),Math.PI/18,true);
 
 var forma = new THREE.ShapeGeometry(arco);
 var malla = new THREE.Mesh(forma);
