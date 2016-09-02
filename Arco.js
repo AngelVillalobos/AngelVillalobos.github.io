@@ -1,11 +1,8 @@
-var arco = new THREE.Shape();
+var arco = new THREE.EllipseCurve(0,0,3,3,0,Math.PI/4,false);
 
-figura.moveTo(5.8,0);
-figura.arc(100,75,50,0,2*Math.PI);
-
-var forma = new THREE.ShapeGeometry(figura);
+var forma = new THREE.ShapeGeometry(arco);
 var malla = new THREE.Mesh(forma);
-malla.rotateZ(Math.PI/4);
+//malla.rotateZ(Math.PI/4);
 var escena = new THREE.Scene();
 escena.add(malla);
 var camara = new THREE.PerspectiveCamera();
