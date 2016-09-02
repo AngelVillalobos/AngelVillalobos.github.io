@@ -6,7 +6,7 @@ figura.lineTo(10,40);
 figura.lineTo(40,40);
 figura.lineTo(10,10);
 
-var forma = new THREE.ExtrudeGeometry(figura,{amount:10,curveSegments:100});
+var forma = new THREE.ExtrudeGeometry(figura,{ amount: 8, bevelEnabled: true, bevelSegments: 2, steps: 2, bevelSize: 1, bevelThickness: 1 });
 
 var material = new THREE.MeshNormalMaterial();
 var malla = new THREE.Mesh(forma,material);
