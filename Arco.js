@@ -24,7 +24,7 @@ var forma1 = new THREE.ExtrudeGeometry(arco1,{amount:0.05});
 //var material1 = new THREE.MeshNormalMaterial();
 var malla1 = new THREE.Mesh(forma1);
 
-malla1.rotateX(Math.PI/4);
+malla1.rotateX(Math.PI/8);
 var escena = new THREE.Scene();
 escena.add(malla1);
 escena.add(malla2);
