@@ -37,7 +37,7 @@ var malla1 = new THREE.Mesh(forma1,material1);
 //var material4 = new THREE.MeshNormalMaterial();
 //var malla4 = new THREE.Mesh(forma4,material4);
 //
-malla1.rotateX(Math.PI/6);
+//malla1.rotateX(Math.PI/6);
 //malla2.rotateX(Math.PI/6);
 //malla3.rotateX(Math.PI/6);
 //malla4.rotateX(Math.PI/6);
