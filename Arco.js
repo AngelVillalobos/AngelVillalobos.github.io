@@ -12,6 +12,7 @@ arco3.absarc(0,0,0.35,Math.PI*(13/9),Math.PI*(19/18),true);
 arco4.absarc(0,0,0.5,Math.PI*(14/9),Math.PI*(35/18),false);
 arco4.absarc(0,0,0.35,Math.PI*(35/18),Math.PI*(14/9),true);
 
+var forma1 = new THREE.ShapeGeometry(arco1);
 //var malla1 = new THREE.Mesh(forma1);
 var forma2 = new THREE.ShapeGeometry(arco2);
 var malla2 = new THREE.Mesh(forma2);
@@ -20,7 +21,7 @@ var malla3 = new THREE.Mesh(forma3);
 var forma4 = new THREE.ShapeGeometry(arco4);
 var malla4 = new THREE.Mesh(forma4);
 //
-var forma1 = new THREE.ExtrudeGeometry(arco1,{amount:0.05});
+var forma1E = new THREE.ExtrudeGeometry(forma1,{amount:0.05});
 //var material1 = new THREE.MeshNormalMaterial();
 var malla1 = new THREE.Mesh(forma1);
 
