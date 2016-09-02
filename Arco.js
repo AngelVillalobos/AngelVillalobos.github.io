@@ -1,7 +1,8 @@
 
 var arco = new THREE.Shape();
 arco.moveTo(0,0);
-arco.absarc( 2, 2, 8, 0, Math.PI/2, false );
+arco.lineTo(0,0.2);
+arco.absarc(0,0,0.5,0,Math.PI/2,false);
 
 var forma = new THREE.ShapeGeometry(arco);
 var malla = new THREE.Mesh(forma);
