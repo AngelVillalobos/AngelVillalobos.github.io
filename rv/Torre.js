@@ -7,8 +7,8 @@ var Corona1Forma = new THREE.TorusGeometry(0.4,0.1,30,200);
 var Corona2Forma = new THREE.SphereGeometry(0.7,32,32,6,6.3,1.5,3);
 
 CoronaForma.translate(0,1.2,0);
-Corona1Forma.translate(0,0,0);
-Corona2Forma.translate(0,0,-1.3);
+Corona1Forma.translate(0,0,-1.3);
+Corona2Forma.translate(0,0,0);
 TorreForma.translate(0,0.6,0);
 Base2Forma.translate(0,0,-0.1);
 Base3Forma.translate(0,0,-1.1);
