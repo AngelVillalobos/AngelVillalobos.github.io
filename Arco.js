@@ -33,7 +33,7 @@ var forma3 = new THREE.ExtrudeGeometry(arco3,{steps:500,amount:0.01,bevelEnabled
 var material3 = new THREE.MeshNormalMaterial();
 var malla3 = new THREE.Mesh(forma3,material3);
 
-var forma1 = new THREE.ExtrudeGeometry(arco4,{steps:500,amount:0.01,bevelEnabled:true,bevelSegments:500,bevelSize:0.7,bevelThickness:0.7});
+var forma4 = new THREE.ExtrudeGeometry(arco4,{steps:500,amount:0.01,bevelEnabled:true,bevelSegments:500,bevelSize:0.7,bevelThickness:0.7});
 var material4 = new THREE.MeshNormalMaterial();
 var malla4 = new THREE.Mesh(forma4,material4);
 
