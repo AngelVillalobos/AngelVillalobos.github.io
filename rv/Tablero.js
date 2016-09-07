@@ -9,7 +9,7 @@ camara.position.z = 15;
 
 var BaseForma = new THREE.BoxGeometry(1,30,30,10,10,10);
 
-var BaseMaterial = new THREE.MeshBasicMaterial({color:412a09});
+var BaseMaterial = new THREE.MeshBasicMaterial({color:0x412a09});
 
 var BaseFinal = new THREE.Mesh(BaseForma,BaseMaterial);
 
