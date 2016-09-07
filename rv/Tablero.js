@@ -1,22 +1,26 @@
-var campoVision = 45;
-var relacionAspecto = window.innerWidth/window.innerHeight;
-var planoCercano = 1;
-var planoLejano = 1000;
+var campoVision=45;
+var relacionAspecto=window.innerWidth/window.innerHeight;
+var planoCercano=1;
+var planoLejano=1000;
 
-var camara = new THREE.PerspectiveCamera( campoVision, relacionAspecto, planoCercano, planoLejano );
+var camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
 
-camara.position.z = 15;
+camara.position.z=15;
 
-var BaseForma = new THREE.BoxGeometry(1,30,30,10,10,10);
+var cubo=new THREE.Mesh(new THREE.BoxGeometry(2,2,2),new THREE.MeshNormalMaterial());
+cubo.rotateY(Math.PI/4);
 
-var BaseMaterial = new THREE.MeshBasicMaterial({color:0x412a09});
+var esfera1=new THREE.Mesh(new THREE.SphereGeometry(1),new THREE.MeshNormalMaterial());
+esfera1.position.x=5;
 
-var BaseFinal = new THREE.Mesh(BaseForma,BaseMaterial);
-
-BaseFinal.rotateX(Math.PI/4);
+var esfera2=new THREE.Mesh(new THREE.SphereGeometry(1),new THREE.MeshNormalMaterial());
+esfera2.position.x=-5;
+esfera2.position.z=-10;
 
 var escena = new THREE.Scene();
-escena.add(BaseFinal);
+escena.add(cubo);
+escena.add(esfera1);
+escena.add(esfera2);
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
 document.body.appendChild(renderizador.domElement);
