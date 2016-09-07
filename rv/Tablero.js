@@ -16,7 +16,7 @@ var BaseFinal = new THREE.Mesh(BaseForma,BaseMaterial);
 BaseFinal.rotateX(Math.PI/4);
 
 var escena = new THREE.Scene();
-escena.add(BaseFinalMalla);
+escena.add(BaseFinal);
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
 document.body.appendChild(renderizador.domElement);
