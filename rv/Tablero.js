@@ -13,6 +13,8 @@ var A1=new THREE.Mesh(new THREE.BoxGeometry(1.25,1.25,0.05),new THREE.MeshBasicM
 Base.rotateX(-Math.PI/3);
 A1.rotateX(-Math.PI/3);
 
+A1.position.y=0.2;
+
 var escena = new THREE.Scene();
 escena.add(Base);
 escena.add(A1);
