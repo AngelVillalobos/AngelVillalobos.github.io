@@ -8,17 +8,13 @@ var camara = new THREE.PerspectiveCamera( campoVision, relacionAspecto, planoCer
 camara.position.z = 15;
 
 var BaseForma = new THREE.BoxGeometry(1,30,30,10,10,10);
-BaseForma.rotateX(Math.PI/4);
 
-var BaseMalla = new THREE.Mesh(BaseForma);
+var BaseMaterial = new THREE.MeshBasicMaterial({color:412a09});
 
-var BaseFinal = new THREE.Geometry();
+var BaseFinal = new THREE.Mesh(BaseForma,BaseMaterial);
 
-BaseFinal.merge(BaseMalla.geometry,BaseMalla.matrix);
+BaseFinal.rotateX(Math.PI/4);
 
-var material = new THREE.MeshBasicMaterial({color:0x412a09});
-var BaseFinalMalla = new THREE.Mesh(BaseFinal,material);
-//TorrefMalla.rotateX(Math.PI/12);
 var escena = new THREE.Scene();
 escena.add(BaseFinalMalla);
 var renderizador = new THREE.WebGLRenderer();
