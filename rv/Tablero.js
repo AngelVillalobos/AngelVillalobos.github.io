@@ -14,6 +14,8 @@ Base.rotateX(-Math.PI/3);
 A1.rotateX(-Math.PI/3);
 
 A1.position.y=0.2;
+A1.position.x=-5;
+A1.position.z=-5;
 
 var escena = new THREE.Scene();
 escena.add(Base);
