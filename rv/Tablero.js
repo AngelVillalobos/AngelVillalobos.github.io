@@ -8,8 +8,8 @@ var camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,
 camara.position.z=15;
 
 var Base=new THREE.Mesh(new THREE.BoxGeometry(10,10,1),new THREE.MeshBasicMaterial({color:0x412a09}));
-//Base.rotateX(Math.PI/2);
-//
+Base.rotateX(-Math.PI/3);
+
 var escena = new THREE.Scene();
 escena.add(Base);
 
