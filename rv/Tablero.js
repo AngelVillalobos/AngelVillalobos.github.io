@@ -8,7 +8,7 @@ var camara = new THREE.PerspectiveCamera( campoVision, relacionAspecto, planoCer
 camara.position.z = 15;
 
 var BaseForma = new THREE.BoxGeometry(1,30,30,10,10,10);
-BaseForma.translate( 0, 0, 0 );
+BaseForma.rotateX(Math.PI/4);
 
 var BaseMalla = new THREE.Mesh(BaseForma);
 
