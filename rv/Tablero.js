@@ -8,10 +8,14 @@ var camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,
 camara.position.z=15;
 
 var Base=new THREE.Mesh(new THREE.BoxGeometry(10,10,0.3),new THREE.MeshBasicMaterial({color:0x412a09}));
+var A1=new THREE.Mesh(new THREE.BoxGeometry(1.25,1.25,0.05),new THREE.MeshBasicMaterial({color:0x000000}));
+
 Base.rotateX(-Math.PI/3);
+A1.rotateX(-Math.PI/3);
 
 var escena = new THREE.Scene();
 escena.add(Base);
+escena.add(A1);
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
