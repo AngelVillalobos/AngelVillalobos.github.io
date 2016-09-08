@@ -10,7 +10,7 @@ camara.position.z=150;
 var BaseMalla=new THREE.Mesh(new THREE.BoxGeometry(100,100,0.3),new THREE.MeshBasicMaterial({color:0x412a09}));
 var Casilla1=new THREE.Mesh(new THREE.BoxGeometry(10,10,0.03),new THREE.MeshBasicMaterial({color:0xffffff}));
 
-Casilla1.traslate(10,10,3);
+Casilla1.translate(10,10,3);
 
 var BaseFinal = new THREE.Geometry();
 
