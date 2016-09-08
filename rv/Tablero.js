@@ -24,6 +24,7 @@ for (var i=0;i<33; i ++)
       CasillaG[i]=new THREE.Mesh(FCasillaG,MCasillaG);
   }
 
+//
       
 
 var escena = new THREE.Scene();
