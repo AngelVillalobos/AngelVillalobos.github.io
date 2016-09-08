@@ -23,7 +23,7 @@ var escena = new THREE.Scene();
 for (var i=0;i<33; i ++)
   {
       CasillaB[i]=new THREE.Mesh(FCasillaB,MCasillaB);
-      CasillaB[i].position.set(i+10,i+10,1);
+      CasillaB[i].position.set(i,i,1);
       CasillaG[i]=new THREE.Mesh(FCasillaG,MCasillaG);
       escena.add(CasillaG[i]);
   }
