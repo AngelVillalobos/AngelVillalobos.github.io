@@ -17,10 +17,10 @@ for (var i=0;i<33; i ++)
       var CasillaB[i]=new THREE.Mesh(new THREE.BoxGeometry(10,10,0.03),new THREE.MeshBasicMaterial({color:0xffffff}));
       CasillaB[i].rotateX=(-Math.PI/4);
       CasillaB[i].translate(i*2,i*2,0.3);
-      escena.add(CasillaB[i]);
+      
   }
 
-
+escena.add(CasillaB);
 
 BaseMalla.rotateX(-Math.PI/4);
 
