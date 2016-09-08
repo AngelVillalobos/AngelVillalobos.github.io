@@ -18,17 +18,21 @@ var Tablero=new THREE.Mesh(FTablero,MTablero);
 var CasillaB=new Array();
 var CasillaG=new Array();
 
+var escena = new THREE.Scene();
+
 for (var i=0;i<33; i ++)
   {
       CasillaB[i]=new THREE.Mesh(FCasillaB,MCasillaB);
+      CasillaB[i].translate(i+10,i+10,1);
       CasillaG[i]=new THREE.Mesh(FCasillaG,MCasillaG);
+      escena.add(CasillaG[i]);
   }
 
 //
       
 
-var escena = new THREE.Scene();
-escena.add(CasillaG[1]);
+
+
 escena.add(CasillaB[1]);
 
 var renderizador = new THREE.WebGLRenderer();
