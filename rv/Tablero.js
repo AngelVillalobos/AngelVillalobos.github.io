@@ -20,7 +20,7 @@ BaseFinal.merge(Casilla1.geometry,Casilla1.matrix);
 
 var BaseMaterial = new THREE.MeshNormalMaterial();
 var BaseF = new THREE.Mesh(BaseFinal,BaseMaterial);
-BaseF.rotateX(Math.PI/12);
+BaseF.rotateX(-Math.PI/4);
 var escena = new THREE.Scene();
 escena.add(BaseF);
 
