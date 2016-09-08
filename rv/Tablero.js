@@ -12,7 +12,7 @@ var escena = new THREE.Scene();
 var BaseMalla=new THREE.Mesh(new THREE.BoxGeometry(100,100,0.3),new THREE.MeshBasicMaterial({color:0x412a09}));
 var CasillaB=new THREE.Mesh(new THREE.BoxGeometry(10,10,0.03),new THREE.MeshBasicMaterial({color:0xffffff}));
 
-for (var i=0;i=32; i ++)
+for (var i=0;i<33; i ++)
   {
       var CasillaB[i]=new THREE.Mesh(new THREE.BoxGeometry(10,10,0.03),new THREE.MeshBasicMaterial({color:0xffffff}));
       CasillaB[i].rotateX=(-Math.PI/4);
