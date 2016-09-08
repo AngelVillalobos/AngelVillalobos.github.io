@@ -20,7 +20,7 @@ for (var i=0;i<33; i ++)
       
   }
 
-escena.add(CasillaB);
+escena.add(CasillaB[1]);
 
 BaseMalla.rotateX(-Math.PI/4);
 
