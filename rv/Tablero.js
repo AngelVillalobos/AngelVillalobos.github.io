@@ -7,7 +7,7 @@ var camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,
 
 camara.position.z=15;
 
-var BaseMalla=new THREE.Mesh(new THREE.BoxGeometry(100,100,0.3),new THREE.MeshBasicMaterial({color:0x412a09}))
+var BaseMalla=new THREE.Mesh(new THREE.BoxGeometry(100,100,0.3),new THREE.MeshBasicMaterial({color:0x412a09}));
 
 var BaseFinal = new THREE.Geometry();
 
