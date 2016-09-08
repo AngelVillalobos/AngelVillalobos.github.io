@@ -34,9 +34,12 @@ for (var i=0;i<33; i ++)
           {
             CasillaB[i].position.set(i*10,0,1);
           }
-        //  CasillaG[i].position.set(-j*10,i,1);
+          else
+          {
+            CasillaG[i].position.set(i*10,0,1);
+          }
           escena.add(CasillaB[i]);
-        //  escena.add(CasillaG[i]);
+          escena.add(CasillaG[i]);
         }
   }
 //escena.add(Tablero);
