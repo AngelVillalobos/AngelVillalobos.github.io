@@ -21,10 +21,6 @@ var CasillaG=new Array();
 for (var i=0;i<33; i ++)
   {
       var CasillaB[i]=new THREE.Mesh(FCasillaB,MCasillaB);
-  }
-  
-for (var i=0;i<33; i ++)
-  {
       var CasillaG[i]=new THREE.Mesh(FCasillaG,MCasillaG);
   }
 
