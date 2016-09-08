@@ -26,6 +26,7 @@ for (var i=0;i<33; i ++)
 
 var escena = new THREE.Scene();
 
+
 escena.add(CasillaG[1]);
 escena.add(CasillaB[1]);
 
