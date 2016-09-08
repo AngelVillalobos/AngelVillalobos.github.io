@@ -7,11 +7,11 @@ var camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,
 
 camara.position.z=150;
 
-var FCasillaB=new THREE.Mesh(new THREE.BoxGeometry(10,10,0.03);
+var FCasillaB=new THREE.Mesh(new THREE.BoxGeometry(10,10,0.03));
 var MCasillaB=new THREE.MeshBasicMaterial({color:0xffffff});
-var FTablero=new THREE.Mesh(new THREE.BoxGeometry(100,100,0.3);
+var FTablero=new THREE.Mesh(new THREE.BoxGeometry(100,100,0.3));
 var MTablero=new THREE.MeshBasicMaterial({color:0x412a09});
-var FCasillaG=new THREE.Mesh(new THREE.BoxGeometry(10,10,0.03);
+var FCasillaG=new THREE.Mesh(new THREE.BoxGeometry(10,10,0.03));
 var MCasillaG=new THREE.MeshBasicMaterial({color:0x151515});
 var Tablero=new THREE.Mesh(FTablero,MTablero);
 
