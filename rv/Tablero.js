@@ -28,7 +28,6 @@ for (var i=0;i<33; i ++)
       escena.add(CasillaG[i]);
   }
 
-//
 escena.add(Tablero);
 
 var renderizador = new THREE.WebGLRenderer();
