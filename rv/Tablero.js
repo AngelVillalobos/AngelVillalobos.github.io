@@ -17,7 +17,7 @@ BaseFinal.merge(Casilla1.geometry,Casilla1.matrix);
 
 
 var escena = new THREE.Scene();
-escena.add(BaseFinal);
+escena.add(BaseMalla);
 
 
 var renderizador = new THREE.WebGLRenderer();
