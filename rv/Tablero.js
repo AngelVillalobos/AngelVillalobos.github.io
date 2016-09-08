@@ -12,7 +12,7 @@ var MCasillaB=new THREE.MeshBasicMaterial({color:0xffffff});
 var FTablero=new THREE.BoxGeometry(100,100,0.3);
 var MTablero=new THREE.MeshBasicMaterial({color:0x412a09});
 var FCasillaG=new THREE.BoxGeometry(10,10,0.03);
-var MCasillaG=new THREE.MeshBasicMaterial({color:0xaaaaaa});
+var MCasillaG=new THREE.MeshBasicMaterial({color:0x6b6b6b});
 var Tablero=new THREE.Mesh(FTablero,MTablero);
 
 var CasillaB=new Array();
@@ -33,11 +33,11 @@ for (var i=0;i<32; i ++)
         {
           if(i%2==0)
           {
-            CasillaB[i].position.set((i*10)-50,0,1);
+            CasillaG[i].position.set((i*10)-50,0,1);
           }
           else
           {
-            CasillaG[i].position.set((i*10)-50,0,1);
+            CasillaB[i].position.set((i*10)-50,0,1);
           }
           escena.add(CasillaB[i]);
           escena.add(CasillaG[i]);
