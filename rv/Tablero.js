@@ -7,24 +7,32 @@ var camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,
 
 camara.position.z=150;
 
-var escena = new THREE.Scene();
+var FCasillaB=new THREE.Mesh(new THREE.BoxGeometry(10,10,0.03);
+var MCasillaB=new THREE.MeshBasicMaterial({color:0xffffff});
+var FTablero=new THREE.Mesh(new THREE.BoxGeometry(100,100,0.3);
+var MTablero=new THREE.MeshBasicMaterial({color:0x412a09});
+var FCasillaG=new THREE.Mesh(new THREE.BoxGeometry(10,10,0.03);
+var MCasillaG=new THREE.MeshBasicMaterial({color:0x151515});
+var Tablero=new THREE.Mesh(FTablero,MTablero);
 
-var BaseMalla=new THREE.Mesh(new THREE.BoxGeometry(100,100,0.3),new THREE.MeshBasicMaterial({color:0x412a09}));
 var CasillaB=new Array();
+var CasillaG=new Array();
 
 for (var i=0;i<33; i ++)
   {
-      var CasillaB[i]=new THREE.Mesh(new THREE.BoxGeometry(10,10,0.03),new THREE.MeshBasicMaterial({color:0xffffff}));
-      CasillaB[i].rotateX=(-Math.PI/4);
-      CasillaB[i].translate(i*2,i*2,0.3);
-      
+      var CasillaB[i]=new THREE.Mesh(FCasillaB,MCasillaB);
+  }
+  
+for (var i=0;i<33; i ++)
+  {
+      var CasillaG[i]=new THREE.Mesh(FCasillaG,MCasillaG);
   }
 
+var escena = new THREE.Scene();
+
+escena.add(CasillaG[1]);
 escena.add(CasillaB[1]);
 
-BaseMalla.rotateX(-Math.PI/4);
-
-escena.add(BaseMalla);
 
 
 var renderizador = new THREE.WebGLRenderer();
