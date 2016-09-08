@@ -7,21 +7,21 @@ var camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,
 
 camara.position.z=15;
 
-var Base=new THREE.Mesh(new THREE.BoxGeometry(10,10,0.3),new THREE.MeshBasicMaterial({color:0x412a09}));
-var CA1=new THREE.Mesh(new THREE.BoxGeometry(0.625,0.625,0.05),new THREE.MeshBasicMaterial({color:0xffffff}));
+var BaseForma=new THREE.BoxGeometry(100,100,0.3);
+var BaseMaterial=new THREE.MeshBasicMaterial({color:0x412a09});
+var BaseMalla=new THREE.Mesh(BaseForma,BaseMaterial)
 
-Base.rotateX(-Math.PI/2);
-CA1.rotateX(-Math.PI/2);
+var BaseFinal = new THREE.Geometry();
 
-CA1.position.y=0.2;
-CA1.position.x=-4.375;
-CA1.position.z=0;
+BaseFinal.merge(BaseMalla.geometry,BaseMalla.matrix);
+
 
 var escena = new THREE.Scene();
-escena.add(Base);
-escena.add(CA1);
+escena.add(BaseFinal);
+
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
 document.body.appendChild(renderizador.domElement);
 renderizador.render(escena,camara);
+
