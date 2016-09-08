@@ -12,7 +12,7 @@ var MCasillaB=new THREE.MeshBasicMaterial({color:0xffffff});
 var FTablero=new THREE.BoxGeometry(100,100,0.3);
 var MTablero=new THREE.MeshBasicMaterial({color:0x412a09});
 var FCasillaG=new THREE.BoxGeometry(10,10,0.03);
-var MCasillaG=new THREE.MeshBasicMaterial({color:0x151515});
+var MCasillaG=new THREE.MeshBasicMaterial({color:0xaaaaaa});
 var Tablero=new THREE.Mesh(FTablero,MTablero);
 
 var CasillaB=new Array();
