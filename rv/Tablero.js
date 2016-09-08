@@ -28,10 +28,6 @@ for (var i=0;i<33; i ++)
       escena.add(CasillaG[i]);
   }
 
-//
-      
-
-
 
 escena.add(CasillaB[1]);
 
