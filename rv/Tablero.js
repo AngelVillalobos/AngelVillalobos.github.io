@@ -23,11 +23,19 @@ var escena = new THREE.Scene();
 for (var i=0;i<33; i ++)
   {
       CasillaB[i]=new THREE.Mesh(FCasillaB,MCasillaB);
-      CasillaB[i].position.set(i,i,1);
       CasillaG[i]=new THREE.Mesh(FCasillaG,MCasillaG);
-      escena.add(CasillaB[i]);
   }
 
+for (var i=0;i<33; i ++)
+  {
+      for (var j=0;j<33; j ++)
+        {
+          CasillaB[i].position.set(i,j,1);
+          CasillaG[i].position.set(-j,-i,1);
+          escena.add(CasillaB[i]);
+          escena.add(CasillaG[i]);
+        }
+  }
 //escena.add(Tablero);
 
 var renderizador = new THREE.WebGLRenderer();
