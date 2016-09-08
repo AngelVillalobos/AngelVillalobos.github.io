@@ -29,8 +29,6 @@ var escena = new THREE.Scene();
 escena.add(CasillaG[1]);
 escena.add(CasillaB[1]);
 
-
-
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
 document.body.appendChild(renderizador.domElement);
