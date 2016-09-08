@@ -37,7 +37,7 @@ for (var i=0;i<33; i ++)
         }
   }
 //escena.add(Tablero);
-
+//
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
 document.body.appendChild(renderizador.domElement);
