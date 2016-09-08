@@ -30,10 +30,13 @@ for (var i=0;i<33; i ++)
   {
       for (var j=0;j<33; j ++)
         {
-          CasillaB[i].position.set(i*10,-j,1);
-          CasillaG[i].position.set(-j*10,i,1);
+          if(i%2==0)
+          {
+            CasillaB[i].position.set(i*10,0,1);
+          }
+        //  CasillaG[i].position.set(-j*10,i,1);
           escena.add(CasillaB[i]);
-          escena.add(CasillaG[i]);
+        //  escena.add(CasillaG[i]);
         }
   }
 //escena.add(Tablero);
