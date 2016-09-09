@@ -22,22 +22,22 @@ var escena = new THREE.Scene();
 var a=1;
 var b=1;
 var c=0;
-for (var i=0;i<33; i ++)
+for (var i=0;i<64; i ++)
   {
       CasillaB[i]=new THREE.Mesh(FCasillaB,MCasillaB);
       CasillaG[i]=new THREE.Mesh(FCasillaG,MCasillaG);
   }
-for (var j=0;j<33; j ++)
+for (var j=0;j<64; j ++)
   {
     if(j%2==0)
       {
-        CasillaG[j].position.set((c*10)-80,b*10,0.6);
+        CasillaG[j].position.set((c*10)-80,(b*10)-35,0.6);
         escena.add(CasillaG[j]);
         a=a+1;
       }
     else
       {
-        CasillaB[j].position.set((c*10)-80,b*10,0.6);
+        CasillaB[j].position.set((c*10)-80,(b*10)-35,0.6);
         escena.add(CasillaB[j]);
         a=a+1;
       }
