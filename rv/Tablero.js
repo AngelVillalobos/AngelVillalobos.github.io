@@ -37,20 +37,14 @@ for (var j=0;j<71; j ++)
       {
         CasillaG[j].position.set((c*10)-45,(b*10)-35,0.6);
         CasillaG[j].rotateX(-Math.PI/6);
-        Casillas.merge(CasillaG[j].geometry,CasillaG[j].matrix);
-        //escena.add(CasillaG[j]);
-        var CasillasFinal = new THREE.Mesh(Casillas);
-        escena.add(CasillasFinal);
+        escena.add(CasillaG[j]);
         a=a+1;
       }
     else
       {
         CasillaB[j].position.set((c*10)-45,(b*10)-35,0.6);
         CasillaB[j].rotateX(-Math.PI/6);
-        Casillas.merge(CasillaB[j].geometry,CasillaB[j].matrix);
-        //escena.add(CasillaB[j]);
-        var CasillasFinal = new THREE.Mesh(Casillas);
-        escena.add(CasillasFinal);
+        escena.add(CasillaB[j]);
         a=a+1;
       }
   if(a==9)
@@ -68,7 +62,6 @@ for (var j=0;j<71; j ++)
 
 Tablero.rotateX(-Math.PI/6);
 //escena.add(Tablero);
-escena.add(CasillasFinal);
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
