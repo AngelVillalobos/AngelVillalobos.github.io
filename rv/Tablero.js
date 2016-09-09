@@ -21,7 +21,7 @@ var CasillaG=new Array();
 var escena = new THREE.Scene();
 
 var a=1;
-/////////////////////////////////
+///////////////////////////////
 for (var i=0;i<8; i ++)
   {
       CasillaB[i]=new THREE.Mesh(FCasillaB,MCasillaB);
