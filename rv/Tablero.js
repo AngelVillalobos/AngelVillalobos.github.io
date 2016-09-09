@@ -19,7 +19,8 @@ var CasillaB=new Array();
 var CasillaG=new Array();
 
 var escena = new THREE.Scene();
-var a=10;
+var a=1;
+var b=1;
 
 for (var i=0;i<32; i ++)
   {
@@ -30,15 +31,20 @@ for (var j=0;j<8; j ++)
   {
     if(j%2==0)
       {
-        CasillaG[j].position.set((j*10)-35,a,0.6);
+        CasillaG[j].position.set((j*10)-35,b*10,0.6);
         escena.add(CasillaG[j]);
+        a=a+1;
       }
     else
       {
-        CasillaB[j].position.set((j*10)-35,a,0.6);
+        CasillaB[j].position.set((j*10)-35,b*10,0.6);
         escena.add(CasillaB[j]);
+        a=a+1;
       }
-      
+    if(a==8)
+    {
+      b=b+1;
+    }
       
   }
   
