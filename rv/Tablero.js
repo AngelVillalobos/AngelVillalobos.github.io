@@ -22,12 +22,12 @@ var escena = new THREE.Scene();
 var a=1;
 var b=1;
 
-for (var i=0;i<32; i ++)
+for (var i=0;i<33; i ++)
   {
       CasillaB[i]=new THREE.Mesh(FCasillaB,MCasillaB);
       CasillaG[i]=new THREE.Mesh(FCasillaG,MCasillaG);
   }
-for (var j=0;j<8; j ++)
+for (var j=0;j<33; j ++)
   {
     if(j%2==0)
       {
