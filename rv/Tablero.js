@@ -38,7 +38,7 @@ for (var j=0;j<8; j ++)
       }
     else
       {
-        CasillaB[j].position.set((j*10)-50,(a*10),1);
+        CasillaB[j].position.set((j*10)-50,(j*a*10),1);
       }
     escena.add(CasillaG[j]);
     escena.add(CasillaB[j]);
