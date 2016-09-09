@@ -20,7 +20,7 @@ var CasillaG=new Array();
 
 var escena = new THREE.Scene();
 
-var a=0;
+Tablero.position.set(0,0,-1);
 
 for (var i=0;i<8; i ++)
   {
@@ -45,7 +45,7 @@ for (var j=0;j<8; j ++)
 
 
   //
-//escena.add(Tablero);
+escena.add(Tablero);
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
