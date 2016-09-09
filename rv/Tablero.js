@@ -19,6 +19,7 @@ var CasillaB=new Array();
 var CasillaG=new Array();
 
 var escena = new THREE.Scene();
+var a=10;
 
 for (var i=0;i<32; i ++)
   {
@@ -29,13 +30,11 @@ for (var j=0;j<8; j ++)
   {
     if(j%2==0)
       {
-        CasillaG[j].position.set((j*10)-35,-35,0.6);
-        
+        CasillaG[j].position.set((j*10)-35,a,0.6);
       }
     else
       {
-        CasillaB[j].position.set((j*10)-35,-35,0.6);
-        
+        CasillaB[j].position.set((j*10)-35,a,0.6);
       }
       escena.add(CasillaG[j]);
       escena.add(CasillaB[j]);
@@ -46,47 +45,16 @@ for (var j=0;j<8; j ++)
     if(j%2==0)
       {
         CasillaB[j].position.set((j*10)-35,-25,0.6);
-        
       }
     else
       {
         CasillaG[j].position.set((j*10)-35,-25,0.6);
-        
       }
       escena.add(CasillaB[j]);
       escena.add(CasillaG[j]);
   }
   
-  for (var j=0;j<8; j ++)
-  {
-    if(j%2==0)
-      {
-        CasillaG[j].position.set((j*10)-35,-15,0.6);
-        
-      }
-    else
-      {
-        CasillaB[j].position.set((j*10)-35,-15,0.6);
-        
-      }
-      escena.add(CasillaG[j]);
-      escena.add(CasillaB[j]);
-  }
-for (var j=0;j<8; j ++)
-  {
-    if(j%2==0)
-      {
-        CasillaB[j].position.set((j*10)-35,-5,0.6);
-        
-      }
-    else
-      {
-        CasillaG[j].position.set((j*10)-35,-5,0.6);
-        
-      }
-      escena.add(CasillaB[j]);
-      escena.add(CasillaG[j]);
-  }
+  
 
 
 escena.add(Tablero);
