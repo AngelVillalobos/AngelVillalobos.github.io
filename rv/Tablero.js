@@ -62,7 +62,7 @@ for (var j=0;j<71; j ++)
 
 Tablero.rotateX(-Math.PI/6);
 //escena.add(Tablero);
-//
+
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
 document.body.appendChild(renderizador.domElement);
