@@ -39,7 +39,8 @@ for (var j=0;j<71; j ++)
         CasillaG[j].rotateX(-Math.PI/6);
         Casillas.merge(CasillaG[j].geometry,CasillaG[j].matrix);
         //escena.add(CasillaG[j]);
-        escena.add(Casillas);
+        var CasillasFinal = new THREE.Mesh(Casillas);
+        escena.add(CasillasFinal);
         a=a+1;
       }
     else
@@ -48,7 +49,8 @@ for (var j=0;j<71; j ++)
         CasillaB[j].rotateX(-Math.PI/6);
         Casillas.merge(CasillaB[j].geometry,CasillaB[j].matrix);
         //escena.add(CasillaB[j]);
-        escena.add(Casillas);
+        var CasillasFinal = new THREE.Mesh(Casillas);
+        escena.add(CasillasFinal);
         a=a+1;
       }
   if(a==9)
