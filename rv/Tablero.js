@@ -27,8 +27,8 @@ for (var i=0;i<8; i ++)
       CasillaB[i]=new THREE.Mesh(FCasillaB,MCasillaB);
       CasillaG[i]=new THREE.Mesh(FCasillaG,MCasillaG);
   }
-for (var i=0;i<8; i ++)
-  {
+//for (var i=0;i<8; i ++)
+//  {
       for (var j=0;j<8; j ++)
         {
             if(i%2==0)
@@ -43,7 +43,7 @@ for (var i=0;i<8; i ++)
             escena.add(CasillaG[j]);
         }
         
-  }
+//  }
 
 ////////////////////////////////////////////////////
 //escena.add(Tablero);
