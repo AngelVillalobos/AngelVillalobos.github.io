@@ -39,6 +39,7 @@ for (var j=0;j<71; j ++)
         CasillaG[j].rotateX(-Math.PI/6);
         Casillas.merge(CasillaG[j].geometry,CasillaG[j].matrix);
         //escena.add(CasillaG[j]);
+        escena.add(Casillas);
         a=a+1;
       }
     else
@@ -47,6 +48,7 @@ for (var j=0;j<71; j ++)
         CasillaB[j].rotateX(-Math.PI/6);
         Casillas.merge(CasillaB[j].geometry,CasillaB[j].matrix);
         //escena.add(CasillaB[j]);
+        escena.add(Casillas);
         a=a+1;
       }
   if(a==9)
@@ -60,7 +62,7 @@ for (var j=0;j<71; j ++)
   }
 
 //var material = new THREE.MeshNormalMaterial();
-var CasillasFinal = new THREE.Mesh(Casillas);//,material);
+//var CasillasFinal = new THREE.Mesh(Casillas);//,material);
 
 Tablero.rotateX(-Math.PI/6);
 //escena.add(Tablero);
