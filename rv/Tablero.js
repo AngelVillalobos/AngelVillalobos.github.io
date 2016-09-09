@@ -42,8 +42,9 @@ for (var j=0;j<8; j ++)
       }
     escena.add(CasillaG[j]);
     escena.add(CasillaB[j]);
+    a=a+1;
   }
-a=a+1;
+
 }
 
   
