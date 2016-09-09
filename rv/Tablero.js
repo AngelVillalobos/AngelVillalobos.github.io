@@ -27,7 +27,7 @@ for (var i=0;i<64; i ++)
       CasillaB[i]=new THREE.Mesh(FCasillaB,MCasillaB);
       CasillaG[i]=new THREE.Mesh(FCasillaG,MCasillaG);
   }
-for (var j=0;j<64; j ++)
+for (var j=0;j<72; j ++)
   {
     if(j%2==0)
       {
