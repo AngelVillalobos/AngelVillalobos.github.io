@@ -21,46 +21,69 @@ var CasillaG=new Array();
 var escena = new THREE.Scene();
 
 var a=1;
-///////////////////////////////
+
 for (var i=0;i<8; i ++)
   {
       CasillaB[i]=new THREE.Mesh(FCasillaB,MCasillaB);
       CasillaG[i]=new THREE.Mesh(FCasillaG,MCasillaG);
   }
-for (var i=0;i<4; i ++)
+  
+for (var j=0;j<8; j ++)
   {
-      for (var j=0;j<8; j ++)
-        {
-            if(j%2==0)
-            {
-              CasillaG[j].position.set((j*10)-50,(i*20)+100,1);
-            }
-            else
-            {
-              CasillaB[j].position.set((j*10)-50,(i*20)+100,1);
-            }
-            escena.add(CasillaB[j]);
-            escena.add(CasillaG[j]);
-        }
-    }
-        for (var j=0;j<8; j ++)
-        {
-            if(j%2==0)
-            {
-              CasillaB[j].position.set((j*10)-50,50,1);
-            }
-            else
-            {
-              CasillaG[j].position.set((j*10)-50,50,1);
-            }
-            escena.add(CasillaB[j]);
-            escena.add(CasillaG[j]);
-        }
-//  }
+    if(j%2==0)
+      {
+        CasillaG[j].position.set((j*10)-50,90,1);
+      }
+    else
+      {
+        CasillaB[j].position.set((j*10)-50,90,1);
+      }
+    escena.add(CasillaB[j]);
+    escena.add(CasillaG[j]);
+  }
+for (var j=0;j<8; j ++)
+  {
+    if(j%2==0)
+      {
+        CasillaB[j].position.set((j*10)-50,80,1);
+      }
+    else
+      {
+        CasillaG[j].position.set((j*10)-50,80,1);
+      }
+    escena.add(CasillaB[j]);
+    escena.add(CasillaG[j]);
+  }
+for (var j=0;j<8; j ++)
+  {
+    if(j%2==0)
+      {
+        CasillaG[j].position.set((j*10)-50,70,1);
+      }
+    else
+      {
+        CasillaB[j].position.set((j*10)-50,70,1);
+      }
+    escena.add(CasillaB[j]);
+    escena.add(CasillaG[j]);
+  }
+for (var j=0;j<8; j ++)
+  {
+    if(j%2==0)
+      {
+        CasillaB[j].position.set((j*10)-50,60,1);
+      }
+    else
+      {
+        CasillaG[j].position.set((j*10)-50,60,1);
+      }
+    escena.add(CasillaB[j]);
+    escena.add(CasillaG[j]);
+  }
+  
 
-////////////////////////////////////////////////////
 //escena.add(Tablero);
-//
+
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
 document.body.appendChild(renderizador.domElement);
