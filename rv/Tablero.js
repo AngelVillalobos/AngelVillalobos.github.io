@@ -19,8 +19,8 @@ var CasillaB=new Array();
 var CasillaG=new Array();
 
 var escena = new THREE.Scene();
-var a=0;
-var b=1;
+var a=1;
+var b=0;
 var c=1;
 for (var i=0;i<64; i ++)
   {
