@@ -41,7 +41,7 @@ for (var j=0;j<64; j ++)
         escena.add(CasillaB[j]);
         a=a+1;
       }
-    if(a==9)
+  if(a==9)
     {
       a=1;
       b=b+1;
