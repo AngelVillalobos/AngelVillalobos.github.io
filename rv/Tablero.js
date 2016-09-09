@@ -27,33 +27,20 @@ for (var i=0;i<8; i ++)
       CasillaB[i]=new THREE.Mesh(FCasillaB,MCasillaB);
       CasillaG[i]=new THREE.Mesh(FCasillaG,MCasillaG);
   }
-
-for (var i=0;i<8; i ++)
-{
 for (var j=0;j<8; j ++)
   {
     if(j%2==0&&i==0)
       {
-        CasillaG[j].position.set((j*10)-50,(i*10)+10,1);
+        CasillaG[j].position.set((j*10)-50,100,1);
       }
     else
       {
-        CasillaB[j].position.set((j*10)-50,(i*10)+10,1);
-      }
-    if(j%2==0&&i==1)
-      {
-        CasillaB[j].position.set((j*10)-50,(i*10)+10,1);
-      }
-    else
-      {
-        CasillaG[j].position.set((j*10)-50,(i*10)+10,1);
+        CasillaB[j].position.set((j*10)-50,100,1);
       }
     escena.add(CasillaG[j]);
     escena.add(CasillaB[j]);
-    a=a+1;
   }
 
-}
 
   
 //escena.add(Tablero);
