@@ -21,7 +21,7 @@ var CasillaG=new Array();
 var escena = new THREE.Scene();
 var a=1;
 var b=1;
-var c=0;
+var c=1;
 for (var i=0;i<64; i ++)
   {
       CasillaB[i]=new THREE.Mesh(FCasillaB,MCasillaB);
@@ -45,7 +45,7 @@ for (var j=0;j<64; j ++)
     {
       a=1;
       b=b+1;
-      c=0;
+      c=1;
     }
     c=c+1;
   }
