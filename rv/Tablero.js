@@ -34,14 +34,14 @@ for (var j=0;j<8; j ++)
   {
     if(j%2==0)
       {
-        CasillaG[j].position.set((j*10)-50,(i*10)+10,1);
+        CasillaG[j].position.set((j*10)-50,10,1);
       }
     else
       {
-        CasillaB[j].position.set((j*10)-50,(i*10)+10,1);
+        CasillaB[j].position.set((j*10)-50,10,1);
       }
-    escena.add(CasillaG[i]);
-    escena.add(CasillaB[i]);
+    escena.add(CasillaG[j]);
+    escena.add(CasillaB[j]);
   }
 
 }
