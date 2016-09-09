@@ -29,38 +29,19 @@ for (var i=0;i<8; i ++)
   }
 for (var i=0;i<8; i ++)
   {
-      //for (var j=0;j<32; j ++)
-        //{
-        switch(a)
+      for (var j=0;j<8; j ++)
         {
-          case 1:
             if(i%2==0)
             {
-              CasillaG[i].position.set((i*10)-50,0,1);
+              CasillaG[i].position.set((j*10)-50,0,1);
             }
             else
             {
-              CasillaB[i].position.set((i*10)-50,0,1);
+              CasillaB[i].position.set((j*10)-50,0,1);
             }
-            escena.add(CasillaB[i]);
-            escena.add(CasillaG[i]);
-            break;
-            
-            case 2:
-            if(i%2==0)
-            {
-              CasillaG[i].position.set((i*10)-50,10,1);
-            }
-            else
-            {
-              CasillaB[i].position.set((i*10)-50,10,1);
-            }
-            escena.add(CasillaB[i]);
-            escena.add(CasillaG[i]);
-            break;
+            escena.add(CasillaB[j]);
+            escena.add(CasillaG[j]);
         }
-        a=a+1;
-        //}
         
   }
 
