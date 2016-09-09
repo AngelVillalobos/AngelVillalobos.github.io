@@ -31,13 +31,15 @@ for (var j=0;j<8; j ++)
     if(j%2==0)
       {
         CasillaG[j].position.set((j*10)-35,a,0.6);
+        escena.add(CasillaG[j]);
       }
     else
       {
         CasillaB[j].position.set((j*10)-35,a,0.6);
+        escena.add(CasillaB[j]);
       }
-      escena.add(CasillaG[j]);
-      escena.add(CasillaB[j]);
+      
+      
   }
   
   for (var j=0;j<8; j ++)
