@@ -30,13 +30,15 @@ for (var j=0;j<8; j ++)
     if(j%2==0)
       {
         CasillaG[j].position.set((j*10)-35,-35,0.6);
-        escena.add(CasillaG[j]);
+        
       }
     else
       {
         CasillaB[j].position.set((j*10)-35,-35,0.6);
-        escena.add(CasillaB[j]);
+        
       }
+      escena.add(CasillaG[j]);
+      escena.add(CasillaB[j]);
   }
   
   for (var j=0;j<8; j ++)
@@ -44,13 +46,15 @@ for (var j=0;j<8; j ++)
     if(j%2==0)
       {
         CasillaG[j].position.set((j*10)-35,-25,0.6);
-        escena.add(CasillaB[j]);
+        
       }
     else
       {
         CasillaB[j].position.set((j*10)-35,-25,0.6);
-        escena.add(CasillaG[j]);
+        
       }
+      escena.add(CasillaB[j]);
+      escena.add(CasillaG[j]);
   }
   
   for (var j=0;j<8; j ++)
@@ -58,13 +62,15 @@ for (var j=0;j<8; j ++)
     if(j%2==0)
       {
         CasillaG[j].position.set((j*10)-35,-15,0.6);
-        escena.add(CasillaG[j]);
+        
       }
     else
       {
         CasillaB[j].position.set((j*10)-35,-15,0.6);
-        escena.add(CasillaB[j]);
+        
       }
+      escena.add(CasillaG[j]);
+      escena.add(CasillaB[j]);
   }
 
 
