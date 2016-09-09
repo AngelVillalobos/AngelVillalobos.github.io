@@ -20,8 +20,6 @@ var CasillaG=new Array();
 
 var escena = new THREE.Scene();
 
-Tablero.position.set(0,0,0);
-
 for (var i=0;i<8; i ++)
   {
       CasillaB[i]=new THREE.Mesh(FCasillaB,MCasillaB);
