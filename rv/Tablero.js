@@ -19,7 +19,7 @@ var CasillaB=new Array();
 var CasillaG=new Array();
 
 var escena = new THREE.Scene();
-var a=1;
+var a=0;
 var b=1;
 var c=1;
 for (var i=0;i<64; i ++)
@@ -43,7 +43,7 @@ for (var j=0;j<64; j ++)
       }
   if(a==10)
     {
-      a=1;
+      a=0;
       b=b+1;
       c=1;
     }
