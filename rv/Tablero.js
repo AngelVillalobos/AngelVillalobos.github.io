@@ -57,13 +57,12 @@ for (var j=0;j<71; j ++)
       j=j+1;
     }
     c=c+1;
-    
-    
   }
   
 //
 Tablero.rotateX(-Math.PI/6);
 escena.add(Tablero);
+escena.add(Casillas);
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
