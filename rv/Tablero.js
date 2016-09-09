@@ -55,7 +55,7 @@ for (var j=0;j<8; j ++)
   }
   
   
-
+//
 
 escena.add(Tablero);
 
