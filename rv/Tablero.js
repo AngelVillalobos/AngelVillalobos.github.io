@@ -5,7 +5,7 @@ var planoLejano=1000;
 
 var camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
 
-camara.position.z=150;
+camara.position.z=400;
 
 var FCasillaB=new THREE.BoxGeometry(10,10,0.03);
 var MCasillaB=new THREE.MeshBasicMaterial({color:0xffffff});
@@ -33,16 +33,15 @@ for (var i=0;i<8; i ++)
         {
             if(j%2==0)
             {
-              CasillaG[j].position.set((j*10)-50,i+10,1);
+              CasillaG[j].position.set((j*10)-50,i*10,1);
             }
             else
             {
-              CasillaB[j].position.set((j*10)-50,i+10,1);
+              CasillaB[j].position.set((j*10)-50,i*10,1);
             }
-            
         }
-        escena.add(CasillaB[j]);
-            escena.add(CasillaG[j]);
+      escena.add(CasillaB[j]);
+      escena.add(CasillaG[j]);
   }
 
 ////////////////////////////////////////////////////
