@@ -40,8 +40,8 @@ for (var j=0;j<8; j ++)
       {
         CasillaB[j].position.set((j*10)-50,(i*10)+10,1);
       }
-    escena.add(CasillaG[j]);
-    escena.add(CasillaB[j]);
+    escena.add(CasillaG[i]);
+    escena.add(CasillaB[i]);
   }
 
 }
