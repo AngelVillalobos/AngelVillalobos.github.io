@@ -5,7 +5,7 @@ var planoLejano=1000;
 
 var camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
 
-camara.position.z=500;
+camara.position.z=150;
 
 var FCasillaB=new THREE.BoxGeometry(10,10,0.03);
 var MCasillaB=new THREE.MeshBasicMaterial({color:0xffffff});
