@@ -18,10 +18,14 @@ var Tablero=new THREE.Mesh(FTablero,MTablero);
 var CasillaB=new Array();
 var CasillaG=new Array();
 
+var Casillas = new THREE.Geometry();
+
 var escena = new THREE.Scene();
+
 var a=1;
 var b=0;
 var c=1;
+
 for (var i=0;i<71; i ++)
   {
       CasillaB[i]=new THREE.Mesh(FCasillaB,MCasillaB);
@@ -51,6 +55,8 @@ for (var j=0;j<71; j ++)
       j=j+1;
     }
     c=c+1;
+    Casillas.merge(CasillaB[j].geometry,CasillasB[j].matrix);
+    Casillas.merge(CasillaG[j].geometry,CasillasG[j].matrix);
   }
   
 //
