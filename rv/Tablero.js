@@ -31,11 +31,11 @@ for (var j=0;j<8; j ++)
   {
     if(j%2==0)
       {
-        CasillaG[j].position.set((j*10)-50,100,1);
+        CasillaG[j].position.set((j*10)-50,40,1);
       }
     else
       {
-        CasillaB[j].position.set((j*10)-50,100,1);
+        CasillaB[j].position.set((j*10)-50,40,1);
       }
     escena.add(CasillaG[j]);
     escena.add(CasillaB[j]);
