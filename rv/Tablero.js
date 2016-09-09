@@ -32,12 +32,14 @@ for (var j=0;j<71; j ++)
     if(j%2==0)
       {
         CasillaG[j].position.set((c*10)-45,(b*10)-35,0.6);
+        CasillaG[j].rotateX(Math.pi/4);
         escena.add(CasillaG[j]);
         a=a+1;
       }
     else
       {
         CasillaB[j].position.set((c*10)-45,(b*10)-35,0.6);
+        CasillaB[j].rotateX(Math.pi/4);
         escena.add(CasillaB[j]);
         a=a+1;
       }
@@ -52,7 +54,7 @@ for (var j=0;j<71; j ++)
   }
   
 //
-
+Tablero.rotateX(Math.pi/4);
 escena.add(Tablero);
 
 var renderizador = new THREE.WebGLRenderer();
