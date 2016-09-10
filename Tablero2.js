@@ -39,13 +39,13 @@ for (var j=0;j<71; j ++)
   {
     if(j%2==0)
       {
-        CasillaG[j].position.set((c*10)-45,(b*10)-(30),0.6);
+        CasillaG[j].position.set((c*10)-35,(b*10)-(30),0.6);
         escena.add(CasillaG[j]);
         a=a+1;
       }
     else
       {
-        CasillaB[j].position.set((c*10)-45,(b*10)-(30),0.6);
+        CasillaB[j].position.set((c*10)-35,(b*10)-(30),0.6);
         escena.add(CasillaB[j]);
         a=a+1;
       }
