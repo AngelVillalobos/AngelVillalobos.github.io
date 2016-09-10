@@ -36,12 +36,13 @@ for (var j=0;j<71; j ++)
     if(j%2==0)
       {
         CasillaG[j].position.set((c*10)-45,(b*10)-(35-(b*0.5)),0.6);
-        Casillas.merge(CasillaG[j].geometry,CasillaG[j].matrix);
+        
         //CasillaG[j].rotateX(-Math.PI/6);
         
         //escena.add(CasillaG[j]);
         a=a+1;
       }
+      Casillas.merge(CasillaG[j].geometry,CasillaG[j].matrix);
     else
       {
         CasillaB[j].position.set((c*10)-45,(b*10)-(35-(b*0.5)),0.6);
