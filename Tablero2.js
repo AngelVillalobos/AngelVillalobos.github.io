@@ -58,7 +58,7 @@ for (var j=0;j<71; j ++)
     }
     c=c+1;
   }
-Tablero.position.set(0,0,0.6);
+Tablero.position.set(0,0,0);
 escena.add(Tablero);
 
 var renderizador = new THREE.WebGLRenderer();
