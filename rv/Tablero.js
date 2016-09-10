@@ -5,17 +5,17 @@ var planoLejano=1000;
 
 var camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
 
-//camara.position.z=150;
-//camara.position.y=150;
-camara.position.x=150;
+camara.position.z=150;
+camara.position.y=-100;
+//camara.position.x=150;
 
 camara.lookAt(new THREE.Vector3(0,0,0));
 
-var FCasillaB=new THREE.BoxGeometry(10,10,0.03);
+var FCasillaB=new THREE.BoxGeometry(10,10,0.03,10,10,10);
 var MCasillaB=new THREE.MeshBasicMaterial({color:0xffffff});
-var FTablero=new THREE.BoxGeometry(100,100,0.3);
+var FTablero=new THREE.BoxGeometry(100,100,0.3,10,10,10);
 var MTablero=new THREE.MeshBasicMaterial({color:0x412a09});
-var FCasillaG=new THREE.BoxGeometry(10,10,0.03);
+var FCasillaG=new THREE.BoxGeometry(10,10,0.03,10,10,10);
 var MCasillaG=new THREE.MeshBasicMaterial({color:0x6b6b6b});
 var Tablero=new THREE.Mesh(FTablero,MTablero);
 
@@ -39,15 +39,13 @@ for (var j=0;j<71; j ++)
   {
     if(j%2==0)
       {
-        CasillaG[j].position.set((c*10)-45,(b*10)-(30),0.6);
-        CasillaG[j].rotateX(-Math.PI/6);
+        CasillaG[j].position.set((c*10)-45,(b*10)-(35),0.6);
         escena.add(CasillaG[j]);
         a=a+1;
       }
     else
       {
-        CasillaB[j].position.set((c*10)-45,(b*10)-(30),0.6);
-        CasillaB[j].rotateX(-Math.PI/6);
+        CasillaB[j].position.set((c*10)-45,(b*10)-(35),0.6);
         escena.add(CasillaB[j]);
         a=a+1;
       }
@@ -60,15 +58,10 @@ for (var j=0;j<71; j ++)
     }
     c=c+1;
   }
-
-
-Tablero.position.set(0,0,-21);
-Tablero.rotateX(-Math.PI/6);
-Tablero.rotateY(Math.PI/100);
+Tablero.position.set(0,0,0);
 escena.add(Tablero);
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
 document.body.appendChild(renderizador.domElement);
 renderizador.render(escena,camara);
-
