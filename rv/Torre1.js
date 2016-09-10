@@ -46,8 +46,14 @@ TorrefForma.merge(Corona3Malla.geometry,Corona3Malla.matrix);
 
 TorrefForma.translate(0,-0.6,0);
 
-var material = new THREE.MeshNormalMaterial();
+var material = new THREE.MeshBasicMaterial({color:0xebe89a});
 var TorrefMalla = new THREE.Mesh(TorrefForma,material);
 TorrefMalla.rotateX(Math.PI/12);
 var escena = new THREE.Scene();
 escena.add(TorrefMalla);
+var camara = new THREE.PerspectiveCamera();
+camara.position.z=3;
+var renderizador = new THREE.WebGLRenderer();
+renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
+document.body.appendChild(renderizador.domElement);
+renderizador.render(escena,camara);
