@@ -8,6 +8,8 @@ var camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,
 camara.position.z=150;
 camara.position.y=150;
 
+camara.lookAt(new THREE.Vector3(0,0,0));
+
 var FCasillaB=new THREE.BoxGeometry(10,10,0.03);
 var MCasillaB=new THREE.MeshBasicMaterial({color:0xffffff});
 var FTablero=new THREE.BoxGeometry(100,100,0.3);
