@@ -60,11 +60,11 @@ for (var j=0;j<71; j ++)
     c=c+1;
   }
 
-//var material = new THREE.MeshNormalMaterial();
-//var CasillasFinal = new THREE.Mesh(Casillas);//,material);
+var material = new THREE.MeshBasicMaterial({color:0x412a09});
+var CasillasFinal = new THREE.Mesh(Casillas,material);
 
 Tablero.rotateX(-Math.PI/6);
-//escena.add(Tablero);
+escena.add(CasillasFinal);
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
