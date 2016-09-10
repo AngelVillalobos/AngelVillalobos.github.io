@@ -11,11 +11,11 @@ camara.position.y=-100;
 
 camara.lookAt(new THREE.Vector3(0,0,0));
 
-var FCasillaB=new THREE.BoxGeometry(10,10,0.03);
+var FCasillaB=new THREE.BoxGeometry(10,10,0.03,10,10,10);
 var MCasillaB=new THREE.MeshBasicMaterial({color:0xffffff});
-var FTablero=new THREE.BoxGeometry(100,100,0.3);
+var FTablero=new THREE.BoxGeometry(100,100,0.3,10,10,10);
 var MTablero=new THREE.MeshBasicMaterial({color:0x412a09});
-var FCasillaG=new THREE.BoxGeometry(10,10,0.03);
+var FCasillaG=new THREE.BoxGeometry(10,10,0.03,10,10,10);
 var MCasillaG=new THREE.MeshBasicMaterial({color:0x6b6b6b});
 var Tablero=new THREE.Mesh(FTablero,MTablero);
 
