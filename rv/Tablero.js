@@ -39,15 +39,15 @@ for (var j=0;j<71; j ++)
   {
     if(j%2==0)
       {
-        CasillaG[j].position.set((c*10)-45,(b*10)-(30),0.6-(j*0.65));
-        //CasillaG[j].rotateX(-Math.PI/6);
+        CasillaG[j].position.set((c*10)-45,(b*10)-(30),0.6-(j*0.67));
+        CasillaG[j].rotateX(-Math.PI/6);
         escena.add(CasillaG[j]);
         a=a+1;
       }
     else
       {
-        CasillaB[j].position.set((c*10)-45,(b*10)-(30),0.6-(j*0.65));
-        //CasillaB[j].rotateX(-Math.PI/6);
+        CasillaB[j].position.set((c*10)-45,(b*10)-(30),0.6-(j*0.67));
+        CasillaB[j].rotateX(-Math.PI/6);
         escena.add(CasillaB[j]);
         a=a+1;
       }
