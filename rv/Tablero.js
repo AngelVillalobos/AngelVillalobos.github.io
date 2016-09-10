@@ -57,9 +57,8 @@ for (var j=0;j<71; j ++)
     c=c+1;
   }
 
-var material = new THREE.MeshBasicMaterial({color:0x6b6b6b});
-var CasillasFinal = new THREE.Mesh(Casillas,material);
 
+Tablero.position.set(0,-1,-1);
 Tablero.rotateX(-Math.PI/6);
 escena.add(Tablero);
 
