@@ -5,8 +5,8 @@ var planoLejano=1000;
 
 var camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
 
-camara.position.z=150;
-//camara.position.y=150;
+//camara.position.z=150;
+camara.position.y=150;
 //camara.position.x=150;
 
 camara.lookAt(new THREE.Vector3(0,0,0));
@@ -39,14 +39,14 @@ for (var j=0;j<71; j ++)
   {
     if(j%2==0)
       {
-        CasillaG[j].position.set((c*10)-45,(b*10)-(30),0.6-(j*0.65));
+        CasillaG[j].position.set((c*10)-45,(b*10)-(27),0.6-(j*0.65));
         CasillaG[j].rotateX(-Math.PI/6);
         escena.add(CasillaG[j]);
         a=a+1;
       }
     else
       {
-        CasillaB[j].position.set((c*10)-45,(b*10)-(30),0.6-(j*0.65));
+        CasillaB[j].position.set((c*10)-45,(b*10)-(27),0.6-(j*0.65));
         CasillaB[j].rotateX(-Math.PI/6);
         escena.add(CasillaB[j]);
         a=a+1;
