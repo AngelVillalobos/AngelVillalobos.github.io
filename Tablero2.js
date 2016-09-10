@@ -47,7 +47,7 @@ for (var j=0;j<71; j ++)
     else
       {
         CasillaB[j].position.set((c*10)-45,(b*10)-(30),0.6);//-(j*0.67));
-        CasillaB[j].rotateX(-Math.PI/6);
+        //CasillaB[j].rotateX(-Math.PI/6);
         escena.add(CasillaB[j]);
         a=a+1;
       }
