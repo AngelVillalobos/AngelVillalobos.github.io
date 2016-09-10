@@ -42,7 +42,7 @@ for (var j=0;j<71; j ++)
         //escena.add(CasillaG[j]);
         a=a+1;
       }
-      Casillas.merge(CasillaG[j].geometry,CasillaG[j].matrix);
+      
     else
       {
         CasillaB[j].position.set((c*10)-45,(b*10)-(35-(b*0.5)),0.6);
@@ -50,6 +50,7 @@ for (var j=0;j<71; j ++)
         escena.add(CasillaB[j]);
         a=a+1;
       }
+      Casillas.merge(CasillaG[j].geometry,CasillaG[j].matrix);
   if(a==9)
     {
       a=1;
