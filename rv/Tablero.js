@@ -60,7 +60,7 @@ for (var j=0;j<71; j ++)
 
 Tablero.position.set(0,-11,-10);
 Tablero.rotateX(-Math.PI/6);
-escena.add(Tablero);
+//escena.add(Tablero);
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
