@@ -51,6 +51,7 @@ for (var j=0;j<71; j ++)
         a=a+1;
       }
       Casillas.merge(CasillaG[j].geometry,CasillaG[j].matrix);
+      Casillas.merge(CasillaB[j].geometry,CasillaB[j].matrix);
   if(a==9)
     {
       a=1;
