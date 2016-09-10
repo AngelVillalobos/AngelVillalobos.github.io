@@ -40,13 +40,13 @@ for (var j=0;j<71; j ++)
     if(j%2==0)
       {
         CasillaG[j].position.set((c*10)-45,(b*10)-(35),0.6);
-        escena.add(CasillaG[j]);
+        //escena.add(CasillaG[j]);
         a=a+1;
       }
     else
       {
         CasillaB[j].position.set((c*10)-45,(b*10)-(35),0.6);
-        escena.add(CasillaB[j]);
+        //escena.add(CasillaB[j]);
         a=a+1;
       }
   if(a==9)
@@ -59,7 +59,7 @@ for (var j=0;j<71; j ++)
     c=c+1;
   }
 Tablero.position.set(0,0,0);
-escena.add(Tablero);
+//escena.add(Tablero);
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
