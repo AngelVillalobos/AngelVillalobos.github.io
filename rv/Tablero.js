@@ -28,8 +28,8 @@ var c=1;
 
 for (var i=0;i<71; i ++)
   {
-      CasillaB[i]=new THREE.Mesh(FCasillaB,MCasillaB);
-      CasillaG[i]=new THREE.Mesh(FCasillaG,MCasillaG);
+      CasillaB[i]=new THREE.Mesh(FCasillaB);//,MCasillaB);
+      CasillaG[i]=new THREE.Mesh(FCasillaG);//,MCasillaG);
   }
 for (var j=0;j<71; j ++)
   {
@@ -63,7 +63,7 @@ for (var j=0;j<71; j ++)
     c=c+1;
   }
 
-var material = new THREE.MeshBasicMaterial({color:0x412a09});
+var material = new THREE.MeshBasicMaterial({color:0x6b6b6b});
 var CasillasFinal = new THREE.Mesh(Casillas,material);
 
 Tablero.rotateX(-Math.PI/6);
