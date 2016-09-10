@@ -54,7 +54,7 @@ for (var j=0;j<71; j ++)
       c=0;
       j=j+1;
     }
-    Casillas.merge(CasillaG[].geometry,CasillaG[].matrix);
+    Casillas.merge(CasillaG[j].geometry,CasillaG[j].matrix);
     c=c+1;
   }
 
