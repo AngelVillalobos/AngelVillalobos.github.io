@@ -62,7 +62,7 @@ for (var j=0;j<71; j ++)
   }
 
 
-Tablero.position.set(0,0,-50);
+Tablero.position.set(0,0,-40);
 Tablero.rotateX(-Math.PI/6);
 escena.add(Tablero);
 
