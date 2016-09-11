@@ -44,7 +44,7 @@ TorrefForma.merge(Corona3Malla.geometry,Corona3Malla.matrix);
 
 
 
-TorrefForma.translate(0,0,-10);
+TorrefForma.translate(10,10,10);
 
 var material = new THREE.MeshNormalMaterial();
 var TorrefMalla = new THREE.Mesh(TorrefForma,material);
