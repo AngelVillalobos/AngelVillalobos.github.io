@@ -5,8 +5,8 @@ var planoLejano=1000;
 
 var camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
 
-camara.position.z=150;
-camara.position.y=-100;
+//camara.position.z=150;
+//camara.position.y=-100;
 //camara.position.x=150;
 
 camara.lookAt(new THREE.Vector3(0,0,0));
@@ -59,7 +59,7 @@ for (var j=0;j<71; j ++)
     c=c+1;
   }
 Tablero.position.set(0,0,0);
-escena.add(Tablero);
+//escena.add(Tablero);
 ///////////////////////////////////////////////////////////////////////////////////////
 var BaseForma = new THREE.CylinderGeometry(0.6,0.6,0.2,64,64);
 var Base2Forma = new THREE.TorusGeometry(0.4,0.1,30,200);
