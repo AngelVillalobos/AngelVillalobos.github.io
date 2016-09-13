@@ -40,13 +40,13 @@ for (var j=0;j<71; j ++)
     if(j%2==0)
       {
         CasillaG[j].position.set((c*10)-45,(b*10)-(35),0.6);
-        escena.add(CasillaG[j]);
+        //escena.add(CasillaG[j]);
         a=a+1;
       }
     else
       {
         CasillaB[j].position.set((c*10)-45,(b*10)-(35),0.6);
-        escena.add(CasillaB[j]);
+        //escena.add(CasillaB[j]);
         a=a+1;
       }
   if(a==9)
@@ -107,11 +107,11 @@ TorrefForma.merge(Corona3Malla.geometry,Corona3Malla.matrix);
 
 
 //0xebe89a
-TorrefForma.translate(15,15,15);
+TorrefForma.translate(0,0,1);
 
 var material = new THREE.MeshBasicMaterial({color:0x00ff00,wireframe:true});
 var TorrefMalla = new THREE.Mesh(TorrefForma,material);
-//TorrefMalla.rotateX(Math.PI/12);
+TorrefMalla.rotateX(Math.PI/2);
 //var escena = new THREE.Scene();
 escena.add(TorrefMalla);
 //var camara = new THREE.PerspectiveCamera();
