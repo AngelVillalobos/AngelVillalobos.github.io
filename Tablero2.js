@@ -108,7 +108,8 @@ TorrefForma.merge(Corona3Malla.geometry,Corona3Malla.matrix);
 
 //0xebe89a
 TorrefForma.translate(0,0,1);
-TorrefForma.scale.x=10;
+TorrefForma.scale.x=100;
+TorrefForma.scale.y=100;
 //TorrefForma.scale.y=10;
 //TorrefForma.scale.z=10;
 var material = new THREE.MeshBasicMaterial({color:0x00ff00,wireframe:true});
