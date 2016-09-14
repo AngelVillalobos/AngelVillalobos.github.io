@@ -114,8 +114,8 @@ TorrefForma.translate(0,0,1);
 var material = new THREE.MeshBasicMaterial({color:0x00ff00,wireframe:true});
 var TorrefMalla = new THREE.Mesh(TorrefForma,material);
 TorrefMalla.rotateX(Math.PI/2);
-TorrefMalla.scale.x=1000;
-TorrefMalla.scale.y=1000;
+TorrefMalla.scale.set(10,10,10);
+
 //var escena = new THREE.Scene();
 escena.add(TorrefMalla);
 //var camara = new THREE.PerspectiveCamera();
