@@ -5,7 +5,7 @@ var planoLejano=1000;
 
 var camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
 
-camara.position.z=150;
+camara.position.z=15;
 //camara.position.y=-100;
 //camara.position.x=150;
 
@@ -109,6 +109,8 @@ TorrefForma.merge(Corona3Malla.geometry,Corona3Malla.matrix);
 //0xebe89a
 TorrefForma.translate(0,0,1);
 TorrefForma.scale.x=10;
+TorrefForma.scale.y=10;
+TorrefForma.scale.z=10;
 var material = new THREE.MeshBasicMaterial({color:0x00ff00,wireframe:true});
 var TorrefMalla = new THREE.Mesh(TorrefForma,material);
 TorrefMalla.rotateX(Math.PI/2);
