@@ -40,13 +40,13 @@ for (var j=0;j<71; j ++)
     if(j%2==0)
       {
         CasillaG[j].position.set((c*10)-45,(b*10)-(35),0.6);
-        //escena.add(CasillaG[j]);
+        escena.add(CasillaG[j]);
         a=a+1;
       }
     else
       {
         CasillaB[j].position.set((c*10)-45,(b*10)-(35),0.6);
-        //escena.add(CasillaB[j]);
+        escena.add(CasillaB[j]);
         a=a+1;
       }
   if(a==9)
@@ -59,7 +59,7 @@ for (var j=0;j<71; j ++)
     c=c+1;
   }
 Tablero.position.set(0,0,0);
-//escena.add(Tablero);
+escena.add(Tablero);
 ///////////////////////////////////////////////////////////////////////////////////////
 var BaseForma = new THREE.CylinderGeometry(0.6,0.6,0.2,64,64);
 var Base2Forma = new THREE.TorusGeometry(0.4,0.1,30,200);
@@ -108,10 +108,7 @@ TorrefForma.merge(Corona3Malla.geometry,Corona3Malla.matrix);
 
 //0xebe89a
 TorrefForma.translate(0,0,1);
-
-//TorrefForma.scale.y=10;
-//TorrefForma.scale.z=10;
-var material = new THREE.MeshBasicMaterial({color:0x00ff00,wireframe:true});
+var material = new THREE.MeshNormalMaterial();//({color:0x00ff00,wireframe:true});
 var TorrefMalla = new THREE.Mesh(TorrefForma,material);
 TorrefMalla.rotateX(Math.PI/2);
 TorrefMalla.scale.set(10,10,10);
