@@ -96,23 +96,24 @@ var Corona3Malla = new THREE.Mesh(Corona3Forma);
 
 
 var TorrefForma = new THREE.Geometry();
+
+  TorrefForma.merge(BaseMalla.geometry,BaseMalla.matrix);
+  TorrefForma.merge(Base2Malla.geometry,Base2Malla.matrix);
+  TorrefForma.merge(Base3Malla.geometry,Base3Malla.matrix);
+  TorrefForma.merge(TorreMalla.geometry,TorreMalla.matrix);
+  TorrefForma.merge(CoronaMalla.geometry,CoronaMalla.matrix);
+  TorrefForma.merge(Corona1Malla.geometry,Corona1Malla.matrix);
+  TorrefForma.merge(Corona2Malla.geometry,Corona2Malla.matrix);
+  TorrefForma.merge(Corona3Malla.geometry,Corona3Malla.matrix);
+ 
+
 for (var i=0;i<4;i++)
 {
-  Torres[i]=TorrefForma.merge(BaseMalla.geometry,BaseMalla.matrix);
-  Torres[i]=TorrefForma.merge(Base2Malla.geometry,Base2Malla.matrix);
-  Torres[i]=TorrefForma.merge(Base3Malla.geometry,Base3Malla.matrix);
-  Torres[i]=TorrefForma.merge(TorreMalla.geometry,TorreMalla.matrix);
-  Torres[i]=TorrefForma.merge(CoronaMalla.geometry,CoronaMalla.matrix);
-  Torres[i]=TorrefForma.merge(Corona1Malla.geometry,Corona1Malla.matrix);
-  Torres[i]=TorrefForma.merge(Corona2Malla.geometry,Corona2Malla.matrix);
-  Torres[i]=TorrefForma.merge(Corona3Malla.geometry,Corona3Malla.matrix);
-  //Torres[i]=TorrefForma;
+  Torres[i]=TorrefForma;
 }
 
-
-
 //0xebe89a
-Torres[0].translate(4,3,1.2);
+Torres[0].translate(3,3,1.2);
 Torres[1].translate(-4,3,1.2);
 var material = new THREE.MeshNormalMaterial();//({color:0x00ff00,wireframe:true});
 var TorrefMalla = new THREE.Mesh(TorrefForma,material);
