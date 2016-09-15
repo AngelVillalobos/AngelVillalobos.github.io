@@ -9,8 +9,8 @@ camara.far=100;
 camara.updateProjectionMatrix();
 //
 
-//camara.position.z=3;
-camara.position.y=5;
+camara.position.z=3;
+//camara.position.y=5;
 //camara.position.x=50;
 
 
