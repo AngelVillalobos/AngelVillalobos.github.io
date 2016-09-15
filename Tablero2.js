@@ -5,7 +5,7 @@ var planoLejano=1000;
 
 var camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
 //
-camara.position.z=150;
+//camara.position.z=150;
 camara.position.y=-100;
 //camara.position.x=150;
 
@@ -123,7 +123,7 @@ for (var i=0;i<2;i++)
   TorresN[i].scale.set(7,7,8);
 }
   TorresB[0].castShadow=true;
-  TorresB[0].position.set(-35,-35,5);
+  TorresB[0].position.set(-35,-35,1.2);
   escena.add(TorresB[0]);
   TorresB[1].position.set(35,-35,1.2);
   escena.add(TorresB[1]);
@@ -139,7 +139,7 @@ for (var i=0;i<2;i++)
 ///////////////////////////////////////////////////////////////////////////////////////
 var luzPuntual=new THREE.PointLight(0xFFFFFF);
 luzPuntual.position.x=150;
-luzPuntual.position.y=-150;
+luzPuntual.position.y=150;
 luzPuntual.position.z=150;
 
 escena.add(luzPuntual);
