@@ -113,22 +113,15 @@ for (var i=0;i<4;i++)
   Torres[i]=new THREE.Mesh(TorrefForma,material);
   Torres[i].rotateX(Math.PI/2);
   Torres[i].scale.set(7,7,8);
+  escena.add(Torres[i]);
 }
 
 //0xebe89a
   Torres[0].translate(3,3,1.2);
-  escena.add(Torres[0]);
+  escena.add(Torres[i]);
   //Torres[1].translate(-4,3,1.2);
   //escena.add(Torres[1]);
 
-//var escena = new THREE.Scene();
-
-//var camara = new THREE.PerspectiveCamera();
-//camara.position.z=3;
-//var renderizador = new THREE.WebGLRenderer();
-//renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
-//document.body.appendChild(renderizador.domElement);
-//renderizador.render(escena,camara);
 
 ///////////////////////////////////////////////////////////////////////////////////////
 
