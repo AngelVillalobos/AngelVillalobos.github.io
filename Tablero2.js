@@ -37,9 +37,9 @@ var c=1;
 for (var i=0;i<71; i ++)
   {
       CasillaB[i]=new THREE.Mesh(FCasillaB,MCasillaB);
-      CasillaB[0].castShadow=true;
+      CasillaB[i].castShadow=true;
       CasillaG[i]=new THREE.Mesh(FCasillaG,MCasillaG);
-      CasillaG[0].castShadow=true;
+      CasillaG[i].castShadow=true;
   }
 for (var j=0;j<71; j ++)
   {
