@@ -112,8 +112,8 @@ var TorrefForma = new THREE.Geometry();
   TorrefForma.merge(Corona2Malla.geometry,Corona2Malla.matrix);
   TorrefForma.merge(Corona3Malla.geometry,Corona3Malla.matrix);
  
-var material1 = new THREE.MeshLambertMaterial({color:0xffff99});//,wireframe:true});
-var material2 = new THREE.MeshLambertMaterial({color:0xe0e0e0});//,wireframe:true});
+var material1 = new THREE.MeshLambertMaterial({color:0xffff99});
+var material2 = new THREE.MeshLambertMaterial({color:0xe0e0e0});
 
 for (var i=0;i<2;i++)
 {
@@ -141,7 +141,7 @@ for (var i=0;i<2;i++)
 
 
 ///////////////////////////////////////////////////////////////////////////////////////
-var luzPuntual=new THREE.PointLight(0xFFFFFF);
+var luzPuntual=new THREE.PointLight(0xFFFFFF,2);
 luzPuntual.position.x=150;
 luzPuntual.position.y=-150;
 luzPuntual.position.z=150;
