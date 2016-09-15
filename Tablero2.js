@@ -107,15 +107,15 @@ var TorrefForma = new THREE.Geometry();
   TorrefForma.merge(Corona2Malla.geometry,Corona2Malla.matrix);
   TorrefForma.merge(Corona3Malla.geometry,Corona3Malla.matrix);
  
-var material1 = new THREE.MeshNormalMaterial({color:0x00ff00,wireframe:true});
-var material2 = new THREE.MeshNormalMaterial({color:0x0000ff,wireframe:true});
+var material1 = new THREE.MeshBasicMaterial({color:0x00ff00,wireframe:true});
+var material2 = new THREE.MeshBasicMaterial({color:0x0000ff,wireframe:true});
 var TorrefMalla = new THREE.Mesh(TorrefForma,material1);
 for (var i=0;i<2;i++)
 {
   TorresB[i]=new THREE.Mesh(TorrefForma,material1);
   TorresN[i]=new THREE.Mesh(TorrefForma,material2);
   TorresB[i].rotateX(Math.PI/2);
-  TorresB[i].rotateX(Math.PI/2);
+  TorresN[i].rotateX(Math.PI/2);
   TorresB[i].scale.set(7,7,8);
   TorresN[i].scale.set(7,7,8);
 }
