@@ -123,7 +123,7 @@ for (var i=0;i<2;i++)
   TorresN[i].scale.set(7,7,8);
 }
   TorresB[0].castShadow=true;
-  TorresB[0].position.set(-35,-35,1.2);
+  TorresB[0].position.set(-35,-35,5);
   escena.add(TorresB[0]);
   TorresB[1].position.set(35,-35,1.2);
   escena.add(TorresB[1]);
