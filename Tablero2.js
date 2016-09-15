@@ -110,9 +110,7 @@ var material = new THREE.MeshNormalMaterial();//({color:0x00ff00,wireframe:true}
 var TorrefMalla = new THREE.Mesh(TorrefForma,material);
 for (var i=0;i<4;i++)
 {
-  Torres[i]=TorrefMalla;
-  
-  
+  Torres[i]=new THREE.Mesh(TorrefForma,material);
   Torres[i].rotateX(Math.PI/2);
   Torres[i].scale.set(7,7,8);
 }
@@ -120,8 +118,8 @@ for (var i=0;i<4;i++)
 //0xebe89a
   Torres[0].translate(3,3,1.2);
   escena.add(Torres[0]);
-  Torres[1].translate(-4,3,1.2);
-  escena.add(Torres[1]);
+  //Torres[1].translate(-4,3,1.2);
+  //escena.add(Torres[1]);
 
 //var escena = new THREE.Scene();
 
