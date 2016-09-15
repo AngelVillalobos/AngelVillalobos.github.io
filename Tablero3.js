@@ -5,13 +5,13 @@ camara.right=window.innerWidth/10;
 camara.top=window.innerHeight/10;
 camara.bottom=window.innerHeight/-10;
 camara.near=0;
-camara.far=15000;
+camara.far=20000;
 camara.updateProjectionMatrix();
 
 
 camara.position.z=20;
-camara.position.y=-3;
-camara.position.x=-3;
+camara.position.y=-15;
+camara.position.x=15;
 
 
 camara.lookAt(new THREE.Vector3(0,0,0));
