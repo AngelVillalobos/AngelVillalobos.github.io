@@ -107,8 +107,8 @@ var TorrefForma = new THREE.Geometry();
   TorrefForma.merge(Corona2Malla.geometry,Corona2Malla.matrix);
   TorrefForma.merge(Corona3Malla.geometry,Corona3Malla.matrix);
  
-var material1 = new THREE.MeshBasicMaterial({color:0x00ff00});//,wireframe:true});
-var material2 = new THREE.MeshBasicMaterial({color:0x0000ff});//,wireframe:true});
+var material1 = new THREE.MeshLambertMaterial({color:0x00ff00});//,wireframe:true});
+var material2 = new THREE.MeshLambertMaterial({color:0x0000ff});//,wireframe:true});
 var TorrefMalla = new THREE.Mesh(TorrefForma,material1);
 for (var i=0;i<2;i++)
 {
