@@ -130,11 +130,15 @@ for (var i=0;i<2;i++)
 
 
 //0xebe89a
-  
-  //escena.add(Torres[i]);
-  //Torres[1].translate(-4,3,1.2);
-  //escena.add(Torres[1]);
 
+
+///////////////////////////////////////////////////////////////////////////////////////
+var luzPuntual=new THREE.PointLight(0xFFFFFF);
+luzPuntual.position.x=10;
+luzPuntual.position.y=10;
+luzPuntual.position.z=10;
+
+escena.add(luzPuntual);
 
 ///////////////////////////////////////////////////////////////////////////////////////
 
