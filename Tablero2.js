@@ -141,7 +141,7 @@ for (var i=0;i<2;i++)
 
 
 ///////////////////////////////////////////////////////////////////////////////////////
-var luzPuntual=new THREE.PointLight(0xFFFFFF,3);
+var luzPuntual=new THREE.PointLight(0xFFFFFF,2);
 luzPuntual.position.x=150;
 luzPuntual.position.y=-150;
 luzPuntual.position.z=150;
