@@ -106,22 +106,25 @@ var TorrefForma = new THREE.Geometry();
   TorrefForma.merge(Corona2Malla.geometry,Corona2Malla.matrix);
   TorrefForma.merge(Corona3Malla.geometry,Corona3Malla.matrix);
  
-
+var material = new THREE.MeshNormalMaterial();//({color:0x00ff00,wireframe:true});
+var TorrefMalla = new THREE.Mesh(TorrefForma,material);
 for (var i=0;i<4;i++)
 {
-  Torres[i]=TorrefForma;
+  Torres[i]=TorrefMalla;
+  
+  
+  Torres[i].rotateX(Math.PI/2);
+  Torres[i].scale.set(7,7,8);
 }
 
 //0xebe89a
-Torres[0].translate(3,3,1.2);
-Torres[1].translate(-4,3,1.2);
-var material = new THREE.MeshNormalMaterial();//({color:0x00ff00,wireframe:true});
-var TorrefMalla = new THREE.Mesh(TorrefForma,material);
-TorrefMalla.rotateX(Math.PI/2);
-TorrefMalla.scale.set(7,7,8);
+  Torres[0].translate(3,3,1.2);
+  escena.add(Torres[0]);
+  Torres[1].translate(-4,3,1.2);
+  escena.add(Torres[1]);
 
 //var escena = new THREE.Scene();
-escena.add(TorrefMalla);
+
 //var camara = new THREE.PerspectiveCamera();
 //camara.position.z=3;
 //var renderizador = new THREE.WebGLRenderer();
