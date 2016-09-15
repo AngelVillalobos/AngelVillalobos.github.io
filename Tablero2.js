@@ -37,23 +37,21 @@ var c=1;
 for (var i=0;i<71; i ++)
   {
       CasillaB[i]=new THREE.Mesh(FCasillaB,MCasillaB);
-      
+      CasillaB[i].receiveShadow=true;   
       CasillaG[i]=new THREE.Mesh(FCasillaG,MCasillaG);
-      
+      CasillaG[i].receiveShadow=true;
   }
 for (var j=0;j<71; j ++)
   {
     if(j%2==0)
       {
         CasillaG[j].position.set((c*10)-45,(b*10)-(35),0.6);
-        CasillaG[i].castShadow=true;
         escena.add(CasillaG[j]);
         a=a+1;
       }
     else
       {
         CasillaB[j].position.set((c*10)-45,(b*10)-(35),0.6);
-        CasillaB[i].castShadow=true;
         escena.add(CasillaB[j]);
         a=a+1;
       }
