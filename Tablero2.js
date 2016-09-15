@@ -116,13 +116,15 @@ var material2 = new THREE.MeshLambertMaterial({color:0x0000ff});//,wireframe:tru
 for (var i=0;i<2;i++)
 {
   TorresB[i]=new THREE.Mesh(TorrefForma,material1);
+  TorresB[i].castShadow=true;
   TorresN[i]=new THREE.Mesh(TorrefForma,material2);
+  TorresN[i].castShadow=true;
   TorresB[i].rotateX(Math.PI/2);
   TorresN[i].rotateX(Math.PI/2);
   TorresB[i].scale.set(7,7,8);
   TorresN[i].scale.set(7,7,8);
 }
-  TorresB[0].castShadow=true;
+  
   TorresB[0].position.set(-35,-35,1.2);
   escena.add(TorresB[0]);
   TorresB[1].position.set(35,-35,1.2);
@@ -137,9 +139,9 @@ for (var i=0;i<2;i++)
 
 
 ///////////////////////////////////////////////////////////////////////////////////////
-var luzPuntual=new THREE.PointLight(0xFFFFFF);
+var luzPuntual=new THREE.PointLight(0xFFFFFF,10);
 luzPuntual.position.x=150;
-luzPuntual.position.y=150;
+luzPuntual.position.y=.150;
 luzPuntual.position.z=150;
 
 escena.add(luzPuntual);
