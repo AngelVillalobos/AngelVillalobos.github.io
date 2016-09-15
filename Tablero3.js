@@ -9,9 +9,9 @@ camara.far=1000;
 camara.updateProjectionMatrix();
 
 
-camara.position.z=150;
-camara.position.y=-100;
-camara.position.x=150;
+camara.position.z=50;
+camara.position.y=-10;
+camara.position.x=50;
 
 
 camara.lookAt(new THREE.Vector3(0,0,0));
