@@ -114,7 +114,7 @@ for (var i=0;i<4;i++)
   Torres[i].rotateX(Math.PI/2);
   Torres[i].scale.set(7,7,8);
 }
-  Torres[0].position.set(-4,-4,1.2);
+  Torres[0].position.set(-35,-35,1.2);
   escena.add(Torres[0]);
   Torres[1].position.set(4,-4,1.2);
   escena.add(Torres[1]);
