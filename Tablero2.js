@@ -37,9 +37,7 @@ var c=1;
 for (var i=0;i<71; i ++)
   {
       CasillaB[i]=new THREE.Mesh(FCasillaB,MCasillaB);
-      CasillaB[i].receiveShadow=true;
       CasillaG[i]=new THREE.Mesh(FCasillaG,MCasillaG);
-      CasillaG[i].receiveShadow=true;
   }
 for (var j=0;j<71; j ++)
   {
@@ -64,7 +62,7 @@ for (var j=0;j<71; j ++)
     }
     c=c+1;
   }
-  Tablero.receiveShadow=true;
+Tablero.receiveShadow=true;
 Tablero.position.set(0,0,0);
 escena.add(Tablero);
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -114,18 +112,17 @@ var TorrefForma = new THREE.Geometry();
  
 var material1 = new THREE.MeshLambertMaterial({color:0x00ff00});//,wireframe:true});
 var material2 = new THREE.MeshLambertMaterial({color:0x0000ff});//,wireframe:true});
-var TorrefMalla = new THREE.Mesh(TorrefForma,material1);
+
 for (var i=0;i<2;i++)
 {
   TorresB[i]=new THREE.Mesh(TorrefForma,material1);
-  TorresB[i].castShadow=true;
   TorresN[i]=new THREE.Mesh(TorrefForma,material2);
-  TorresN[i].castShadow=true;
   TorresB[i].rotateX(Math.PI/2);
   TorresN[i].rotateX(Math.PI/2);
   TorresB[i].scale.set(7,7,8);
   TorresN[i].scale.set(7,7,8);
 }
+  TorresB[0].castShadow=true;
   TorresB[0].position.set(-35,-35,1.2);
   escena.add(TorresB[0]);
   TorresB[1].position.set(35,-35,1.2);
