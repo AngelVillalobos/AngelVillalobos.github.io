@@ -37,11 +37,9 @@ var c=1;
 for (var i=0;i<71; i ++)
   {
       CasillaB[i]=new THREE.Mesh(FCasillaB,MCasillaB);
-      CasillaB[i].receiveShadow=true;   
-      //CasillaB[i].castShadow=true;  
+      CasillaB[i].receiveShadow=true;
       CasillaG[i]=new THREE.Mesh(FCasillaG,MCasillaG);
       CasillaG[i].receiveShadow=true;
-      //CasillaG[i].castShadow=true;  
   }
 for (var j=0;j<71; j ++)
   {
@@ -114,8 +112,8 @@ var TorrefForma = new THREE.Geometry();
   TorrefForma.merge(Corona2Malla.geometry,Corona2Malla.matrix);
   TorrefForma.merge(Corona3Malla.geometry,Corona3Malla.matrix);
  
-var material1 = new THREE.MeshLambertMaterial({color:0x00ff00});//,wireframe:true});
-var material2 = new THREE.MeshLambertMaterial({color:0x0000ff});//,wireframe:true});
+var material1 = new THREE.MeshLambertMaterial({color:0xffff99});//,wireframe:true});
+var material2 = new THREE.MeshLambertMaterial({color:0xe0e0e0});//,wireframe:true});
 
 for (var i=0;i<2;i++)
 {
