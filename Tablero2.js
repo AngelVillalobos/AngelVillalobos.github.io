@@ -21,6 +21,7 @@ var Tablero=new THREE.Mesh(FTablero,MTablero);
 
 var CasillaB=new Array();
 var CasillaG=new Array();
+var Torres=new Array();
 
 var Casillas = new THREE.Geometry();
 
@@ -95,15 +96,19 @@ var Corona3Malla = new THREE.Mesh(Corona3Forma);
 
 
 var TorrefForma = new THREE.Geometry();
+for (var i=0;i<4;i++)
+{
+  TorrefForma.merge(BaseMalla.geometry,BaseMalla.matrix);
+  TorrefForma.merge(Base2Malla.geometry,Base2Malla.matrix);
+  TorrefForma.merge(Base3Malla.geometry,Base3Malla.matrix);
+  TorrefForma.merge(TorreMalla.geometry,TorreMalla.matrix);
+  TorrefForma.merge(CoronaMalla.geometry,CoronaMalla.matrix);
+  TorrefForma.merge(Corona1Malla.geometry,Corona1Malla.matrix);
+  TorrefForma.merge(Corona2Malla.geometry,Corona2Malla.matrix);
+  TorrefForma.merge(Corona3Malla.geometry,Corona3Malla.matrix);
+  Torres[i]=TorrefForma;
+}
 
-TorrefForma.merge(BaseMalla.geometry,BaseMalla.matrix);
-TorrefForma.merge(Base2Malla.geometry,Base2Malla.matrix);
-TorrefForma.merge(Base3Malla.geometry,Base3Malla.matrix);
-TorrefForma.merge(TorreMalla.geometry,TorreMalla.matrix);
-TorrefForma.merge(CoronaMalla.geometry,CoronaMalla.matrix);
-TorrefForma.merge(Corona1Malla.geometry,Corona1Malla.matrix);
-TorrefForma.merge(Corona2Malla.geometry,Corona2Malla.matrix);
-TorrefForma.merge(Corona3Malla.geometry,Corona3Malla.matrix);
 
 
 //0xebe89a
