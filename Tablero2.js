@@ -113,7 +113,7 @@ for (var i=0;i<4;i++)
   Torres[i]=new THREE.Mesh(TorrefForma,material);
   Torres[i].rotateX(Math.PI/2);
   Torres[i].scale.set(7,7,8);
-  Torres[0].translate(3+(i*2),3-(i*1.5),1.2);
+  Torres[i].translate(3+(i*2),3-(i*1.5),1.2);
   escena.add(Torres[i]);
 }
 
