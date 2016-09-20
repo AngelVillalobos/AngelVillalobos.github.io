@@ -147,13 +147,13 @@ luzPuntual1.position.y=-150;
 luzPuntual1.position.z=150;
 
 var luzPuntual2=new THREE.PointLight(0xFFFFFF);
-luzPuntual2.position.x=150;
+luzPuntual2.position.x=-150;
 luzPuntual2.position.y=-150;
 luzPuntual2.position.z=150;
 
 var luzPuntual3=new THREE.PointLight(0xFFFFFF);
-luzPuntual3.position.x=150;
-luzPuntual3.position.y=-150;
+luzPuntual3.position.x=0;
+luzPuntual3.position.y=150;
 luzPuntual3.position.z=150;
 
 escena.add(luzPuntual1);
