@@ -18,8 +18,6 @@ var FCasillaG=new THREE.BoxGeometry(10,10,0.03,10,10,10);
 var MCasillaG=new THREE.MeshLambertMaterial({color:0x6b6b6b});
 var Tablero=new THREE.Mesh(FTablero,MTablero);
 
-
-
 var CasillaB=new Array();
 var CasillaG=new Array();
 var TorresB=new Array();
@@ -125,7 +123,6 @@ for (var i=0;i<2;i++)
   TorresB[i].scale.set(7,7,8);
   TorresN[i].scale.set(7,7,8);
 }
-  
   TorresB[0].position.set(-35,-35,1.2);
   escena.add(TorresB[0]);
   TorresB[1].position.set(35,-35,1.2);
@@ -134,10 +131,6 @@ for (var i=0;i<2;i++)
   escena.add(TorresN[0]);
   TorresN[1].position.set(35,35,1.2);
   escena.add(TorresN[1]);
-
-
-//0xebe89a
-
 
 ///////////////////////////////////////////////////////////////////////////////////////
 var luzPuntual1=new THREE.PointLight(0xFFFFFF);
@@ -165,7 +158,6 @@ var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth,window.innerHeight);
 document.body.appendChild(renderizador.domElement);
 renderizador.shadowMapEnabled=true;
-
 
 luzPuntual1.castShadow=true;
 luzPuntual2.castShadow=true;
