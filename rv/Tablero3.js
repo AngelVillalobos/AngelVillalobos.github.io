@@ -110,7 +110,9 @@ var TorrefForma = new THREE.Geometry();
   TorrefForma.merge(Corona3Malla.geometry,Corona3Malla.matrix);
  
 var material1 = new THREE.MeshLambertMaterial({color:0xffff99});
+material1.transparent=true;
 var material2 = new THREE.MeshLambertMaterial({color:0xe0e0e0});
+material2.transparent=true;
 
 for (var i=0;i<2;i++)
 {
@@ -133,17 +135,17 @@ for (var i=0;i<2;i++)
   escena.add(TorresN[1]);
 
 ///////////////////////////////////////////////////////////////////////////////////////
-var luzPuntual1=new THREE.PointLight(0xFFFFFF,0.4);
+var luzPuntual1=new THREE.PointLight(0xFFFF00,0.4);
 luzPuntual1.position.x=150;
 luzPuntual1.position.y=-150;
 luzPuntual1.position.z=150;
 
-var luzPuntual2=new THREE.PointLight(0xFFFFFF,0.4);
+var luzPuntual2=new THREE.PointLight(0xFF00FF,0.4);
 luzPuntual2.position.x=-150;
 luzPuntual2.position.y=-150;
 luzPuntual2.position.z=150;
 
-var luzPuntual3=new THREE.PointLight(0xFFFFFF,0.4);
+var luzPuntual3=new THREE.PointLight(0x00FFFF,0.4);
 luzPuntual3.position.x=0;
 luzPuntual3.position.y=150;
 luzPuntual3.position.z=150;
