@@ -167,5 +167,7 @@ document.body.appendChild(renderizador.domElement);
 renderizador.shadowMapEnabled=true;
 
 
-luzPuntual.castShadow=true;
+luzPuntual1.castShadow=true;
+luzPuntual2.castShadow=true;
+luzPuntual3.castShadow=true;
 renderizador.render(escena,camara);
