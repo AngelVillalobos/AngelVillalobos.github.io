@@ -152,8 +152,8 @@ luzPuntual3.position.x=0;
 luzPuntual3.position.y=150;
 luzPuntual3.position.z=150;
 
-escena.add(luzPuntual1);
-escena.add(luzPuntual2);
+//escena.add(luzPuntual1);
+//escena.add(luzPuntual2);
 escena.add(luzPuntual3);
 
 ///////////////////////////////////////////////////////////////////////////////////////
