@@ -117,6 +117,7 @@ material2.transparent=true;
 for (var i=0;i<2;i++)
 {
   material1.opacity=(i*0.25)+0.25;
+  material2.opacity=1-(i*0.25);
   TorresB[i]=new THREE.Mesh(TorrefForma,material1);
   TorresB[i].castShadow=true;
   TorresN[i]=new THREE.Mesh(TorrefForma,material2);
