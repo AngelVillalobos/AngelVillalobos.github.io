@@ -133,17 +133,17 @@ for (var i=0;i<2;i++)
   escena.add(TorresN[1]);
 
 ///////////////////////////////////////////////////////////////////////////////////////
-var luzPuntual1=new THREE.PointLight(0xFFFFFF);
+var luzPuntual1=new THREE.PointLight(0xFFFFFF,0.4);
 luzPuntual1.position.x=150;
 luzPuntual1.position.y=-150;
 luzPuntual1.position.z=150;
 
-var luzPuntual2=new THREE.PointLight(0xFFFFFF);
+var luzPuntual2=new THREE.PointLight(0xFFFFFF,0.4);
 luzPuntual2.position.x=-150;
 luzPuntual2.position.y=-150;
 luzPuntual2.position.z=150;
 
-var luzPuntual3=new THREE.PointLight(0xFFFFFF);
+var luzPuntual3=new THREE.PointLight(0xFFFFFF,0.4);
 luzPuntual3.position.x=0;
 luzPuntual3.position.y=150;
 luzPuntual3.position.z=150;
