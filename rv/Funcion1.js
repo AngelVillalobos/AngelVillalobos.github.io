@@ -52,7 +52,7 @@ function init(p)
   document.body.appendChild(renderizador.domElement);
   camara.position.z=5*p;
 }
-var main=function(p)
+var loop=function()
 {
   requestAnimationFrame(loop);
   renderizador.render(escena,camara);
