@@ -73,7 +73,7 @@ function init(p)
   renderizador.setSize(700,700);
   document.body.appendChild(renderizador.domElement);
   camara.position.z=5*p;
-  step=0.1
+  step=0.01;
 }
 var loop=function()
 {
