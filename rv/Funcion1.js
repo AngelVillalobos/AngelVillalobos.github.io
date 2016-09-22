@@ -62,6 +62,7 @@ var escena,camara,renderizador,malla;
 init(1);
 loop();
 Ejercicio 1*/
+
 function init(p)
 {
   malla=new THREE.Mesh(new THREE.BoxGeometry(p,p,p),new THREE.MeshNormalMaterial());
