@@ -40,7 +40,7 @@ var main=function(p)
 var escena,camara,renderizador;
 
 main(init);
-Ejemplo3*/
+Ejemplo3
 function init(p)
 {
   malla=new THREE.Mesh(new THREE.BoxGeometry(p,p,p),new THREE.MeshNormalMaterial());
@@ -66,6 +66,29 @@ var loop=function()
   {
     malla.translate.x(0.01)
   }
+}
+var escena,camara,renderizador,malla;
+init(1);
+loop();
+Ejercicio 1*/
+
+function init(p)
+{
+  malla=new THREE.Mesh(new THREE.BoxGeometry(p,p,p),new THREE.MeshNormalMaterial());
+  escena=new THREE.Scene();
+  escena.add(malla);
+  camara=new THREE.PerspectiveCamera();
+  renderizador = new THREE.WebGLRenderer();
+  renderizador.setSize(700,700);
+  document.body.appendChild(renderizador.domElement);
+  camara.position.z=5*p;
+}
+var loop=function()
+{
+  requestAnimationFrame(loop);
+  renderizador.render(escena,camara);
+  malla.rotateY(0.01);
+  malla.position.x(0.01)
 }
 var escena,camara,renderizador,malla;
 init(1);
