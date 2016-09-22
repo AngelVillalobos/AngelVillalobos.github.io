@@ -20,5 +20,4 @@ var main=function(p)
 var escena,camara,renderizador;
 
 init(1);
-
 main();
