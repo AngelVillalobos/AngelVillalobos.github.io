@@ -85,6 +85,7 @@ var loop=function()
     step=-step;
     malla.position.x+=step;
 }
+
 var escena,camara,renderizador,malla,step;
 init(1);
 loop();
