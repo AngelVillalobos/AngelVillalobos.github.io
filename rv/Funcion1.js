@@ -57,6 +57,15 @@ var loop=function()
   requestAnimationFrame(loop);
   renderizador.render(escena,camara);
   malla.rotateY(0.01);
+  malla.position.x(0.01)
+  if (malla.position.x==4)
+  {
+    malla.position.x(-0.01)
+  }
+  if (malla.position.x==-4)
+  {
+    malla.position.x(0.01)
+  }
 }
 var escena,camara,renderizador,malla;
 init(1);
