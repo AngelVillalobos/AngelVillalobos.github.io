@@ -18,4 +18,4 @@ var main=function(p)
 }
 var escena,camara,renderizador;
 init(1);
-main();
+main(2);
