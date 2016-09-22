@@ -11,7 +11,6 @@ function init(p)
   var renderizador = new THREE.WebGLRenderer();
   renderizador.setSize(700,700);
   document.body.appendChild(renderizador.domElement);
-  renderizador.render(escena,camara);
 }
 var main=function(p)
 {
