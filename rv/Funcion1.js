@@ -14,7 +14,7 @@ function init()
   renderizador.render(escena,camara);
 }
 
-var main=function init(p)
+var main=function()
 {
   renderizador.render(escena,camara);
 }
