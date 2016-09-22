@@ -60,11 +60,11 @@ var loop=function()
   malla.position.x(0.01)
   if (malla.position.x==4)
   {
-    malla.position.x(-0.01)
+    malla.translate.x(-0.01)
   }
   if (malla.position.x==-4)
   {
-    malla.position.x(0.01)
+    malla.translate.x(0.01)
   }
 }
 var escena,camara,renderizador,malla;
