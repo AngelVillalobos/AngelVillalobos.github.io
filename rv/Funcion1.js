@@ -2,9 +2,9 @@
 -En JS las funciones son objetos de primer orden
 -En JS, al descender semánticamente de Lisp, maneja las funciones como valores
 */
-function init(p)
+function init()
 {
-  var malla(new THREE.BoxGeometry(p,p,p),new THREE.MeshNormalMaterial());
+  var malla(new THREE.BoxGeometry(1,1,1),new THREE.MeshNormalMaterial());
   escena=new THREE.Scene();
   escena.add(malla);
   camara=new THREE.PerspectiveCamera();
