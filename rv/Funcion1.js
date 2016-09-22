@@ -61,3 +61,4 @@ var loop=function()
 var escena,camara,renderizador,malla;
 init(1);
 loop();
+
