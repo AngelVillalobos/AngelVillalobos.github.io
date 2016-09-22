@@ -80,13 +80,7 @@ var loop=function()
   requestAnimationFrame(loop);
   renderizador.render(escena,camara);
   malla.rotateY(0.01);
-  if(Math.abs(malla.position.x)>=2)//||Math.abs(malla.position.y)>=1)
-    step=-step;
-    malla.position.x+=step;
-    malla.position.y+=step;
- // if(Math.abs(malla.position.y)>=2)
-   // step=-step;
-    //malla.position.y+=step;
+  if(Math.abs(malla.position.x)>=2)
 }
 var escena,camara,renderizador,malla,step;
 init(1);
