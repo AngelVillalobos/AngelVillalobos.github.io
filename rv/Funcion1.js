@@ -84,6 +84,7 @@ var loop=function()
   if(Math.abs(malla.position.x)>=2)
     step=-step;
     malla.position.x+=step;
+}
 var escena,camara,renderizador,malla,step;
 init(1);
 loop();
