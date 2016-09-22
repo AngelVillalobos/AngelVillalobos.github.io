@@ -1,7 +1,7 @@
 /*
 -En JS las funciones son objetos de primer orden
 -En JS, al descender semánticamente de Lisp, maneja las funciones como valores
-*/
+
 function init(p)
 {
   var malla=new THREE.Mesh(new THREE.BoxGeometry(p,p,p),new THREE.MeshNormalMaterial());
