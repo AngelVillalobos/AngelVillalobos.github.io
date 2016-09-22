@@ -1,4 +1,5 @@
-/*
+    step=-step;
+    malla.position.x+=step;/*
 -En JS las funciones son objetos de primer orden
 -En JS, al descender semánticamente de Lisp, maneja las funciones como valores
 Ejemplo 1
@@ -81,7 +82,8 @@ var loop=function()
   renderizador.render(escena,camara);
   malla.rotateY(0.01);
   if(Math.abs(malla.position.x)>=2)
-}
+    step=-step;
+    malla.position.x+=step;
 var escena,camara,renderizador,malla,step;
 init(1);
 loop();
