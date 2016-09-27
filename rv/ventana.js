@@ -25,8 +25,8 @@ ventana.setup=function()
 ventana.loop=function()
 {
   requestAnimationFrame(ventana.loop);
-  ventana.malla.rotateX=0.01;
-  ventana.malla.rotateY=0.01;
+  ventana.malla.rotateX(0.01);
+  ventana.malla.rotateY(0.01);
   ventana.renderizador.render(ventana.escena,ventana.camara);
 }
 ventana.setup();
