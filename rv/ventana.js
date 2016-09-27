@@ -19,7 +19,7 @@ ventana.setup=function()
   renderizador.setSize(window.innerHeight,window.innerHeight);
   document.body.appendChild(renderizador.domElement);
   ventana.malla=new THREE.Mesh(new THREE.BoxGeometry(1,1,1),new THREE.MeshNormalMaterial());
-  centana.escena.add(ventana.malla);
+  ventana.escena.add(ventana.malla);
 }
 
 ventana.loop=function()
@@ -30,4 +30,4 @@ ventana.loop=function()
   ventana.renderizador.render(ventana.escena,centana.camara);
 }
 ventana.setup();
-centana.loop();
+ventana.loop();
