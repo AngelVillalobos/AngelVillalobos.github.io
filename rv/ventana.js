@@ -27,7 +27,7 @@ ventana.loop=function()
   requestAnimationFrame(ventana.loop);
   ventana.malla.rotateX=0.01;
   ventana.malla.rotateY=0.01;
-  ventana.renderizador.render(ventana.escena,centana.camara);
+  ventana.renderizador.render(ventana.escena,ventana.camara);
 }
 ventana.setup();
 ventana.loop();
