@@ -18,7 +18,7 @@ textura.setup=function()
   textura.renderizador=new THREE.WebGLRenderer({canvas:lienzo,antialiaas:true});
   textura.renderizador.setSize(600,600);
 }
-textura.loop=function();
+textura.loop=function()
 {
   requestAnimationFrame(textura.loop);
   if(textura.malla!==undefined)
