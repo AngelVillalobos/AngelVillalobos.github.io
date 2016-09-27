@@ -26,7 +26,7 @@ textura.loop=function()
     textura.malla.rotateX(0.01);
     textura.malla.rotateY(0.01);
   }
-  textura.renderizador.render(textura.escena,textuera.camara);
+  textura.renderizador.render(textura.escena,textura.camara);
 }
 textura.setup();
 textura.loop();
