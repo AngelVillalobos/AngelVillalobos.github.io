@@ -18,7 +18,7 @@ ventana.setup=function()
   var renderizador = new THREE.WebGLRenderer();
   renderizador.setSize(window.innerHeight,window.innerHeight);
   document.body.appendChild(renderizador.domElement);
-  ventana.malla=new THREE.Mesh(new TREE.BoxGeometry(1,1,1),new THREE.MeshNormalMaterial());
+  ventana.malla=new THREE.Mesh(new THREE.BoxGeometry(1,1,1),new THREE.MeshNormalMaterial());
   centana.escena.add(ventana.malla);
 }
 
