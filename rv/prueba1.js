@@ -1,5 +1,5 @@
 var TEXTURATB=new Object();
-////////////////////////////////////////////////////////////////////
+/////////////DEFINICIÓN DE TORRE/////////////////////////////////////
 var BaseForma = new THREE.CylinderGeometry(0.6,0.6,0.2,64,64);
 var Base2Forma = new THREE.TorusGeometry(0.4,0.1,30,200);
 var Base3Forma = new THREE.TorusGeometry(0.3,0.1,30,200);
