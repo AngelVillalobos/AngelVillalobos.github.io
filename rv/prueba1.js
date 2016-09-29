@@ -50,7 +50,6 @@ var TorrefForma = new THREE.Geometry();
 TEXTURATB.retrollamada=function(textura)
 {
   var material1 = new THREE.MeshBasicMaterial({map:textura});
-  //TEXTURATB.malla=new Array();
   for (var i=1;i<3;i++)
   {
     TEXTURATB.malla[i]=new THREE.Mesh(TorrefForma,material1);
@@ -68,6 +67,7 @@ TEXTURATB.setup=function()
   cargador.load("maderaB.jpg",TEXTURATB.retrollamada);
   TEXTURATB.camara=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
   TEXTURATB.camara.position.z=10;
+  TEXTURATB.camara.position.y=10;
   var lienzo=document.getElementById("ejemplo-textura");
   TEXTURATB.renderizador=new THREE.WebGLRenderer({canvas:lienzo,antialiaas:true});
   TEXTURATB.renderizador.setSize(600,600);
