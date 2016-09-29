@@ -72,11 +72,14 @@ TEXTURATB.setup=function()
 TEXTURATB.loop=function()
 {
   requestAnimationFrame(TEXTURATB.loop);
-  if(TEXTURATB.malla!==undefined)
+  for (var i=1;i<3;i++)
   {
-    TEXTURATB.malla.rotateY(0.01);
+    if(TEXTURATB.malla[i]!==undefined)
+    {
+      TEXTURATB.malla[i].rotateY(0.01);
+    }
   }
-  TEXTURATB.renderizador.render(TEXTURATB.escena,TEXTURATB.camara);
+    TEXTURATB.renderizador.render(TEXTURATB.escena,TEXTURATB.camara);
 }
 
 
