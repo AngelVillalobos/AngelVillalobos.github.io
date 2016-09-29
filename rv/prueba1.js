@@ -65,8 +65,8 @@ TEXTURATB.setup=function()
   var cargador=new THREE.TextureLoader();
   cargador.load("maderaB.jpg",TEXTURATB.retrollamada);
   TEXTURATB.camara=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
-  TEXTURATB.camara.position.z=5;
-  TEXTURATB.camara.position.x=5;
+  TEXTURATB.camara.position.z=50;
+  TEXTURATB.camara.position.y=5;
   var lienzo=document.getElementById("ejemplo-textura");
   TEXTURATB.renderizador=new THREE.WebGLRenderer({canvas:lienzo,antialiaas:true});
   TEXTURATB.renderizador.setSize(600,600);
