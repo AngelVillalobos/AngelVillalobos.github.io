@@ -48,9 +48,19 @@ var TorrefForma = new THREE.Geometry();
 TEXTURATB.retrollamada=function(textura)
 {
   var material1 = new THREE.MeshBasicMaterial({map:textura});
-  TEXTURATB.malla=new THREE.Mesh(TorrefForma,material1);
-  TEXTURATB.escena.add(TEXTURATB.malla);
+  for (var i=0;i<2;i++)
+  {
+    TEXTURATB.malla[i]=new THREE.Mesh(TorrefForma,material1);
+    TEXTURATB.malla[i].rotateX(Math.PI/2);
+    //TEXTURATB.escena.add(TEXTURATB.malla[i]);
+  }
+  TEXTURATB.malla[0].position.set(-5,0,0);
+  escena.add(TEXTURATB.malla[0]);
+  TEXTURATB.malla[1].position.set(5,0,0);
+  escena.add(TEXTURATB.malla[1]);
 }
+
+
 
 
 
@@ -60,7 +70,7 @@ TEXTURATB.setup=function()
   var cargador=new THREE.TextureLoader();
   cargador.load("maderaB.jpg",TEXTURATB.retrollamada);
   TEXTURATB.camara=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
-  TEXTURATB.camara.position.z=5;
+  TEXTURATB.camara.position.z=10;
   var lienzo=document.getElementById("ejemplo-textura");
   TEXTURATB.renderizador=new THREE.WebGLRenderer({canvas:lienzo,antialiaas:true});
   TEXTURATB.renderizador.setSize(600,600);
@@ -70,7 +80,7 @@ TEXTURATB.loop=function()
   requestAnimationFrame(TEXTURATB.loop);
   if(TEXTURATB.malla!==undefined)
   {
-    TEXTURATB.malla.rotateX(0.01);
+    TEXTURATB.malla.rotateY(0.01);
   }
   TEXTURATB.renderizador.render(TEXTURATB.escena,TEXTURATB.camara);
 }
