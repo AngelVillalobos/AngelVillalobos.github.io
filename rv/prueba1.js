@@ -1,4 +1,5 @@
 var TEXTURATB=new Object();
+TEXTURATB.malla=new Array();
 /////////////DEFINICIÓN DE TORRE////////////////////////////////////
 var BaseForma = new THREE.CylinderGeometry(0.6,0.6,0.2,64,64);
 var Base2Forma = new THREE.TorusGeometry(0.4,0.1,30,200);
@@ -48,7 +49,7 @@ var TorrefForma = new THREE.Geometry();
 TEXTURATB.retrollamada=function(textura)
 {
   var material1 = new THREE.MeshBasicMaterial({map:textura});
-  TEXTURATB.malla=new Array();
+  //TEXTURATB.malla=new Array();
   for (var i=1;i<3;i++)
   {
     TEXTURATB.malla[i]=new THREE.Mesh(TorrefForma,material1);
