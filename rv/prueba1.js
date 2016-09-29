@@ -54,9 +54,9 @@ TEXTURATB.retrollamada=function(textura)
     TEXTURATB.malla[i]=new THREE.Mesh(TorrefForma,material1);
     TEXTURATB.malla[i].rotateX(Math.PI/2);
   }
-  TEXTURATB.malla[1].position.set(-5,0,0);
+  TEXTURATB.malla[1].position.set(-2,0,0);
   TEXTURATB.escena.add(TEXTURATB.malla[1]);
-  TEXTURATB.malla[2].position.set(5,0,0);
+  TEXTURATB.malla[2].position.set(2,0,0);
   TEXTURATB.escena.add(TEXTURATB.malla[2]);
 }
 TEXTURATB.setup=function()
@@ -65,7 +65,7 @@ TEXTURATB.setup=function()
   var cargador=new THREE.TextureLoader();
   cargador.load("maderaB.jpg",TEXTURATB.retrollamada);
   TEXTURATB.camara=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
-  TEXTURATB.camara.position.z=10;
+  TEXTURATB.camara.position.z=5;
   var lienzo=document.getElementById("ejemplo-textura");
   TEXTURATB.renderizador=new THREE.WebGLRenderer({canvas:lienzo,antialiaas:true});
   TEXTURATB.renderizador.setSize(600,600);
