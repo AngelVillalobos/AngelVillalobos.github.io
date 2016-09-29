@@ -1,21 +1,16 @@
 var TEXTURA=new Object();
 
-TEXTURA.retrollamada=function(textura1,textura2)
+TEXTURA.retrollamada=function(textura)
 {
-  var material=new THREE.MeshBasicMaterial({map:textura1});
+  var material=new THREE.MeshBasicMaterial({map:textura});
   TEXTURA.malla=new THREE.Mesh(new THREE.SphereGeometry(1,32,32),material);
   TEXTURA.escena.add(TEXTURA.malla);
-  
-  var material1=new THREE.MeshBasicMaterial({map:textura2});
-  TEXTURA.malla1=new THREE.Mesh(new THREE.SphereGeometry(1,32,32),material1);
-  TEXTURA.escena.add(TEXTURA.malla1);
-  
 }
 TEXTURA.setup=function()
 {
   TEXTURA.escena=new THREE.Scene();
   var cargador=new THREE.TextureLoader();
-  cargador.load("maderaB.jpg","maderaN.jpg",TEXTURA.retrollamada);
+  cargador.load("maderaB.jpg",TEXTURA.retrollamada);
   TEXTURA.camara=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
   TEXTURA.camara.position.z=5;
   var lienzo=document.getElementById("ejemplo-textura");
