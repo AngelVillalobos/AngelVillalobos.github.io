@@ -34,6 +34,7 @@ var Corona1Malla = new THREE.Mesh(Corona1Forma);
 var Corona2Malla = new THREE.Mesh(Corona2Forma);
 var Corona3Malla = new THREE.Mesh(Corona3Forma);
 
+
 var TorrefForma = new THREE.Geometry();
 
   TorrefForma.merge(BaseMalla.geometry,BaseMalla.matrix);
