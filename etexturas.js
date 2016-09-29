@@ -11,8 +11,6 @@ TEXTURA.retrollamada=function(textura1,textura2)
   TEXTURA.escena.add(TEXTURA.malla1);
   
 }
-
-
 TEXTURA.setup=function()
 {
   TEXTURA.escena=new THREE.Scene();
