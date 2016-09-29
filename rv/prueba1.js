@@ -55,8 +55,8 @@ TEXTURATB.retrollamada=function(textura)
   }
   TEXTURATB.malla[1].position.set(-5,0,0);
   escena.add(TEXTURATB.malla[1]);
-  TEXTURATB.malla[3].position.set(5,0,0);
-  escena.add(TEXTURATB.malla[3]);
+  TEXTURATB.malla[2].position.set(5,0,0);
+  escena.add(TEXTURATB.malla[2]);
 }
 TEXTURATB.setup=function()
 {
