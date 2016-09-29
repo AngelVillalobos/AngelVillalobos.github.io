@@ -7,6 +7,7 @@ TEXTURA.retrollamada=function(textura)
   TEXTURA.escena.add(TEXTURA.malla);
 }
 
+
 TEXTURA.setup=function()
 {
   TEXTURA.escena=new THREE.Scene();
