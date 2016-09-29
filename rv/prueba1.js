@@ -48,6 +48,7 @@ var TorrefForma = new THREE.Geometry();
 TEXTURATB.retrollamada=function(textura)
 {
   var material1 = new THREE.MeshBasicMaterial({map:textura});
+  var malla=new Array();
   for (var i=1;i<3;i++)
   {
     TEXTURATB.malla[i]=new THREE.Mesh(TorrefForma,material1);
