@@ -54,9 +54,9 @@ TEXTURATB.retrollamada=function(textura)
     TEXTURATB.malla[i].rotateX(Math.PI/2);
   }
   TEXTURATB.malla[1].position.set(-5,0,0);
-  escena.add(TEXTURATB.malla[1]);
+  TEXTURATB.escena.add(TEXTURATB.malla[1]);
   TEXTURATB.malla[2].position.set(5,0,0);
-  escena.add(TEXTURATB.malla[2]);
+  TEXTURATB.escena.add(TEXTURATB.malla[2]);
 }
 TEXTURATB.setup=function()
 {
