@@ -45,10 +45,6 @@ var TorrefForma = new THREE.Geometry();
   TorrefForma.merge(Corona3Malla.geometry,Corona3Malla.matrix);
 /////////////////////////////////////////////////////////////////////
 
-
-
-
-
 TEXTURATB.retrollamada=function(textura)
 {
   var material1 = new THREE.MeshBasicMaterial({map:textura});
