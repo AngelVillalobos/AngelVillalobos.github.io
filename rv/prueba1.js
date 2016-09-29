@@ -48,15 +48,15 @@ var TorrefForma = new THREE.Geometry();
 TEXTURATB.retrollamada=function(textura)
 {
   var material1 = new THREE.MeshBasicMaterial({map:textura});
-  for (var i=0;i<2;i++)
+  for (var i=1;i<3;i++)
   {
     TEXTURATB.malla[i]=new THREE.Mesh(TorrefForma,material1);
     TEXTURATB.malla[i].rotateX(Math.PI/2);
   }
-  TEXTURATB.malla[0].position.set(-5,0,0);
-  escena.add(TEXTURATB.malla[0]);
-  TEXTURATB.malla[1].position.set(5,0,0);
+  TEXTURATB.malla[1].position.set(-5,0,0);
   escena.add(TEXTURATB.malla[1]);
+  TEXTURATB.malla[3].position.set(5,0,0);
+  escena.add(TEXTURATB.malla[3]);
 }
 
 
