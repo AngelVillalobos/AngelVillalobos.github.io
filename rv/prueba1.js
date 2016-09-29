@@ -58,11 +58,6 @@ TEXTURATB.retrollamada=function(textura)
   TEXTURATB.malla[3].position.set(5,0,0);
   escena.add(TEXTURATB.malla[3]);
 }
-
-
-
-
-
 TEXTURATB.setup=function()
 {
   TEXTURATB.escena=new THREE.Scene();
