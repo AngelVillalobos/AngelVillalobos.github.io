@@ -79,5 +79,6 @@ TEXTURATB.loop=function()
   TEXTURATB.renderizador.render(TEXTURATB.escena,TEXTURATB.camara);
 }
 
+
 TEXTURATB.setup();
 TEXTURATB.loop();
