@@ -85,7 +85,7 @@ var TorrefForma = new THREE.Geometry();
 ////////////////////////////////////////////////////////////////////
 
 ///////////////CREACIÓN DE CASILLAS BLANCAS/////////////////////////
-TEXTURATCB.retrollamada=function(texturacb)
+TEXTURACB.retrollamada=function(texturacb)
 {
   for (var i=0;i<71; i ++)
   {
