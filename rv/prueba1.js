@@ -112,7 +112,7 @@ TEXTURATN.setup=function()
 TEXTURATB.loop=function()
 {
   requestAnimationFrame(TEXTURATB.loop);
-  requestAnimationFrame(TEXTURATN.loop);
+  //requestAnimationFrame(TEXTURATN.loop);
   for (var i=1;i<3;i++)
   {
     if(TEXTURATB.malla[i]!==undefined&&TEXTURATN.malla[i]!==undefined)
