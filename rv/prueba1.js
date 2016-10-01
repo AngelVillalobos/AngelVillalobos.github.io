@@ -3,6 +3,14 @@ var TEXTURATN=new Object();
 var TEXTURATAB=new Object();
 TEXTURATB.malla=new Array();
 TEXTURATN.malla=new Array();
+var TEXTURACB=new Object();
+var TEXTURACN=new Object();
+TEXTURACB.malla=new Array();
+TEXTURACN.malla=new Array();
+var Casillas = new THREE.Geometry();
+var a=1;
+var b=0;
+var c=1;
 /////////////DEFINICIÓN DE CAMARA Y RENDERIZADOR////////////////////
 var campoVision=45;
 var relacionAspecto=window.innerWidth/window.innerHeight;
@@ -28,6 +36,12 @@ TEXTURATB.luzPuntual.castShadow=true;
 
 /////////////DEFINICIÓN DEL TABLERO/////////////////////////////////
 var FTablero=new THREE.BoxGeometry(100,100,0.3,10,10,10);
+////////////////////////////////////////////////////////////////////
+
+/////////////DEFINICIÓN LAS CASILLAS////////////////////////////////
+var FCasillaB=new THREE.BoxGeometry(10,10,0.03,10,10,10);
+var FCasillaG=new THREE.BoxGeometry(10,10,0.03,10,10,10);
+var MCasillaG=new THREE.MeshLambertMaterial({color:0x6b6b6b});
 ////////////////////////////////////////////////////////////////////
 
 /////////////DEFINICIÓN DE TORRE////////////////////////////////////
@@ -68,6 +82,35 @@ var TorrefForma = new THREE.Geometry();
   TorrefForma.merge(Corona1Malla.geometry,Corona1Malla.matrix);
   TorrefForma.merge(Corona2Malla.geometry,Corona2Malla.matrix);
   TorrefForma.merge(Corona3Malla.geometry,Corona3Malla.matrix);
+////////////////////////////////////////////////////////////////////
+
+///////////////CREACIÓN DE CASILLAS BLANCAS/////////////////////////
+TEXTURATCB.retrollamada=function(texturacb)
+{
+  for (var i=0;i<71; i ++)
+  {
+    var MCasillaB=new THREE.MeshLambertMaterial({map:texturacb});
+    TEXTURACB.malla[i]=new THREE.Mesh(FCasillaB,MCasillaB);
+    TEXTURACB.malla[i].receiveShadow=true;
+  }
+  for (var j=0;j<71; j ++)
+  {
+    if(j%2!=0)
+      {
+        TEXTURACB.malla[i].position.set((c*10)-45,(b*10)-(35),0.6);
+        TEXTURATB.escena.add(TEXTURACB.malla[i]);
+        a=a+1;
+      }
+  if(a==9)
+    {
+      a=1;
+      b=b+1;
+      c=0;
+      j=j+1;
+    }
+    c=c+1;
+  }
+}
 ////////////////////////////////////////////////////////////////////
 
 ///////////////CREACIÓN DEL TABLERO/////////////////////////////////
@@ -116,6 +159,14 @@ TEXTURATN.retrollamada=function(textura)
   TEXTURATN.malla[2].position.set(35,35,1.2);
   TEXTURATB.escena.add(TEXTURATN.malla[2]);
   TEXTURATB.escena.add(TEXTURATB.luzPuntual);
+}
+////////////////////////////////////////////////////////////////////
+
+///////////////CARGANDO CASILLAS BLANCAS////////////////////////////
+TEXTURACB.setup=function()
+{
+  TEXTURACB.cargador=new THREE.TextureLoader();
+  TEXTURACB.cargador.load("marmolN.jpg",TEXTURACB.retrollamada);
 }
 ////////////////////////////////////////////////////////////////////
 
@@ -180,6 +231,17 @@ TEXTURATAB.loop=function()
 {
   requestAnimationFrame(TEXTURATAB.loop);
   if(TEXTURATAB.malla!==undefined)
+  {
+    TEXTURATB.renderizador.render(TEXTURATB.escena,TEXTURATB.camara);
+   }
+}
+////////////////////////////////////////////////////////////////////
+
+////////////////////LOOP CASILLAS BLANCAS///////////////////////////
+TEXTURACB.loop=function()
+{
+  requestAnimationFrame(TEXTURACB.loop);
+  if(TEXTURACB.malla!==undefined)
   {
     TEXTURATB.renderizador.render(TEXTURATB.escena,TEXTURATB.camara);
    }
