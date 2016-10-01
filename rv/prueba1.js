@@ -1,5 +1,6 @@
 var TEXTURATB=new Object();
 var TEXTURATN=new Object();
+var TEXTURATAB=new Object();
 TEXTURATB.malla=new Array();
 TEXTURATN.malla=new Array();
 /////////////DEFINICIÓN DE CAMARA Y RENDERIZADOR////////////////////
@@ -23,6 +24,10 @@ TEXTURATB.luzPuntual.position.x=50;
 TEXTURATB.luzPuntual.position.y=-50;
 TEXTURATB.luzPuntual.position.z=50;
 TEXTURATB.luzPuntual.castShadow=true;
+////////////////////////////////////////////////////////////////////
+
+/////////////DEFINICIÓN DEL TABLERO/////////////////////////////////
+var FTablero=new THREE.BoxGeometry(100,100,0.3,10,10,10);
 ////////////////////////////////////////////////////////////////////
 
 /////////////DEFINICIÓN DE TORRE////////////////////////////////////
@@ -65,6 +70,17 @@ var TorrefForma = new THREE.Geometry();
   TorrefForma.merge(Corona3Malla.geometry,Corona3Malla.matrix);
 ////////////////////////////////////////////////////////////////////
 
+///////////////CREACIÓN DEL TABLERO/////////////////////////////////
+TEXTURATAB.retrollamada=function(texturatab)
+{
+  var MTablero=new THREE.MeshLambertMaterial({map:texturatab});
+  TEXTURATAB.Tablero=new THREE.Mesh(FTablero,MTablero);
+  TEXTURATAB.Tablero.receiveShadow=true;
+  TEXTURATAB.Tablero.position.set(0,0,0);
+  TEXTURATB.escena.add(Tablero);
+}
+////////////////////////////////////////////////////////////////////
+
 ///////////////CREACIÓN DE TORRE BLANCA/////////////////////////////
 TEXTURATB.retrollamada=function(textura1)
 {
@@ -102,6 +118,14 @@ TEXTURATN.retrollamada=function(textura)
 ////////////////////////////////////////////////////////////////////
 
 ///////////////CARGANDO TORRE BLANCA////////////////////////////////
+TEXTURATAB.setup=function()
+{
+  TEXTURATAB.cargador=new THREE.TextureLoader();
+  TEXTURATAB.cargador.load("marmolA.jpg",TEXTURATAB.retrollamada);
+}
+////////////////////////////////////////////////////////////////////
+
+///////////////CARGANDO TORRE BLANCA////////////////////////////////
 TEXTURATB.setup=function()
 {
   TEXTURATB.escena=new THREE.Scene();
@@ -113,7 +137,6 @@ TEXTURATB.setup=function()
 ///////////////CARGANDO TORRE NEGRA////////////////////////////////
 TEXTURATN.setup=function()
 {
-  //TEXTURATN.escena=new THREE.Scene();
   TEXTURATN.cargador=new THREE.TextureLoader();
   TEXTURATN.cargador.load("maderaN.jpg",TEXTURATN.retrollamada);
 }
@@ -149,26 +172,26 @@ TEXTURATN.loop=function()
     }
   }
 }
+////////////////////////////////////////////////////////////////////
 
+////////////////////LOOP TABLERO////////////////////////////////////
+TEXTURATAB.loop=function()
+{
+  requestAnimationFrame(TEXTURATAB.loop);
+  for (var i=1;i<3;i++)
+  {
+    if(TEXTURATAB.malla[i]!==undefined)
+    {
+      TEXTURATB.renderizador.render(TEXTURATAB.escena,TEXTURATB.camara);  
+      //TEXTURATB.malla[i].rotateY(0.01);
+    }
+  }
+}
+////////////////////////////////////////////////////////////////////
 
-
-
-
-
-
-
-
-
-
-/*
-  TEXTURATB.camara=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
-  //TEXTURATB.camara.position.z=5;
-  TEXTURATB.camara.position.y=-5;
-  TEXTURATB.camara.lookAt(new THREE.Vector3(0,0,0));
-  var lienzo=document.getElementById("ejemplo-textura");
-  TEXTURATB.renderizador=new THREE.WebGLRenderer({canvas:lienzo,antialiaas:true});
-  TEXTURATB.renderizador.setSize(600,600);*/
 TEXTURATB.setup();
 TEXTURATN.setup();
+TEXTURATAB.setup();
+TEXTURATAB.loop();
 TEXTURATB.loop();
 TEXTURATN.loop();
