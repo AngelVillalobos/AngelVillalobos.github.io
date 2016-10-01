@@ -90,7 +90,7 @@ TEXTURATB.retrollamada=function(textura1)
     TEXTURATB.malla[i]=new THREE.Mesh(TorrefForma,material1);
     TEXTURATB.malla[i].rotateX(Math.PI/2);
     TEXTURATB.malla[i].castShadow=true;
-    TEXTURATN.malla[i].scale.set(7,7,8);
+    TEXTURATB.malla[i].scale.set(7,7,8);
   }
   TEXTURATB.malla[1].position.set(-35,-35,0);
   TEXTURATB.escena.add(TEXTURATB.malla[1]);
