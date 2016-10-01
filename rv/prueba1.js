@@ -59,9 +59,9 @@ var TorrefForma = new THREE.Geometry();
 ////////////////////////////////////////////////////////////////////
 
 ///////////////CREACIÓN DE TORRE BLANCA/////////////////////////////
-TEXTURATB.retrollamada=function(textura)
+TEXTURATB.retrollamada=function(textura1)
 {
-  var material1 = new THREE.MeshBasicMaterial({map:textura});
+  var material1 = new THREE.MeshBasicMaterial({map:textura1});
   for (var i=1;i<3;i++)
   {
     TEXTURATB.malla[i]=new THREE.Mesh(TorrefForma,material1);
@@ -69,7 +69,7 @@ TEXTURATB.retrollamada=function(textura)
   }
   TEXTURATB.malla[1].position.set(-2,-2,0);
   TEXTURATB.escena.add(TEXTURATB.malla[1]);
-  TEXTURATB.malla[2].position.set(-2,2,0);
+  TEXTURATB.malla[2].position.set(2,-2,0);
   TEXTURATB.escena.add(TEXTURATB.malla[2]);
 }
 ////////////////////////////////////////////////////////////////////
@@ -83,7 +83,7 @@ TEXTURATN.retrollamada=function(textura)
     TEXTURATN.malla[i]=new THREE.Mesh(TorrefForma,material2);
     TEXTURATN.malla[i].rotateX(Math.PI/2);
   }
-  TEXTURATN.malla[1].position.set(2,-2,0);
+  TEXTURATN.malla[1].position.set(-2,2,0);
   TEXTURATN.escena.add(TEXTURATN.malla[1]);
   TEXTURATN.malla[2].position.set(2,2,0);
   TEXTURATN.escena.add(TEXTURATN.malla[2]);
@@ -94,8 +94,8 @@ TEXTURATN.retrollamada=function(textura)
 TEXTURATB.setup=function()
 {
   TEXTURATB.escena=new THREE.Scene();
-  var cargador=new THREE.TextureLoader();
-  cargador.load("maderaB.jpg",TEXTURATB.retrollamada);
+  TEXTURATB.cargador=new THREE.TextureLoader();
+  TEXTURATB.cargador.load("maderaB.jpg",TEXTURATB.retrollamada);
 }
 ////////////////////////////////////////////////////////////////////
 
@@ -103,8 +103,8 @@ TEXTURATB.setup=function()
 TEXTURATN.setup=function()
 {
   TEXTURATN.escena=new THREE.Scene();
-  var cargador=new THREE.TextureLoader();
-  cargador.load("maderaN.jpg",TEXTURATN.retrollamada);
+  TEXTURATN.cargador=new THREE.TextureLoader();
+  TEXTURATN.cargador.load("maderaN.jpg",TEXTURATN.retrollamada);
 }
 ////////////////////////////////////////////////////////////////////
 
