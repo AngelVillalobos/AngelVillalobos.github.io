@@ -9,8 +9,8 @@ var relacionAspecto=window.innerWidth/window.innerHeight;
 var planoCercano=100;
 var planoLejano=1000;
 TEXTURATB.camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
-TEXTURATB.camara.position.z=150;
-TEXTURATB.camara.position.y=-100;
+TEXTURATB.camara.position.z=5;
+//TEXTURATB.camara.position.y=-100;
 TEXTURATB.camara.lookAt(new THREE.Vector3(0,0,0));
 
 var lienzo=document.getElementById("ejemplo-textura");
@@ -67,9 +67,9 @@ TEXTURATB.retrollamada=function(textura)
     TEXTURATB.malla[i]=new THREE.Mesh(TorrefForma,material1);
     TEXTURATB.malla[i].rotateX(Math.PI/2);
   }
-  TEXTURATB.malla[1].position.set(-2,0,0);
+  TEXTURATB.malla[1].position.set(-2,-2,0);
   TEXTURATB.escena.add(TEXTURATB.malla[1]);
-  TEXTURATB.malla[2].position.set(2,0,0);
+  TEXTURATB.malla[2].position.set(-2,2,0);
   TEXTURATB.escena.add(TEXTURATB.malla[2]);
 }
 ////////////////////////////////////////////////////////////////////
@@ -83,9 +83,9 @@ TEXTURATN.retrollamada=function(textura)
     TEXTURATN.malla[i]=new THREE.Mesh(TorrefForma,material2);
     TEXTURATN.malla[i].rotateX(Math.PI/2);
   }
-  TEXTURATN.malla[1].position.set(-2,0,0);
+  TEXTURATN.malla[1].position.set(2,-2,0);
   TEXTURATN.escena.add(TEXTURATN.malla[1]);
-  TEXTURATN.malla[2].position.set(2,0,0);
+  TEXTURATN.malla[2].position.set(2,2,0);
   TEXTURATN.escena.add(TEXTURATN.malla[2]);
 }
 ////////////////////////////////////////////////////////////////////
@@ -157,3 +157,5 @@ TEXTURATN.loop=function()
   TEXTURATB.renderizador.setSize(600,600);*/
 TEXTURATB.setup();
 TEXTURATB.loop();
+TEXTURATN.setup();
+TEXTURATN.loop();
