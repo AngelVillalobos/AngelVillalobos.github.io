@@ -8,10 +8,10 @@ var campoVision=45;
 var relacionAspecto=window.innerWidth/window.innerHeight;
 var planoCercano=100;
 var planoLejano=1000;
-var camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
-camara.position.z=150;
-camara.position.y=-100;
-camara.lookAt(new THREE.Vector3(0,0,0));
+TEXTURATB.camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
+TEXTURATB.camara.position.z=150;
+TEXTURATB.camara.position.y=-100;
+TEXTURATB.camara.lookAt(new THREE.Vector3(0,0,0));
 ////////////////////////////////////////////////////////////////////
 
 /////////////DEFINICIÓN DE TORRE////////////////////////////////////
@@ -112,7 +112,7 @@ TEXTURATB.loop=function()
   {
     if(TEXTURATB.malla[i]!==undefined)
     {
-      TEXTURATB.renderizador.render(TEXTURATB.escena,camara);  
+      TEXTURATB.renderizador.render(TEXTURATB.escena,TEXTURATB.camara);  
       //TEXTURATB.malla[i].rotateY(0.01);
     }
   }
@@ -127,7 +127,7 @@ TEXTURATN.loop=function()
   {
     if(TEXTURATN.malla[i]!==undefined)
     {
-      TEXTURATN.renderizador.render(TEXTURATN.escena,camara);  
+      TEXTURATN.renderizador.render(TEXTURATN.escena,TEXTURATB.camara);  
       //TEXTURATB.malla[i].rotateY(0.01);
     }
   }
