@@ -6,7 +6,7 @@ TEXTURATN.malla=new Array();
 /////////////DEFINICIÓN DE CAMARA Y RENDERIZADOR///////////////////////////////////
 var campoVision=45;
 var relacionAspecto=window.innerWidth/window.innerHeight;
-var planoCercano=100;
+var planoCercano=1;
 var planoLejano=1000;
 TEXTURATB.camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
 TEXTURATB.camara.position.z=5;
