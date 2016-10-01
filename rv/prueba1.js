@@ -8,7 +8,9 @@ var TEXTURACN=new Object();
 TEXTURACB.malla=new Array();
 TEXTURACN.malla=new Array();
 var Casillas = new THREE.Geometry();
-
+var a=1;
+var b=0;
+var c=1;
 /////////////DEFINICIÓN DE CAMARA Y RENDERIZADOR////////////////////
 var campoVision=45;
 var relacionAspecto=window.innerWidth/window.innerHeight;
@@ -85,9 +87,6 @@ var TorrefForma = new THREE.Geometry();
 ///////////////CREACIÓN DE CASILLAS BLANCAS/////////////////////////
 TEXTURACB.retrollamada=function(texturacb)
 {
-  var a=1;
-  var b=0;
-  var c=1;
   for (var i=0;i<71; i ++)
   {
     var MCasillaB=new THREE.MeshLambertMaterial({map:texturacb});
@@ -102,7 +101,7 @@ TEXTURACB.retrollamada=function(texturacb)
         TEXTURATB.escena.add(TEXTURACB.malla[j]);
         a=a+1;
       }
-  if(a==9)
+    if(a==9)
     {
       a=1;
       b=b+1;
