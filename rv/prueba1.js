@@ -12,7 +12,7 @@ var planoCercano=1;
 var planoLejano=1000;
 TEXTURATB.camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
 TEXTURATB.camara.position.z=10;
-TEXTURATB.camara.position.y=-2;
+TEXTURATB.camara.position.y=-10;
 TEXTURATB.camara.lookAt(new THREE.Vector3(0,0,0));
 TEXTURATB.renderizador = new THREE.WebGLRenderer();
 TEXTURATB.renderizador.setSize(window.innerWidth,window.innerHeight);
