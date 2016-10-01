@@ -92,9 +92,9 @@ TEXTURATB.retrollamada=function(textura1)
     TEXTURATB.malla[i].castShadow=true;
     TEXTURATB.malla[i].scale.set(7,7,8);
   }
-  TEXTURATB.malla[1].position.set(-35,-35,0);
+  TEXTURATB.malla[1].position.set(-35,-35,1.2);
   TEXTURATB.escena.add(TEXTURATB.malla[1]);
-  TEXTURATB.malla[2].position.set(35,-35,0);
+  TEXTURATB.malla[2].position.set(35,-35,1.2);
   TEXTURATB.escena.add(TEXTURATB.malla[2]);
   TEXTURATB.escena.add(TEXTURATB.luzPuntual);
 }
@@ -111,9 +111,9 @@ TEXTURATN.retrollamada=function(textura)
     TEXTURATN.malla[i].castShadow=true;
     TEXTURATN.malla[i].scale.set(7,7,8);
   }
-  TEXTURATN.malla[1].position.set(-35,35,0);
+  TEXTURATN.malla[1].position.set(-35,35,1.2);
   TEXTURATB.escena.add(TEXTURATN.malla[1]);
-  TEXTURATN.malla[2].position.set(35,35,0);
+  TEXTURATN.malla[2].position.set(35,35,1.2);
   TEXTURATB.escena.add(TEXTURATN.malla[2]);
   TEXTURATB.escena.add(TEXTURATB.luzPuntual);
 }
