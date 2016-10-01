@@ -95,7 +95,7 @@ TEXTURACB.retrollamada=function(texturacb)
   }
   for (var j=0;j<71; j ++)
   {
-    if(j%2!=0)
+    if(j%2==0)
       {
         TEXTURACB.malla[i].position.set((c*10)-45,(b*10)-(35),0.6);
         TEXTURATB.escena.add(TEXTURACB.malla[i]);
