@@ -2,9 +2,6 @@ var TEXTURATB=new Object();
 var TEXTURATN=new Object();
 TEXTURATB.malla=new Array();
 TEXTURATN.malla=new Array();
-
-
-
 /////////////DEFINICIÓN DE CAMARA Y RENDERIZADOR////////////////////
 var campoVision=45;
 var relacionAspecto=window.innerWidth/window.innerHeight;
@@ -129,10 +126,10 @@ TEXTURATB.loop=function()
   //requestAnimationFrame(TEXTURATN.loop);
   for (var i=1;i<3;i++)
   {
-    if(TEXTURATB.malla[i]!==undefined)//&&TEXTURATN.malla[i]!==undefined)
+    if(TEXTURATB.malla[i]!==undefined&&TEXTURATN.malla[i]!==undefined)
     {
       TEXTURATB.renderizador.render(TEXTURATB.escena,TEXTURATB.camara);  
-      //TEXTURATB.renderizador.render(TEXTURATN.escena,TEXTURATB.camara);  
+      TEXTURATB.renderizador.render(TEXTURATN.escena,TEXTURATB.camara);  
       //TEXTURATB.malla[i].rotateY(0.01);
     }
   }
