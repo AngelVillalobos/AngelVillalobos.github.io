@@ -251,6 +251,8 @@ TEXTURACB.loop=function()
 TEXTURATB.setup();
 TEXTURATN.setup();
 TEXTURATAB.setup();
+TEXTURACB.setup();
+TEXTURACB.loop();
 TEXTURATAB.loop();
 TEXTURATB.loop();
 TEXTURATN.loop();
