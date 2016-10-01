@@ -3,6 +3,8 @@ var TEXTURATN=new Object();
 TEXTURATB.malla=new Array();
 TEXTURATN.malla=new Array();
 
+
+
 /////////////DEFINICIÓN DE CAMARA Y RENDERIZADOR///////////////////////////////////
 var campoVision=45;
 var relacionAspecto=window.innerWidth/window.innerHeight;
@@ -13,9 +15,11 @@ TEXTURATB.camara.position.z=15;
 TEXTURATB.camara.position.y=-10;
 TEXTURATB.camara.lookAt(new THREE.Vector3(0,0,0));
 
-var lienzo=document.getElementById("ejemplo-textura");
-TEXTURATB.renderizador=new THREE.WebGLRenderer({canvas:lienzo,antialiaas:true});
-TEXTURATB.renderizador.setSize(600,600);
+//var lienzo=document.getElementById("ejemplo-textura");
+TEXTURATB.renderizador = new THREE.WebGLRenderer();
+TEXTURATB.renderizador.setSize(window.innerWidth,window.innerHeight);
+document.body.appendChild(TEXTURATB.renderizador.domElement);
+TEXTURATB.renderizador.shadowMapEnabled=true;
 ////////////////////////////////////////////////////////////////////
 
 /////////////DEFINICIÓN DE TORRE////////////////////////////////////
