@@ -178,14 +178,10 @@ TEXTURATN.loop=function()
 TEXTURATAB.loop=function()
 {
   requestAnimationFrame(TEXTURATAB.loop);
-  for (var i=1;i<3;i++)
+  if(TEXTURATAB.malla!==undefined)
   {
-    if(TEXTURATAB.malla[i]!==undefined)
-    {
-      TEXTURATB.renderizador.render(TEXTURATAB.escena,TEXTURATB.camara);  
-      //TEXTURATB.malla[i].rotateY(0.01);
-    }
-  }
+    TEXTURATB.renderizador.render(TEXTURATAB.escena,TEXTURATB.camara);
+   }
 }
 ////////////////////////////////////////////////////////////////////
 
