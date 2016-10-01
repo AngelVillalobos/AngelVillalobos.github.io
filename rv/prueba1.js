@@ -20,9 +20,9 @@ TEXTURATB.renderizador.shadowMapEnabled=true;
 
 /////////////DEFINICIÓN DE LA LUZ///////////////////////////////////
 TEXTURATB.luzPuntual=new THREE.PointLight(0xFFFFFF,1.2);
-TEXTURATB.luzPuntual.position.x=50;
-TEXTURATB.luzPuntual.position.y=-50;
-TEXTURATB.luzPuntual.position.z=50;
+TEXTURATB.luzPuntual.position.x=150;
+TEXTURATB.luzPuntual.position.y=-150;
+TEXTURATB.luzPuntual.position.z=150;
 TEXTURATB.luzPuntual.castShadow=true;
 ////////////////////////////////////////////////////////////////////
 
