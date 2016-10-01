@@ -82,7 +82,7 @@ TEXTURATB.loop=function()
 }
 
   TEXTURATB.camara=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
-  TEXTURATB.camara.position.z=5;
+  //TEXTURATB.camara.position.z=5;
   TEXTURATB.camara.position.y=-5;
   TEXTURATB.camara.lookAt(new THREE.Vector3(0,0,0));
   var lienzo=document.getElementById("ejemplo-textura");
