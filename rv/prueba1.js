@@ -104,7 +104,7 @@ TEXTURATN.setup=function()
 {
   TEXTURATN.escena=new THREE.Scene();
   var cargador=new THREE.TextureLoader();
-  cargador.load("maderaB.jpg",TEXTURATN.retrollamada);
+  cargador.load("maderaN.jpg",TEXTURATN.retrollamada);
 }
 ////////////////////////////////////////////////////////////////////
 
@@ -156,6 +156,6 @@ TEXTURATN.loop=function()
   TEXTURATB.renderizador=new THREE.WebGLRenderer({canvas:lienzo,antialiaas:true});
   TEXTURATB.renderizador.setSize(600,600);*/
 TEXTURATB.setup();
-TEXTURATB.loop();
 TEXTURATN.setup();
+TEXTURATB.loop();
 TEXTURATN.loop();
