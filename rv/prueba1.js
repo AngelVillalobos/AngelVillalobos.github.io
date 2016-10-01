@@ -98,7 +98,7 @@ TEXTURACB.retrollamada=function(texturacb)
   {
     if(j%2==0)
       {
-        TEXTURACB.malla[i].position.set((c*10)-45,(b*10)-(35),0.6);
+        TEXTURACB.malla[j].position.set((c*10)-45,(b*10)-(35),0.6);
         TEXTURATB.escena.add(TEXTURACB.malla[i]);
         a=a+1;
       }
@@ -200,14 +200,11 @@ TEXTURATN.setup=function()
 TEXTURATB.loop=function()
 {
   requestAnimationFrame(TEXTURATB.loop);
-  //requestAnimationFrame(TEXTURATN.loop);
   for (var i=1;i<3;i++)
   {
     if(TEXTURATB.malla[i]!==undefined)//&&TEXTURATN.malla[i]!==undefined)
     {
       TEXTURATB.renderizador.render(TEXTURATB.escena,TEXTURATB.camara);  
-      //TEXTURATB.renderizador.render(TEXTURATN.escena,TEXTURATB.camara);  
-      //TEXTURATB.malla[i].rotateY(0.01);
     }
   }
 }
