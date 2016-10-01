@@ -101,7 +101,7 @@ TEXTURACB.retrollamada=function(texturacb)
         TEXTURATB.escena.add(TEXTURACB.malla[j]);
         a=a+1;
       }
-    if(a==9)
+    if(a==5)
     {
       a=1;
       b=b+1;
