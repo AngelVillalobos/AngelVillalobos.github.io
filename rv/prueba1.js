@@ -169,8 +169,7 @@ TEXTURATN.loop=function()
   {
     if(TEXTURATN.malla[i]!==undefined)
     {
-      TEXTURATB.renderizador.render(TEXTURATN.escena,TEXTURATB.camara);  
-      //TEXTURATB.malla[i].rotateY(0.01);
+      TEXTURATB.renderizador.render(TEXTURATB.escena,TEXTURATB.camara);
     }
   }
 }
@@ -182,7 +181,7 @@ TEXTURATAB.loop=function()
   requestAnimationFrame(TEXTURATAB.loop);
   if(TEXTURATAB.malla!==undefined)
   {
-    TEXTURATB.renderizador.render(TEXTURATAB.escena,TEXTURATB.camara);
+    TEXTURATB.renderizador.render(TEXTURATB.escena,TEXTURATB.camara);
    }
 }
 ////////////////////////////////////////////////////////////////////
