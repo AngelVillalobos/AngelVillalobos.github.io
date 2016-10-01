@@ -158,6 +158,6 @@ TEXTURATN.loop=function()
   TEXTURATB.renderizador=new THREE.WebGLRenderer({canvas:lienzo,antialiaas:true});
   TEXTURATB.renderizador.setSize(600,600);*/
 TEXTURATB.setup();
-TEXTURATN.setup();
+//TEXTURATN.setup();
 TEXTURATB.loop();
 //TEXTURATN.loop();
