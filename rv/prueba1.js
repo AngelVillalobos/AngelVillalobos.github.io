@@ -25,6 +25,7 @@ TEXTURATB.luzPuntual=new THREE.PointLight(0xFFFFFF);
 TEXTURATB.luzPuntual.position.x=150;
 TEXTURATB.luzPuntual.position.y=-150;
 TEXTURATB.luzPuntual.position.z=150;
+TEXTURATB.luzPuntual.castShadow=true;
 ////////////////////////////////////////////////////////////////////
 
 /////////////DEFINICIÓN DE TORRE////////////////////////////////////
@@ -70,11 +71,12 @@ var TorrefForma = new THREE.Geometry();
 ///////////////CREACIÓN DE TORRE BLANCA/////////////////////////////
 TEXTURATB.retrollamada=function(textura1)
 {
-  var material1 = new THREE.MeshBasicMaterial({map:textura1});
+  var material1 = new THREE.MeshLambertMaterial({map:textura1});
   for (var i=1;i<3;i++)
   {
     TEXTURATB.malla[i]=new THREE.Mesh(TorrefForma,material1);
     TEXTURATB.malla[i].rotateX(Math.PI/2);
+    TEXTURATB.malla[i].castShadow=true;
   }
   TEXTURATB.malla[1].position.set(-2,-2,0);
   TEXTURATB.escena.add(TEXTURATB.malla[1]);
@@ -87,11 +89,12 @@ TEXTURATB.retrollamada=function(textura1)
 ///////////////CREACIÓN DE TORRE NEGRA//////////////////////////////
 TEXTURATN.retrollamada=function(textura)
 {
-  var material2 = new THREE.MeshBasicMaterial({map:textura});
+  var material2 = new THREE.MeshLambertMaterial({map:textura});
   for (var i=1;i<3;i++)
   {
     TEXTURATN.malla[i]=new THREE.Mesh(TorrefForma,material2);
     TEXTURATN.malla[i].rotateX(Math.PI/2);
+    TEXTURATN.malla[i].castShadow=true;
   }
   TEXTURATN.malla[1].position.set(-2,2,0);
   TEXTURATB.escena.add(TEXTURATN.malla[1]);
