@@ -3,7 +3,7 @@ var TEXTURATN=new Object();
 TEXTURATB.malla=new Array();
 TEXTURATN.malla=new Array();
 
-/////////////DEFINICIÓN DE CAMARA Y ESCENA///////////////////////////////////
+/////////////DEFINICIÓN DE CAMARA Y RENDERIZADOR///////////////////////////////////
 var campoVision=45;
 var relacionAspecto=window.innerWidth/window.innerHeight;
 var planoCercano=100;
@@ -12,6 +12,10 @@ TEXTURATB.camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCe
 TEXTURATB.camara.position.z=150;
 TEXTURATB.camara.position.y=-100;
 TEXTURATB.camara.lookAt(new THREE.Vector3(0,0,0));
+
+var lienzo=document.getElementById("ejemplo-textura");
+TEXTURATB.renderizador=new THREE.WebGLRenderer({canvas:lienzo,antialiaas:true});
+TEXTURATB.renderizador.setSize(600,600);
 ////////////////////////////////////////////////////////////////////
 
 /////////////DEFINICIÓN DE TORRE////////////////////////////////////
