@@ -96,7 +96,7 @@ TEXTURACB.retrollamada=function(texturacb)
   }
   for (var j=0;j<71; j ++)
   {
-    if(j%2==0)
+    if(j%2!==0)
       {
         TEXTURACB.malla[j].position.set((c*10)-45,(b*10)-(35),0.6);
         TEXTURATB.escena.add(TEXTURACB.malla[j]);
@@ -167,7 +167,7 @@ TEXTURATN.retrollamada=function(textura)
 TEXTURACB.setup=function()
 {
   TEXTURACB.cargador=new THREE.TextureLoader();
-  TEXTURACB.cargador.load("marmolN.jpg",TEXTURACB.retrollamada);
+  TEXTURACB.cargador.load("marmolB.jpg",TEXTURACB.retrollamada);
 }
 ////////////////////////////////////////////////////////////////////
 
