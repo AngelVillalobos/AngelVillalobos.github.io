@@ -54,7 +54,6 @@ TEXTURATB.retrollamada=function(textura)
   {
     TEXTURATB.malla[i]=new THREE.Mesh(TorrefForma,material1);
     TEXTURATB.malla[i].rotateX(Math.PI/2);
-    TEXTURATB.malla[i].rotateX(Math.PI/2);
   }
   TEXTURATB.malla[1].position.set(-2,0,0);
   TEXTURATB.escena.add(TEXTURATB.malla[1]);
@@ -75,15 +74,16 @@ TEXTURATB.loop=function()
   {
     if(TEXTURATB.malla[i]!==undefined)
     {
-      TEXTURATB.malla[i].rotateY(0.01);
+      TEXTURATB.renderizador.render(TEXTURATB.escena,TEXTURATB.camara);
+      //TEXTURATB.malla[i].rotateY(0.01);
     }
   }
-    TEXTURATB.renderizador.render(TEXTURATB.escena,TEXTURATB.camara);
+    
 }
 
   TEXTURATB.camara=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
   TEXTURATB.camara.position.z=5;
-  //TEXTURATB.camara.position.y=5;
+  TEXTURATB.camara.position.y=5;
   var lienzo=document.getElementById("ejemplo-textura");
   TEXTURATB.renderizador=new THREE.WebGLRenderer({canvas:lienzo,antialiaas:true});
   TEXTURATB.renderizador.setSize(600,600);
