@@ -109,7 +109,7 @@ TEXTURATB.setup=function()
 {
   TEXTURATB.escena=new THREE.Scene();
   TEXTURATB.cargador=new THREE.TextureLoader();
-  TEXTURATB.cargador.load("maderaB.jpg",TEXTURATB.retrollamada);
+  TEXTURATB.cargador.load("maderaB1.jpg",TEXTURATB.retrollamada);
 }
 ////////////////////////////////////////////////////////////////////
 
