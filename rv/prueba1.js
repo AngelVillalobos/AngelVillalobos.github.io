@@ -53,8 +53,8 @@ TEXTURATB.retrollamada=function(textura)
   for (var i=1;i<3;i++)
   {
     TEXTURATB.malla[i]=new THREE.Mesh(TorrefForma,material1);
-    TEXTURATB.malla[i].rotateX(Math.PI/2);
-    TEXTURATB.malla[i].rotateX(Math.PI/2);
+    //TEXTURATB.malla[i].rotateX(Math.PI/2);
+    //TEXTURATB.malla[i].rotateX(Math.PI/2);
   }
   TEXTURATB.malla[1].position.set(-2,0,0);
   TEXTURATB.escena.add(TEXTURATB.malla[1]);
