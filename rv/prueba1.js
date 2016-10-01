@@ -77,7 +77,7 @@ TEXTURATAB.retrollamada=function(texturatab)
   TEXTURATAB.Tablero=new THREE.Mesh(FTablero,MTablero);
   TEXTURATAB.Tablero.receiveShadow=true;
   TEXTURATAB.Tablero.position.set(0,0,0);
-  TEXTURATB.escena.add(Tablero);
+  TEXTURATB.escena.add(TEXTURATAB.Tablero);
 }
 ////////////////////////////////////////////////////////////////////
 
