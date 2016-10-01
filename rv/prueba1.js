@@ -115,10 +115,10 @@ TEXTURATB.loop=function()
   //requestAnimationFrame(TEXTURATN.loop);
   for (var i=1;i<3;i++)
   {
-    if(TEXTURATB.malla[i]!==undefined&&TEXTURATN.malla[i]!==undefined)
+    if(TEXTURATB.malla[i]!==undefined)//&&TEXTURATN.malla[i]!==undefined)
     {
       TEXTURATB.renderizador.render(TEXTURATB.escena,TEXTURATB.camara);  
-      TEXTURATB.renderizador.render(TEXTURATN.escena,TEXTURATB.camara);  
+      //TEXTURATB.renderizador.render(TEXTURATN.escena,TEXTURATB.camara);  
       //TEXTURATB.malla[i].rotateY(0.01);
     }
   }
