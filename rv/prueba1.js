@@ -12,8 +12,6 @@ var camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,
 camara.position.z=150;
 camara.position.y=-100;
 camara.lookAt(new THREE.Vector3(0,0,0));
-
-var escena = new THREE.Scene();
 ////////////////////////////////////////////////////////////////////
 
 /////////////DEFINICIÓN DE TORRE////////////////////////////////////
@@ -66,9 +64,9 @@ TEXTURATB.retrollamada=function(textura)
     TEXTURATB.malla[i].rotateX(Math.PI/2);
   }
   TEXTURATB.malla[1].position.set(-2,0,0);
-  escena.add(TEXTURATB.malla[1]);
+  TEXTURATB.escena.add(TEXTURATB.malla[1]);
   TEXTURATB.malla[2].position.set(2,0,0);
-  escena.add(TEXTURATB.malla[2]);
+  TEXTURATB.escena.add(TEXTURATB.malla[2]);
 }
 ////////////////////////////////////////////////////////////////////
 
@@ -82,16 +80,16 @@ TEXTURATN.retrollamada=function(textura)
     TEXTURATN.malla[i].rotateX(Math.PI/2);
   }
   TEXTURATN.malla[1].position.set(-2,0,0);
-  escena.add(TEXTURATN.malla[1]);
+  TEXTURATN.escena.add(TEXTURATN.malla[1]);
   TEXTURATN.malla[2].position.set(2,0,0);
-  escena.add(TEXTURATN.malla[2]);
+  TEXTURATN.escena.add(TEXTURATN.malla[2]);
 }
 ////////////////////////////////////////////////////////////////////
 
 ///////////////CARGANDO TORRE BLANCA////////////////////////////////
 TEXTURATB.setup=function()
 {
-  //TEXTURATB.escena=new THREE.Scene();
+  TEXTURATB.escena=new THREE.Scene();
   var cargador=new THREE.TextureLoader();
   cargador.load("maderaB.jpg",TEXTURATB.retrollamada);
 }
@@ -100,11 +98,13 @@ TEXTURATB.setup=function()
 ///////////////CARGANDO TORRE NEGRA////////////////////////////////
 TEXTURATN.setup=function()
 {
-  //TEXTURATN.escena=new THREE.Scene();
+  TEXTURATN.escena=new THREE.Scene();
   var cargador=new THREE.TextureLoader();
   cargador.load("maderaB.jpg",TEXTURATN.retrollamada);
 }
 ////////////////////////////////////////////////////////////////////
+
+///////////////////LOOP TORRE BLANCA////////////////////////////////
 TEXTURATB.loop=function()
 {
   requestAnimationFrame(TEXTURATB.loop);
@@ -112,13 +112,26 @@ TEXTURATB.loop=function()
   {
     if(TEXTURATB.malla[i]!==undefined)
     {
-      TEXTURATB.renderizador.render(escena,camara);  
+      TEXTURATB.renderizador.render(TEXTURATB.escena,camara);  
       //TEXTURATB.malla[i].rotateY(0.01);
     }
   }
-  
 }
+////////////////////////////////////////////////////////////////////
 
+////////////////////LOOP TORRE NEGRA////////////////////////////////
+TEXTURATN.loop=function()
+{
+  requestAnimationFrame(TEXTURATN.loop);
+  for (var i=1;i<3;i++)
+  {
+    if(TEXTURATN.malla[i]!==undefined)
+    {
+      TEXTURATN.renderizador.render(TEXTURATN.escena,camara);  
+      //TEXTURATB.malla[i].rotateY(0.01);
+    }
+  }
+}
 
 
 
