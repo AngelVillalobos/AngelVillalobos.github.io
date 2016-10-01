@@ -70,15 +70,15 @@ TEXTURATB.setup=function()
 TEXTURATB.loop=function()
 {
   requestAnimationFrame(TEXTURATB.loop);
-  /*for (var i=1;i<3;i++)
+  for (var i=1;i<3;i++)
   {
     if(TEXTURATB.malla[i]!==undefined)
     {
-      
+      TEXTURATB.renderizador.render(TEXTURATB.escena,TEXTURATB.camara);  
       //TEXTURATB.malla[i].rotateY(0.01);
     }
-  }*/
-  TEXTURATB.renderizador.render(TEXTURATB.escena,TEXTURATB.camara);  
+  }
+  
 }
 
   TEXTURATB.camara=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
