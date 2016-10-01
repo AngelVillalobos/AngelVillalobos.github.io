@@ -131,7 +131,7 @@ TEXTURATN.loop=function()
   {
     if(TEXTURATN.malla[i]!==undefined)
     {
-      TEXTURATN.renderizador.render(TEXTURATN.escena,TEXTURATB.camara);  
+      TEXTURATB.renderizador.render(TEXTURATN.escena,TEXTURATB.camara);  
       //TEXTURATB.malla[i].rotateY(0.01);
     }
   }
