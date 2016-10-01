@@ -66,12 +66,7 @@ TEXTURATB.setup=function()
   TEXTURATB.escena=new THREE.Scene();
   var cargador=new THREE.TextureLoader();
   cargador.load("maderaB.jpg",TEXTURATB.retrollamada);
-  TEXTURATB.camara=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
-  TEXTURATB.camara.position.z=5;
-  //TEXTURATB.camara.position.y=5;
-  var lienzo=document.getElementById("ejemplo-textura");
-  TEXTURATB.renderizador=new THREE.WebGLRenderer({canvas:lienzo,antialiaas:true});
-  TEXTURATB.renderizador.setSize(600,600);
+  ///////
 }
 TEXTURATB.loop=function()
 {
@@ -86,6 +81,11 @@ TEXTURATB.loop=function()
     TEXTURATB.renderizador.render(TEXTURATB.escena,TEXTURATB.camara);
 }
 
-
+  TEXTURATB.camara=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
+  TEXTURATB.camara.position.z=5;
+  //TEXTURATB.camara.position.y=5;
+  var lienzo=document.getElementById("ejemplo-textura");
+  TEXTURATB.renderizador=new THREE.WebGLRenderer({canvas:lienzo,antialiaas:true});
+  TEXTURATB.renderizador.setSize(600,600);
 TEXTURATB.setup();
 TEXTURATB.loop();
