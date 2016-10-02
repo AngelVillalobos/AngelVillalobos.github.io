@@ -106,11 +106,11 @@ TEXTURACN.retrollamada=function(texturacn)
       b=b+1;
       if(b%2==0)
       {
-         c=1;
+         c=0;
       }
       else
       {
-         c=0;
+         c=1;
       }  
       j=j+1;
     }
