@@ -86,13 +86,13 @@ TEXTURACN.retrollamada=function(texturacn)
   var a=1;
   var b=0;
   var c=1;
-  for (var i=0;i<65; i ++)
+  for (var i=0;i<64; i ++)
   {
     var MCasillaN=new THREE.MeshLambertMaterial({map:texturacn});
     TEXTURACN.malla[i]=new THREE.Mesh(FCasillaG,MCasillaN);
     TEXTURACN.malla[i].receiveShadow=true;
   }
-  for (var j=0;j<65; j ++)
+  for (var j=0;j<64; j ++)
   {
     if(j%2==0)
       {
@@ -125,13 +125,13 @@ TEXTURACB.retrollamada=function(texturacb)
   var a=1;
   var b=0;
   var c=1;
-  for (var i=0;i<65; i ++)
+  for (var i=0;i<64; i ++)
   {
     var MCasillaB=new THREE.MeshLambertMaterial({map:texturacb});
     TEXTURACB.malla[i]=new THREE.Mesh(FCasillaB,MCasillaB);
     TEXTURACB.malla[i].receiveShadow=true;
   }
-  for (var j=0;j<65; j ++)
+  for (var j=0;j<64; j ++)
   {
     if(j%2!==0)
       {
