@@ -87,13 +87,13 @@ TEXTURACB.retrollamada=function(texturacb)
   var a=1;
   var b=0;
   var c=1;
-  for (var i=0;i<71; i ++)
+  for (var i=0;i<65; i ++)
   {
     var MCasillaB=new THREE.MeshLambertMaterial({map:texturacb});
     TEXTURACB.malla[i]=new THREE.Mesh(FCasillaB,MCasillaB);
     TEXTURACB.malla[i].receiveShadow=true;
   }
-  for (var j=0;j<71; j ++)
+  for (var j=0;j<65; j ++)
   {
     if(j%2!==0)
       {
