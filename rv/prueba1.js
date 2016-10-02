@@ -97,7 +97,7 @@ TEXTURACN.retrollamada=function(texturacn)
     if(j%2==0)
       {
         TEXTURACN.malla[j].position.set((c*10)-45,(b*10)-(35),0.6);
-        TEXTURATN.escena.add(TEXTURACN.malla[j]);
+        TEXTURATB.escena.add(TEXTURACN.malla[j]);
         a=a+1;
       }
     if(a==5)
