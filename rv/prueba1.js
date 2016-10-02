@@ -38,7 +38,6 @@ var FTablero=new THREE.BoxGeometry(100,100,0.3,10,10,10);
 /////////////DEFINICIÓN LAS CASILLAS////////////////////////////////
 var FCasillaB=new THREE.BoxGeometry(10,10,0.03,10,10,10);
 var FCasillaG=new THREE.BoxGeometry(10,10,0.03,10,10,10);
-var MCasillaG=new THREE.MeshLambertMaterial({color:0x6b6b6b});
 ////////////////////////////////////////////////////////////////////
 
 /////////////DEFINICIÓN DE TORRE////////////////////////////////////
@@ -79,6 +78,45 @@ var TorrefForma = new THREE.Geometry();
   TorrefForma.merge(Corona1Malla.geometry,Corona1Malla.matrix);
   TorrefForma.merge(Corona2Malla.geometry,Corona2Malla.matrix);
   TorrefForma.merge(Corona3Malla.geometry,Corona3Malla.matrix);
+////////////////////////////////////////////////////////////////////
+
+///////////////CREACIÓN DE CASILLAS NEGRAS//////////////////////////
+TEXTURACN.retrollamada=function(texturacn)
+{
+  var a=1;
+  var b=0;
+  var c=1;
+  for (var i=0;i<65; i ++)
+  {
+    var MCasillaN=new THREE.MeshLambertMaterial({map:texturacn});
+    TEXTURACN.malla[i]=new THREE.Mesh(FCasillaG,MCasillaN);
+    TEXTURACN.malla[i].receiveShadow=true;
+  }
+  for (var j=0;j<65; j ++)
+  {
+    if(j%2==0)
+      {
+        TEXTURACN.malla[j].position.set((c*10)-45,(b*10)-(35),0.6);
+        TEXTURATN.escena.add(TEXTURACN.malla[j]);
+        a=a+1;
+      }
+    if(a==5)
+    {
+      a=1;
+      b=b+1;
+      if(b%2==0)
+      {
+         c=1;
+      }
+      else
+      {
+         c=0;
+      }  
+      j=j+1;
+    }
+    c=c+1;
+  }
+}
 ////////////////////////////////////////////////////////////////////
 
 ///////////////CREACIÓN DE CASILLAS BLANCAS/////////////////////////
@@ -169,6 +207,14 @@ TEXTURATN.retrollamada=function(textura)
 }
 ////////////////////////////////////////////////////////////////////
 
+///////////////CARGANDO CASILLAS NEGRAS/////////////////////////////
+TEXTURACN.setup=function()
+{
+  TEXTURACN.cargador=new THREE.TextureLoader();
+  TEXTURACN.cargador.load("marmolN.jpg",TEXTURACN.retrollamada);
+}
+////////////////////////////////////////////////////////////////////
+
 ///////////////CARGANDO CASILLAS BLANCAS////////////////////////////
 TEXTURACB.setup=function()
 {
@@ -252,10 +298,23 @@ TEXTURACB.loop=function()
 }
 ////////////////////////////////////////////////////////////////////
 
+////////////////////LOOP CASILLAS NEGRAS///////////////////////////
+TEXTURACN.loop=function()
+{
+  requestAnimationFrame(TEXTURACN.loop);
+  if(TEXTURACN.malla!==undefined)
+  {
+    TEXTURATB.renderizador.render(TEXTURATB.escena,TEXTURATB.camara);
+   }
+}
+////////////////////////////////////////////////////////////////////
+
 TEXTURATB.setup();
 TEXTURATN.setup();
 TEXTURATAB.setup();
 TEXTURACB.setup();
+TEXTURACN.setup();
+TEXTURACN.loop();
 TEXTURACB.loop();
 TEXTURATAB.loop();
 TEXTURATB.loop();
