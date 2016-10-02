@@ -93,7 +93,7 @@ TEXTURACB.retrollamada=function(texturacb)
     TEXTURACB.malla[i]=new THREE.Mesh(FCasillaB,MCasillaB);
     TEXTURACB.malla[i].receiveShadow=true;
   }
-  for (var j=0;j<32; j ++)
+  for (var j=0;j<71; j ++)
   {
     if(j%2!==0)
       {
