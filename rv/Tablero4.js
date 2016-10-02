@@ -1,3 +1,4 @@
+/////////////DEFINICIÓN DE OBJETOS Y MALLAS/////////////////////////
 var TEXTURATB=new Object();
 var TEXTURATN=new Object();
 var TEXTURATAB=new Object();
@@ -8,6 +9,8 @@ var TEXTURACN=new Object();
 TEXTURACB.malla=new Array();
 TEXTURACN.malla=new Array();
 var Casillas = new THREE.Geometry();
+////////////////////////////////////////////////////////////////////
+
 /////////////DEFINICIÓN DE CAMARA Y RENDERIZADOR////////////////////
 var campoVision=45;
 var relacionAspecto=window.innerWidth/window.innerHeight;
