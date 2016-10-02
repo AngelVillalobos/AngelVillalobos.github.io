@@ -105,7 +105,7 @@ TEXTURACB.retrollamada=function(texturacb)
     {
       a=1;
       b=b+1;
-      if(b%2===)
+      if(b%2==0)
       {
          c=1;
       }
