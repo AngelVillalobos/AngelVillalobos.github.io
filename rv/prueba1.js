@@ -87,7 +87,7 @@ TEXTURACB.retrollamada=function(texturacb)
   var a=1;
   var b=0;
   var c=1;
-  for (var i=0;i<32; i ++)
+  for (var i=0;i<71; i ++)
   {
     var MCasillaB=new THREE.MeshLambertMaterial({map:texturacb});
     TEXTURACB.malla[i]=new THREE.Mesh(FCasillaB,MCasillaB);
