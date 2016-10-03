@@ -7,7 +7,7 @@ var Corona3Forma = new THREE.SphereGeometry(0.1,32,32,6,6.3,6,6.3);
 Corona3Forma.translate(0,-1.3,0);
 TorreForma.translate(0,0.375,0);
 Base2Forma.translate(0,0,-0.08);
-Base3Forma.translate(0,0,-0.75);
+Base3Forma.translate(0,0,-0.7);
 
 Corona3Forma.rotateX(Math.PI);
 Base3Forma.rotateX(Math.PI/2);
