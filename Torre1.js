@@ -1,6 +1,6 @@
 var BaseForma = new THREE.CylinderGeometry(0.5,0.5,0.15,64,64);
 var Base2Forma = new THREE.TorusGeometry(0.35,0.1,30,200);
-var Base3Forma = new THREE.TorusGeometry(0.25,0.1,30,200);
+var Base3Forma = new THREE.TorusGeometry(0.2,0.07,30,200);
 var TorreForma = new THREE.CylinderGeometry(0.2,0.4,0.6,64,64);
 var Corona3Forma = new THREE.SphereGeometry(0.1,32,32,6,6.3,6,6.3);
 
