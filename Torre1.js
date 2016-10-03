@@ -1,20 +1,14 @@
 var BaseForma = new THREE.CylinderGeometry(0.5,0.5,0.15,64,64);
 var Base2Forma = new THREE.TorusGeometry(0.35,0.1,30,200);
-var Base3Forma = new THREE.TorusGeometry(0.3,0.1,30,200);
+var Base3Forma = new THREE.TorusGeometry(0.25,0.1,30,200);
 var TorreForma = new THREE.CylinderGeometry(0.2,0.4,0.6,64,64);
-var Corona1Forma = new THREE.TorusGeometry(0.4,0.1,30,200);
-var Corona2Forma = new THREE.SphereGeometry(0.4,32,32,6,6.3,1.5,3);
 var Corona3Forma = new THREE.SphereGeometry(0.1,32,32,6,6.3,6,6.3);
 
-Corona1Forma.translate(0,0,-1.3);
-Corona2Forma.translate(0,-1.2,0);
 Corona3Forma.translate(0,-1.6,0);
 TorreForma.translate(0,0.375,0);
 Base2Forma.translate(0,0,-0.08);
 Base3Forma.translate(0,0,-1.1);
 
-Corona1Forma.rotateX(Math.PI/2);
-Corona2Forma.rotateX(Math.PI);
 Corona3Forma.rotateX(Math.PI);
 Base3Forma.rotateX(Math.PI/2);
 Base2Forma.rotateX(Math.PI/2);
@@ -23,8 +17,6 @@ var BaseMalla = new THREE.Mesh(BaseForma);
 var Base2Malla = new THREE.Mesh(Base2Forma);
 var Base3Malla = new THREE.Mesh(Base3Forma);
 var TorreMalla = new THREE.Mesh(TorreForma);
-var Corona1Malla = new THREE.Mesh(Corona1Forma);
-var Corona2Malla = new THREE.Mesh(Corona2Forma);
 var Corona3Malla = new THREE.Mesh(Corona3Forma);
 
 
@@ -34,8 +26,6 @@ TorrefForma.merge(BaseMalla.geometry,BaseMalla.matrix);
 TorrefForma.merge(Base2Malla.geometry,Base2Malla.matrix);
 TorrefForma.merge(Base3Malla.geometry,Base3Malla.matrix);
 TorrefForma.merge(TorreMalla.geometry,TorreMalla.matrix);
-TorrefForma.merge(Corona1Malla.geometry,Corona1Malla.matrix);
-TorrefForma.merge(Corona2Malla.geometry,Corona2Malla.matrix);
 TorrefForma.merge(Corona3Malla.geometry,Corona3Malla.matrix);
 
 
