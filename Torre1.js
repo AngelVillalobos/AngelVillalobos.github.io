@@ -4,10 +4,10 @@ var Base3Forma = new THREE.TorusGeometry(0.25,0.1,30,200);
 var TorreForma = new THREE.CylinderGeometry(0.2,0.4,0.6,64,64);
 var Corona3Forma = new THREE.SphereGeometry(0.1,32,32,6,6.3,6,6.3);
 
-Corona3Forma.translate(0,-0.8,0);
+Corona3Forma.translate(0,-1.3,0);
 TorreForma.translate(0,0.375,0);
 Base2Forma.translate(0,0,-0.08);
-Base3Forma.translate(0,0,-1.1);
+Base3Forma.translate(0,0,-0.8);
 
 Corona3Forma.rotateX(Math.PI);
 Base3Forma.rotateX(Math.PI/2);
