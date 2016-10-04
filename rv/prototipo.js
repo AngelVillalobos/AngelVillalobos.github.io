@@ -13,7 +13,7 @@ PROTOTIPO.ArbolGeometry=function()
   var esferaMalla=new THREE.Mesh(esferaForma);
   
   this.merge(troncoMalla.geometry,troncoMalla.matrix);
-  this.merge(esferaMalla.geometru,esferaMalla.matrix);
+  this.merge(esferaMalla.geometry,esferaMalla.matrix);
 }
 
 PROTOTIPO.ArbolGeometry.prototype=new THREE.Geometry();
