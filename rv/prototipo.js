@@ -35,8 +35,8 @@ PROTOTIPO.setup=function()
   PROTOTIPO.renderizador.setSize(600,600);
   
   PROTOTIPO.escena=new THREE.Scene();
-  PROTOTIPO.escena.add(arbol1.malla);
-  PROTOTIPO.escena.add(arbol2.malla); 
+  PROTOTIPO.escena.add(arbol1);
+  PROTOTIPO.escena.add(arbol2); 
 }
 
 PROTOTIPO.loop=function()
