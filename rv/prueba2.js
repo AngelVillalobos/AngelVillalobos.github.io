@@ -93,7 +93,7 @@ AJEDREZ.setup=function()
   
   AJEDREZ.camara=new THREE.PerspectiveCamera();
   AJEDREZ.camara.position.z=150;
-  
+  AJEDREZ.camara.position.y=-150;
   var lienzo=document.getElementById("ejemplo-prototipo");
   AJEDREZ.renderizador=new THREE.WebGLRenderer({canvas:lienzo,antialias:true});
   
