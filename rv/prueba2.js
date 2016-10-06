@@ -50,6 +50,8 @@ AJEDREZ.TableroGeometry=function()
   THREE.Geometry.call(this);
   var FTablero=new THREE.BoxGeometry(100,100,0.3,10,10,10);
   FTablero.translate(0,0,0);
+  var MTablero=new THREE.Mesh(FTablero);
+  this.merge(MTablero.geometry,MTablero.matrix);
 }
 AJEDREZ.TableroGeometry.prototype=new THREE.Geometry();
 ////////////////////////////////////////////////////////////////////
