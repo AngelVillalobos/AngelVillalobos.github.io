@@ -83,6 +83,7 @@ AJEDREZ.setup=function()
       AJEDREZ.TORRES[i]=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshBasicMaterial({map:AJEDREZ.cargador.load("maderaN.jpg")}));
     }
   }
+  
   AJEDREZ.TORRES[1].position.set(-35,-35,1.2);
   AJEDREZ.TORRES[2].position.set(35,-35,1.2);
   AJEDREZ.TORRES[3].position.set(-35,35,1.2);
