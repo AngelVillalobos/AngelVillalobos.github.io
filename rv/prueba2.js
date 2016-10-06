@@ -87,6 +87,7 @@ AJEDREZ.setup=function()
   AJEDREZ.escena=new THREE.Scene();
   AJEDREZ.escena.add(Torre1B);
   AJEDREZ.escena.add(Torre2B); 
+  AJEDREZ.escena.add(Tablero); 
 }
 
 AJEDREZ.loop=function()
