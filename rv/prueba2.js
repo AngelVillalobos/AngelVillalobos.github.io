@@ -1,4 +1,5 @@
 var AJEDREZ=new Object();
+AJEDREZ.TORRES=new Array();
 /////////////DEFINICIÓN DE TORRE////////////////////////////////////
 AJEDREZ.TorreGeometry=function()
 {
@@ -70,13 +71,26 @@ AJEDREZ.TableroGeometry.prototype=new THREE.Geometry();
 AJEDREZ.setup=function()
 {
   AJEDREZ.cargador=new THREE.TextureLoader();  
-  
-  var Torre1B=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshBasicMaterial({map:AJEDREZ.cargador.load("maderaB.jpg")}));
-  var Torre2B=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshBasicMaterial({map:AJEDREZ.cargador.load("maderaN.jpg")}));
+  for (var i=1;i<5;i++)
+  {
+    if(i>0&&i<3)
+    {
+      AJEDREZ.TORRES[i]=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshBasicMaterial({map:AJEDREZ.cargador.load("maderaB.jpg")}));
+      AJEDREZ.TORRES[i].position.set(-35,-35,1.2);
+    }
+    else
+    {
+      AJEDREZ.TORRES[i]=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshBasicMaterial({map:AJEDREZ.cargador.load("maderaN.jpg")}));
+    }
+  }
+  AJEDREZ.TORRES[1].position.set(-35,-35,1.2);
+  AJEDREZ.TORRES[2].position.set(35,-35,1.2);
+  AJEDREZ.TORRES[3].position.set(-35,35,1.2);
+  AJEDREZ.TORRES[4].position.set(35,35,1.2);
+  //var Torre1B=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshBasicMaterial({map:AJEDREZ.cargador.load("maderaB.jpg")}));
+  //var Torre2B=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshBasicMaterial({map:AJEDREZ.cargador.load("maderaN.jpg")}));
   var Tablero=new THREE.Mesh(new AJEDREZ.TableroGeometry(),new THREE.MeshBasicMaterial({map:AJEDREZ.cargador.load("marmolA.jpg")}));
   
-  Torre1B.position.x=-1;
-  Torre2B.position.x=1;
   
   AJEDREZ.camara=new THREE.PerspectiveCamera();
   AJEDREZ.camara.position.z=150;
@@ -87,8 +101,10 @@ AJEDREZ.setup=function()
   AJEDREZ.renderizador.setSize(600,600);
   
   AJEDREZ.escena=new THREE.Scene();
-  AJEDREZ.escena.add(Torre1B);
-  AJEDREZ.escena.add(Torre2B); 
+for (var i=1;i<5;i++)
+  {
+    AJEDREZ.escena.add(AJEDREZ.TORRES[i]); 
+  } 
   AJEDREZ.escena.add(Tablero); 
 }
 
