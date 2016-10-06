@@ -76,7 +76,7 @@ AJEDREZ.setup=function()
   Torre2B.position.x=1;
   
   AJEDREZ.camara=new THREE.PerspectiveCamera();
-  AJEDREZ.camara.position.z=5;
+  AJEDREZ.camara.position.z=150;
   
   var lienzo=document.getElementById("ejemplo-prototipo");
   AJEDREZ.renderizador=new THREE.WebGLRenderer({canvas:lienzo,antialias:true});
