@@ -46,14 +46,10 @@ AJEDREZ.TorreGeometry.prototype=new THREE.Geometry();
 
 AJEDREZ.setup=function()
 {
-  AJEDREZ.cargador1=new THREE.TextureLoader();
-  AJEDREZ.cargador2=new THREE.TextureLoader();
-  //AJEDREZ.cargador1.load("marmolB.jpg",TEXTURACB.retrollamada);
+  AJEDREZ.cargador1=new THREE.TextureLoader();  
   
-  
-  
-  var Torre1B=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshBasicMaterial({map:AJEDREZ.cargador1.load("marmolB.jpg")}));
-  var Torre2B=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshBasicMaterial({map:AJEDREZ.cargador1.load("marmolN.jpg")}));
+  var Torre1B=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshBasicMaterial({map:AJEDREZ.cargador1.load("maderaB.jpg")}));
+  var Torre2B=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshBasicMaterial({map:AJEDREZ.cargador1.load("maderaN.jpg")}));
   
   Torre1B.position.x=-1;
   Torre2B.position.x=1;
