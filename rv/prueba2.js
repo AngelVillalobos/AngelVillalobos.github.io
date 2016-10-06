@@ -55,11 +55,11 @@ AJEDREZ.setup=function()
   var Torre1B=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshBasicMaterial({map:AJEDREZ.cargador1.load("marmolB.jpg")}));
   var Torre2B=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshNormalMaterial());
   
-  Torre1B.position.x=-5;
-  Torre2B.position.x=5;
+  Torre1B.position.x=-1;
+  Torre2B.position.x=1;
   
   AJEDREZ.camara=new THREE.PerspectiveCamera();
-  AJEDREZ.camara.position.z=20;
+  AJEDREZ.camara.position.z=5;
   
   var lienzo=document.getElementById("ejemplo-prototipo");
   AJEDREZ.renderizador=new THREE.WebGLRenderer({canvas:lienzo,antialias:true});
