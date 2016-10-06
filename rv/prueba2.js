@@ -63,8 +63,6 @@ AJEDREZ.TableroGeometry.prototype=new THREE.Geometry();
 
 
 
-
-
 AJEDREZ.setup=function()
 {
   AJEDREZ.cargador=new THREE.TextureLoader();  
