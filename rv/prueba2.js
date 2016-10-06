@@ -42,7 +42,7 @@ AJEDREZ.TorreGeometry=function()
   this.merge(Corona2Malla.geometry,Corona2Malla.matrix);
   this.merge(Corona3Malla.geometry,Corona3Malla.matrix);
 }
-AJEDREZ.Torre.prototype=new THREE.Geometry();
+AJEDREZ.TorreGeometry.prototype=new THREE.Geometry();
 
 AJEDREZ.setup=function()
 {
