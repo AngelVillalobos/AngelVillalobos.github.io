@@ -95,5 +95,6 @@ AJEDREZ.loop=function()
   AJEDREZ.renderizador.render(AJEDREZ.escena,AJEDREZ.camara);
 }
 
+
 AJEDREZ.setup();
 AJEDREZ.loop();
