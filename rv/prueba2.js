@@ -87,6 +87,7 @@ AJEDREZ.setup=function()
   AJEDREZ.TORRES[2].position.set(35,-35,1.2);
   AJEDREZ.TORRES[3].position.set(-35,35,1.2);
   AJEDREZ.TORRES[4].position.set(35,35,1.2);
+  
   //var Torre1B=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshBasicMaterial({map:AJEDREZ.cargador.load("maderaB.jpg")}));
   //var Torre2B=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshBasicMaterial({map:AJEDREZ.cargador.load("maderaN.jpg")}));
   var Tablero=new THREE.Mesh(new AJEDREZ.TableroGeometry(),new THREE.MeshBasicMaterial({map:AJEDREZ.cargador.load("marmolA.jpg")}));
