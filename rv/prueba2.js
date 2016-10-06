@@ -52,7 +52,7 @@ AJEDREZ.setup=function()
   
   
   
-  var Torre1B=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshNormalMaterial({map:AJEDREZ.cargador1.load("marmolB.jpg")}));
+  var Torre1B=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshBasicMaterial({map:AJEDREZ.cargador1.load("marmolB.jpg")}));
   var Torre2B=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshNormalMaterial());
   
   Torre1B.position.x=-5;
