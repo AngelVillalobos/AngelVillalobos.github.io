@@ -47,6 +47,7 @@ AJEDREZ.TorreGeometry.prototype=new THREE.Geometry();
 /////////////DEFINICIÓN DEL TABLERO/////////////////////////////////
 AJEDREZ.TableroGeometry=function()
 {
+  THREE.Geometry.call(this);
   var FTablero=new THREE.BoxGeometry(100,100,0.3,10,10,10);
   FTablero.translate(0,0,0);
 }
