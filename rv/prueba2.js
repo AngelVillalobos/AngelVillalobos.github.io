@@ -1,9 +1,8 @@
 var AJEDREZ=new Object();
-
+/////////////DEFINICIÓN DE TORRE////////////////////////////////////
 AJEDREZ.TorreGeometry=function()
 {
   THREE.Geometry.call(this);
-  
   var BaseForma = new THREE.CylinderGeometry(0.6,0.6,0.2,64,64);
   var Base2Forma = new THREE.TorusGeometry(0.4,0.1,30,200);
   var Base3Forma = new THREE.TorusGeometry(0.3,0.1,30,200);
@@ -43,13 +42,36 @@ AJEDREZ.TorreGeometry=function()
   this.merge(Corona3Malla.geometry,Corona3Malla.matrix);
 }
 AJEDREZ.TorreGeometry.prototype=new THREE.Geometry();
+////////////////////////////////////////////////////////////////////
+
+/////////////DEFINICIÓN DEL TABLERO/////////////////////////////////
+AJEDREZ.TableroGeometry=function()
+{
+  var FTablero=new THREE.BoxGeometry(100,100,0.3,10,10,10);
+}
+AJEDREZ.TableroGeometry.prototype=new THREE.Geometry();
+////////////////////////////////////////////////////////////////////
+
+/////////////DEFINICIÓN LAS CASILLAS////////////////////////////////
+AJEDREZ.CasillasGeometryGeometry=function()
+{
+  var FCasilla=new THREE.BoxGeometry(10,10,0.03,10,10,10);
+}
+AJEDREZ.TableroGeometry.prototype=new THREE.Geometry();
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
 
 AJEDREZ.setup=function()
 {
-  AJEDREZ.cargador1=new THREE.TextureLoader();  
+  AJEDREZ.cargador=new THREE.TextureLoader();  
   
-  var Torre1B=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshBasicMaterial({map:AJEDREZ.cargador1.load("maderaB.jpg")}));
-  var Torre2B=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshBasicMaterial({map:AJEDREZ.cargador1.load("maderaN.jpg")}));
+  var Torre1B=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshBasicMaterial({map:AJEDREZ.cargador.load("maderaB.jpg")}));
+  var Torre2B=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshBasicMaterial({map:AJEDREZ.cargador.load("maderaN.jpg")}));
+  var Tablero=new THREE.Mesh(new AJEDREZ.TableroGeometry(),new THREE.MeshBasicMaterial({map:AJEDREZ.cargador.load("marmolA.jpg")}));
   
   Torre1B.position.x=-1;
   Torre2B.position.x=1;
