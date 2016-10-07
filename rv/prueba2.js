@@ -216,7 +216,7 @@ AJEDREZ.setup=function()
   } 
   for (var i=1;i<65;i++)
   {
-    AJEDREZ.escena.add(AJEDREZ.CASILLASN[i]); 
+    //AJEDREZ.escena.add(AJEDREZ.CASILLASN[i]); 
     AJEDREZ.escena.add(AJEDREZ.CASILLASB[i]);
   } 
   AJEDREZ.escena.add(AJEDREZ.TABLERO); 
