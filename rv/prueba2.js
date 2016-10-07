@@ -3,9 +3,10 @@ AJEDREZ.TORRES=new Array();
 AJEDREZ.PEONES=new Array();
 AJEDREZ.CASILLASN=new Array();
 AJEDREZ.CASILLASB=new Array();
-///////////////CONSTRUCTOR LA CAMARA////////////////////////////////
-AJEDREZ.CamaraConst=function()
+////////////CONSTRUCTOR LA CAMARA RENDERIZADOR Y LUCES//////////////
+AJEDREZ.CRL=function()
 {
+  /////CAMARA////
   var campoVision=45;
   var relacionAspecto=window.innerWidth/window.innerHeight;
   var planoCercano=1;
@@ -14,28 +15,19 @@ AJEDREZ.CamaraConst=function()
   AJEDREZ.camara.position.z=120;
   AJEDREZ.camara.position.y=-90;
   AJEDREZ.camara.lookAt(new THREE.Vector3(0,0,0));
-}
-////////////////////////////////////////////////////////////////////
-
-///////////////CONSTRUCTOR DEL RENDERIZADOR/////////////////////////
-AJEDREZ.RenderizadorConst=function()
-{
+  /////RENDERIZADOR////
   AJEDREZ.renderizador = new THREE.WebGLRenderer();
   AJEDREZ.renderizador.setSize(window.innerWidth,window.innerHeight);
   document.body.appendChild(AJEDREZ.renderizador.domElement);
   AJEDREZ.renderizador.shadowMapEnabled=true;
-}
-////////////////////////////////////////////////////////////////////
-
-//////////////////CONSTRUCTOR DE LA LUZ/////////////////////////////
-AJEDREZ.LucesConst=function()
-{
+  /////LUZ////
   AJEDREZ.luzPuntual=new THREE.PointLight(0xFFFFFF,1.2);
   AJEDREZ.luzPuntual.position.x=150;
   AJEDREZ.luzPuntual.position.y=-150;
   AJEDREZ.luzPuntual.position.z=150;
   AJEDREZ.luzPuntual.castShadow=true;
 }
+////////////////////////////////////////////////////////////////////
 
 /////////////CONSTRUCTOR DE PEON///////////////////////////////////
 AJEDREZ.PeonGeometry=function()
@@ -161,33 +153,6 @@ AJEDREZ.retrollamadaPEONES=function()
 }
 ////////////////////////////////////////////////////////////////////
   
-/////////////////CREANDO LAS TORRES///////////////////////////////
-AJEDREZ.retrollamadaTORRES=function()
-{
-  AJEDREZ.cargador=new THREE.TextureLoader(); 
-  for (var i=1;i<17;i++)
-  {
-    /////TORRES BLANCAS////
-    if(i>0&&i<9)
-    {
-      AJEDREZ.TORRES[i]=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshLambertMaterial({map:AJEDREZ.cargador.load("maderaB.jpg")}));
-    }
-    ////TORRES NEGRAS////
-    else
-    {
-      AJEDREZ.TORRES[i]=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshLambertMaterial({map:AJEDREZ.cargador.load("maderaN.jpg")}));
-    }
-    AJEDREZ.TORRES[i].rotateX(Math.PI/2);
-    AJEDREZ.TORRES[i].scale.set(7,7,8);
-    AJEDREZ.TORRES[i].castShadow=true;
-  }
-  AJEDREZ.TORRES[1].position.set(-35,-35,1.2);
-  AJEDREZ.TORRES[2].position.set(35,-35,1.2);
-  AJEDREZ.TORRES[3].position.set(-35,35,1.2);
-  AJEDREZ.TORRES[4].position.set(35,35,1.2);
-}
-////////////////////////////////////////////////////////////////////
-  
 ///////////////////CREANDO EL TABLERO///////////////////////////////
 AJEDREZ.retrollamadaTABLERO=function()
 {
@@ -265,21 +230,16 @@ AJEDREZ.retrollamadaCASILLAS=function()
 }
 ////////////////////////////////////////////////////////////////////
 
-AJEDREZ.retrollamadaTORRES();
 AJEDREZ.retrollamadaPEONES();
 AJEDREZ.retrollamadaTABLERO();
 AJEDREZ.retrollamadaCASILLAS();
-AJEDREZ.CamaraConst();
-AJEDREZ.RenderizadorConst();
-AJEDREZ.LucesConst();
+AJEDREZ.CRLConst();
+
 
 AJEDREZ.setup=function()
 {
   AJEDREZ.escena=new THREE.Scene();
-  for (var i=1;i<5;i++)
-  {
-    AJEDREZ.escena.add(AJEDREZ.TORRES[i]); 
-  } 
+
   for (var i=1;i<17;i++)
   {
     AJEDREZ.escena.add(AJEDREZ.PEONES[i]); 
