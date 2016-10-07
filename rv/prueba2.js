@@ -1,6 +1,6 @@
 var AJEDREZ=new Object();
 AJEDREZ.TORRES=new Array();
-
+var a=10;
 ///////////////CONSTRUCTOR LA CAMARA////////////////////////////////
 AJEDREZ.CamaraConst=function()
 {
@@ -101,26 +101,25 @@ AJEDREZ.retrollamada=function()
   /////////////////CREANDO LAS TORRES///////////////////////////////
   for (var i=1;i<5;i++)
   {
+    
     /////TORRES BLANCAS////
     if(i>0&&i<3)
     {
-      var a=10;
       AJEDREZ.TORRES[i]=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshBasicMaterial({map:AJEDREZ.cargador.load("maderaB.jpg")}));
-      AJEDREZ.TORRES[i].position.set((1*a)-45,-35,1.2);
-      a=a+30;
     }
     ////TORRES NEGRAS////
     else
     {
-      var a=10;
       AJEDREZ.TORRES[i]=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshBasicMaterial({map:AJEDREZ.cargador.load("maderaN.jpg")}));
-      AJEDREZ.TORRES[i].position.set((i*a)-45,35,1.2);
-      a=a+30;
     }
     AJEDREZ.TORRES[i].rotateX(Math.PI/2);
     AJEDREZ.TORRES[i].scale.set(7,7,8);
     AJEDREZ.TORRES[i].castShadow=true;
   }
+  AJEDREZ.TORRES[1].position.set(-35,-35,1.2);
+  AJEDREZ.TORRES[2].position.set(35,-35,1.2);
+  AJEDREZ.TORRES[3].position.set(-35,35,1.2);
+  AJEDREZ.TORRES[4].position.set(35,35,1.2);
   ////////////////////////////////////////////////////////////////////
   
   ///////////////////CREANDO EL TABLERO///////////////////////////////
