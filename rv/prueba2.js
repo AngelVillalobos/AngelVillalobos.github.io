@@ -137,7 +137,7 @@ AJEDREZ.retrollamadaPEONES=function()
   for (var i=1;i<17;i++)
   {
     /////PEONES BLANCOS////
-    if(i>0&&i<3)
+    if(i>0&&i<9)
     {
       AJEDREZ.PEONES[i]=new THREE.Mesh(new AJEDREZ.PeonGeometry(),new THREE.MeshLambertMaterial({map:AJEDREZ.cargador.load("maderaB.jpg")}));
       AJEDREZ.PEONES[i].position.set((a*10)-45,-25,1.2);
