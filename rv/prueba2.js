@@ -111,7 +111,7 @@ AJEDREZ.retrollamada=function()
   for (var i=1;i<5;i++)
   {
     /////TORRES BLANCAS////
-    if(i>0&&i<3)
+    if(i>=1&&i<3)
     {
       AJEDREZ.TORRES[i]=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshLambertMaterial({map:AJEDREZ.cargador.load("maderaB.jpg")}));
     }
