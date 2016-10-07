@@ -129,19 +129,19 @@ AJEDREZ.retrollamada=function()
   
   ///////////////////CREANDO EL TABLERO///////////////////////////////
   AJEDREZ.TABLERO=new THREE.Mesh(new AJEDREZ.TableroGeometry(),new THREE.MeshLambertMaterial({map:AJEDREZ.cargador.load("marmolA.jpg")}));
-  AJEDREZ.TABLERO.castShadow=true;
+  AJEDREZ.TABLERO.receiveShadow=true;
   ////////////////////////////////////////////////////////////////////
 }
 
-
-
-AJEDREZ.setup=function()
-{
-  
   AJEDREZ.retrollamada();
   AJEDREZ.CamaraConst();
   AJEDREZ.RenderizadorConst();
   AJEDREZ.LucesConst();
+
+AJEDREZ.setup=function()
+{
+  
+  
   
   AJEDREZ.escena=new THREE.Scene();
   for (var i=1;i<5;i++)
