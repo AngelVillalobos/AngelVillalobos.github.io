@@ -111,7 +111,7 @@ AJEDREZ.retrollamada=function()
   for (var i=1;i<5;i++)
   {
     /////TORRES BLANCAS////
-    if(i>=1&&i<3)
+    if(i>0&&i<3)
     {
       AJEDREZ.TORRES[i]=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshLambertMaterial({map:AJEDREZ.cargador.load("maderaB.jpg")}));
     }
@@ -146,7 +146,7 @@ AJEDREZ.retrollamada=function()
     AJEDREZ.CASILLASB[i].receiveShadow=true;
     AJEDREZ.CASILLASN[i].receiveShadow=true;
   }
-  for (var j=0;j<64; j ++)
+  for (var j=1;j<65; j ++)
   {
     if(j%2==0)
       {
