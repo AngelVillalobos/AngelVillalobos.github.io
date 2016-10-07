@@ -1,5 +1,6 @@
 var AJEDREZ=new Object();
 AJEDREZ.TORRES=new Array();
+AJEDREZ.PEONES=new Array();
 AJEDREZ.CASILLASN=new Array();
 AJEDREZ.CASILLASB=new Array();
 ///////////////CONSTRUCTOR LA CAMARA////////////////////////////////
@@ -35,6 +36,37 @@ AJEDREZ.LucesConst=function()
   AJEDREZ.luzPuntual.position.z=150;
   AJEDREZ.luzPuntual.castShadow=true;
 }
+
+/////////////CONSTRUCTOR DE PEON///////////////////////////////////
+AJEDREZ.PeonGeometry=function()
+{
+  THREE.Geometry.call(this);
+  var BasePForma = new THREE.CylinderGeometry(0.5,0.5,0.15,64,64);
+  var Base2PForma = new THREE.TorusGeometry(0.35,0.1,30,200);
+  var Base3PForma = new THREE.TorusGeometry(0.2,0.07,30,200);
+  var PeonForma = new THREE.CylinderGeometry(0.2,0.4,0.6,64,64);
+  var CoronaPForma = new THREE.SphereGeometry(0.36,32,32,6,6.3,6,6.3);
+  CoronaPForma.translate(0,-1,0);
+  PeonForma.translate(0,0.375,0);
+  Base2PForma.translate(0,0,-0.08);
+  Base3PForma.translate(0,0,-0.7);
+  CoronaPForma.rotateX(Math.PI);
+  Base3PForma.rotateX(Math.PI/2);
+  Base2PForma.rotateX(Math.PI/2);
+  var BasePMalla = new THREE.Mesh(BasePForma);
+  var Base2PMalla = new THREE.Mesh(Base2PForma);
+  var Base3PMalla = new THREE.Mesh(Base3PForma);
+  var PeonMalla = new THREE.Mesh(PeonForma);
+  var CoronaPMalla = new THREE.Mesh(CoronaPForma);
+  var PeonfForma = new THREE.Geometry();
+  this.merge(BasePMalla.geometry,BasePMalla.matrix);
+  this.merge(Base2PMalla.geometry,Base2PMalla.matrix);
+  this.merge(Base3PMalla.geometry,Base3PMalla.matrix);
+  this.merge(PeonMalla.geometry,PeonMalla.matrix);
+  this.merge(CoronaPMalla.geometry,CoronaPMalla.matrix);
+}
+AJEDREZ.PeonGeometry.prototype=new THREE.Geometry();
+////////////////////////////////////////////////////////////////////
 
 /////////////CONSTRUCTOR DE TORRE///////////////////////////////////
 AJEDREZ.TorreGeometry=function()
@@ -108,11 +140,33 @@ AJEDREZ.CasillasGeometry.prototype=new THREE.Geometry();
 AJEDREZ.retrollamada=function()
 {
   AJEDREZ.cargador=new THREE.TextureLoader(); 
-  /////////////////CREANDO LAS TORRES///////////////////////////////
+  
+  /////////////////CREANDO LOS PEONES///////////////////////////////
   for (var i=1;i<5;i++)
   {
-    /////TORRES BLANCAS////
+    /////PEONES BLANCOS////
     if(i>0&&i<3)
+    {
+      AJEDREZ.PEONES[i]=new THREE.Mesh(new AJEDREZ.PeonGeometry(),new THREE.MeshLambertMaterial({map:AJEDREZ.cargador.load("maderaB.jpg")}));
+      AJEDREZ.PEONES[i].position.set((i*10)-45,-25,1.2);
+    }
+    ////PEONES NEGROS////
+    else
+    {
+      AJEDREZ.PEONES[i]=new THREE.Mesh(new AJEDREZ.PeonGeometry(),new THREE.MeshLambertMaterial({map:AJEDREZ.cargador.load("maderaN.jpg")}));
+      AJEDREZ.PEONES[i].position.set((i*10)-45,35,1.2);
+    }
+    AJEDREZ.PEONES[i].rotateX(Math.PI/2);
+    AJEDREZ.PEONES[i].scale.set(7,7,8);
+    AJEDREZ.PEONES[i].castShadow=true;
+  }
+  ////////////////////////////////////////////////////////////////////
+  
+  /////////////////CREANDO LAS TORRES///////////////////////////////
+  for (var i=1;i<17;i++)
+  {
+    /////TORRES BLANCAS////
+    if(i>0&&i<9)
     {
       AJEDREZ.TORRES[i]=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshLambertMaterial({map:AJEDREZ.cargador.load("maderaB.jpg")}));
     }
@@ -202,10 +256,10 @@ AJEDREZ.retrollamada=function()
 }
 //////////////////y//////////////////////////////////////////////////
 
-  AJEDREZ.retrollamada();
-  AJEDREZ.CamaraConst();
-  AJEDREZ.RenderizadorConst();
-  AJEDREZ.LucesConst();
+AJEDREZ.retrollamada();
+AJEDREZ.CamaraConst();
+AJEDREZ.RenderizadorConst();
+AJEDREZ.LucesConst();
 
 AJEDREZ.setup=function()
 {
@@ -214,9 +268,13 @@ AJEDREZ.setup=function()
   {
     AJEDREZ.escena.add(AJEDREZ.TORRES[i]); 
   } 
+  for (var i=1;i<17;i++)
+  {
+    AJEDREZ.escena.add(AJEDREZ.PEONES[i]); 
+  } 
   for (var i=1;i<65;i++)
   {
-    //AJEDREZ.escena.add(AJEDREZ.CASILLASN[i]); 
+    AJEDREZ.escena.add(AJEDREZ.CASILLASN[i]); 
     AJEDREZ.escena.add(AJEDREZ.CASILLASB[i]);
   } 
   AJEDREZ.escena.add(AJEDREZ.TABLERO); 
