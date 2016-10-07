@@ -16,17 +16,13 @@ AJEDREZ.CamaraConst=function()
 ////////////////////////////////////////////////////////////////////
 
 ///////////////CONSTRUCTOR DEL RENDERIZADOR/////////////////////////
-/*AJEDREZ.CamaraConst=function()
+AJEDREZ.RenderizadorConst=function()
 {
-  var campoVision=45;
-  var relacionAspecto=window.innerWidth/window.innerHeight;
-  var planoCercano=1;
-  var planoLejano=1000;
-  AJEDREZ.camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
-  AJEDREZ.camara.position.z=120;
-  AJEDREZ.camara.position.y=-90;
-  AJEDREZ.camara.lookAt(new THREE.Vector3(0,0,0));
-}*/
+  AJEDREZ.renderizador = new THREE.WebGLRenderer();
+  AJEDREZ.renderizador.setSize(window.innerWidth,window.innerHeight);
+  document.body.appendChild(AJEDREZ.renderizador.domElement);
+  AJEDREZ.renderizador.shadowMapEnabled=true;
+}
 ////////////////////////////////////////////////////////////////////
 
 /////////////CONSTRUCTOR DE TORRE///////////////////////////////////
@@ -135,10 +131,8 @@ AJEDREZ.setup=function()
   
   AJEDREZ.retrollamada();
   AJEDREZ.CamaraConst();
-  var lienzo=document.getElementById("ejemplo-prototipo");
-  AJEDREZ.renderizador=new THREE.WebGLRenderer({canvas:lienzo,antialias:true});
+  AJEDREZ.RenderizadorConst();
   
-  AJEDREZ.renderizador.setSize(600,600);
   
   AJEDREZ.escena=new THREE.Scene();
 for (var i=1;i<5;i++)
