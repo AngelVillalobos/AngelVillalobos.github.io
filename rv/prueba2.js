@@ -1,4 +1,5 @@
 var AJEDREZ=new Object();
+AJEDREZ.TORRES=new Array();
 AJEDREZ.CASILLASN=new Array();
 AJEDREZ.CASILLASB=new Array();
 ///////////////CONSTRUCTOR LA CAMARA////////////////////////////////
