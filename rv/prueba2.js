@@ -180,9 +180,6 @@ AJEDREZ.retrollamada=function()
 
 AJEDREZ.setup=function()
 {
-  
-  
-  
   AJEDREZ.escena=new THREE.Scene();
   for (var i=1;i<5;i++)
   {
