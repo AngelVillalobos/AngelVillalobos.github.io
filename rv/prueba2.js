@@ -1,6 +1,7 @@
 var AJEDREZ=new Object();
 AJEDREZ.TORRES=new Array();
-/////////////DEFINICIÓN DE TORRE////////////////////////////////////
+
+/////////////CONSTRUCTOR DE TORRE////////////////////////////////////
 AJEDREZ.TorreGeometry=function()
 {
   THREE.Geometry.call(this);
@@ -45,7 +46,7 @@ AJEDREZ.TorreGeometry=function()
 AJEDREZ.TorreGeometry.prototype=new THREE.Geometry();
 ////////////////////////////////////////////////////////////////////
 
-/////////////DEFINICIÓN DEL TABLERO/////////////////////////////////
+/////////////CONSTRUCTOR DEL TABLERO////////////////////////////////
 AJEDREZ.TableroGeometry=function()
 {
   THREE.Geometry.call(this);
@@ -57,7 +58,7 @@ AJEDREZ.TableroGeometry=function()
 AJEDREZ.TableroGeometry.prototype=new THREE.Geometry();
 ////////////////////////////////////////////////////////////////////
 
-/////////////DEFINICIÓN LAS CASILLAS////////////////////////////////
+/////////////CONSTRUCTOR LAS CASILLAS///////////////////////////////
 AJEDREZ.CasillasGeometryGeometry=function()
 {
   var FCasilla=new THREE.BoxGeometry(10,10,0.03,10,10,10);
@@ -65,29 +66,38 @@ AJEDREZ.CasillasGeometryGeometry=function()
 AJEDREZ.TableroGeometry.prototype=new THREE.Geometry();
 ////////////////////////////////////////////////////////////////////
 
-AJEDREZ.setup=function()
+AJEDREZ.retrollamada=function()
 {
-  AJEDREZ.cargador=new THREE.TextureLoader();  
+  AJEDREZ.cargador=new THREE.TextureLoader(); 
+  
   for (var i=1;i<5;i++)
   {
     if(i>0&&i<3)
     {
+      var a=10;
       AJEDREZ.TORRES[i]=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshBasicMaterial({map:AJEDREZ.cargador.load("maderaB.jpg")}));
-      AJEDREZ.TORRES[i].position.set(-35,-35,1.2);
+      AJEDREZ.TORRES[i].position.set((1*a)-45,-35,1.2);
+      a=a+30;
     }
     else
     {
+      var a=10;
       AJEDREZ.TORRES[i]=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshBasicMaterial({map:AJEDREZ.cargador.load("maderaN.jpg")}));
+      AJEDREZ.TORRES[i].position.set((i*a)-45,35,1.2);
+      a=a+30;
     }
     AJEDREZ.TORRES[i].rotateX(Math.PI/2);
     AJEDREZ.TORRES[i].scale.set(7,7,8);
   }
+
+}
+
+
+
+AJEDREZ.setup=function()
+{
   
-  AJEDREZ.TORRES[1].position.set(-35,-35,1.2);
-  AJEDREZ.TORRES[2].position.set(35,-35,1.2);
-  AJEDREZ.TORRES[3].position.set(-35,35,1.2);
-  AJEDREZ.TORRES[4].position.set(35,35,1.2);
-  
+  AJEDREZ.retrollamada();
   var Tablero=new THREE.Mesh(new AJEDREZ.TableroGeometry(),new THREE.MeshBasicMaterial({map:AJEDREZ.cargador.load("marmolA.jpg")}));
   
   
