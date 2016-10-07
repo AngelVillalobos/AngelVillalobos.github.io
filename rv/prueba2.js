@@ -151,7 +151,7 @@ AJEDREZ.retrollamada=function()
   {
     if(j%2==0)
       {
-        AJEDREZ.CASILLASN[i].position.set((c*10)-45,(b*10)-(35),0.6);
+        AJEDREZ.CASILLASN[j].position.set((c*10)-45,(b*10)-(35),0.6);
         a=a+1;
       }
     if(a==5)
