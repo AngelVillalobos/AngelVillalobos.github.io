@@ -154,7 +154,7 @@ AJEDREZ.retrollamada=function()
     else
     {
       AJEDREZ.PEONES[i]=new THREE.Mesh(new AJEDREZ.PeonGeometry(),new THREE.MeshLambertMaterial({map:AJEDREZ.cargador.load("maderaN.jpg")}));
-      AJEDREZ.PEONES[i].position.set((i*10)-45,35,1.2);
+      AJEDREZ.PEONES[i].position.set((i*10)-45,25,1.2);
     }
     AJEDREZ.PEONES[i].rotateX(Math.PI/2);
     AJEDREZ.PEONES[i].scale.set(7,7,8);
