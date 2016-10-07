@@ -136,12 +136,10 @@ AJEDREZ.CasillasGeometry=function()
 AJEDREZ.CasillasGeometry.prototype=new THREE.Geometry();
 ////////////////////////////////////////////////////////////////////
 
-///////////////////////CREANDO PIEZAS///////////////////////////////
-AJEDREZ.retrollamada=function()
+///////////////////////CREANDO PEONES///////////////////////////////
+AJEDREZ.retrollamadaPEONES=function()
 {
   AJEDREZ.cargador=new THREE.TextureLoader(); 
-  
-  /////////////////CREANDO LOS PEONES///////////////////////////////
   for (var i=1;i<17;i++)
   {
     /////PEONES BLANCOS////
@@ -160,9 +158,13 @@ AJEDREZ.retrollamada=function()
     AJEDREZ.PEONES[i].scale.set(7,7,8);
     AJEDREZ.PEONES[i].castShadow=true;
   }
-  ////////////////////////////////////////////////////////////////////
+}
+////////////////////////////////////////////////////////////////////
   
-  /////////////////CREANDO LAS TORRES///////////////////////////////
+/////////////////CREANDO LAS TORRES///////////////////////////////
+AJEDREZ.retrollamadaTORRES=function()
+{
+  AJEDREZ.cargador=new THREE.TextureLoader(); 
   for (var i=1;i<17;i++)
   {
     /////TORRES BLANCAS////
@@ -183,14 +185,22 @@ AJEDREZ.retrollamada=function()
   AJEDREZ.TORRES[2].position.set(35,-35,1.2);
   AJEDREZ.TORRES[3].position.set(-35,35,1.2);
   AJEDREZ.TORRES[4].position.set(35,35,1.2);
-  ////////////////////////////////////////////////////////////////////
+}
+////////////////////////////////////////////////////////////////////
   
-  ///////////////////CREANDO EL TABLERO///////////////////////////////
+///////////////////CREANDO EL TABLERO///////////////////////////////
+AJEDREZ.retrollamadaTABLERO=function()
+{
+  AJEDREZ.cargador=new THREE.TextureLoader(); 
   AJEDREZ.TABLERO=new THREE.Mesh(new AJEDREZ.TableroGeometry(),new THREE.MeshLambertMaterial({map:AJEDREZ.cargador.load("marmolA.jpg")}));
   AJEDREZ.TABLERO.receiveShadow=true;
-  ////////////////////////////////////////////////////////////////////
+}
+////////////////////////////////////////////////////////////////////
   
-  /////////////////////CREANDO CASILLAS///////////////////////////////
+/////////////////////CREANDO CASILLAS///////////////////////////////
+AJEDREZ.retrollamadaCASILLAS=function()
+{
+  AJEDREZ.cargador=new THREE.TextureLoader(); 
   for (var i=1;i<65; i ++)
   {
     AJEDREZ.CASILLASB[i]=new THREE.Mesh(new AJEDREZ.CasillasGeometry(),new THREE.MeshLambertMaterial({map:AJEDREZ.cargador.load("marmolB.jpg")}));
@@ -252,11 +262,13 @@ AJEDREZ.retrollamada=function()
     }
     c=c+1;
   }
-  ////////////////////////////////////////////////////////////////////
 }
-//////////////////y//////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
 
-AJEDREZ.retrollamada();
+AJEDREZ.retrollamadaTORRES();
+AJEDREZ.retrollamadaPEONES();
+AJEDREZ.retrollamadaTABLERO();
+AJEDREZ.retrollamadaCASILLAS();
 AJEDREZ.CamaraConst();
 AJEDREZ.RenderizadorConst();
 AJEDREZ.LucesConst();
