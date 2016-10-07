@@ -128,6 +128,33 @@ AJEDREZ.CasillasGeometry=function()
 AJEDREZ.CasillasGeometry.prototype=new THREE.Geometry();
 ////////////////////////////////////////////////////////////////////
 
+/////////////////CREANDO LAS TORRES///////////////////////////////
+AJEDREZ.retrollamadaTORRES=function()
+{
+  AJEDREZ.cargador=new THREE.TextureLoader(); 
+  for (var i=1;i<17;i++)
+  {
+    /////TORRES BLANCAS////
+    if(i>0&&i<9)
+    {
+      AJEDREZ.TORRES[i]=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshLambertMaterial({map:AJEDREZ.cargador.load("maderaB.jpg")}));
+    }
+    ////TORRES NEGRAS////
+    else
+    {
+      AJEDREZ.TORRES[i]=new THREE.Mesh(new AJEDREZ.TorreGeometry(),new THREE.MeshLambertMaterial({map:AJEDREZ.cargador.load("maderaN.jpg")}));
+    }
+    AJEDREZ.TORRES[i].rotateX(Math.PI/2);
+    AJEDREZ.TORRES[i].scale.set(7,7,8);
+    AJEDREZ.TORRES[i].castShadow=true;
+  }
+  AJEDREZ.TORRES[1].position.set(-35,-35,1.2);
+  AJEDREZ.TORRES[2].position.set(35,-35,1.2);
+  AJEDREZ.TORRES[3].position.set(-35,35,1.2);
+  AJEDREZ.TORRES[4].position.set(35,35,1.2);
+}
+////////////////////////////////////////////////////////////////////
+
 ///////////////////////CREANDO PEONES///////////////////////////////
 AJEDREZ.retrollamadaPEONES=function()
 {
@@ -241,10 +268,15 @@ AJEDREZ.retrollamadaCASILLAS=function()
 AJEDREZ.setup=function()
 {
   AJEDREZ.escena=new THREE.Scene();
+  AJEDREZ.retrollamadaTORRES();
   AJEDREZ.retrollamadaPEONES();
   AJEDREZ.retrollamadaTABLERO();
   AJEDREZ.retrollamadaCASILLAS();
   AJEDREZ.CRL();
+  for (var i=1;i<5;i++)
+  {
+    AJEDREZ.escena.add(AJEDREZ.TORRES[i]); 
+  } 
   for (var i=1;i<17;i++)
   {
     AJEDREZ.escena.add(AJEDREZ.PEONES[i]); 
