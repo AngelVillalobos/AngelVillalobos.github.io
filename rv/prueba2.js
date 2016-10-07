@@ -139,7 +139,7 @@ AJEDREZ.retrollamada=function()
   /////////////////////CREANDO CASILLAS///////////////////////////////
   var a=1;
   var b=0;
-  var c=1;
+  var c=0;
   for (var i=1;i<65; i ++)
   {
     AJEDREZ.CASILLASB[i]=new THREE.Mesh(new AJEDREZ.CasillasGeometry(),new THREE.MeshLambertMaterial({map:AJEDREZ.cargador.load("marmolB.jpg")}));
