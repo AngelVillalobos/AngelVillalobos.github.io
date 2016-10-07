@@ -137,9 +137,6 @@ AJEDREZ.retrollamada=function()
   ////////////////////////////////////////////////////////////////////
   
   /////////////////////CREANDO CASILLAS///////////////////////////////
-  var a=1;
-  var b=0;
-  var c=0;
   for (var i=1;i<65; i ++)
   {
     AJEDREZ.CASILLASB[i]=new THREE.Mesh(new AJEDREZ.CasillasGeometry(),new THREE.MeshLambertMaterial({map:AJEDREZ.cargador.load("marmolB.jpg")}));
@@ -147,11 +144,42 @@ AJEDREZ.retrollamada=function()
     AJEDREZ.CASILLASB[i].receiveShadow=true;
     AJEDREZ.CASILLASN[i].receiveShadow=true;
   }
+  ////POSISIONANDO CASILLAS NEGRAS////
+  var a=1;
+  var b=0;
+  var c=0;
   for (var j=1;j<65; j ++)
   {
     if(j%2==0)
       {
         AJEDREZ.CASILLASN[j].position.set((c*10)-45,(b*10)-(35),0.6);
+        a=a+1;
+      }
+    if(a==5)
+    {
+      a=1;
+      b=b+1;
+      if(b%2==0)
+      {
+         c=0;
+      }
+      else
+      {
+         c=1;
+      }  
+      j=j+1;
+    }
+    c=c+1;
+  }
+  ////POSISIONANDO CASILLAS BLANCAS////
+  var a=1;
+  var b=0;
+  var c=0;
+    for (var j=1;j<65; j ++)
+  {
+    if(j%2!==0)
+      {
+        AJEDREZ.CASILLASB[j].position.set((c*10)-45,(b*10)-(35),0.6);
         a=a+1;
       }
     if(a==5)
