@@ -142,7 +142,7 @@ AJEDREZ.retrollamada=function()
   AJEDREZ.cargador=new THREE.TextureLoader(); 
   
   /////////////////CREANDO LOS PEONES///////////////////////////////
-  for (var i=1;i<5;i++)
+  for (var i=1;i<17;i++)
   {
     /////PEONES BLANCOS////
     if(i>0&&i<3)
