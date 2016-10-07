@@ -1,5 +1,6 @@
 var AJEDREZ=new Object();
-AJEDREZ.TORRES=new Array();
+AJEDREZ.CASILLASN=new Array();
+AJEDREZ.CASILLASB=new Array();
 ///////////////CONSTRUCTOR LA CAMARA////////////////////////////////
 AJEDREZ.CamaraConst=function()
 {
@@ -24,7 +25,7 @@ AJEDREZ.RenderizadorConst=function()
 }
 ////////////////////////////////////////////////////////////////////
 
-///////////////CONSTRUCTOR DEL RENDERIZADOR/////////////////////////
+//////////////////CONSTRUCTOR DE LA LUZ/////////////////////////////
 AJEDREZ.LucesConst=function()
 {
   AJEDREZ.luzPuntual=new THREE.PointLight(0xFFFFFF,1.2);
@@ -92,11 +93,14 @@ AJEDREZ.TableroGeometry.prototype=new THREE.Geometry();
 ////////////////////////////////////////////////////////////////////
 
 /////////////CONSTRUCTOR LAS CASILLAS///////////////////////////////
-AJEDREZ.CasillasGeometryGeometry=function()
+AJEDREZ.CasillasGeometry=function()
 {
+  THREE.Geometry.call(this);
   var FCasilla=new THREE.BoxGeometry(10,10,0.03,10,10,10);
+  var MCasilla=new THREE.Mesh(FCasilla);
+  this.merge(MCasilla.geometry,MCasilla.matrix);
 }
-AJEDREZ.TableroGeometry.prototype=new THREE.Geometry();
+AJEDREZ.CasillasGeometry.prototype=new THREE.Geometry();
 ////////////////////////////////////////////////////////////////////
 
 ///////////////////////CREANDO PIEZAS///////////////////////////////
@@ -106,7 +110,6 @@ AJEDREZ.retrollamada=function()
   /////////////////CREANDO LAS TORRES///////////////////////////////
   for (var i=1;i<5;i++)
   {
-    
     /////TORRES BLANCAS////
     if(i>0&&i<3)
     {
@@ -131,7 +134,45 @@ AJEDREZ.retrollamada=function()
   AJEDREZ.TABLERO=new THREE.Mesh(new AJEDREZ.TableroGeometry(),new THREE.MeshLambertMaterial({map:AJEDREZ.cargador.load("marmolA.jpg")}));
   AJEDREZ.TABLERO.receiveShadow=true;
   ////////////////////////////////////////////////////////////////////
+  
+  /////////////////////CREANDO CASILLAS///////////////////////////////
+  var a=1;
+  var b=0;
+  var c=1;
+  for (var i=1;i<65; i ++)
+  {
+    AJEDREZ.CASILLASB[i]=new THREE.Mesh(new AJEDREZ.CasillasGeometry(),new THREE.MeshLambertMaterial({map:AJEDREZ.cargador.load("marmolB.jpg")}));
+    AJEDREZ.CASILLASN[i]=new THREE.Mesh(new AJEDREZ.CasillasGeometry(),new THREE.MeshLambertMaterial({map:AJEDREZ.cargador.load("marmolN.jpg")}));
+    AJEDREZ.CASILLASB[i].receiveShadow=true;
+    AJEDREZ.CASILLASN[i].receiveShadow=true;
+  }
+  for (var j=0;j<64; j ++)
+  {
+    if(j%2==0)
+      {
+        AJEDREZ.CASILLASN[i].position.set((c*10)-45,(b*10)-(35),0.6);
+        a=a+1;
+      }
+    if(a==5)
+    {
+      a=1;
+      b=b+1;
+      if(b%2==0)
+      {
+         c=0;
+      }
+      else
+      {
+         c=1;
+      }  
+      j=j+1;
+    }
+    c=c+1;
+  }
 }
+  ////////////////////////////////////////////////////////////////////
+}
+////////////////////////////////////////////////////////////////////
 
   AJEDREZ.retrollamada();
   AJEDREZ.CamaraConst();
@@ -147,6 +188,10 @@ AJEDREZ.setup=function()
   for (var i=1;i<5;i++)
   {
     AJEDREZ.escena.add(AJEDREZ.TORRES[i]); 
+  } 
+  for (var i=1;i<65;i++)
+  {
+    AJEDREZ.escena.add(AJEDREZ.CASILLASN[i]); 
   } 
   AJEDREZ.escena.add(AJEDREZ.TABLERO); 
   AJEDREZ.escena.add(AJEDREZ.luzPuntual); 
