@@ -174,7 +174,7 @@ AJEDREZ.retrollamada=function()
   ////POSICIONANDO CASILLAS BLANCAS////
   var a=1;
   var b=0;
-  var c=2;
+  var c=1;
   for (var j=1;j<65; j ++)
   {
     if(j%2!==0)
@@ -186,13 +186,13 @@ AJEDREZ.retrollamada=function()
     {
       a=1;
       b=b+1;
-      if(b%2==0)
+      if(b%2!==0)
       {
-         c=1;
+         c=0;
       }
       else
       {
-         c=2;
+         c=1;
       }  
       j=j+1;
     }
