@@ -124,8 +124,8 @@ AJEDREZ.retrollamada=function()
   ////////////////////////////////////////////////////////////////////
   
   ///////////////////CREANDO EL TABLERO///////////////////////////////
-  var Tablero=new THREE.Mesh(new AJEDREZ.TableroGeometry(),new THREE.MeshBasicMaterial({map:AJEDREZ.cargador.load("marmolA.jpg")}));
-  Tablero.position.set(0,0,0);
+  AJEDREZ.TABLERO=new THREE.Mesh(new AJEDREZ.TableroGeometry(),new THREE.MeshBasicMaterial({map:AJEDREZ.cargador.load("marmolA.jpg")}));
+  AJEDREZ.TABLERO.position.set(0,0,0);
   ////////////////////////////////////////////////////////////////////
 }
 
@@ -146,7 +146,7 @@ for (var i=1;i<5;i++)
   {
     AJEDREZ.escena.add(AJEDREZ.TORRES[i]); 
   } 
-  AJEDREZ.escena.add(Tablero); 
+  AJEDREZ.escena.add(AJEDREZ.TABLERO); 
 }
 
 AJEDREZ.loop=function()
