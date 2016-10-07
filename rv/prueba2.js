@@ -144,7 +144,7 @@ AJEDREZ.retrollamada=function()
     AJEDREZ.CASILLASB[i].receiveShadow=true;
     AJEDREZ.CASILLASN[i].receiveShadow=true;
   }
-  ////POSISIONANDO CASILLAS NEGRAS////
+  ////POSICIONANDO CASILLAS NEGRAS////
   var a=1;
   var b=0;
   var c=0;
@@ -171,11 +171,11 @@ AJEDREZ.retrollamada=function()
     }
     c=c+1;
   }
-  ////POSISIONANDO CASILLAS BLANCAS////
+  ////POSICIONANDO CASILLAS BLANCAS////
   var a=1;
   var b=0;
   var c=1;
-    for (var j=1;j<65; j ++)
+  for (var j=1;j<65; j ++)
   {
     if(j%2!==0)
       {
