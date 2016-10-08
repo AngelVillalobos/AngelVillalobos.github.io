@@ -32,6 +32,17 @@ AJEDREZ.CRL=function()
 }
 ////////////////////////////////////////////////////////////////////
 
+/////////////CONSTRUCTOR LAS CASILLAS///////////////////////////////
+AJEDREZ.CasillasGeometry=function()
+{
+  THREE.Geometry.call(this);
+  var FCasilla=new THREE.BoxGeometry(10,10,0.03,10,10,10);
+  var MCasilla=new THREE.Mesh(FCasilla);
+  this.merge(MCasilla.geometry,MCasilla.matrix);
+}
+AJEDREZ.CasillasGeometry.prototype=new THREE.Geometry();
+////////////////////////////////////////////////////////////////////
+
 /////////////CONSTRUCTOR DE PEON///////////////////////////////////
 AJEDREZ.PeonGeometry=function()
 {
@@ -154,7 +165,7 @@ AJEDREZ.RetrollamadaPeonBlanco=function(textura)
     AJEDREZ.PeonesBlancos[i].scale.set(7,7,8);
     AJEDREZ.PeonesBlancos[i].castShadow=true;
     AJEDREZ.escena.add(AJEDREZ.PeonesBlancos[i]);
-    AJEDREZ.PeonesBlancos[i].position.set((a*10)-45,-35,1.2);
+    AJEDREZ.PeonesBlancos[i].position.set((a*10)-45,-25,1.2);
     a=a+1;
   }
 }
@@ -172,19 +183,66 @@ AJEDREZ.RetrollamadaPeonNegro=function(textura)
     AJEDREZ.PeonesNegros[i].scale.set(7,7,8);
     AJEDREZ.PeonesNegros[i].castShadow=true;
     AJEDREZ.escena.add(AJEDREZ.PeonesNegros[i]);
-    AJEDREZ.PeonesNegros[i].position.set((a*10)-45,35,1.2);
+    AJEDREZ.PeonesNegros[i].position.set((a*10)-45,25,1.2);
     a=a+1;
   }
 }
 ////////////////////////////////////////////////////////////////////
 
+////////////CREANDO CASILLAS BLANCAS//////////////////////
+AJEDREZ.RetrollamadaCasillaBlanca=function(textura)
+{
+  var a=1;
+  var b=0;
+  var c=2;
+  var materialCasillaBlanca=new THREE.MeshLambertMaterial({map:textura});
+  for (var i=1;i<65; i ++)
+  {
+    AJEDREZ.CasillasBlancas[i]=new THREE.Mesh(new AJEDREZ.CasillasGeometry(),materialCasillaBlanca);
+    AJEDREZ.CasillasBlancas[i].receiveShadow=true;
+  }
+  for (var j=1;j<65; j ++)
+  {
+    if(j%2!==0)
+      {
+        AJEDREZ.CasillasBlancas[j].position.set((c*10)-45,(b*10)-(35),0.6);
+        a=a+1;
+      }
+    if(a==5)
+    {
+      a=1;
+      b=b+1;
+      if(b%2!==0)
+      {
+         c=0;
+      }
+      else
+      {
+         c=1;
+      }  
+      j=j+1;
+    }
+    c=c+1;
+    AJEDREZ.escena.add(AJEDREZ.CasillasBlancas[j]);
+  }
+}
+////////////////////////////////////////////////////////////////////
+
+
+
 
 AJEDREZ.setupPiezas=function()
 {
-  AJEDREZ.cargadorPiezaBlanca=new THREE.TextureLoader(); 
+  AJEDREZ.cargadorTorreBlanca=new THREE.TextureLoader(); 
+  AJEDREZ.cargadorPiezaBlanca.load("maderaB.jpg",AJEDREZ.RetrollamadaTorreBlanca);  
+  AJEDREZ.cargadorPeonBlanco=new THREE.TextureLoader(); 
+  AJEDREZ.cargadorPeonBlanco.load("maderaB.jpg",AJEDREZ.RetrollamadaPeonBlanco);  
+  AJEDREZ.cargadorCasillaBlanca=new THREE.TextureLoader(); 
+  AJEDREZ.cargadorCasillaBlanca.load("marmolB.jpg",AJEDREZ.RetrollamadaCasillaBlanca);  
+  
   AJEDREZ.cargadorPiezaNegra=new THREE.TextureLoader();
-  AJEDREZ.cargadorPiezaBlanca.load("maderaB.jpg",AJEDREZ.RetrollamadaTorreBlanca);   
-  AJEDREZ.cargadorPiezaBlanca.load("maderaB.jpg",AJEDREZ.RetrollamadaPeonBlanco);   
+    
+  
   AJEDREZ.cargadorPiezaNegra.load("maderaN.jpg",AJEDREZ.RetrollamadaTorreNegra);  
   AJEDREZ.cargadorPiezaNegra.load("maderaN.jpg",AJEDREZ.RetrollamadaPeonNegro);  
 }
