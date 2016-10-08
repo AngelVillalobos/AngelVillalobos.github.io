@@ -43,6 +43,17 @@ AJEDREZ.CasillasGeometry=function()
 AJEDREZ.CasillasGeometry.prototype=new THREE.Geometry();
 ////////////////////////////////////////////////////////////////////
 
+/////////////CONSTRUCTOR DEL TABLERO////////////////////////////////
+AJEDREZ.TableroGeometry=function()
+{
+  THREE.Geometry.call(this);
+  var FTablero=new THREE.BoxGeometry(100,100,0.3,10,10,10);
+  var MTablero=new THREE.Mesh(FTablero);
+  this.merge(MTablero.geometry,MTablero.matrix);
+}
+AJEDREZ.TableroGeometry.prototype=new THREE.Geometry();
+////////////////////////////////////////////////////////////////////
+
 /////////////CONSTRUCTOR DE PEON///////////////////////////////////
 AJEDREZ.PeonGeometry=function()
 {
@@ -269,6 +280,16 @@ AJEDREZ.RetrollamadaCasillaNegra=function(textura)
 }
 ////////////////////////////////////////////////////////////////////
 
+///////////////////CREANDO EL TABLERO///////////////////////////////
+AJEDREZ.RetrollamadaTablero=function(textura)
+{
+  var materialTablero=new THREE.MeshLambertMaterial({map:textura});
+  AJEDREZ.Tablero=new THREE.Mesh(new AJEDREZ.TableroGeometry(),materialTablero);
+  AJEDREZ.Tablero.receiveShadow=true;
+  AJEDREZ.escena.add(AJEDREZ.Tablero);
+}
+////////////////////////////////////////////////////////////////////
+
 
 AJEDREZ.setupPiezas=function()
 {
@@ -284,6 +305,8 @@ AJEDREZ.setupPiezas=function()
   AJEDREZ.cargadorPeonNegro.load("maderaN.jpg",AJEDREZ.RetrollamadaPeonNegro);  
   AJEDREZ.cargadorCasillaNegra=new THREE.TextureLoader(); 
   AJEDREZ.cargadorCasillaNegra.load("marmolN.jpg",AJEDREZ.RetrollamadaCasillaNegra);  
+  AJEDREZ.cargadorTablero=new THREE.TextureLoader(); 
+  AJEDREZ.cargadorTablero.load("marmolA.jpg",AJEDREZ.RetrollamadaTablero);  
 }
 
 
