@@ -235,26 +235,26 @@ AJEDREZ.RetrollamadaCasillaNegra=function(textura)
 {
   var a=1;
   var b=0;
-  var c=2;
+  var c=0;
   var materialCasillaNegra=new THREE.MeshLambertMaterial({map:textura});
   for (var i=1;i<65; i ++)
   {
     AJEDREZ.CasillasNegras[i]=new THREE.Mesh(new AJEDREZ.CasillasGeometry(),materialCasillaNegra);
     AJEDREZ.CasillasNegras[i].receiveShadow=true;
-    
   }
   for (var j=1;j<65; j ++)
   {
-    if(j%2!==0)
+    if(j%2==0)
       {
         AJEDREZ.CasillasNegras[j].position.set((c*10)-45,(b*10)-(35),0.6);
+        AJEDREZ.escena.add(AJEDREZ.CasillasNegras[j]);
         a=a+1;
       }
     if(a==5)
     {
       a=1;
       b=b+1;
-      if(b%2!==0)
+      if(b%2==0)
       {
          c=0;
       }
@@ -265,7 +265,6 @@ AJEDREZ.RetrollamadaCasillaNegra=function(textura)
       j=j+1;
     }
     c=c+1;
-    //AJEDREZ.escena.add(AJEDREZ.CasillasNegras[j]);
   }
 }
 ////////////////////////////////////////////////////////////////////
