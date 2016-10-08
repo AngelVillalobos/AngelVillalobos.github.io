@@ -234,7 +234,7 @@ AJEDREZ.RetrollamadaCasillaBlanca=function(textura)
 AJEDREZ.setupPiezas=function()
 {
   AJEDREZ.cargadorTorreBlanca=new THREE.TextureLoader(); 
-  AJEDREZ.cargadorPiezaBlanca.load("maderaB.jpg",AJEDREZ.RetrollamadaTorreBlanca);  
+  AJEDREZ.cargadorTorreBlanca.load("maderaB.jpg",AJEDREZ.RetrollamadaTorreBlanca);  
   AJEDREZ.cargadorPeonBlanco=new THREE.TextureLoader(); 
   AJEDREZ.cargadorPeonBlanco.load("maderaB.jpg",AJEDREZ.RetrollamadaPeonBlanco);  
   AJEDREZ.cargadorCasillaBlanca=new THREE.TextureLoader(); 
