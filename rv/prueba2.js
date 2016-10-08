@@ -113,5 +113,5 @@ AJEDREZ.loop=function()
 
 AJEDREZ.setupPiezas();
 
-//AJEDREZ.setup();
+AJEDREZ.setup();
 //AJEDREZ.loop();
