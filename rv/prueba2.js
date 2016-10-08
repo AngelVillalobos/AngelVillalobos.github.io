@@ -6,7 +6,6 @@ AJEDREZ.PeonesNegros=new Array();
 AJEDREZ.CasillasNegras=new Array();
 AJEDREZ.CasillasBlancas=new Array();
 
-
 AJEDREZ.CRL=function()
 {
   /////CAMARA////
