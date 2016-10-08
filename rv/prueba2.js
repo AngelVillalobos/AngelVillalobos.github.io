@@ -196,13 +196,13 @@ AJEDREZ.RetrollamadaCasillaBlanca=function(textura)
   var b=0;
   var c=2;
   var materialCasillaBlanca=new THREE.MeshLambertMaterial({map:textura});
-  for (var i=1;i<64; i ++)
+  for (var i=1;i<65; i ++)
   {
     AJEDREZ.CasillasBlancas[i]=new THREE.Mesh(new AJEDREZ.CasillasGeometry(),materialCasillaBlanca);
     AJEDREZ.CasillasBlancas[i].receiveShadow=true;
     
   }
-  for (var j=1;j<60; j ++)
+  for (var j=1;j<65; j ++)
   {
     AJEDREZ.escena.add(AJEDREZ.CasillasBlancas[j]);
     if(j%2!==0)
