@@ -15,8 +15,8 @@ AJEDREZ.CRL=function()
   var planoCercano=1;
   var planoLejano=1000;
   AJEDREZ.camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
-  AJEDREZ.camara.position.z=150;
-  //AJEDREZ.camara.position.y=-120;
+  AJEDREZ.camara.position.z=120;
+  AJEDREZ.camara.position.y=-90;
   AJEDREZ.camara.lookAt(new THREE.Vector3(0,0,0));
   /////RENDERIZADOR////
   AJEDREZ.renderizador = new THREE.WebGLRenderer();
