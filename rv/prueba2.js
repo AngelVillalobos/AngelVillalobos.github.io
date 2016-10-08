@@ -79,7 +79,7 @@ AJEDREZ.TorreGeometry.prototype=new THREE.Geometry();
 AJEDREZ.RetrollamadaTorreBlanca=function(textura)
 {
   var materialTorreBlanca=new THREE.MeshLambertMaterial({map:textura});
-  for (var i=0;i<3;i++)
+  for (var i=1;i<3;i++)
   {
     AJEDREZ.TorresBlancas[i]=new THREE.Mesh(new AJEDREZ.TorreGeometry(),materialTorreBlanca);
     AJEDREZ.TorresBlancas[i].rotateX(Math.PI/2);
@@ -96,9 +96,9 @@ AJEDREZ.RetrollamadaTorreBlanca=function(textura)
 AJEDREZ.RetrollamadaTorreNegra=function(textura)
 {
   var materialTorreNegra=new THREE.MeshLambertMaterial({map:textura});
-  for (var i=0;i<3;i++)
+  for (var i=1;i<3;i++)
   {
-    AJEDREZ.TorresNegras[i]=new THREE.Mesh(new AJEDREZ.TorreGeometry(),materialTorreBlanca);
+    AJEDREZ.TorresNegras[i]=new THREE.Mesh(new AJEDREZ.TorreGeometry(),materialTorreNegra);
     AJEDREZ.TorresNegras[i].rotateX(Math.PI/2);
     AJEDREZ.TorresNegras[i].scale.set(7,7,8);
     AJEDREZ.TorresNegras[i].castShadow=true;
