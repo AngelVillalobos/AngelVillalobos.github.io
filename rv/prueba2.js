@@ -149,7 +149,7 @@ AJEDREZ.RetrollamadaPeonBlanco=function(textura)
   var materialPeonBlanco=new THREE.MeshLambertMaterial({map:textura});
   for (var i=1;i<9;i++)
   {
-    AJEDREZ.PeonesBlancos[i]=new THREE.Mesh(new AJEDREZ.TorreGeometry(),materialTorreBlanca);
+    AJEDREZ.PeonesBlancos[i]=new THREE.Mesh(new AJEDREZ.PeonGeometry(),materialPeonBlanco);
     AJEDREZ.PeonesBlancos[i].rotateX(Math.PI/2);
     AJEDREZ.PeonesBlancos[i].scale.set(7,7,8);
     AJEDREZ.PeonesBlancos[i].castShadow=true;
@@ -167,7 +167,7 @@ AJEDREZ.RetrollamadaPeonNegro=function(textura)
   var materialPeonNegro=new THREE.MeshLambertMaterial({map:textura});
   for (var i=1;i<9;i++)
   {
-    AJEDREZ.PeonesNegros[i]=new THREE.Mesh(new AJEDREZ.TorreGeometry(),materialTorreNegro);
+    AJEDREZ.PeonesNegros[i]=new THREE.Mesh(new AJEDREZ.PeonGeometry(),materialPeonNegro);
     AJEDREZ.PeonesNegros[i].rotateX(Math.PI/2);
     AJEDREZ.PeonesNegros[i].scale.set(7,7,8);
     AJEDREZ.PeonesNegros[i].castShadow=true;
