@@ -133,7 +133,6 @@ AJEDREZ.RetrollamadaTorreBlanca=function(textura)
   }
   AJEDREZ.TorresBlancas[1].position.set(-35,-35,1.2);
   AJEDREZ.TorresBlancas[2].position.set(35,-35,1.2);
-  AJEDREZ.TorresB=true;
 }
 ////////////////////////////////////////////////////////////////////
 
@@ -151,7 +150,6 @@ AJEDREZ.RetrollamadaTorreNegra=function(textura)
   }
   AJEDREZ.TorresNegras[1].position.set(-35,35,1.2);
   AJEDREZ.TorresNegras[2].position.set(35,35,1.2);
-  AJEDREZ.TorresN=true;
 }
 ////////////////////////////////////////////////////////////////////
 
@@ -170,7 +168,6 @@ AJEDREZ.RetrollamadaPeonBlanco=function(textura)
     AJEDREZ.PeonesBlancos[i].position.set((a*10)-45,-25,1.2);
     a=a+1;
   }
-  AJEDREZ.PeonesB=true;
 }
 ////////////////////////////////////////////////////////////////////
 
@@ -189,7 +186,6 @@ AJEDREZ.RetrollamadaPeonNegro=function(textura)
     AJEDREZ.PeonesNegros[i].position.set((a*10)-45,25,1.2);
     a=a+1;
   }
-  AJEDREZ.PeonesN=true;
 }
 ////////////////////////////////////////////////////////////////////
 
@@ -229,7 +225,6 @@ AJEDREZ.RetrollamadaCasillaBlanca=function(textura)
     }
     c=c+1;
   }
-  AJEDREZ.CasillasB=true;
 }
 ////////////////////////////////////////////////////////////////////
 
@@ -254,15 +249,11 @@ AJEDREZ.setupPiezas=function()
 
 AJEDREZ.setup=function()
 {
+  AJEDREZ.BANDERA=true;
   AJEDREZ.escena=new THREE.Scene();
   AJEDREZ.CRL();
   AJEDREZ.setupPiezas();
-  AJEDREZ.escena.add(AJEDREZ.luzPuntual);
-  if(AJEDREZ.TorresB&&AJEDREZ.TorresN&&AJEDREZ.PeonesB&&AJEDREZ.PeonesB&&AJEDREZ.CasillasB)
-  {
-    AJEDREZ.BANDERA=true;
-  }
-   
+  AJEDREZ.escena.add(AJEDREZ.luzPuntual);   
 }
 
 AJEDREZ.loop=function()
