@@ -4,6 +4,7 @@ AJEDREZ.PEONES=new Array();
 AJEDREZ.CASILLASN=new Array();
 AJEDREZ.CASILLASB=new Array();
 
+
 /////////////CONSTRUCTOR DE TORRE///////////////////////////////////
 AJEDREZ.TorreGeometry=function()
 {
