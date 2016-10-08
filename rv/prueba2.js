@@ -127,12 +127,21 @@ AJEDREZ.setup=function()
   AJEDREZ.setupPiezas();
   AJEDREZ.escena=new THREE.Scene();
   AJEDREZ.escena.add(AJEDREZ.luzPuntual);
+  AJEDREZ.BANDERA=true; 
 }
 
 AJEDREZ.loop=function()
 {
   requestAnimationFrame(AJEDREZ.loop);
-  AJEDREZ.renderizador.render(AJEDREZ.escena,AJEDREZ.camara);
+  if(AJEDREZ.BANDERA)
+  {
+    AJEDREZ.renderizador.render(AJEDREZ.escena,AJEDREZ.camara);
+  }
+  else
+  {
+    AJEDREZ.setup();
+  }
+  
 }
 
 
