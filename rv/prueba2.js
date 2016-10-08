@@ -200,6 +200,7 @@ AJEDREZ.RetrollamadaCasillaBlanca=function(textura)
   {
     AJEDREZ.CasillasBlancas[i]=new THREE.Mesh(new AJEDREZ.CasillasGeometry(),materialCasillaBlanca);
     AJEDREZ.CasillasBlancas[i].receiveShadow=true;
+    AJEDREZ.escena.add(AJEDREZ.CasillasBlancas[i]);
   }
   for (var j=1;j<65; j ++)
   {
@@ -223,7 +224,6 @@ AJEDREZ.RetrollamadaCasillaBlanca=function(textura)
       j=j+1;
     }
     c=c+1;
-    AJEDREZ.escena.add(AJEDREZ.CasillasBlancas[j]);
   }
 }
 ////////////////////////////////////////////////////////////////////
