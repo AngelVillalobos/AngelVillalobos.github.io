@@ -263,7 +263,7 @@ AJEDREZ.RetrollamadaCasillaNegra=function(textura)
       j=j+1;
     }
     c=c+1;
-    AJEDREZ.escena.add(AJEDREZ.CasillasNegras[j]);
+    //AJEDREZ.escena.add(AJEDREZ.CasillasNegras[j]);
   }
 }
 ////////////////////////////////////////////////////////////////////
