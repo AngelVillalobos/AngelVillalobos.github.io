@@ -84,6 +84,7 @@ AJEDREZ.RetrollamadaTorreBlanca=function(textura)
     AJEDREZ.TorresBlancas[i].rotateX(Math.PI/2);
     AJEDREZ.TorresBlancas[i].scale.set(7,7,8);
     AJEDREZ.TorresBlancas[i].castShadow=true;
+    AJEDREZ.escena.add(AJEDREZ.TorresBlancas[i]);
   }
 }
 ////////////////////////////////////////////////////////////////////
@@ -104,10 +105,7 @@ AJEDREZ.setup=function()
   
   
   
-  for (var i=1;i<3;i++)
-  {
-    AJEDREZ.escena.add(AJEDREZ.TorresBlancas[i]); 
-  } 
+  
   AJEDREZ.escena.add(AJEDREZ.luzPuntual);
 }
 
