@@ -139,6 +139,7 @@ AJEDREZ.RetrollamadaTorreBlanca=function(textura)
     AJEDREZ.TorresBlancas[i].rotateX(Math.PI/2);
     AJEDREZ.TorresBlancas[i].scale.set(7,7,8);
     AJEDREZ.TorresBlancas[i].castShadow=true;
+    AJEDREZ.TorresBlancas[i].receiveShadow=true;
     AJEDREZ.escena.add(AJEDREZ.TorresBlancas[i]);
   }
   AJEDREZ.TorresBlancas[1].position.set(-35,-35,1.2);
@@ -156,6 +157,7 @@ AJEDREZ.RetrollamadaTorreNegra=function(textura)
     AJEDREZ.TorresNegras[i].rotateX(Math.PI/2);
     AJEDREZ.TorresNegras[i].scale.set(7,7,8);
     AJEDREZ.TorresNegras[i].castShadow=true;
+    AJEDREZ.TorresNegras[i].receiveShadow=true;
     AJEDREZ.escena.add(AJEDREZ.TorresNegras[i]);
   }
   AJEDREZ.TorresNegras[1].position.set(-35,35,1.2);
@@ -174,6 +176,7 @@ AJEDREZ.RetrollamadaPeonBlanco=function(textura)
     AJEDREZ.PeonesBlancos[i].rotateX(Math.PI/2);
     AJEDREZ.PeonesBlancos[i].scale.set(7,7,8);
     AJEDREZ.PeonesBlancos[i].castShadow=true;
+    AJEDREZ.PeonesBlancos[i].receiveShadow=true;
     AJEDREZ.escena.add(AJEDREZ.PeonesBlancos[i]);
     AJEDREZ.PeonesBlancos[i].position.set((a*10)-45,-25,1.2);
     a=a+1;
@@ -192,6 +195,7 @@ AJEDREZ.RetrollamadaPeonNegro=function(textura)
     AJEDREZ.PeonesNegros[i].rotateX(Math.PI/2);
     AJEDREZ.PeonesNegros[i].scale.set(7,7,8);
     AJEDREZ.PeonesNegros[i].castShadow=true;
+    AJEDREZ.PeonesNegros[i].receiveShadow=true;
     AJEDREZ.escena.add(AJEDREZ.PeonesNegros[i]);
     AJEDREZ.PeonesNegros[i].position.set((a*10)-45,25,1.2);
     a=a+1;
@@ -210,7 +214,6 @@ AJEDREZ.RetrollamadaCasillaBlanca=function(textura)
   {
     AJEDREZ.CasillasBlancas[i]=new THREE.Mesh(new AJEDREZ.CasillasGeometry(),materialCasillaBlanca);
     AJEDREZ.CasillasBlancas[i].receiveShadow=true;
-    
   }
   for (var j=1;j<65; j ++)
   {
