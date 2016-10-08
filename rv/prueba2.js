@@ -66,14 +66,10 @@ AJEDREZ.RetrollamadaTorreBlanca=function(textura)
 AJEDREZ.setupPiezas=function()
 {
   AJEDREZ.cargadorPiezaBlanca=new THREE.TextureLoader(); 
-  AJEDREZ.cargadorPiezaBlanca.load("maderaB.jpg",AJEDREZ.RetrollamadaTorreBlanca);
-  
-
-  
-  
+  AJEDREZ.cargadorPiezaBlanca.load("maderaB.jpg",AJEDREZ.RetrollamadaTorreBlanca);  
 }
 
-
+AJEDREZ.setupPiezas();
 
 
 AJEDREZ.setup=function()
@@ -115,6 +111,6 @@ AJEDREZ.loop=function()
   AJEDREZ.renderizador.render(AJEDREZ.escena,AJEDREZ.camara);
 }
 
-AJEDREZ.setupPiezas();
+
 AJEDREZ.setup();
 AJEDREZ.loop();
