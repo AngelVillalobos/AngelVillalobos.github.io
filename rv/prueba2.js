@@ -79,7 +79,7 @@ AJEDREZ.setupPiezas=function()
 AJEDREZ.setup=function()
 {
   AJEDREZ.escena=new THREE.Scene();
-  AJEDREZ.setupPiezas();
+  
   /////CAMARA////
   var campoVision=45;
   var relacionAspecto=window.innerWidth/window.innerHeight;
@@ -115,6 +115,6 @@ AJEDREZ.loop=function()
   AJEDREZ.renderizador.render(AJEDREZ.escena,AJEDREZ.camara);
 }
 
-
+AJEDREZ.setupPiezas();
 AJEDREZ.setup();
 AJEDREZ.loop();
