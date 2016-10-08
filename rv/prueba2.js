@@ -71,7 +71,6 @@ AJEDREZ.setupPiezas=function()
 
 AJEDREZ.setupPiezas();
 
-
 AJEDREZ.setup=function()
 {
   AJEDREZ.escena=new THREE.Scene();
