@@ -204,10 +204,11 @@ AJEDREZ.RetrollamadaCasillaBlanca=function(textura)
   }
   for (var j=1;j<65; j ++)
   {
-    AJEDREZ.escena.add(AJEDREZ.CasillasBlancas[j+2]);
+    
     if(j%2!==0)
       {
         AJEDREZ.CasillasBlancas[j].position.set((c*10)-45,(b*10)-(35),0.6);
+        AJEDREZ.escena.add(AJEDREZ.CasillasBlancas[j]);
         a=a+1;
       }
     if(a==5)
