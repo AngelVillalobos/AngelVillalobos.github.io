@@ -53,7 +53,7 @@ AJEDREZ.TorreGeometry.prototype=new THREE.Geometry();
 AJEDREZ.RetrollamadaTorreBlanca=function(textura)
 {
   var materialTorreBlanca=new THREE.MeshLambertMaterial({map:textura});
-  for (var i=1;i<3;i++)
+  for (var i=0;i<3;i++)
   {
     AJEDREZ.TorresBlancas[i]=new THREE.Mesh(new AJEDREZ.TorreGeometry(),materialTorreBlanca);
     AJEDREZ.TorresBlancas[i].rotateX(Math.PI/2);
