@@ -1,5 +1,6 @@
 var AJEDREZ=new Object();
 AJEDREZ.TorresBlancas=new Array();
+AJEDREZ.TorresNegras=new Array();
 AJEDREZ.PEONES=new Array();
 AJEDREZ.CASILLASN=new Array();
 AJEDREZ.CASILLASB=new Array();
@@ -86,13 +87,36 @@ AJEDREZ.RetrollamadaTorreBlanca=function(textura)
     AJEDREZ.TorresBlancas[i].castShadow=true;
     AJEDREZ.escena.add(AJEDREZ.TorresBlancas[i]);
   }
+  AJEDREZ.TorresBlancas[1].position.set(-35,-35,1.2);
+  AJEDREZ.TorresBlancas[2].position.set(35,-35,1.2);
 }
 ////////////////////////////////////////////////////////////////////
+
+/////////////////CREANDO TORRE NEGRA///////////////////////////////
+AJEDREZ.RetrollamadaTorreNegra=function(textura)
+{
+  var materialTorreNegra=new THREE.MeshLambertMaterial({map:textura});
+  for (var i=0;i<3;i++)
+  {
+    AJEDREZ.TorresNegras[i]=new THREE.Mesh(new AJEDREZ.TorreGeometry(),materialTorreBlanca);
+    AJEDREZ.TorresNegras[i].rotateX(Math.PI/2);
+    AJEDREZ.TorresNegras[i].scale.set(7,7,8);
+    AJEDREZ.TorresNegras[i].castShadow=true;
+    AJEDREZ.escena.add(AJEDREZ.TorresNegras[i]);
+  }
+  AJEDREZ.TorresBlancas[1].position.set(-35,35,1.2);
+  AJEDREZ.TorresBlancas[2].position.set(35,35,1.2);
+}
+////////////////////////////////////////////////////////////////////
+
+
 
 AJEDREZ.setupPiezas=function()
 {
   AJEDREZ.cargadorPiezaBlanca=new THREE.TextureLoader(); 
-  AJEDREZ.cargadorPiezaBlanca.load("maderaB.jpg",AJEDREZ.RetrollamadaTorreBlanca);  
+  AJEDREZ.cargadorPiezaNegra=new THREE.TextureLoader();
+  AJEDREZ.cargadorPiezaBlanca.load("maderaB.jpg",AJEDREZ.RetrollamadaTorreBlanca);   
+  AJEDREZ.cargadorPiezaNegra.load("maderaN.jpg",AJEDREZ.RetrollamadaTorreNegra);  
 }
 
 
@@ -102,10 +126,6 @@ AJEDREZ.setup=function()
   AJEDREZ.CRL();
   AJEDREZ.setupPiezas();
   AJEDREZ.escena=new THREE.Scene();
-  
-  
-  
-  
   AJEDREZ.escena.add(AJEDREZ.luzPuntual);
 }
 
