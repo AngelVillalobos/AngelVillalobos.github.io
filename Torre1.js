@@ -1,4 +1,4 @@
-var BaseForma = new THREE.CylinderGeometry(0.5,0.5,0.15,64,64);
+/*var BaseForma = new THREE.CylinderGeometry(0.5,0.5,0.15,64,64);
 var Base2Forma = new THREE.TorusGeometry(0.35,0.1,30,200);
 var Base3Forma = new THREE.TorusGeometry(0.2,0.07,30,200);
 var TorreForma = new THREE.CylinderGeometry(0.2,0.4,0.6,64,64);
@@ -37,9 +37,22 @@ var TorrefMalla = new THREE.Mesh(TorrefForma,material);
 //TorrefMalla.rotateX(Math.PI/12);
 var escena = new THREE.Scene();
 escena.add(TorrefMalla);
+*/
+
+var points = [];
+for ( var i = 0; i < 10; i ++ ) {
+	points.push( new THREE.Vector2( Math.sin( i * 0.2 ) * 10 + 5, ( i - 5 ) * 2 ) );
+}
+var geometry = new THREE.LatheGeometry( points );
+var material = new THREE.MeshBasicMaterial( { color: 0xffff00 } );
+var lathe = new THREE.Mesh( geometry, material );
+scene.add( lathe );
+
+
+
 var camara = new THREE.PerspectiveCamera();
 camara.position.z=3;
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
 document.body.appendChild(renderizador.domElement);
-renderizador.render(escena,camara);
+renderizador.render(scene,camara);
