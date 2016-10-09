@@ -46,6 +46,7 @@ for ( var i = 0; i < 10; i ++ ) {
 var geometry = new THREE.LatheGeometry( points );
 var material = new THREE.MeshBasicMaterial( { color: 0xffff00 } );
 var lathe = new THREE.Mesh( geometry, material );
+var scene = new THREE.Scene();
 scene.add( lathe );
 
 
