@@ -40,7 +40,7 @@ TorrefMalla.rotateX(Math.PI/12);
 
 var points = [];
 for ( var i = -4; i < 10; i ++ ) {
-	points.push( new THREE.Vector2( Math.cos( i * 0.2 ) * 0.2 + 0.1, ( i - 0.1 ) * 0.5 ) );
+	points.push( new THREE.Vector2( Math.cos( i * 0.2 ) * 0.2 + 0.1, ( i - 0.1 ) * 0.05 ) );
 }
 var geometry = new THREE.LatheGeometry( points );
 var material = new THREE.MeshNormalMaterial();
