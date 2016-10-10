@@ -10,7 +10,7 @@ for (var i=-4;i<10;i++)
 }
 var Corona1Forma=new THREE.LatheGeometry(Puntos);
 
-Corona1Forma.translate(0,1,0);
+Corona1Forma.translate(0,1.8,0);
 Corona3Forma.translate(0,-1.5,0);
 TorreForma.translate(0,0.825,0);
 Base2Forma.translate(0,0,-0.08);
@@ -39,7 +39,7 @@ TorrefForma.merge(Corona1Malla.geometry,Corona1Malla.matrix);
 
 
 
-TorrefForma.translate(0,-0.6,0);
+TorrefForma.translate(0,0,0);
 
 var material = new THREE.MeshNormalMaterial();
 var TorrefMalla = new THREE.Mesh(TorrefForma,material);
@@ -55,7 +55,7 @@ escena.add(TorrefMalla);
 
 
 var camara = new THREE.PerspectiveCamera();
-camara.position.z=6;
+camara.position.z=4;
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
 document.body.appendChild(renderizador.domElement);
