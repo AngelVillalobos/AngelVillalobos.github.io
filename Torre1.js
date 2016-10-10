@@ -45,14 +45,14 @@ for ( var i = -4; i < 10; i ++ ) {
 var geometry = new THREE.LatheGeometry( points );
 var material = new THREE.MeshNormalMaterial();
 var lathe = new THREE.Mesh( geometry, material );
-lathe.position.y=15
+//lathe.position.y=15
 var scene = new THREE.Scene();
 scene.add( lathe );
-scene.add(TorrefMalla);
+//scene.add(TorrefMalla);
 
 
 var camara = new THREE.PerspectiveCamera();
-camara.position.z=50;
+camara.position.z=15;
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
 document.body.appendChild(renderizador.domElement);
