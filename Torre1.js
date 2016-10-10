@@ -35,8 +35,7 @@ TorrefForma.translate(0,-0.6,0);
 var material = new THREE.MeshNormalMaterial();
 var TorrefMalla = new THREE.Mesh(TorrefForma,material);
 //TorrefMalla.rotateX(Math.PI/12);
-var escena = new THREE.Scene();
-escena.add(TorrefMalla);
+
 
 
 var points = [];
@@ -49,7 +48,7 @@ var lathe = new THREE.Mesh( geometry, material );
 lathe.position.y=15
 var scene = new THREE.Scene();
 scene.add( lathe );
-
+scene.add(TorrefMalla);
 
 
 var camara = new THREE.PerspectiveCamera();
