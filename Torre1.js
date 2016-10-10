@@ -12,7 +12,7 @@ var Corona1Forma=new THREE.LatheGeometry(Puntos);
 
 Corona1Forma.translate(0,1,0);
 Corona3Forma.translate(0,-1.5,0);
-TorreForma.translate(0,0.375,0);
+TorreForma.translate(0,0.0.6,0);
 Base2Forma.translate(0,0,-0.08);
 Base3Forma.translate(0,0,-0.7);
 
