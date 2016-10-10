@@ -40,7 +40,7 @@ TorrefMalla.rotateX(Math.PI/12);
 
 var points = [];
 for ( var i = -4; i < 10; i ++ ) {
-	points.push( new THREE.Vector2( Math.cos( i * 0.2 ) * 0.8 + 0.3, ( i - 0.3 ) * 0.15 ) );
+	points.push( new THREE.Vector2( Math.cos( i * 0.2 ) * 0.2 + 0.1, ( i - 0.1 ) * 0.1 ) );
 }
 var geometry = new THREE.LatheGeometry( points );
 var material = new THREE.MeshNormalMaterial();
@@ -52,7 +52,7 @@ scene.add(TorrefMalla);
 
 
 var camara = new THREE.PerspectiveCamera();
-camara.position.z=15;
+camara.position.z=3;
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
 document.body.appendChild(renderizador.domElement);
