@@ -40,7 +40,7 @@ var TorrefMalla = new THREE.Mesh(TorrefForma,material);
 
 var points = [];
 for ( var i = -4; i < 10; i ++ ) {
-	points.push( new THREE.Vector2( Math.cos( i * 0.2 ) * 1 + 0.5, ( i - 0.5 ) * 0.2 ) );
+	points.push( new THREE.Vector2( Math.cos( i * 0.2 ) * 0.1 + 0.05, ( i - 0.05 ) * 0.02 ) );
 }
 var geometry = new THREE.LatheGeometry( points );
 var material = new THREE.MeshNormalMaterial();
