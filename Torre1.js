@@ -14,7 +14,7 @@ Corona1Forma.translate(0,1,0);
 Corona3Forma.translate(0,-1.5,0);
 TorreForma.translate(0,0.825,0);
 Base2Forma.translate(0,0,-0.08);
-Base3Forma.translate(0,0,-0.7);
+Base3Forma.translate(0,0,-1.6);
 
 Corona1Forma.rotateY(Math.PI);
 Corona3Forma.rotateX(Math.PI);
@@ -55,7 +55,7 @@ escena.add(TorrefMalla);
 
 
 var camara = new THREE.PerspectiveCamera();
-camara.position.z=3;
+camara.position.z=6;
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
 document.body.appendChild(renderizador.domElement);
