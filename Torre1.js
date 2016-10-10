@@ -1,4 +1,4 @@
-/*var BaseForma = new THREE.CylinderGeometry(0.5,0.5,0.15,64,64);
+var BaseForma = new THREE.CylinderGeometry(0.5,0.5,0.15,64,64);
 var Base2Forma = new THREE.TorusGeometry(0.35,0.1,30,200);
 var Base3Forma = new THREE.TorusGeometry(0.2,0.07,30,200);
 var TorreForma = new THREE.CylinderGeometry(0.2,0.4,0.6,64,64);
@@ -37,7 +37,7 @@ var TorrefMalla = new THREE.Mesh(TorrefForma,material);
 //TorrefMalla.rotateX(Math.PI/12);
 var escena = new THREE.Scene();
 escena.add(TorrefMalla);
-*/
+
 
 var points = [];
 for ( var i = -4; i < 10; i ++ ) {
