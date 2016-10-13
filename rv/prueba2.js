@@ -16,7 +16,7 @@ AJEDREZ.CRL=function()
   var planoCercano=1;
   var planoLejano=1000;
   AJEDREZ.camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
-  AJEDREZ.camara.position.z=120;
+  //AJEDREZ.camara.position.z=120;
   AJEDREZ.camara.position.y=-90;
   AJEDREZ.camara.lookAt(new THREE.Vector3(0,0,0));
   /////RENDERIZADOR////
@@ -189,6 +189,23 @@ AJEDREZ.RetrollamadaAlfilBlanco=function(textura)
 }
 ////////////////////////////////////////////////////////////////////
 
+/////////////////CREANDO ALFIL NEGRO///////////////////////////////
+AJEDREZ.RetrollamadaAlfilNegro=function(textura)
+{
+  var materialAlfilNegro=new THREE.MeshLambertMaterial({map:textura});
+  for (var i=1;i<3;i++)
+  {
+    AJEDREZ.AlfilesNegros[i]=new THREE.Mesh(new AJEDREZ.AlfilGeometry(),materialAlfilNegro);
+    AJEDREZ.AlfilesNegros[i].rotateX(Math.PI/2);
+    AJEDREZ.AlfilesNegros[i].scale.set(7,7,8);
+    AJEDREZ.AlfilesNegros[i].castShadow=true;
+    AJEDREZ.escena.add(AJEDREZ.AlfilesNegros[i]);
+  }
+  AJEDREZ.AlfilesNegros[1].position.set(-15,35,1.2);
+  AJEDREZ.AlfilesNegros[2].position.set(15,35,1.2);
+}
+////////////////////////////////////////////////////////////////////
+
 /////////////////CREANDO TORRE BLANCA///////////////////////////////
 AJEDREZ.RetrollamadaTorreBlanca=function(textura)
 {
@@ -356,7 +373,9 @@ AJEDREZ.RetrollamadaTablero=function(textura)
 AJEDREZ.setupPiezas=function()
 {
   AJEDREZ.cargadorAlfilBlanco=new THREE.TextureLoader(); 
-  AJEDREZ.cargadorAlfilBlanco.load("maderaB.jpg",AJEDREZ.RetrollamadaAlfilBlanco);  
+  AJEDREZ.cargadorAlfilBlanco.load("maderaB.jpg",AJEDREZ.RetrollamadaAlfilBlanco);
+  AJEDREZ.cargadorAlfilNegro=new THREE.TextureLoader(); 
+  AJEDREZ.cargadorAlfilNegro.load("maderaN.jpg",AJEDREZ.RetrollamadaAlfilNegro);
   AJEDREZ.cargadorTorreBlanca=new THREE.TextureLoader(); 
   AJEDREZ.cargadorTorreBlanca.load("maderaB.jpg",AJEDREZ.RetrollamadaTorreBlanca);  
   AJEDREZ.cargadorPeonBlanco=new THREE.TextureLoader(); 
