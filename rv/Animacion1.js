@@ -31,12 +31,13 @@ function loop()
 {
   requestAnimationFrame(loop);
   //pieza.rotateY(0.025);
-  pieza.piernaizq.rotateX(0.025);
-  if(pieza.piernaizq.rotationX===Math.PI/6)
-  {
+  setTimeout(function() {
+    pieza.piernaizq.rotateX(0.025);
+}, 500);
+  
+  setTimeout(function() {
     pieza.piernaizq.rotateX(-0.025);
-  }
-    //pieza.piernaizq.rotateX(-0.025);
+}, 500);
   
   renderizador.render(escena,camara);
 }
