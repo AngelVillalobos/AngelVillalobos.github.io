@@ -31,13 +31,12 @@ function loop()
 {
   requestAnimationFrame(loop);
   //pieza.rotateY(0.025);
-  setTimeout(function() {
-    pieza.piernaizq.rotateX(0.025);
-}, 2000);
-  
+  pieza.piernaizq.rotateX(0.025)
   setTimeout(function() {
     pieza.piernaizq.rotateX(-0.025);
 }, 2000);
+  
+
   
   renderizador.render(escena,camara);
 }
