@@ -36,8 +36,6 @@ function loop()
     pieza.piernaizq.rotateX(-0.025);
 }, 2000);
   
-
-  
   renderizador.render(escena,camara);
 }
 
