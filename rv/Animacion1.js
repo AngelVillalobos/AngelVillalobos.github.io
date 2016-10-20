@@ -14,7 +14,6 @@ function Pieza()
   this.piernader.position.y=-4;
   cuerpo.position.z=2.5;
 }
-
 Pieza.prototype=new THREE.Object3D;
 var pieza,escena,camara,renderizador;
 function setup()
