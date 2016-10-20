@@ -6,11 +6,11 @@ function Pieza()
   this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
   var cuerpo=new THREE.Mesh(new THREE.BoxGeometry(5,10,5));
   this.add(this.piernaizq,this.piernader,cuerpo);
-  this.piernaizq.position.z=2;
+  this.piernaizq.position.z=2.5;
   this.piernaizq.position.y=-4;
   this.piernaizq.position.x=-3;
   this.piernader.position.x=3;
-  this.piernader.position.z=2;
+  this.piernader.position.z=2.5;
   this.piernader.position.y=-4;
   cuerpo.position.z=2.5;
 }
