@@ -35,8 +35,3 @@ function loop()
 
 setup();
 loop();
-
-
-
-
-
