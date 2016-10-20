@@ -31,7 +31,15 @@ function loop()
 {
   requestAnimationFrame(loop);
   //pieza.rotateY(0.025);
-  pieza.piernaizq.rotateX(Math.PI/6);
+  pieza.piernaizq.rotateX(0.025);
+  if(pieza.piernaizq.rotateX===Math.PI/6)
+  {
+    pieza.piernaizq.rotateX(0.025);
+  }
+  if(pieza.piernaizq.rotateX===Math.PI/6)
+  {
+    pieza.piernaizq.rotateX(-0.025);
+  }
   renderizador.render(escena,camara);
 }
 
