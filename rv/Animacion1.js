@@ -13,15 +13,15 @@ function Pieza()
 }
 
 Pieza.prototype=new THREE.Object3D;
-var pieza,escena,camara;
+var pieza,escena,camara,renderizador;
 function setup()
 {
   pieza=new Pieza();
-  var escena = new THREE.Scene();
+  escena = new THREE.Scene();
   escena.add(pieza);
-  var camara = new THREE.PerspectiveCamera();
+  camara = new THREE.PerspectiveCamera();
   camara.position.z=3;
-  var renderizador = new THREE.WebGLRenderer();
+  renderizador = new THREE.WebGLRenderer();
   renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
   document.body.appendChild(renderizador.domElement);
 }
