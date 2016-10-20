@@ -18,6 +18,7 @@ var pieza,escena,camara,renderizador;
 function setup()
 {
   pieza=new Pieza();
+  pieza.rotateY(0.2);
   escena = new THREE.Scene();
   escena.add(pieza);
   camara = new THREE.PerspectiveCamera();
