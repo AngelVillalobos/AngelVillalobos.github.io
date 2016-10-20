@@ -37,7 +37,7 @@ function loop()
   
   setTimeout(function() {
     pieza.piernaizq.rotateX(-0.025);
-}, 500);
+}, 2000);
   
   renderizador.render(escena,camara);
 }
