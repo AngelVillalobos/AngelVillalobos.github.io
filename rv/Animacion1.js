@@ -44,9 +44,3 @@ function loop()
 setup();
 loop();
 
-
-
-
-
-
-
