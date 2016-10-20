@@ -29,7 +29,7 @@ function setup()
 function loop()
 {
   requestAnimationFrame(loop);
-  pieza.rotateY(0.1);
+  pieza.rotateY(0.05);
   renderizador.render(escena,camara);
 }
 
