@@ -33,7 +33,7 @@ function loop()
   //pieza.rotateY(0.025);
   setTimeout(function() {
     pieza.piernaizq.rotateX(0.025);
-}, 500);
+}, 2000);
   
   setTimeout(function() {
     pieza.piernaizq.rotateX(-0.025);
