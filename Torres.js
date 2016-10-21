@@ -78,7 +78,7 @@ AJEDREZ.RetrollamadaTorreNegra=function(textura)
 }
 ////////////////////////////////////////////////////////////////////
 
-AJEDREZ.setupPiezas=function()
+AJEDREZ.setupTorres=function()
 {
   AJEDREZ.cargadorTorre=new THREE.TextureLoader(); 
   AJEDREZ.cargadorTorre.load("maderaB.jpg",AJEDREZ.RetrollamadaTorreBlanca);  
