@@ -12,6 +12,8 @@ function funcion1(geometry,materials)
   material=new THREE.MeshBasicMaterial();
   Modelo=new THREE.Mesh(geometry,material);
   escena.add(Modelo);
+  Modelo.scale.set(15,15,15);
+  Modelo.position.set(0,0,0);
 }
 funcion1();
 
