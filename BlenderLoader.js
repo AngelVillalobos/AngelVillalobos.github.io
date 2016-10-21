@@ -11,7 +11,6 @@ function funcion1(geometry,materials)
 {
   material=new THREE.MeshBasicMaterial();
   Modelo=new THREE.Mesh(geometry,material);
-  
   escena.add(Modelo);
 }
 
