@@ -14,4 +14,4 @@ function funcion1(geometry,materials)
   escena.add(Modelo);
 }
 
-
+funcion1();
