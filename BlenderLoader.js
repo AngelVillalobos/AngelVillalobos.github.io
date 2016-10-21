@@ -6,7 +6,7 @@ renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
 document.body.appendChild(renderizador.domElement);
 renderizador.render(escena,camara);
 var MODELO=new THREE.JSONLoader();
-MODELO.load("Rey1.js",funcion1);
+MODELO.load("Rey.js",funcion1);
 function funcion1(geometry,materials)
 {
   material=new THREE.MeshBasicMaterial();
