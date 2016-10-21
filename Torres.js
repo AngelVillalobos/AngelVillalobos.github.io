@@ -1,4 +1,4 @@
-var AJEDREZ=new Object();
+
 AJEDREZ.TorresBlancas=new Array();
 AJEDREZ.TorresNegras=new Array();
 
