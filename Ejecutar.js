@@ -2,7 +2,7 @@ AJEDREZ.setup=function()
 {
   AJEDREZ.CRL();
   AJEDREZ.setupTorres();
-  AJEDREZ.escena.add(luzPuntual);
+  AJEDREZ.escena.add(AJEDREZ.luzPuntual);
 }
 
 AJEDREZ.loop=function()
