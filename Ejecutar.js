@@ -2,6 +2,7 @@ AJEDREZ.setup=function()
 {
   AJEDREZ.CRL();
   AJEDREZ.setupTorres();
+  AJEDREZ.setupPeones();
   AJEDREZ.escena.add(AJEDREZ.luzPuntual);
 }
 
