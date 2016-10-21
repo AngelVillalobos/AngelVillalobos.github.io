@@ -1,4 +1,3 @@
-
 AJEDREZ.TorresBlancas=new Array();
 AJEDREZ.TorresNegras=new Array();
 
