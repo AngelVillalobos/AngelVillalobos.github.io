@@ -1,3 +1,4 @@
+var AJEDREZ=new Object();
 AJEDREZ.CRL=function()
 {
   /////CAMARA////
