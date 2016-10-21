@@ -20,4 +20,6 @@ AJEDREZ.CRL=function()
   AJEDREZ.luzPuntual.position.y=-150;
   AJEDREZ.luzPuntual.position.z=150;
   AJEDREZ.luzPuntual.castShadow=true;
+  /////ESCENA////
+  AJEDREZ.escena=new THREE.Scene();
 }
