@@ -1,3 +1,4 @@
+var escena = new THREE.Scene();
 var camara = new THREE.PerspectiveCamera();
 camara.position.z=4;
 var renderizador = new THREE.WebGLRenderer();
@@ -10,7 +11,7 @@ function funcion1(geometry,materials)
 {
   material=new THREE.MeshBasicMaterial();
   Modelo=new THREE.Mesh(geometry,material);
-  var escena = new THREE.Scene();
+  
   escena.add(Modelo);
 }
 
