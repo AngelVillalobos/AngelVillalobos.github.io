@@ -56,6 +56,7 @@ AJEDREZ.RetrollamadaTorreBlanca=function(textura)
     AJEDREZ.TorresBlancas[i].rotateX(Math.PI/2);
     AJEDREZ.TorresBlancas[i].scale.set(7,7,8);
     AJEDREZ.TorresBlancas[i].castShadow=true;
+    AJEDREZ.escena.add(AJEDREZ.TorresBlancas[i]);
   }
   AJEDREZ.TorresBlancas[1].position.set(-35,-35,1.2);
   AJEDREZ.TorresBlancas[2].position.set(35,-35,1.2);
@@ -72,6 +73,7 @@ AJEDREZ.RetrollamadaTorreNegra=function(textura)
     AJEDREZ.TorresNegras[i].rotateX(Math.PI/2);
     AJEDREZ.TorresNegras[i].scale.set(7,7,8);
     AJEDREZ.TorresNegras[i].castShadow=true;
+    AJEDREZ.escena.add(AJEDREZ.TorresNegras[i]);
   }
   AJEDREZ.TorresNegras[1].position.set(-35,35,1.2);
   AJEDREZ.TorresNegras[2].position.set(35,35,1.2);
