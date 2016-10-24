@@ -1,7 +1,7 @@
   var escena = new THREE.Scene();
   var camara = new THREE.PerspectiveCamera();
   var renderizador = new THREE.WebGLRenderer();
-  var luzPuntual=new THREE.PointLight(0xFFFFFF,10);
+  var luzPuntual=new THREE.AmbientLight(0xFFFFFF);
 
   init();
   animate();
