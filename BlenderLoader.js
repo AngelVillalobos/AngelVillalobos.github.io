@@ -6,6 +6,7 @@
   init();
   animate();
 
+
 function init()
 {
   camara.position.z=40;
@@ -35,6 +36,7 @@ function animate()
   requestAnimationFrame(animate);
   renderizador.render(escena,camara);
 }
+
 
 
 
