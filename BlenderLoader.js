@@ -1,12 +1,12 @@
   var escena = new THREE.Scene();
   var camara = new THREE.PerspectiveCamera();
-
+  var renderizador = new THREE.WebGLRenderer();
 
 var MODELO=new THREE.JSONLoader();
 MODELO.load('Rey.js',function(geometry){
   
   camara.position.z=4;
-  var renderizador = new THREE.WebGLRenderer();
+  
   var BaseAlMalla = new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.5,0.15,64,64),new THREE.MeshNormalMaterial());
   material=new THREE.MeshBasicMaterial();
   Modelo=new THREE.Mesh(geometry,material);
