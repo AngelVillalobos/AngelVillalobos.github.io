@@ -23,7 +23,7 @@ function init()
   Modelo=new THREE.Mesh(geometry,Material);
   //escena.add(BaseAlMalla);
   Modelo.scale.set(5,5,5);
-  Modelo.rotate.set(Math.PI/6,Math.PI/4,0);
+  Modelo.rotateY(Math.PI/6);
   Modelo.position.set(0,0,0);
   escena.add(Modelo);
   
