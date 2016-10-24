@@ -1,3 +1,4 @@
+
 var MODELO=new THREE.JSONLoader();
 MODELO.load('Rey.js',funcion1(geometry));
 funcion1(geometry){
