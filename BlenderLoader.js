@@ -9,9 +9,9 @@
 
 function init()
 {
-  camara.position.z=40;
+  camara.position.z=100;
   luzPuntual.position.x=50;
-  luzPuntual.position.y=0;
+  luzPuntual.position.y=-50;
   luzPuntual.position.z=50;
   escena.add(luzPuntual);
 
@@ -23,7 +23,7 @@ function init()
   //escena.add(BaseAlMalla);
   Modelo.scale.set(5,5,5);
   Modelo.rotateY(Math.PI/6);
-  Modelo.position.set(0,-20,0);
+  Modelo.position.set(0,0,0);
   escena.add(Modelo);
   
   
