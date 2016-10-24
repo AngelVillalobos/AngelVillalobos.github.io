@@ -15,7 +15,7 @@ MODELO.load('Rey.js',funcion1(geometry){
   renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
   document.body.appendChild(renderizador.domElement);
   renderizador.render(escena,camara);
-}
+});
 //funcion1();
 
 
