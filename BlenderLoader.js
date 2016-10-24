@@ -3,7 +3,7 @@
   var renderizador = new THREE.WebGLRenderer();
 
 var MODELO=new THREE.JSONLoader();
-MODELO.load('Rey.js',function(geometry){
+MODELO.load('cubo.js',function(geometry){
   
   camara.position.z=4;
   
