@@ -11,9 +11,9 @@
 function init()
 {
   camara.position.z=40;
-  luzPuntual.position.x=150;
-  luzPuntual.position.y=-150;
-  luzPuntual.position.z=150;
+  luzPuntual.position.x=50;
+  luzPuntual.position.y=-50;
+  luzPuntual.position.z=50;
   escena.add(luzPuntual);
 
   var Material=new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture('Textura.png')});
