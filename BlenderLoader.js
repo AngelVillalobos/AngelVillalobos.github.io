@@ -1,7 +1,6 @@
 
 var MODELO=new THREE.JSONLoader();
-MODELO.load('Rey.js',funcion1(geometry));
-funcion1(geometry){
+MODELO.load('Rey.js',function(geometry){
   var escena = new THREE.Scene();
   var camara = new THREE.PerspectiveCamera();
   camara.position.z=4;
@@ -16,7 +15,7 @@ funcion1(geometry){
   renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
   document.body.appendChild(renderizador.domElement);
   renderizador.render(escena,camara);
-}
+});
 //funcion1();
 
 
