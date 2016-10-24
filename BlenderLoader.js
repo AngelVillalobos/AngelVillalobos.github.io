@@ -1,5 +1,4 @@
 
-
 var MODELO=new THREE.JSONLoader();
 MODELO.load('Rey.js',funcion1(geometry){
   var escena = new THREE.Scene();
