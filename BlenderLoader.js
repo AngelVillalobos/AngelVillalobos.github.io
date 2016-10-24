@@ -23,7 +23,7 @@ function init()
   //material=new THREE.MeshBasicMaterial();
   Modelo=new THREE.Mesh(geometry,Material);
   //escena.add(BaseAlMalla);
-  Modelo.scale.set(15,15,15);
+  Modelo.scale.set(5,5,5);
   Modelo.position.set(0,0,0);
   escena.add(Modelo);
   
