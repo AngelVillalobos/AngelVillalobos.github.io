@@ -9,6 +9,8 @@
   var MaterialCuerpo=new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture('TexturaCuerpoRey.png')});
   //var MaterialCabeza=new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture('TexturaCabezaRey.png')});
 
+  
+  
   Cargador=new THREE.JSONLoader();
   Cargador.load('CuerpoRey.js',function(geometry){
   Cuerpo=new THREE.Mesh(geometry,MaterialCuerpo);
@@ -16,6 +18,17 @@
   //Cuerpo.rotateY(Math.PI/6);
   Cuerpo.position.set(0,0,0);
   });
+/*  
+  Cargador.load('CabezaRey.js',function(geometry){
+  Cabeza=new THREE.Mesh(geometry,MaterialCabeza);
+  Cabeza.scale.set(5,5,5);
+  //Cuerpo.rotateY(Math.PI/6);
+  Cabeza.position.set(0,-15,0);
+  });
+ */ 
+  var Rey=new THREE.Geometry();
+  escena.add(Cuerpo)
+
 
 function init()
 {
@@ -26,8 +39,7 @@ function init()
   escena.add(luzPuntual);
   renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
   document.body.appendChild(renderizador.domElement);
-  
-  escena.add(Cuerpo);
+;
 }  
 function animate()
 {
