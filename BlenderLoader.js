@@ -11,7 +11,7 @@ function init()
 {
   camara.position.z=40;
   luzPuntual.position.x=50;
-  luzPuntual.position.y=-50;
+  luzPuntual.position.y=-0;
   luzPuntual.position.z=50;
   escena.add(luzPuntual);
 
