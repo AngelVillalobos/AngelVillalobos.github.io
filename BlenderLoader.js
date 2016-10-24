@@ -2,7 +2,7 @@
   var camara = new THREE.PerspectiveCamera();
   var renderizador = new THREE.WebGLRenderer();
   var luzPuntual=new THREE.AmbientLight(0xFFFFFF);
-
+  var Cuerpo;
   init();
   animate();
 
@@ -17,8 +17,9 @@
   Cuerpo.scale.set(5,5,5);
   //Cuerpo.rotateY(Math.PI/6);
   Cuerpo.position.set(0,0,0);
-    escena.add(Cuerpo)
+    
   });
+escena.add(Cuerpo)
 /*  
   Cargador.load('CabezaRey.js',function(geometry){
   Cabeza=new THREE.Mesh(geometry,MaterialCabeza);
