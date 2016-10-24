@@ -14,12 +14,10 @@ function init()
   luzPuntual.position.z=50;
   escena.add(luzPuntual);
 
-  var Material=new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture('Textura.png')});
+  var Material=new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture('TexturaCuerpoRey.png')});
 
   MODELO=new THREE.JSONLoader();
-  MODELO.load('Rey1.js',function(geometry){
-  //var BaseAlMalla = new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.5,0.15,64,64),new THREE.MeshNormalMaterial());
-  //material=new THREE.MeshBasicMaterial();
+  MODELO.load('CuerpoRey.js',function(geometry){
   Modelo=new THREE.Mesh(geometry,Material);
   //escena.add(BaseAlMalla);
   Modelo.scale.set(5,5,5);
