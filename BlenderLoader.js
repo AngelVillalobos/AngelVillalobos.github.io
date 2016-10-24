@@ -1,9 +1,7 @@
 
 
 var MODELO=new THREE.JSONLoader();
-MODELO.load("Rey.js",funcion1(geometry));
-funcion1(geometry)
-{
+MODELO.load('Rey.js',funcion1(geometry){
   var escena = new THREE.Scene();
   var camara = new THREE.PerspectiveCamera();
   camara.position.z=4;
