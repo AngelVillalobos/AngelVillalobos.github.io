@@ -3,8 +3,6 @@
   var renderizador = new THREE.WebGLRenderer();
   var luzPuntual=new THREE.PointLight(0xFFFFFF);
 
-
-
   init();
   animate();
 
