@@ -6,7 +6,6 @@
   init();
   animate();
 
-
 function init()
 {
   camara.position.z=40;
