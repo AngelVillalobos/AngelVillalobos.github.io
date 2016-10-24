@@ -17,6 +17,7 @@
   Cuerpo.scale.set(5,5,5);
   //Cuerpo.rotateY(Math.PI/6);
   Cuerpo.position.set(0,0,0);
+    escena.add(Cuerpo)
   });
 /*  
   Cargador.load('CabezaRey.js',function(geometry){
@@ -27,7 +28,7 @@
   });
  */ 
   var Rey=new THREE.Geometry();
-  escena.add(Cuerpo)
+  
 
 
 function init()
