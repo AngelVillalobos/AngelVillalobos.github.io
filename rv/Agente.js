@@ -91,7 +91,7 @@ function Pared(size,x=0,y=0)
   this.position.x=x;
   this.position.y=y;
 }
-Pared.porototype=new THREE.Object3D();
+Pared.prototype=new THREE.Object3D();
 ///////////
 
 function setup()
