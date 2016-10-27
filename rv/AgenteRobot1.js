@@ -195,4 +195,3 @@ function loop()
 var environment,camara,renderizador;
 setup();
 loop();
-
