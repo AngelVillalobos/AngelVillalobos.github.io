@@ -197,4 +197,3 @@ var environment,camara,renderizador;
 setup();
 loop();
  
-
