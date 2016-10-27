@@ -111,7 +111,7 @@ Robot.porototype.act=function(environment)
   var command=this.actuator.pop();
   if(command===undefined)
     console.log('Indefined command');
-  else if(commandin this.operations)
+  else if(command in this.operations)
     this.operations[command](this);
   else
     console.log('Unknown command');
