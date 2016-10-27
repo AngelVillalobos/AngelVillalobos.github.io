@@ -69,14 +69,14 @@ Pelota.prototype.sense=function(environment)
     this.colision=1;
   else
     this.colision=0;
-}
+};
 
 Pelota.prototype.act=function(environment)
 {
   if(this.colision===1)
     this.step=-this.step;
   this.position.x +=this.step;
-}
+};
 
 ////////////
 
