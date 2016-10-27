@@ -120,7 +120,7 @@ Robot.prototype.act=function(environment)
 
 Robot.prototype.operations={};
 
-Robot.prototype.operationes.goStraight=function(robot,distance)
+Robot.prototype.operations.goStraight=function(robot,distance)
 {
   if(distance===undefined)
     distance=0.05;
