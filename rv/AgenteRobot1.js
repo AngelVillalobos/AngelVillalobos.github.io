@@ -106,7 +106,7 @@ Robot.prototype.plan=function(environment)
     this.actuator.commands.push('goStraight');
 };
 
-Robot.porototype.act=function(environment)
+Robot.prototype.act=function(environment)
 {
   var command=this.actuator.pop();
   if(command===undefined)
