@@ -186,7 +186,7 @@ function setup()
   piezas[9]="          ";
    
   environment=new Environment();
-  environment.setMapCasilla(tablero);
+  //environment.setMapCasilla(tablero);
   environment.setMapPiezas(piezas);
   //////CAMARA////
   var campoVision=45;
