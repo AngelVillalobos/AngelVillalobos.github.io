@@ -133,8 +133,7 @@ function PeonNegro(x,y)
 }
 PeonNegro.prototype=new THREE.Mesh();
 
-
-/*Environment.prototype.setMapCasilla=function(map)
+Environment.prototype.setMapCasilla=function(map)
 {
   cargador=new THREE.TextureLoader();
   for(var i=0;i<map.length;i++)
@@ -152,7 +151,7 @@ PeonNegro.prototype=new THREE.Mesh();
     }
   }
 }
-*/
+
 Environment.prototype.setMapPiezas=function(map)
 {
   var pos=Math.floor(map.length/2);
@@ -208,7 +207,7 @@ function setup()
   piezas[9]="          ";
    
   environment=new Environment();
-  //environment.setMapCasilla(tablero);
+  environment.setMapCasilla(tablero);
   environment.setMapPiezas(piezas);
   //////CAMARA////
   var campoVision=45;
