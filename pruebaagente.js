@@ -113,9 +113,15 @@ Borde.prototype=new THREE.Mesh();
 ///////////////PEON NEGRO///////////////
 function PeonNegro(x,y)
 {
+  Agent.call(this,x,y);
   cargador=new THREE.TextureLoader();
   textura=cargador.load('maderaN.jpg');
-  THREE.Mesh.call(this,new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.sensor=new Sensor();
+  this.actuator=THREE.Mesh.call(this,new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.actuator.commands=[];
+  this.add(this.actuator);
+  
+  
   this.position.x=x;
   this.position.y=y;
   this.position.z=1;
@@ -164,7 +170,7 @@ Environment.prototype.setMapPiezas=function(map)
         Peon.scale.set(7,7,8);
         Peon.rotateX(Math.PI/2);
         Peon.castshadow=true;
-        this.add(Peon);
+        //this.add(Peon);
       }
     }
   }
