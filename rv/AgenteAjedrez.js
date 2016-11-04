@@ -67,7 +67,7 @@ CasillaBlanca.prototype=new THREE.Mesh();
 
 function CasillaNegra(size,x,y)
 {
-  THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.3,10,10,10),new THREE.MeshBasicMaterial({color:0x000000}));
+  THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.3,10,10,10),new THREE.MeshBasicMaterial({color:0x00ffff}));
   this.size=size;
   this.position.x=x;
   this.position.y=y;
@@ -91,11 +91,11 @@ Environment.prototype.setMap=function(map)
     for(var j=0;j<map.length;j++)
     {
       if(map[i][j]==="n")
-        this.add(new CasillaBlanca(10,i*10,j*10));
+        this.add(new CasillaBlanca(10,(i*10)-45,(j*10)-45));
       else if(map[i][j]==="b")
-        this.add(new CasillaNegra(10,i*10,j*10));
+        this.add(new CasillaNegra(10,(i*10)-45,(j*10)-45));
       else if(map[i][j]==="B")
-        this.add(new Borde(10,i*10,j*10));
+        this.add(new Borde(10,(i*10)-45,(j*10)-45));
     }
   }
 }
