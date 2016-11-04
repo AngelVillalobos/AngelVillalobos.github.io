@@ -56,7 +56,7 @@ Environment.prototype.act=function()
   }
 }
 
-function CasillaBlanca(size,x,y,)
+function CasillaBlanca(size,x,y)
 {
   THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.3,10,10,10),new THREE.MeshBasicMaterial({color:0xffffff}));
   this.size=size;
@@ -65,7 +65,7 @@ function CasillaBlanca(size,x,y,)
 }
 CasillaBlanca.prototype=new THREE.Mesh();
 
-function CasillaNegra(size,x,y,)
+function CasillaNegra(size,x,y)
 {
   THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.3,10,10,10),new THREE.MeshBasicMaterial({color:0x000000}));
   this.size=size;
@@ -74,9 +74,9 @@ function CasillaNegra(size,x,y,)
 }
 CasillaNegra.prototype=new THREE.Mesh();
 
-function Borde(size,x,y,)
+function Borde(size,x,y)
 {
-  THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.3,10,10,10),new THREE.MeshBasicMaterial({color:0xffffff}));
+  THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.3,10,10,10),new THREE.MeshBasicMaterial({color:0xff00ff}));
   this.size=size;
   this.position.x=x;
   this.position.y=y;
