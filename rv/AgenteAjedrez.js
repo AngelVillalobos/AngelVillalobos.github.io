@@ -115,7 +115,7 @@ function PeonNegro(x,y)
 {
   cargador=new THREE.TextureLoader();
   textura=cargador.load('maderaN.jpg');
-  THREE.Mesh.call(this,new PeonGeometr(),new THREE.MeshLambertMaterial({map:textura}));
+  THREE.Mesh.call(this,new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.size=size;
   this.position.x=x;
   this.position.y=y;
