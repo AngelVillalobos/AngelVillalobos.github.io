@@ -1,3 +1,33 @@
+///////////////CONSTRUCTOR PEON///////////////
+PeonGeometry=function()
+{
+  THREE.Geometry.call(this);
+  var BasePForma = new THREE.CylinderGeometry(0.5,0.5,0.15,64,64);
+  var Base2PForma = new THREE.TorusGeometry(0.35,0.1,30,200);
+  var Base3PForma = new THREE.TorusGeometry(0.2,0.07,30,200);
+  var PeonForma = new THREE.CylinderGeometry(0.2,0.4,0.6,64,64);
+  var CoronaPForma = new THREE.SphereGeometry(0.36,32,32,6,6.3,6,6.3);
+  CoronaPForma.translate(0,-1,0);
+  PeonForma.translate(0,0.375,0);
+  Base2PForma.translate(0,0,-0.08);
+  Base3PForma.translate(0,0,-0.7);
+  CoronaPForma.rotateX(Math.PI);
+  Base3PForma.rotateX(Math.PI/2);
+  Base2PForma.rotateX(Math.PI/2);
+  var BasePMalla = new THREE.Mesh(BasePForma);
+  var Base2PMalla = new THREE.Mesh(Base2PForma);
+  var Base3PMalla = new THREE.Mesh(Base3PForma);
+  var PeonMalla = new THREE.Mesh(PeonForma);
+  var CoronaPMalla = new THREE.Mesh(CoronaPForma);
+  var PeonfForma = new THREE.Geometry();
+  this.merge(BasePMalla.geometry,BasePMalla.matrix);
+  this.merge(Base2PMalla.geometry,Base2PMalla.matrix);
+  this.merge(Base3PMalla.geometry,Base3PMalla.matrix);
+  this.merge(PeonMalla.geometry,PeonMalla.matrix);
+  this.merge(CoronaPMalla.geometry,CoronaPMalla.matrix);
+}
+PeonGeometry.prototype=new THREE.Geometry();
+///////////////AGENTE///////////////
 function Agent(x=0,y=0)
 {
   THREE.Object3D.call(this);
@@ -44,7 +74,7 @@ Environment.prototype.act=function()
       this.children[i].act(this);
   }
 }
-
+///////////////CASILLA BLANCA///////////////
 function CasillaBlanca(size,x,y)
 {
   cargador=new THREE.TextureLoader();
@@ -56,11 +86,11 @@ function CasillaBlanca(size,x,y)
   this.position.z=0;
 }
 CasillaBlanca.prototype=new THREE.Mesh();
-
+///////////////CASILLA NEGRA///////////////
 function CasillaNegra(size,x,y,textura)
 {
-  //cargador=new THREE.TextureLoader();
-  //textura=cargador.load('marmolN.jpg');
+  cargador=new THREE.TextureLoader();
+  textura=cargador.load('marmolN.jpg');
   THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.3,10,10,10),new THREE.MeshLambertMaterial({map:textura}));
   this.size=size;
   this.position.x=x;
@@ -68,7 +98,7 @@ function CasillaNegra(size,x,y,textura)
   this.position.z=0;
 }
 CasillaNegra.prototype=new THREE.Mesh();
-
+///////////////CASILLA AZUL (BORDE)///////////////
 function Borde(size,x,y)
 {
   cargador=new THREE.TextureLoader();
@@ -80,8 +110,21 @@ function Borde(size,x,y)
   this.position.z=0;
 }
 Borde.prototype=new THREE.Mesh();
+///////////////PEON NEGRO///////////////
+function PeonNegro(x,y)
+{
+  cargador=new THREE.TextureLoader();
+  textura=cargador.load('maderaN.jpg');
+  THREE.Mesh.call(this,new PeonGeometr(),new THREE.MeshLambertMaterial({map:textura}));
+  this.size=size;
+  this.position.x=x;
+  this.position.y=y;
+  this.position.z=0;
+}
+Borde.prototype=new THREE.Mesh();
 
-Environment.prototype.setMapCasilla=function(map)
+
+/*Environment.prototype.setMapCasilla=function(map)
 {
   cargador=new THREE.TextureLoader();
   for(var i=0;i<map.length;i++)
@@ -90,19 +133,16 @@ Environment.prototype.setMapCasilla=function(map)
     {
       if(map[i][j]==="n")
       {
-        textura=cargador.load('marmolN.jpg');
         this.add(new CasillaBlanca(10,(i*10)-45,(j*10)-45),textura);
       }
       else if(map[i][j]==="b")
-        //textura=cargador.load('marmolB.jpg');
         this.add(new CasillaNegra(10,(i*10)-45,(j*10)-45));
       else if(map[i][j]==="B")
-        //textura=cargador.load('marmolA.jpg');
         this.add(new Borde(10,(i*10)-45,(j*10)-45));
     }
   }
 }
-
+*/
 Environment.prototype.setMapPieza=function(map)
 {
   var pos=Math.floor(map.length/2);
@@ -110,12 +150,12 @@ Environment.prototype.setMapPieza=function(map)
   {
     for(var j=0;j<map.length;j++)
     {
-      if(map[i][j]==="n")
-        this.add(new CasillaBlanca(10,(i*10)-45,(j*10)-45));
-      else if(map[i][j]==="b")
-        this.add(new CasillaNegra(10,(i*10)-45,(j*10)-45));
-      else if(map[i][j]==="B")
-        this.add(new Borde(10,(i*10)-45,(j*10)-45));
+      if(map[i][j]==="p")
+        this.add(new PeonNegro((i*10)-45,(j*10)-45));
+      //else if(map[i][j]==="b")
+        //this.add(new CasillaNegra(10,(i*10)-45,(j*10)-45));
+      //else if(map[i][j]==="B")
+        //this.add(new Borde(10,(i*10)-45,(j*10)-45));
     }
   }
 }
