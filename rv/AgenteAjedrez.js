@@ -89,13 +89,15 @@ Environment.prototype.setMapCasilla=function(map)
     for(var j=0;j<map.length;j++)
     {
       if(map[i][j]==="n")
+      {
         textura=cargador.load('marmolN.jpg');
         this.add(new CasillaBlanca(10,(i*10)-45,(j*10)-45),textura);
+      }
       else if(map[i][j]==="b")
-        textura=cargador.load('marmolB.jpg');
+        //textura=cargador.load('marmolB.jpg');
         this.add(new CasillaNegra(10,(i*10)-45,(j*10)-45));
       else if(map[i][j]==="B")
-        textura=cargador.load('marmolA.jpg');
+        //textura=cargador.load('marmolA.jpg');
         this.add(new Borde(10,(i*10)-45,(j*10)-45));
     }
   }
