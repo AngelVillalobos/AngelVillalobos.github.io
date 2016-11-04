@@ -1,14 +1,3 @@
-var ajedrez= new THREE.Object3D;
-ajedrez.torresBlancas=new Array();
-ajedrez.torresNegras=new Array();
-ajedrez.peonesBlancos=new Array();
-ajedrez.peonesNegros=new Array();
-ajedrez.casillasNegras=new Array();
-ajedrez.casillasBlancas=new Array();
-ajedrez.alfilesBlancos=new Array();
-ajedrez.alfilesNegros=new Array();
-
-
 function Agent(x=0,y=0)
 {
   THREE.Object3D.call(this);
@@ -92,9 +81,9 @@ Borde.prototype=new THREE.Mesh();
 Environment.prototype.setMap=function(map)
 {
   var pos=Math.floor(map.length/2);
-  for(var i=0;i<map.length;i++)
+  for(var i=0;i=<map.length;i++)
   {
-    for(var j=0;j<map.length;j++)
+    for(var j=0;j=<map.length;j++)
     {
       if(map[i][j]==="n")
         this.add(new CasillaBlanca(10,(i*10)-45,(j*10)-45));
