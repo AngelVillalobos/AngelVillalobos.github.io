@@ -144,7 +144,7 @@ function setup()
   luzPuntual.position.z=150;
   luzPuntual.castShadow=true;
   environment.add(camara);
-  environment.add(luzpuntual);
+  environment.add(luzPuntual);
 }
 function loop()
 {
