@@ -58,7 +58,7 @@ Environment.prototype.act=function()
 
 function CasillaBlanca(size,x,y)
 {
-  THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.3,10,10,10),new THREE.MeshBasicMaterial({color:0xffffff}));
+  THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.3,10,10,10),new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture('marmolB.jpg')}));
   this.size=size;
   this.position.x=x;
   this.position.y=y;
@@ -67,7 +67,8 @@ CasillaBlanca.prototype=new THREE.Mesh();
 
 function CasillaNegra(size,x,y)
 {
-  THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.3,10,10,10),new THREE.MeshBasicMaterial({color:0x00ffff}));
+  THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.3,10,10,10),new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture('marmolN.jpg')}));
+
   this.size=size;
   this.position.x=x;
   this.position.y=y;
@@ -76,7 +77,8 @@ CasillaNegra.prototype=new THREE.Mesh();
 
 function Borde(size,x,y)
 {
-  THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.3,10,10,10),new THREE.MeshBasicMaterial({color:0xff00ff}));
+  THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.3,10,10,10),new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture('marmolA.jpg')}));
+
   this.size=size;
   this.position.x=x;
   this.position.y=y;
