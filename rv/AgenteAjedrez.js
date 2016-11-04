@@ -102,27 +102,43 @@ Environment.prototype.setMap=function(map)
 
 function setup()
 {
-  var mapa=new Array();
-  mapa[0]="BBBBBBBB";
-  mapa[1]="BbnbnbnbnB";
-  mapa[2]="BnbnbnbnbB";
-  mapa[3]="BbnbnbnbnB";
-  mapa[4]="BnbnbnbnbB";
-  mapa[5]="BbnbnbnbnB";
-  mapa[6]="BnbnbnbnbB";
-  mapa[7]="BbnbnbnbnB";
-  mapa[8]="BnbnbnbnbB";
-  mapa[9]="BBBBBBBB";
+  var tablero=new Array();
+  tablero[0]="BBBBBBBB";
+  tablero[1]="BbnbnbnbnB";
+  tablero[2]="BnbnbnbnbB";
+  tablero[3]="BbnbnbnbnB";
+  tablero[4]="BnbnbnbnbB";
+  tablero[5]="BbnbnbnbnB";
+  tablero[6]="BnbnbnbnbB";
+  tablero[7]="BbnbnbnbnB";
+  tablero[8]="BnbnbnbnbB";
+  tablero[9]="BBBBBBBB";
  
    
   environment=new Environment();
-  environment.setMap(mapa);
-  camara=new THREE.PerspectiveCamera();
-  camara.position.z=100;
-  renderizador=new THREE.WebGLRenderer();
-  renderizador.setSize(window.innerHeight,window.innerHeight);
-  document.body.appendChild(renderizador.domElement); 
+  environment.setMap(tablero);
+  //////CAMARA////
+  var campoVision=45;
+  var relacionAspecto=window.innerWidth/window.innerHeight;
+  var planoCercano=1;
+  var planoLejano=1000;
+  camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
+  camara.position.z=120;
+  camara.position.y=-90;
+  camara.lookAt(new THREE.Vector3(0,0,0));
+  /////RENDERIZADOR////
+  renderizador = new THREE.WebGLRenderer();
+  renderizador.setSize(window.innerWidth,window.innerHeight);
+  document.body.appendChild(AJEDREZ.renderizador.domElement);
+  renderizador.shadowMapEnabled=true;
+  /////LUZ////
+  luzPuntual=new THREE.PointLight(0xFFFFFF,1.2);
+  luzPuntual.position.x=150;
+  luzPuntual.position.y=-150;
+  luzPuntual.position.z=150;
+  luzPuntual.castShadow=true;
   environment.add(camara);
+  environment.add(luzpuntual);
 }
 function loop()
 {
@@ -133,6 +149,6 @@ function loop()
   renderizador.render(environment,camara);
 }
 
-var environment,camara,renderizador;
+var environment,camara,renderizador,luzpuntual;
 setup();
 loop();
