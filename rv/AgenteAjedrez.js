@@ -118,7 +118,7 @@ function PeonNegro(x,y)
   THREE.Mesh.call(this,new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.position.x=x;
   this.position.y=y;
-  this.position.z=0;
+  this.position.z=0.3;
 }
 PeonNegro.prototype=new THREE.Mesh();
 ///////////////PEON BLANCO///////////////
@@ -129,7 +129,7 @@ function PeonBlanco(x,y)
   THREE.Mesh.call(this,new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.position.x=x;
   this.position.y=y;
-  this.position.z=0;
+  this.position.z=0.3;
 }
 PeonBlanco.prototype=new THREE.Mesh();
 
@@ -141,11 +141,23 @@ Environment.prototype.setMapCasilla=function(map)
     for(var j=0;j<map.length;j++)
     {
       if(map[i][j]==="n")
-        this.add(new CasillaBlanca(10,(i*10)-45,(j*10)-45));
+      {
+        Casilla=new CasillaBlanca(10,(i*10)-45,(j*10)-45);
+        Casilla.receiveShadow=true;
+        this.add(Casilla);
+      }
       else if(map[i][j]==="b")
-        this.add(new CasillaNegra(10,(i*10)-45,(j*10)-45));
+      {
+        Casilla=new CasillaNegra(10,(i*10)-45,(j*10)-45);
+        Casilla.receiveShadow=true;
+        this.add(Casilla);
+      }
       else if(map[i][j]==="B")
-        this.add(new Borde(10,(i*10)-45,(j*10)-45));
+      {
+        Borde=new Borde(10,(i*10)-45,(j*10)-45);
+        Borde.receiveShadow=true;
+        this.add(Borde);
+      }
     }
   }
 }
@@ -159,7 +171,7 @@ Environment.prototype.setMapPiezas=function(map)
     {
       if(map[i][j]==="p")
       {
-        Peon=new PeonNegro((i*10)-45,(j*10)-45);
+        Peon=new PeonNegro((j*10)-45,(i*10)-45);
         Peon.scale.set(7,7,8);
         Peon.rotateX(Math.PI/2);
         Peon.castshadow=true;
@@ -167,7 +179,7 @@ Environment.prototype.setMapPiezas=function(map)
       }
       else if(map[i][j]==="P")
       {
-        Peon=new PeonBlanco((i*10)-45,(j*10)-45);
+        Peon=new PeonBlanco((j*10)-45,(i*10)-45);
         Peon.scale.set(7,7,8);
         Peon.rotateX(Math.PI/2);
         Peon.castshadow=true;
