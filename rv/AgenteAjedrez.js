@@ -121,7 +121,7 @@ function PeonNegro(x,y)
   this.position.y=y;
   this.position.z=0;
 }
-Borde.prototype=new THREE.Mesh();
+PeonNegro.prototype=new THREE.Mesh();
 
 
 /*Environment.prototype.setMapCasilla=function(map)
