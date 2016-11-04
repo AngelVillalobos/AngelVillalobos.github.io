@@ -143,7 +143,7 @@ Borde.prototype=new THREE.Mesh();
   }
 }
 */
-Environment.prototype.setMapPieza=function(map)
+Environment.prototype.setMapPiezas=function(map)
 {
   var pos=Math.floor(map.length/2);
   for(var i=0;i<map.length;i++)
