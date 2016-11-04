@@ -53,17 +53,19 @@ function CasillaBlanca(size,x,y)
   this.size=size;
   this.position.x=x;
   this.position.y=y;
+  this.position.z=0;
 }
 CasillaBlanca.prototype=new THREE.Mesh();
 
-function CasillaNegra(size,x,y)
+function CasillaNegra(size,x,y,textura)
 {
-  cargador=new THREE.TextureLoader();
-  textura=cargador.load('marmolN.jpg');
+  //cargador=new THREE.TextureLoader();
+  //textura=cargador.load('marmolN.jpg');
   THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.3,10,10,10),new THREE.MeshLambertMaterial({map:textura}));
   this.size=size;
   this.position.x=x;
   this.position.y=y;
+  this.position.z=0;
 }
 CasillaNegra.prototype=new THREE.Mesh();
 
@@ -75,10 +77,31 @@ function Borde(size,x,y)
   this.size=size;
   this.position.x=x;
   this.position.y=y;
+  this.position.z=0;
 }
 Borde.prototype=new THREE.Mesh();
 
-Environment.prototype.setMap=function(map)
+Environment.prototype.setMapCasilla=function(map)
+{
+  cargador=new THREE.TextureLoader();
+  for(var i=0;i<map.length;i++)
+  {
+    for(var j=0;j<map.length;j++)
+    {
+      if(map[i][j]==="n")
+        textura=cargador.load('marmolN.jpg');
+        this.add(new CasillaBlanca(10,(i*10)-45,(j*10)-45),textura);
+      else if(map[i][j]==="b")
+        textura=cargador.load('marmolB.jpg');
+        this.add(new CasillaNegra(10,(i*10)-45,(j*10)-45));
+      else if(map[i][j]==="B")
+        textura=cargador.load('marmolA.jpg');
+        this.add(new Borde(10,(i*10)-45,(j*10)-45));
+    }
+  }
+}
+
+Environment.prototype.setMapPieza=function(map)
 {
   var pos=Math.floor(map.length/2);
   for(var i=0;i<map.length;i++)
@@ -108,10 +131,21 @@ function setup()
   tablero[7]="BbnbnbnbnB";
   tablero[8]="BnbnbnbnbB";
   tablero[9]="BBBBBBBBBB";
- 
+  var piezas=new Array();
+  piezas[0]="          ";
+  piezas[1]=" TCAXRACT ";
+  piezas[2]=" PPPPPPPP ";
+  piezas[3]="          ";
+  piezas[4]="          ";
+  piezas[5]="          ";
+  piezas[6]="          ";
+  piezas[7]=" pppppppp ";
+  piezas[8]=" tcaxract ";
+  piezas[9]="          ";
    
   environment=new Environment();
-  environment.setMap(tablero);
+  environment.setMapCasilla(tablero);
+  environment.setMapPiezas(piezas);
   //////CAMARA////
   var campoVision=45;
   var relacionAspecto=window.innerWidth/window.innerHeight;
