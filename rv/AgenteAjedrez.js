@@ -1,3 +1,42 @@
+///////////////CONSTRUCTOR DEL ALFIL////////////////////////////////
+AlfilGeometry=function()
+{
+  THREE.Geometry.call(this);
+  var BaseAlForma = new THREE.CylinderGeometry(0.5,0.5,0.15,64,64);
+  var Base2AlForma = new THREE.TorusGeometry(0.35,0.1,30,200);
+  var Base3AlForma = new THREE.TorusGeometry(0.2,0.07,30,200);
+  var AlfilForma = new THREE.CylinderGeometry(0.2,0.4,1.2,64,64);
+  var Corona3AlForma = new THREE.SphereGeometry(0.08,32,32,6,6.3,6,6.3);
+  var Puntos = [];
+  for (var i=-4;i<10;i++)
+  {
+  	Puntos.push(new THREE.Vector2(Math.cos(i*0.2)*0.2+0.1,(i-0.1)*0.05));
+  }
+  var Corona1AlForma=new THREE.LatheGeometry(Puntos);
+  Corona1AlForma.translate(0,1.52,0);
+  Corona3AlForma.translate(0,-2,0);
+  AlfilForma.translate(0,0.675,0);
+  Base2AlForma.translate(0,0,-0.08);
+  Base3AlForma.translate(0,0,-1.25);
+  Corona1AlForma.rotateY(Math.PI);
+  Corona3AlForma.rotateX(Math.PI);
+  Base3AlForma.rotateX(Math.PI/2);
+  Base2AlForma.rotateX(Math.PI/2);
+  var BaseAlMalla = new THREE.Mesh(BaseAlForma);
+  var Base2AlMalla = new THREE.Mesh(Base2AlForma);
+  var Base3AlMalla = new THREE.Mesh(Base3AlForma);
+  var AlfilMalla = new THREE.Mesh(AlfilForma);
+  var Corona3AlMalla = new THREE.Mesh(Corona3AlForma);
+  var Corona1AlMalla = new THREE.Mesh(Corona1AlForma);
+  var AlfilfForma = new THREE.Geometry();
+  this.merge(BaseAlMalla.geometry,BaseAlMalla.matrix);
+  this.merge(Base2AlMalla.geometry,Base2AlMalla.matrix);
+  this.merge(Base3AlMalla.geometry,Base3AlMalla.matrix);
+  this.merge(AlfilMalla.geometry,AlfilMalla.matrix);
+  this.merge(Corona3AlMalla.geometry,Corona3AlMalla.matrix);
+  this.merge(Corona1AlMalla.geometry,Corona1AlMalla.matrix);
+}
+AlfilGeometry.prototype=new THREE.Geometry();
 ///////////////CONSTRUCTOR PEON///////////////
 PeonGeometry=function()
 {
@@ -161,7 +200,7 @@ function PeonNegro(x,y)
   THREE.Mesh.call(this,new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.position.x=x;
   this.position.y=y;
-  this.position.z=0.6;
+  this.position.z=1;
 }
 PeonNegro.prototype=new THREE.Mesh();
 ///////////////PEON BLANCO///////////////
@@ -172,7 +211,7 @@ function PeonBlanco(x,y)
   THREE.Mesh.call(this,new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.position.x=x;
   this.position.y=y;
-  this.position.z=0.6;
+  this.position.z=1;
 }
 PeonBlanco.prototype=new THREE.Mesh();
 ///////////////TORRE NEGRA///////////////
@@ -183,7 +222,7 @@ function TorreNegra(x,y)
   THREE.Mesh.call(this,new TorreGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.position.x=x;
   this.position.y=y;
-  this.position.z=0.6;
+  this.position.z=1;
 }
 TorreNegra.prototype=new THREE.Mesh();
 ///////////////TORRE BLANCA///////////////
@@ -194,9 +233,31 @@ function TorreBlanca(x,y)
   THREE.Mesh.call(this,new TorreGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.position.x=x;
   this.position.y=y;
-  this.position.z=0.6;
+  this.position.z=1;
 }
 TorreBlanca.prototype=new THREE.Mesh();
+///////////////ALFIL NEGRO///////////////
+function AlfilNegro(x,y)
+{
+  cargador=new THREE.TextureLoader();
+  textura=cargador.load('maderaN.jpg');
+  THREE.Mesh.call(this,new AlfilGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.position.x=x;
+  this.position.y=y;
+  this.position.z=1;
+}
+AlfilNegro.prototype=new THREE.Mesh();
+///////////////ALFIL BLANCO///////////////
+function AlfilBlanco(x,y)
+{
+  cargador=new THREE.TextureLoader();
+  textura=cargador.load('maderaB.jpg');
+  THREE.Mesh.call(this,new AlfilGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.position.x=x;
+  this.position.y=y;
+  this.position.z=1;
+}
+AlfilBlanco.prototype=new THREE.Mesh();
 
 Environment.prototype.setMapCasilla=function(map)
 {
@@ -265,6 +326,22 @@ Environment.prototype.setMapPiezas=function(map)
         Torre.rotateX(Math.PI/2);
         Torre.castshadow=true;
         this.add(Torre);
+      }
+      else if(map[i][j]==="a")
+      {
+        Alfil=new AlfilNegro((j*10)-45,(i*10)-45);
+        Alfil.scale.set(7,7,8);
+        Alfil.rotateX(Math.PI/2);
+        Alfil.castshadow=true;
+        this.add(Alfil);
+      }
+      else if(map[i][j]==="A")
+      {
+        Alfil=new AlfilBlanco((j*10)-45,(i*10)-45);
+        Alfil.scale.set(7,7,8);
+        Alfil.rotateX(Math.PI/2);
+        Alfil.castshadow=true;
+        this.add(Alfil);
       }
     }
   }
