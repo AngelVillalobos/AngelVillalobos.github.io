@@ -150,7 +150,11 @@ Environment.prototype.setMapPiezas=function(map)
     for(var j=0;j<map.length;j++)
     {
       if(map[i][j]==="p")
-        this.add(new PeonNegro((i*10)-45,(j*10)-45));
+      {
+        Peon=new PeonNegro((i*10)-45,(j*10)-45)
+        Peon.scale.set(7,7,8)
+        this.add(Peon);
+      }
       //else if(map[i][j]==="b")
         //this.add(new CasillaNegra(10,(i*10)-45,(j*10)-45));
       //else if(map[i][j]==="B")
