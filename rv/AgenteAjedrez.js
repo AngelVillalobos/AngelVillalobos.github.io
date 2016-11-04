@@ -122,7 +122,7 @@ function PeonNegro(x,y)
 }
 PeonNegro.prototype=new THREE.Mesh();
 ///////////////PEON BLANCO///////////////
-function PeonNegro(x,y)
+function PeonBlanco(x,y)
 {
   cargador=new THREE.TextureLoader();
   textura=cargador.load('maderaB.jpg');
@@ -131,7 +131,7 @@ function PeonNegro(x,y)
   this.position.y=y;
   this.position.z=0;
 }
-PeonNegro.prototype=new THREE.Mesh();
+PeonBlanco.prototype=new THREE.Mesh();
 
 Environment.prototype.setMapCasilla=function(map)
 {
@@ -141,9 +141,7 @@ Environment.prototype.setMapCasilla=function(map)
     for(var j=0;j<map.length;j++)
     {
       if(map[i][j]==="n")
-      {
-        this.add(new CasillaBlanca(10,(i*10)-45,(j*10)-45),textura);
-      }
+        this.add(new CasillaBlanca(10,(i*10)-45,(j*10)-45));
       else if(map[i][j]==="b")
         this.add(new CasillaNegra(10,(i*10)-45,(j*10)-45));
       else if(map[i][j]==="B")
