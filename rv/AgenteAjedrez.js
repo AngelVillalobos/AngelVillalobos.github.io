@@ -129,7 +129,7 @@ function setup()
   /////RENDERIZADOR////
   renderizador = new THREE.WebGLRenderer();
   renderizador.setSize(window.innerWidth,window.innerHeight);
-  document.body.appendChild(AJEDREZ.renderizador.domElement);
+  document.body.appendChild(renderizador.domElement);
   renderizador.shadowMapEnabled=true;
   /////LUZ////
   luzPuntual=new THREE.PointLight(0xFFFFFF,1.2);
