@@ -154,9 +154,9 @@ Environment.prototype.setMapCasilla=function(map)
       }
       else if(map[i][j]==="B")
       {
-        Borde=new Borde(10,(i*10)-45,(j*10)-45);
-        Borde.receiveShadow=true;
-        this.add(Borde);
+        CBorde=new Borde(10,(i*10)-45,(j*10)-45);
+        CBorde.receiveShadow=true;
+        this.add(CBorde);
       }
     }
   }
