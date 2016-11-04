@@ -81,9 +81,9 @@ Borde.prototype=new THREE.Mesh();
 Environment.prototype.setMap=function(map)
 {
   var pos=Math.floor(map.length/2);
-  for(var i=0;i<map.length;i++)
+  for(var i=0;i=map.length;i++)
   {
-    for(var j=0;j<map.length;j++)
+    for(var j=0;j=map.length;j++)
     {
       if(map[i][j]==="n")
         this.add(new CasillaBlanca(10,(i*10)-45,(j*10)-45));
