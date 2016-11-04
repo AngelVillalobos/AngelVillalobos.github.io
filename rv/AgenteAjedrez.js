@@ -121,6 +121,17 @@ function PeonNegro(x,y)
   this.position.z=0;
 }
 PeonNegro.prototype=new THREE.Mesh();
+///////////////PEON BLANCO///////////////
+function PeonNegro(x,y)
+{
+  cargador=new THREE.TextureLoader();
+  textura=cargador.load('maderaB.jpg');
+  THREE.Mesh.call(this,new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.position.x=x;
+  this.position.y=y;
+  this.position.z=0;
+}
+PeonNegro.prototype=new THREE.Mesh();
 
 
 /*Environment.prototype.setMapCasilla=function(map)
@@ -151,12 +162,20 @@ Environment.prototype.setMapPiezas=function(map)
     {
       if(map[i][j]==="p")
       {
-        Peon=new PeonNegro((i*10)-45,(j*10)-45)
-        Peon.scale.set(7,7,8)
+        Peon=new PeonNegro((i*10)-45,(j*10)-45);
+        Peon.scale.set(7,7,8);
+        Peon.rotateX(Math.PI/2);
+        Peon.castshadow=true;
         this.add(Peon);
       }
-      //else if(map[i][j]==="b")
-        //this.add(new CasillaNegra(10,(i*10)-45,(j*10)-45));
+      else if(map[i][j]==="P")
+      {
+        Peon=new PeonBlanco((i*10)-45,(j*10)-45);
+        Peon.scale.set(7,7,8);
+        Peon.rotateX(Math.PI/2);
+        Peon.castshadow=true;
+        this.add(Peon);
+      }
       //else if(map[i][j]==="B")
         //this.add(new Borde(10,(i*10)-45,(j*10)-45));
     }
