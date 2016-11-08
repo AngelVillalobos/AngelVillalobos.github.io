@@ -1,4 +1,3 @@
-
 function Agent(x=0,y=0)
 {
   THREE.Object3D.call(this);
@@ -197,5 +196,3 @@ var environment,camara,renderizador;
 setup();
 loop();
  
-
-
