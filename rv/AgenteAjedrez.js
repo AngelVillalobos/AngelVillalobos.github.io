@@ -200,7 +200,7 @@ function PeonNegro(x,y)
   THREE.Mesh.call(this,new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.position.x=x;
   this.position.y=y;
-  this.position.z=1;
+  this.position.z=2;
 }
 PeonNegro.prototype=new THREE.Mesh();
 ///////////////PEON BLANCO///////////////
@@ -211,7 +211,7 @@ function PeonBlanco(x,y)
   THREE.Mesh.call(this,new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.position.x=x;
   this.position.y=y;
-  this.position.z=1;
+  this.position.z=2;
 }
 PeonBlanco.prototype=new THREE.Mesh();
 ///////////////TORRE NEGRA///////////////
@@ -222,7 +222,7 @@ function TorreNegra(x,y)
   THREE.Mesh.call(this,new TorreGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.position.x=x;
   this.position.y=y;
-  this.position.z=1;
+  this.position.z=2;
 }
 TorreNegra.prototype=new THREE.Mesh();
 ///////////////TORRE BLANCA///////////////
@@ -233,7 +233,7 @@ function TorreBlanca(x,y)
   THREE.Mesh.call(this,new TorreGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.position.x=x;
   this.position.y=y;
-  this.position.z=1;
+  this.position.z=2;
 }
 TorreBlanca.prototype=new THREE.Mesh();
 ///////////////ALFIL NEGRO///////////////
@@ -244,7 +244,7 @@ function AlfilNegro(x,y)
   THREE.Mesh.call(this,new AlfilGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.position.x=x;
   this.position.y=y;
-  this.position.z=1;
+  this.position.z=2;
 }
 AlfilNegro.prototype=new THREE.Mesh();
 ///////////////ALFIL BLANCO///////////////
@@ -255,7 +255,7 @@ function AlfilBlanco(x,y)
   THREE.Mesh.call(this,new AlfilGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.position.x=x;
   this.position.y=y;
-  this.position.z=1;
+  this.position.z=2;
 }
 AlfilBlanco.prototype=new THREE.Mesh();
 
@@ -390,7 +390,7 @@ function setup()
   document.body.appendChild(renderizador.domElement);
   renderizador.shadowMapEnabled=true;
   /////LUZ////
-  luzPuntual=new THREE.PointLight(0xFFFFFF,1.2);
+  luzPuntual=new THREE.PointLight(0xFF0000,1.2);
   luzPuntual.position.x=150;
   luzPuntual.position.y=-150;
   luzPuntual.position.z=150;
