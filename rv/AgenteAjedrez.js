@@ -189,7 +189,7 @@ function Borde(size,x,y)
   this.size=size;
   this.position.x=x;
   this.position.y=y;
-  this.position.z=0;
+  this.position.z=-2;
 }
 Borde.prototype=new THREE.Mesh();
 ///////////////PEON NEGRO///////////////
@@ -390,7 +390,7 @@ function setup()
   document.body.appendChild(renderizador.domElement);
   renderizador.shadowMapEnabled=true;
   /////LUZ////
-  luzPuntual=new THREE.PointLight(0xFF0000,1.2);
+  luzPuntual=new THREE.PointLight(0xFFFFFF,2);
   luzPuntual.position.x=150;
   luzPuntual.position.y=-150;
   luzPuntual.position.z=150;
