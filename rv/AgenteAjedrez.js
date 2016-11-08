@@ -410,3 +410,5 @@ function loop()
 var environment,camara,renderizador,luzpuntual;
 setup();
 loop();
+
+
