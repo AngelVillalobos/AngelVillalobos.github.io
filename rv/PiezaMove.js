@@ -170,7 +170,7 @@ function setup()
   tablero[8]="BnbnbnbnbB";
   tablero[9]="BBBBBBBBBB";
   
-  Peon=new PeonNegro(-35,-25);
+  Peon=new Peon(-35,-25);
   Peon.scale.set(7,7,8);
   Peon.rotateX(Math.PI/2);
   Peon.castshadow=true;
