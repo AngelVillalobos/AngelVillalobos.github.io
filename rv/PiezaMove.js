@@ -154,7 +154,7 @@ function Peon(x,y)
   this.actuator.commands=[];
   this.add(this.actuator);
 }
-Robot.prototype=new Agent();
+Peon.prototype=new Agent();
 
 function setup()
 {
