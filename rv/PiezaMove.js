@@ -176,7 +176,7 @@ function setup()
   Peon.castshadow=true;
    
   environment=new Environment();
-  environment.setMapCasilla(tablero);
+  //environment.setMapCasilla(tablero);
     //////CAMARA////
   var campoVision=45;
   var relacionAspecto=window.innerWidth/window.innerHeight;
