@@ -20,7 +20,7 @@ Environment.prototype=new THREE.Scene();
 
 Environment.prototype.sense=function()
 {
-  for(var i=0;i<this.children.lenght;i++)
+  for(var i=0;i<this.children.length;i++)
   {
     if(this.children[i].sense!==undefined)
       this.children[i].sense(this);
@@ -29,7 +29,7 @@ Environment.prototype.sense=function()
 
 Environment.prototype.plan=function()
 {
-  for(var i=0;i<this.children.lenght;i++)
+  for(var i=0;i<this.children.length;i++)
   {
     if(this.children[i].plan!==undefined)
       this.children[i].plan(this);
@@ -38,7 +38,7 @@ Environment.prototype.plan=function()
 
 Environment.prototype.act=function()
 {
-  for(var i=0;i<this.children.lenght;i++)
+  for(var i=0;i<this.children.length;i++)
   {
     if(this.children[i].act!==undefined)
       this.children[i].act(this);
@@ -58,10 +58,10 @@ Wall.prototype=new THREE.Mesh();
 
 Environment.prototype.setMap=function(map)
 {
-  var _offset=Math.floor(map.lenght/2);
-  for(var i=0;i<map.lenght;i++)
+  var _offset=Math.floor(map.length/2);
+  for(var i=0;i<map.length;i++)
   {
-    for(var j=0;j<map.lenght;j++)
+    for(var j=0;j<map.length;j++)
     {
       if(map[i][j]==="x")
         this.add(new Wall(1,j-_offset,-(i-_offset)));
@@ -91,7 +91,7 @@ Robot.prototype.sense=function(environment)
 {
   this.sensor.set(this.position,new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0));
   var obstaculo=this.sensor.intersectObjects(environment.children,true);
-  if((obstaculo.lenght>0 && (obstaculo[0].distance<=0.5)))
+  if((obstaculo.length>0 && (obstaculo[0].distance<=0.5)))
     this.sensor.colision=true;
   else
     this.sensor.colision=false;
