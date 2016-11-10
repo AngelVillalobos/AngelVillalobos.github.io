@@ -80,6 +80,7 @@ function CasillaBlanca(size,x,y)
   textura=cargador.load('marmolB.jpg');
   THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.3,10,10,10),new THREE.MeshLambertMaterial({map:textura}));
   this.size=size;
+  this.receiveShadow=true;
   this.position.x=x;
   this.position.y=y;
   this.position.z=0;
@@ -92,6 +93,7 @@ function CasillaNegra(size,x,y,textura)
   textura=cargador.load('marmolN.jpg');
   THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.3,10,10,10),new THREE.MeshLambertMaterial({map:textura}));
   this.size=size;
+  this.receiveShadow=true;
   this.position.x=x;
   this.position.y=y;
   this.position.z=0;
@@ -104,6 +106,7 @@ function Borde(size,x,y)
   textura=cargador.load('marmolA.jpg');
   THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,5,10,10,10),new THREE.MeshLambertMaterial({map:textura}));
   this.size=size;
+  this.receiveShadow=true;
   this.position.x=x;
   this.position.y=y;
   this.position.z=0;
@@ -121,19 +124,19 @@ Environment.prototype.setMapCasilla=function(map)
       if(map[i][j]==="n")
       {
         Casilla=new CasillaBlanca(10,(i*10)-45,(j*10)-45);
-        Casilla.receiveShadow=true;
+        //Casilla.receiveShadow=true;
         this.add(Casilla);
       }
       else if(map[i][j]==="b")
       {
         Casilla=new CasillaNegra(10,(i*10)-45,(j*10)-45);
-        Casilla.receiveShadow=true;
+        //Casilla.receiveShadow=true;
         this.add(Casilla);
       }
       else if(map[i][j]==="B")
       {
         CBorde=new Borde(10,(i*10)-45,(j*10)-45);
-        CBorde.receiveShadow=true;
+        //CBorde.receiveShadow=true;
         this.add(CBorde);
       }
     }
@@ -151,6 +154,7 @@ function Peon(x,y)
   Agent.call(this,x,y);
   cargador=new THREE.TextureLoader();
   textura=cargador.load('maderaN.jpg');
+  this.receiveShadow=true;
   this.position.x=x;
   this.position.y=y;
   this.position.z=0.6;
