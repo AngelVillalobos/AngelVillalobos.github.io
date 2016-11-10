@@ -45,7 +45,6 @@ function Environment()
 {
   THREE.Scene.call(this);
 }
-
 Environment.prototype=new THREE.Scene();
 
 Environment.prototype.sense=function()
@@ -111,28 +110,8 @@ function Borde(size,x,y)
 }
 Borde.prototype=new THREE.Mesh();
 ///////////////PEON NEGRO///////////////
-function PeonNegro(x,y)
-{
-  cargador=new THREE.TextureLoader();
-  textura=cargador.load('maderaN.jpg');
-  THREE.Mesh.call(this,new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
-  this.position.x=x;
-  this.position.y=y;
-  this.position.z=0.6;
-}
-PeonNegro.prototype=new THREE.Mesh();
-///////////////PEON BLANCO///////////////
-function PeonBlanco(x,y)
-{
-  cargador=new THREE.TextureLoader();
-  textura=cargador.load('maderaB.jpg');
-  THREE.Mesh.call(this,new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
-  this.position.x=x;
-  this.position.y=y;
-  this.position.z=0.6;
-}
-PeonBlanco.prototype=new THREE.Mesh();
-/////////////////////////////////////////
+
+
 Environment.prototype.setMapCasilla=function(map)
 {
   cargador=new THREE.TextureLoader();
@@ -162,6 +141,20 @@ Environment.prototype.setMapCasilla=function(map)
   }
 }
 
+function Peon(x,y)
+{
+  Agent.call(this,x,y);
+  cargador=new THREE.TextureLoader();
+  textura=cargador.load('maderaN.jpg');
+  this.position.x=x;
+  this.position.y=y;
+  this.position.z=0.6;
+  this.sensor=new Sensor();
+  this.actuator=THREE.Mesh.call(this,new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.actuator.commands=[];
+  this.add(this.actuator);
+}
+Robot.prototype=new Agent();
 
 function setup()
 {
