@@ -184,8 +184,7 @@ function setup()
    
   environment=new Environment();
   environment.setMapCasilla(tablero);
-  environment.setMapPiezas(piezas);
-  //////CAMARA////
+    //////CAMARA////
   var campoVision=45;
   var relacionAspecto=window.innerWidth/window.innerHeight;
   var planoCercano=1;
