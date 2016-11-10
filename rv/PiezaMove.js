@@ -155,8 +155,8 @@ function Peon(x,y)
   this.position.y=y;
   this.position.z=0.6;
   this.sensor=new Sensor();
-  var Pieza=new THREE.Mesh.call(this,new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
-  this.actuator=
+  //var Pieza=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.actuator.commands=[];
   this.add(this.actuator);
 }
