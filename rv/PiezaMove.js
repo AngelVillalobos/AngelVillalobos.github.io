@@ -102,7 +102,7 @@ function Borde(size,x,y)
 {
   cargador=new THREE.TextureLoader();
   textura=cargador.load('marmolA.jpg');
-  THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.3,10,10,10),new THREE.MeshLambertMaterial({map:textura}));
+  THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,1,10,10,10),new THREE.MeshLambertMaterial({map:textura}));
   this.size=size;
   this.position.x=x;
   this.position.y=y;
