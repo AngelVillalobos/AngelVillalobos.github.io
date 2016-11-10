@@ -76,6 +76,7 @@ function Sensor(position,direction)
   THREE.Raycaster.call(this,position,direction);
   this.colision=false;
 }
+Sensor.prototype = new THREE.Raycaster();
 
 function Robot(size,x,y)
 {
