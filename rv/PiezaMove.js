@@ -112,8 +112,7 @@ function Borde(size,x,y)
   this.position.z=0;
 }
 Borde.prototype=new THREE.Mesh();
-
-
+///////////////Armando el Tablero///////////////
 Environment.prototype.setMapCasilla=function(map)
 {
   cargador=new THREE.TextureLoader();
@@ -142,25 +141,20 @@ Environment.prototype.setMapCasilla=function(map)
     }
   }
 }
-
-Environment.prototype.setMapPiezas=function(map)
+///////////////Colocando Piezas///////////////
+Environment.prototype.setMap=function(map)
 {
   for(var i=0;i<map.length;i++)
   {
     for(var j=0;j<map.length;j++)
     {
       if(map[i][j]==="p")
-      {
-        Peonf=new Peon((j*10)-45,(i*10)-45);
-        Peonf.scale.set(7,7,8);
-        Peonf.rotateX(Math.PI/2);
-        Peonf.castshadow=true;
-        this.add(Peonf)
-      }
+        this.add(new Peon((j*10)-45,(i*10)-45);
+      else if(map[i][j]==="r")
+        this.add(new Peon((j*10)-45,(i*10)-45);
     }
   }
 }
-
 function Sensor(position,direction)
 {
   THREE.Raycaster.call(this,position,direction);
@@ -180,7 +174,6 @@ function Peon(x,y)
   this.position.z=0.6;
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
-  this.actuator.commands=[];
   //this.add(this.actuator);
   document.addEventListener('keydown',Teclado,false);
   //document.addEventListener( 'click', onDocumentMouseDown, false );
@@ -211,7 +204,7 @@ function Teclado()
 function setup()
 {
   document.documentElement.style.overflow = 'hidden';
-  
+  var Peon=new Array();
   var tablero=new Array();
   tablero[0]="BBBBBBBBBB";
   tablero[1]="BbnbnbnbnB";
@@ -236,10 +229,14 @@ function setup()
   Piezas[8]="          ";
   Piezas[9]="          ";
   
-  //Peon=new Peon(-35,-25);
-  //Peon.scale.set(7,7,8);
-  //Peon.rotateX(Math.PI/2);
-  //Peon.castshadow=true;
+  /*for (var i=0;i<7;i++)
+  {
+    Peon[i]=new Peon(-35,-25);
+    Peon[i].scale.set(7,7,8);
+    Peon[i].rotateX(Math.PI/2);
+    Peon[i].castshadow=true;
+  }*/
+  
    
   environment=new Environment();
   environment.setMapCasilla(tablero);
