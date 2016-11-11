@@ -150,9 +150,9 @@ Environment.prototype.setMapPiezas=function(map)
     for(var j=0;j<map.length;j++)
     {
       if(map[i][j]==="p")
-        Peon=new Peon((j*10)-45,(i*10)-45);
+        PiezaPeon=new Peon((j*10)-45,(i*10)-45);
       else if(map[i][j]==="r")
-        Peon=new Peon((j*10)-45,(i*10)-45);
+        PiezaPeon=new Peon((j*10)-45,(i*10)-45);
     }
   }
 }
