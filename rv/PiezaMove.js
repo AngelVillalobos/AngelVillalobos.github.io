@@ -1,7 +1,7 @@
 ///////////////CONSTRUCTOR PEON///////////////
 PeonGeometry=function()
 {
-  THREE.Mesh.call(this);
+  THREE.Geometry.call(this);
   var BasePForma = new THREE.CylinderGeometry(0.5,0.5,0.15,64,64);
   var Base2PForma = new THREE.TorusGeometry(0.35,0.1,30,200);
   var Base3PForma = new THREE.TorusGeometry(0.2,0.07,30,200);
@@ -26,7 +26,7 @@ PeonGeometry=function()
   this.merge(PeonMalla.geometry,PeonMalla.matrix);
   this.merge(CoronaPMalla.geometry,CoronaPMalla.matrix);
 }
-PeonGeometry.prototype=new THREE.Mesh();
+PeonGeometry.prototype=new THREE.Geometry();
 ///////////////AGENTE///////////////
 function Agent(x=0,y=0)
 {
@@ -149,9 +149,9 @@ Environment.prototype.setMapPiezas=function(map)
     for(var j=0;j<map.length;j++)
     {
       if(map[i][j]==="p")
-        this.add(new Peon((j*10)-45,(i*10)-45));
+        new Peon((j*10)-45,(i*10)-45);
       else if(map[i][j]==="r")
-        this.add(new Peon((j*10)-45,(i*10)-45));
+        new Peon((j*10)-45,(i*10)-45);
     }
   }
 }
@@ -174,7 +174,7 @@ function Peon(x,y)
   this.position.z=0.6;
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
-  //this.add(this.actuator);
+  this.add(this.actuator);
   document.addEventListener('keydown',Teclado,false);
   //document.addEventListener( 'click', onDocumentMouseDown, false );
 }
