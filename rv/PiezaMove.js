@@ -178,7 +178,7 @@ function Peon(x,y)
   this.actuator.scale.set(7,7,8);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castshadow=true;
-  document.addEventListener('keydown',Teclado,false);
+  document.addEventListener('keypress',Teclado,false);
   //document.addEventListener( 'click', onDocumentMouseDown, false );
 }
 Peon.prototype=new Agent();
@@ -199,7 +199,7 @@ Peon.prototype.plan=function(environment)
   if(this.sensor.colision==true)
     avance=0;
   else
-    avance=1
+    avance=0.5
 };
 
 function Teclado()
