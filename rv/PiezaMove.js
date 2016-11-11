@@ -112,7 +112,7 @@ function Borde(size,x,y)
   this.position.z=0;
 }
 Borde.prototype=new THREE.Mesh();
-///////////////PEON NEGRO///////////////
+
 
 Environment.prototype.setMapCasilla=function(map)
 {
@@ -148,7 +148,9 @@ function Sensor(position,direction)
   THREE.Raycaster.call(this,position,direction);
   this.colision=false;
 }
+Sensor.prototype = new THREE.Raycaster();
 
+///////////////PEON NEGRO///////////////
 function Peon(x,y)
 {
   Agent.call(this,x,y);
@@ -159,7 +161,6 @@ function Peon(x,y)
   this.position.y=y;
   this.position.z=0.6;
   this.sensor=new Sensor();
-  //var Pieza=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.actuator.commands=[];
   this.add(this.actuator);
@@ -167,23 +168,38 @@ function Peon(x,y)
 }
 Peon.prototype=new Agent();
 
+Peon.prototype.sense=function(environment)
+{
+  this.sensor.set(this.position,new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0.4));
+  var obstaculo=this.sensor.intersectObjects(environment.children,true);
+  if((obstaculo.length>0 && (obstaculo[0].distance<=0.5)))
+    this.sensor.colision=true;
+  else
+    this.sensor.colision=false;
+};
+
 function Teclado()
 {
+  if(Peon.sensor.colision==true)
+    var avance=0.4;
+  else
+    avance=0;
+  
   if(event.keyCode==39)
   {
-    Peon.position.x+=0.3;
+    Peon.position.x+=avance;
   }
   else if(event.keyCode==37)
   {
-    Peon.position.x+=-0.3;
+    Peon.position.x+=-avance;
   }
   else if(event.keyCode==38)
   {
-    Peon.position.y+=0.3;
+    Peon.position.y+=avance;
   }
   else if(event.keyCode==40)
   {
-    Peon.position.y+=-0.3;
+    Peon.position.y+=-avance;
   }
 }
 
