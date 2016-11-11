@@ -254,7 +254,7 @@ function setup()
   renderizador = new THREE.WebGLRenderer();
   renderizador.setSize(window.innerWidth,window.innerHeight);
   document.body.appendChild(renderizador.domElement);
-  renderizador.shadowMapEnabled=true;
+  renderizador.shadowMap.enabled=true;
   /////LUZ////
   luzPuntual=new THREE.PointLight(0xFFFFFF);
   luzPuntual.position.x=150;
@@ -263,7 +263,8 @@ function setup()
   luzPuntual.castShadow=true;
   environment.add(camara);
   environment.add(luzPuntual);
-  environment.add(Peon);
+  
+  //environment.add(Peon);
 }
 function loop()
 {
