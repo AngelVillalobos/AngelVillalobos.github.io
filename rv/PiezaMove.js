@@ -183,7 +183,7 @@ function Peon(x,y)
 }
 Peon.prototype=new Agent();
 
-Peon.prototype.sense=function(environment)
+/*Peon.prototype.sense=function(environment)
 {
   this.sensor.set(this.position,new THREE.Vector3(1,0,0));
   var obstaculo=this.sensor.intersectObjects(environment.children,true);
@@ -201,10 +201,10 @@ Peon.prototype.plan=function(environment)
   else
     avance=0.4;
 };
-
+*/
 function Teclado()
 {
-  //var avance=0.4;
+  var avance=0.4;
   if(event.keyCode==39)
   {
     environment.children[100].position.x+=avance;
@@ -288,7 +288,7 @@ function loop()
 }
 
 
-var environment,camara,renderizador,luzpuntual,avance=0.4;
+var environment,camara,renderizador,luzpuntual,avance;
 
 setup();
 loop();
