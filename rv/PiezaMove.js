@@ -150,7 +150,7 @@ Environment.prototype.setMapPiezas=function(map)
     {
       if(map[i][j]==="p")
       {
-        //this.add(new Peon((j*10)-45,(i*10)-45));
+        this.add(new Peon((j*10)-45,(i*10)-45));
         this.scale.set(7,7,8);
         this.rotateX(Math.PI/2);
         this.castshadow=true;
