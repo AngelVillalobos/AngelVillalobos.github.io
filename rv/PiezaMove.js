@@ -262,8 +262,7 @@ function setup()
   luzPuntual.position.z=150;
   luzPuntual.castShadow=true;
   environment.add(camara);
-  environment.add(luzPuntual);
-  
+  environment.add(luzPuntual); 
   //environment.add(Peon);
 }
 function loop()
