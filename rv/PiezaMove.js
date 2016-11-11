@@ -172,7 +172,7 @@ function Peon(x,y)
   this.castShadow=true;
   this.position.x=x;
   this.position.y=y;
-  this.position.z=15;
+  this.position.z=30;
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.add(this.actuator);
@@ -271,9 +271,9 @@ function setup()
   renderizador.shadowMap.enabled=true;
   /////LUZ////
   luzPuntual=new THREE.PointLight(0xFFFFFF);
-  luzPuntual.position.x=150;
-  luzPuntual.position.y=-150;
-  luzPuntual.position.z=150;
+  luzPuntual.position.x=50;
+  luzPuntual.position.y=-50;
+  luzPuntual.position.z=50;
   luzPuntual.castShadow=true;
   environment.add(camara);
   environment.add(luzPuntual); 
