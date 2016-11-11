@@ -178,7 +178,7 @@ function Peon(x,y)
   this.actuator.scale.set(7,7,8);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castshadow=true;
-  document.addEventListener('keyup',Teclado,false);
+  document.addEventListener('keydown',Teclado,false);
   //document.addEventListener( 'click', onDocumentMouseDown, false );
 }
 Peon.prototype=new Agent();
@@ -187,7 +187,7 @@ Peon.prototype.sense=function(environment)
 {
   this.sensor.set(this.position,new THREE.Vector3(1,0,0));
   var obstaculo=this.sensor.intersectObjects(environment.children,true);
-  if((obstaculo.length>0 && (obstaculo[0].distance<=1)))
+  if((obstaculo.length>0 && (obstaculo[0].distance<=5)))
     this.sensor.colision=true;
   else
     this.sensor.colision=false;
@@ -199,7 +199,7 @@ Peon.prototype.plan=function(environment)
   if(this.sensor.colision==true)
     avance=0;
   else
-    avance=0.5
+    avance=0.4;
 };
 
 function Teclado()
@@ -208,18 +208,22 @@ function Teclado()
   if(event.keyCode==39)
   {
     environment.children[100].position.x+=avance;
+    avance=0.4;
   }
   else if(event.keyCode==37)
   {
     environment.children[100].position.x+=-avance;
+    avance=0.4;
   }
   else if(event.keyCode==38)
   {
     environment.children[100].position.y+=avance;
+    avance=0.4;
   }
   else if(event.keyCode==40)
   {
     environment.children[100].position.y+=-avance;
+    avance=0.4;
   }
 }
 
