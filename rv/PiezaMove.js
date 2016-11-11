@@ -1,7 +1,7 @@
 ///////////////CONSTRUCTOR PEON///////////////
 PeonGeometry=function()
 {
-  THREE.Geometry.call(this);
+  THREE.Mesh.call(this);
   var BasePForma = new THREE.CylinderGeometry(0.5,0.5,0.15,64,64);
   var Base2PForma = new THREE.TorusGeometry(0.35,0.1,30,200);
   var Base3PForma = new THREE.TorusGeometry(0.2,0.07,30,200);
@@ -26,7 +26,7 @@ PeonGeometry=function()
   this.merge(PeonMalla.geometry,PeonMalla.matrix);
   this.merge(CoronaPMalla.geometry,CoronaPMalla.matrix);
 }
-PeonGeometry.prototype=new THREE.Geometry();
+PeonGeometry.prototype=new THREE.Mesh();
 ///////////////AGENTE///////////////
 function Agent(x=0,y=0)
 {
@@ -142,7 +142,7 @@ Environment.prototype.setMapCasilla=function(map)
   }
 }
 ///////////////Colocando Piezas///////////////
-Environment.prototype.setMap=function(map)
+Environment.prototype.setMapPiezas=function(map)
 {
   for(var i=0;i<map.length;i++)
   {
