@@ -149,9 +149,9 @@ Environment.prototype.setMapPiezas=function(map)
     for(var j=0;j<map.length;j++)
     {
       if(map[i][j]==="p")
-        this.add(new Peon((j*10)-45,(i*10)-45);
+        this.add(new Peon((j*10)-45,(i*10)-45));
       else if(map[i][j]==="r")
-        this.add(new Peon((j*10)-45,(i*10)-45);
+        this.add(new Peon((j*10)-45,(i*10)-45));
     }
   }
 }
