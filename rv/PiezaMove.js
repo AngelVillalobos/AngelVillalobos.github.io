@@ -181,7 +181,7 @@ function Teclado()
   {
     Peon.position.y+=0.3;
   }
-  else if(event.keyCode==36)
+  else if(event.keyCode==40)
   {
     Peon.position.y+=-0.3;
   }
