@@ -187,7 +187,7 @@ Peon.prototype.sense=function(environment)
 {
   this.sensor.set(this.position,new THREE.Vector3(1,0,0));
   var obstaculo=this.sensor.intersectObjects(environment.children,true);
-  if((obstaculo.length>0 && (obstaculo[0].distance<=2)))
+  if((obstaculo.length>0 && (obstaculo[0].distance<=3.6)))
     this.sensor.colision=true;
   else
     this.sensor.colision=false;
@@ -208,22 +208,18 @@ function Teclado()
   if(event.keyCode==39)
   {
     environment.children[100].position.x+=avance;
-    avance=0.4;
   }
   else if(event.keyCode==37)
   {
     environment.children[100].position.x+=-avance;
-    avance=0.4;
   }
   else if(event.keyCode==38)
   {
     environment.children[100].position.y+=avance;
-    avance=0.4;
   }
   else if(event.keyCode==40)
   {
     environment.children[100].position.y+=-avance;
-    avance=0.4;
   }
 }
 
