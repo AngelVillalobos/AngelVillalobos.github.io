@@ -198,9 +198,9 @@ Peon.prototype.plan=function(environment)
 {
   //this.actuator.commands=[];
   if(this.sensor.colision==true)
-    avance=0.4;
+    avance=-00.4;
   else
-    avance=-0.4;
+    avance=0.4;
 };
 
 function Teclado()
