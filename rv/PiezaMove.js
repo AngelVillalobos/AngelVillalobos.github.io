@@ -197,11 +197,11 @@ function Teclado()
   }
   else if(event.keyCode==38)
   {
-    environment.children[101].position.y+=avance;
+    environment.children[100].position.y+=avance;
   }
   else if(event.keyCode==40)
   {
-    environment.children[101].position.y+=-avance;
+    environment.children[100].position.y+=-avance;
   }
 }
 
