@@ -151,9 +151,6 @@ Environment.prototype.setMapPiezas=function(map)
       if(map[i][j]==="p")
       {
         this.add(new Peon((j*10)-45,(i*10)-45));
-        this.scale.set(7,7,8);
-        this.rotateX(Math.PI/2);
-        this.castshadow=true;
       }
     }
   }
@@ -177,7 +174,10 @@ function Peon(x,y)
   this.position.z=0.6;
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
-  //this.add(this.actuator);
+  this.add(this.actuator);
+  this.actuator.scale.set(7,7,8);
+  this.actuator.rotateX(Math.PI/2);
+  this.actuator.castshadow=true;
   document.addEventListener('keydown',Teclado,false);
   //document.addEventListener( 'click', onDocumentMouseDown, false );
 }
@@ -231,14 +231,7 @@ function setup()
   Piezas[7]="  p   p   ";
   Piezas[8]="          ";
   Piezas[9]="          ";
-  
-  /*for (var i=0;i<7;i++)
-  {
-    Peon[i]=new Peon(-35,-25);
-    
-  }*/
-  
-   
+     
   environment=new Environment();
   environment.setMapCasilla(tablero);
   environment.setMapPiezas(Piezas);
