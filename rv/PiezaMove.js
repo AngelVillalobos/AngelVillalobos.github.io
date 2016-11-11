@@ -180,10 +180,12 @@ Peon.prototype.sense=function(environment)
 
 function Teclado()
 {
+  var avance;
   if(Peon.sensor.colision==true)
-    var avance=0.4;
-  else
-    avance=0;
+  {
+    avance=-avance;
+  }
+
   
   if(event.keyCode==39)
   {
