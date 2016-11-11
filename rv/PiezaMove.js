@@ -189,19 +189,19 @@ function Teclado()
   var avance=0.4;
   if(event.keyCode==39)
   {
-    environment.children[0].position.x+=avance;
+    environment.children[40].position.x+=avance;
   }
   else if(event.keyCode==37)
   {
-    environment.children[9].position.x+=-avance;
+    environment.children[69].position.x+=-avance;
   }
   else if(event.keyCode==38)
   {
-    environment.children[10].position.y+=avance;
+    environment.children[80].position.y+=avance;
   }
   else if(event.keyCode==40)
   {
-    environment.children[19].position.y+=-avance;
+    environment.children[99].position.y+=-avance;
   }
 }
 
