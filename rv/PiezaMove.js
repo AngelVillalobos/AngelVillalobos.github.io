@@ -155,6 +155,7 @@ Environment.prototype.setMapPiezas=function(map)
         Peonf.scale.set(7,7,8);
         Peonf.rotateX(Math.PI/2);
         Peonf.castshadow=true;
+        this.add(Peonf)
       }
     }
   }
@@ -180,7 +181,7 @@ function Peon(x,y)
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.actuator.commands=[];
-  this.add(this.actuator);
+  //this.add(this.actuator);
   document.addEventListener('keydown',Teclado,false);
   //document.addEventListener( 'click', onDocumentMouseDown, false );
 }
