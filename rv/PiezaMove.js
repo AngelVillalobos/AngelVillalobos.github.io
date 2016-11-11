@@ -182,7 +182,7 @@ function Peon(x,y)
   this.actuator.commands=[];
   this.add(this.actuator);
   document.addEventListener('keydown',Teclado,false);
-  document.addEventListener( 'click', onDocumentMouseDown, false );
+  //document.addEventListener( 'click', onDocumentMouseDown, false );
 }
 Peon.prototype=new Agent();
 
