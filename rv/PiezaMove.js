@@ -143,6 +143,23 @@ Environment.prototype.setMapCasilla=function(map)
   }
 }
 
+Environment.prototype.setMapPiezas=function(map)
+{
+  for(var i=0;i<map.length;i++)
+  {
+    for(var j=0;j<map.length;j++)
+    {
+      if(map[i][j]==="p")
+      {
+        Peon=new Peon((j*10)-45,(i*10)-45);
+        Peon.scale.set(7,7,8);
+        Peon.rotateX(Math.PI/2);
+        Peon.castshadow=true;
+      }
+    }
+  }
+}
+
 function Sensor(position,direction)
 {
   THREE.Raycaster.call(this,position,direction);
@@ -165,18 +182,9 @@ function Peon(x,y)
   this.actuator.commands=[];
   this.add(this.actuator);
   document.addEventListener('keydown',Teclado,false);
+  document.addEventListener( 'click', onDocumentMouseDown, false );
 }
 Peon.prototype=new Agent();
-
-Peon.prototype.sense=function(environment)
-{
-  this.sensor.set(this.position,new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0));
-  var obstaculo=this.sensor.intersectObjects(environment.children,true);
-  if((obstaculo.length>0 && (obstaculo[0].distance<=0.5)))
-    this.sensor.colision=true;
-  else
-    this.sensor.colision=false;
-};
 
 function Teclado()
 {
@@ -215,6 +223,18 @@ function setup()
   tablero[8]="BnbnbnbnbB";
   tablero[9]="BBBBBBBBBB";
   
+  var Piezas=new Array();
+  Piezas[0]="          ";
+  Piezas[1]="          ";
+  Piezas[2]="          ";
+  Piezas[3]="          ";
+  Piezas[4]="          ";
+  Piezas[5]="          ";
+  Piezas[6]="          ";
+  Piezas[7]="  p   p   ";
+  Piezas[8]="          ";
+  Piezas[9]="          ";
+  
   Peon=new Peon(-35,-25);
   Peon.scale.set(7,7,8);
   Peon.rotateX(Math.PI/2);
@@ -222,6 +242,7 @@ function setup()
    
   environment=new Environment();
   environment.setMapCasilla(tablero);
+  environment.setMapPiezas(Piezas);
     //////CAMARA////
   var campoVision=45;
   var relacionAspecto=window.innerWidth/window.innerHeight;
