@@ -149,10 +149,12 @@ Environment.prototype.setMapPiezas=function(map)
     for(var j=0;j<map.length;j++)
     {
       if(map[i][j]==="p")
+      {
         this.add(new Peon((j*10)-45,(i*10)-45));
-      //is.add(PiezaPeon):
-      else if(map[i][j]==="r")
-        PiezaPeon=new Peon((j*10)-45,(i*10)-45);
+        this..scale.set(7,7,8);
+        this.rotateX(Math.PI/2);
+        this.castshadow=true;
+      }
     }
   }
 }
@@ -175,7 +177,6 @@ function Peon(x,y)
   this.position.z=0.6;
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
-  this.add(this.actuator);
   document.addEventListener('keydown',Teclado,false);
   //document.addEventListener( 'click', onDocumentMouseDown, false );
 }
@@ -233,9 +234,7 @@ function setup()
   /*for (var i=0;i<7;i++)
   {
     Peon[i]=new Peon(-35,-25);
-    Peon[i].scale.set(7,7,8);
-    Peon[i].rotateX(Math.PI/2);
-    Peon[i].castshadow=true;
+    
   }*/
   
    
