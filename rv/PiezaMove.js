@@ -151,10 +151,10 @@ Environment.prototype.setMapPiezas=function(map)
     {
       if(map[i][j]==="p")
       {
-        Peon=new Peon((j*10)-45,(i*10)-45);
-        Peon.scale.set(7,7,8);
-        Peon.rotateX(Math.PI/2);
-        Peon.castshadow=true;
+        Peonf=new Peon((j*10)-45,(i*10)-45);
+        Peonf.scale.set(7,7,8);
+        Peonf.rotateX(Math.PI/2);
+        Peonf.castshadow=true;
       }
     }
   }
