@@ -171,7 +171,7 @@ function Peon(x,y)
   this.castShadow=true;
   this.position.x=x;
   this.position.y=y;
-  this.position.z=30;
+  this.position.z=0.4;
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.add(this.actuator);
@@ -247,7 +247,7 @@ function setup()
   Piezas[4]="          ";
   Piezas[5]="          ";
   Piezas[6]="          ";
-  Piezas[7]="  p   p   ";
+  Piezas[7]="  p       ";
   Piezas[8]="          ";
   Piezas[9]="          ";
      
