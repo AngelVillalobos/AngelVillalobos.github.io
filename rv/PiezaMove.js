@@ -163,8 +163,17 @@ function Peon(x,y)
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.actuator.commands=[];
   this.add(this.actuator);
+  document.addEventListener('keydown',Teclado,false);
 }
 Peon.prototype=new Agent();
+
+function Teclado()
+{
+  if(event.keyCode==39)
+  {
+    Peon.position.x+=0.1;
+  }
+}
 
 function setup()
 {
