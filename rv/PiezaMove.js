@@ -187,7 +187,7 @@ function Teclado()
   var avance=0.4;
   if(event.keyCode==39)
   {
-    environment.children[1].position.x+=avance;
+    environment.children[0].position.x+=avance;
   }
   else if(event.keyCode==37)
   {
