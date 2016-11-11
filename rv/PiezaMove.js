@@ -156,7 +156,7 @@ function Peon(x,y)
   Agent.call(this,x,y);
   cargador=new THREE.TextureLoader();
   textura=cargador.load('maderaN.jpg');
-  this.receiveShadow=true;
+  this.castShadow=true;
   this.position.x=x;
   this.position.y=y;
   this.position.z=0.6;
@@ -183,7 +183,7 @@ function Teclado()
   var avance;
   if(Peon.sensor.colision==true)
   {
-    avance=-avance;
+    avance=-0.4;
   }
 
   
