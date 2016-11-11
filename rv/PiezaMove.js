@@ -192,15 +192,15 @@ function Teclado()
   }
   else if(event.keyCode==37)
   {
-    Peon.position.x+=-avance;
+    environment.children[9].position.x+=-avance;
   }
   else if(event.keyCode==38)
   {
-    Peon.position.y+=avance;
+    environment.children[10].position.y+=avance;
   }
   else if(event.keyCode==40)
   {
-    Peon.position.y+=-avance;
+    environment.children[19].position.y+=-avance;
   }
 }
 
