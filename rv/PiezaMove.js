@@ -171,7 +171,19 @@ function Teclado()
 {
   if(event.keyCode==39)
   {
-    Peon.position.x+=0.1;
+    Peon.position.x+=0.3;
+  }
+  else if(event.keyCode==37)
+  {
+    Peon.position.x+=-0.3;
+  }
+  else if(event.keyCode==38)
+  {
+    Peon.position.y+=0.3;
+  }
+  else if(event.keyCode==36)
+  {
+    Peon.position.y+=-0.3;
   }
 }
 
