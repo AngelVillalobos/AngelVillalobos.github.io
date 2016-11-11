@@ -189,6 +189,8 @@ function Teclado()
 
 function setup()
 {
+  document.documentElement.style.overflow = 'hidden';
+  
   var tablero=new Array();
   tablero[0]="BBBBBBBBBB";
   tablero[1]="BbnbnbnbnB";
@@ -241,7 +243,11 @@ function loop()
   renderizador.render(environment,camara);
 }
 
+
+
+
 var environment,camara,renderizador,luzpuntual;
+
 setup();
 loop();
 
