@@ -177,6 +177,7 @@ function Peon(x,y)
   this.position.z=0.6;
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.add(this.actuator);
   document.addEventListener('keydown',Teclado,false);
   //document.addEventListener( 'click', onDocumentMouseDown, false );
 }
