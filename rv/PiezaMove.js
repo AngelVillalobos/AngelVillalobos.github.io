@@ -235,10 +235,10 @@ function setup()
   Piezas[8]="          ";
   Piezas[9]="          ";
   
-  Peon=new Peon(-35,-25);
-  Peon.scale.set(7,7,8);
-  Peon.rotateX(Math.PI/2);
-  Peon.castshadow=true;
+  //Peon=new Peon(-35,-25);
+  //Peon.scale.set(7,7,8);
+  //Peon.rotateX(Math.PI/2);
+  //Peon.castshadow=true;
    
   environment=new Environment();
   environment.setMapCasilla(tablero);
