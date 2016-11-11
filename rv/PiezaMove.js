@@ -178,7 +178,7 @@ function Peon(x,y)
   this.actuator.scale.set(7,7,8);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castshadow=true;
-  document.addEventListener('keypress',Teclado,false);
+  document.addEventListener('keyup',Teclado,false);
   //document.addEventListener( 'click', onDocumentMouseDown, false );
 }
 Peon.prototype=new Agent();
