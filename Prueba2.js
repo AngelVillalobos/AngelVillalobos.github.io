@@ -233,7 +233,7 @@ function onDocumentMouseDown( event ) {
             var intersects = raycaster.intersectObjects( environment.children,true );
 
             if ( intersects.length > 0 ) {
-                intersects[ 0 ].object.material.color.setHex( Math.random() * 0xffffff );
+                intersects[ 0 ].object.material.color.setHex( 0x00ff00 );
               var pos=intersects[0].position;
               console.log(pos);
             }
