@@ -333,6 +333,7 @@ function loop()
 }
 
 
+
 var environment,camara,renderizador,luzpuntual,avance,iReturnValue;
 
 setup();
