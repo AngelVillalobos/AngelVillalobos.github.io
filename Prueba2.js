@@ -232,11 +232,13 @@ function onDocumentMouseDown( event ) {
             var raycaster =  new THREE.Raycaster();                                        
             raycaster.setFromCamera( mouse3D, camara );
             intersects = raycaster.intersectObjects( environment.children,true );
+            
 
             if ( intersects.length > 0 ) {
                 intersects[ 0 ].object.material.color.setHex( 0x00ff00 );
-                C=1;
-                
+                var posicion = intersects[0].getBoundingClientRect();
+ 
+            console.log(posicion.top, posicion.right, posicion.bottom, posicion.left);
                 //console.log(W);                     
             }
         }
