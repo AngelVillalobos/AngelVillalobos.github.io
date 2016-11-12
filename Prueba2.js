@@ -235,22 +235,30 @@ function onDocumentMouseDown( event ) {
 
             if ( intersects.length > 0 ) {
                 intersects[ 0 ].object.material.color.setHex( 0x00ff00 );
-              //getX(intersects[0]);
-              environment.updateMatrixWorld();
-              var M=intersects[0].offsetLeft;
-              console.log(M);
+              //environment.updateMatrixWorld();
+              findPosX(intersects[0]);
+              
+              
+              
             }
         }
 
-function getX( oElement )
-{
-  iReturnValue = 0;
-  while( oElement != null ) {
-    iReturnValue += oElement.offsetLeft;
-    oElement = oElement.offsetParent;
+function findPosX(obj)
+  {
+    var curleft = 0;
+    if(obj.offsetParent)
+        while(1) 
+        {
+          curleft += obj.offsetLeft;
+          if(!obj.offsetParent)
+            break;
+          obj = obj.offsetParent;
+        }
+    else if(obj.x)
+        curleft += obj.x;
+    console.log(curleft);
+    //return curleft;
   }
-  return iReturnValue;
-}
 
 /*function getY( oElement )
 {
