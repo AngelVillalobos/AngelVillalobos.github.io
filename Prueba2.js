@@ -236,7 +236,7 @@ function onDocumentMouseDown( event ) {
               //environment.children(intersects[0]).geometry.computeBoundingSphere();
               var x=intersects[0].point.x;
               console.log(intersects[0]);
-              console.log(mouse3D);
+              console.log(x);
               //console.log(pos);
             }
         }
