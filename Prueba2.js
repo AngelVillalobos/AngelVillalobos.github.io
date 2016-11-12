@@ -234,8 +234,8 @@ function onDocumentMouseDown( event ) {
 
             if ( intersects.length > 0 ) {
                 intersects[ 0 ].object.material.color.setHex( 0x00ff00 );
-              var pos=intersects[0].position.get();
-              console.log(pos);
+              //var pos=intersects[0].position.get();
+              //console.log(pos);
             }
         }
 
@@ -273,7 +273,7 @@ function setup()
   environment.setMapPiezas(Piezas);
   
   document.addEventListener('keydown',Teclado,false);
-  document.addEventListener( 'mousedown', onDocumentMouseDown );
+  document.addEventListener( 'click', onDocumentMouseDown );
   
   //var c = environment.children;
   //console.log(c);
