@@ -234,7 +234,7 @@ function onDocumentMouseDown( event ) {
             var intersects = raycaster.intersectObjects( environment.children,true );
 
             if ( intersects.length > 0 ) {
-                intersects[ 0 ].object.material.color.setHex( 0x00ff00 );
+                intersects[ 0 ].object.material.color.setHex( 0xffffff );
                 console.log(mouse3D);                     
             }
         }
