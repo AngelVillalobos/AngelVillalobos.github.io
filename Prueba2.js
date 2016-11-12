@@ -227,6 +227,8 @@ function SeleccionD(event)
   var raycaster=new THREE.Raycaster();                                        
   raycaster.setFromCamera(mouse3D,camara);
   seleccion=raycaster.intersectObjects(environment.children,true);
+  var T=seleccion.point.x;
+  console.log(T);
   if(seleccion.length>0)
   {
     seleccion[0].object.material.color.setHex(0x00ff00);
