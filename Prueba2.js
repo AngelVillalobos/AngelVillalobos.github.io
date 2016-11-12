@@ -232,7 +232,7 @@ function onDocumentMouseDown( event ) {
                                     0.5 );     
             var raycaster =  new THREE.Raycaster();                                        
             raycaster.setFromCamera( mouse3D, camara );
-            var intersects = raycaster.intersectObjects( environment.children,true );
+            intersects = raycaster.intersectObjects( environment.children,true );
 
             if ( intersects.length > 0 && C===0) {
                 intersects[ 0 ].object.material.color.setHex( 0x00ff00 );
@@ -245,6 +245,30 @@ function onDocumentMouseDown( event ) {
               C=0;
             }
         }
+
+function onDocumentMouseup( event ) { 
+  intersects[ 0 ].object.material.color.setHex( 0xffffff );
+            /*C=0;
+            event.preventDefault();
+            var mouse3D = new THREE.Vector3( ( event.clientX / window.innerWidth ) * 2 - 1,   
+                                    -( event.clientY / window.innerHeight ) * 2 + 1,  
+                                    0.5 );     
+            var raycaster =  new THREE.Raycaster();                                        
+            raycaster.setFromCamera( mouse3D, camara );
+            intersects = raycaster.intersectObjects( environment.children,true );
+
+            if ( intersects.length > 0 && C===0) {
+                intersects[ 0 ].object.material.color.setHex( 0x00ff00 );
+                C=1;
+                
+                //console.log(W);                     
+            }
+            if(C===1){
+              intersects[ 0 ].object.material.color.setHex( 0xffffff );
+              C=0;
+            }*/
+        }
+
 
 
 
@@ -282,7 +306,8 @@ function setup()
   environment.setMapPiezas(Piezas);
   
   document.addEventListener('keydown',Teclado,false);
-  document.addEventListener( 'click', onDocumentMouseDown );
+  document.addEventListener( 'mousedown', onDocumentMouseDown );
+  document.addEventListener( 'mouseup', onDocumentMouseup );
   
   //var c = environment.children;
   //console.log(c);
@@ -321,7 +346,7 @@ function loop()
 
 
 
-var environment,camara,renderizador,luzpuntual,avance,C;
+var environment,camara,renderizador,luzpuntual,avance,C,intersects;
 
 setup();
 loop();
