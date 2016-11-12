@@ -229,7 +229,7 @@ function SeleccionD(event)
   seleccion=raycaster.intersectObjects(environment.children,true);
   if(seleccion.length>0)
   {
-    selecion[0].object.material.color.setHex(0x00ff00);
+    seleccion[0].object.material.color.setHex(0x00ff00);
     var x=seleccion[0].point.x;
     var y=seleccion[0].point.y;
     if(-40<x<-30)
