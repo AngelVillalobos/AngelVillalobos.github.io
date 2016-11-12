@@ -178,7 +178,7 @@ function Peon(x,y)
   this.actuator.scale.set(7,7,8);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castshadow=true;
-  document.addEventListener('keydown',Teclado,false);
+  
   //document.addEventListener( 'click', onDocumentMouseDown, false );
 }
 Peon.prototype=new Agent();
@@ -253,6 +253,9 @@ function setup()
   environment=new Environment();
   environment.setMapCasilla(tablero);
   environment.setMapPiezas(Piezas);
+  
+  document.addEventListener('keydown',Teclado,false);
+  
     //////CAMARA////
   var campoVision=45;
   var relacionAspecto=window.innerWidth/window.innerHeight;
