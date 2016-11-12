@@ -233,7 +233,9 @@ function onDocumentMouseDown( event ) {
 
             if ( intersects.length > 0 ) {
                 intersects[ 0 ].object.material.color.setHex( 0x00ff00 );
+              var pos=GetScreenCordinates(intersects[ 0 ]);
               console.log(mouse3D);
+              console.log(pos);
             }
         }
 
@@ -242,7 +244,22 @@ function onDocumentMouseup( event ) {
         }
 
 
-
+    function GetScreenCordinates(obj) {
+        var p = {};
+        p.x = obj.offsetLeft;
+        p.y = obj.offsetTop;
+        while (obj.offsetParent) {
+            p.x = p.x + obj.offsetParent.offsetLeft;
+            p.y = p.y + obj.offsetParent.offsetTop;
+            if (obj == document.getElementsByTagName("body")[0]) {
+                break;
+            }
+            else {
+                obj = obj.offsetParent;
+            }
+        }
+        return {p.x,p.y};
+    }
 
 
 
