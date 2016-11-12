@@ -227,45 +227,43 @@ function SeleccionD(event)
   var raycaster=new THREE.Raycaster();                                        
   raycaster.setFromCamera(mouse3D,camara);
   seleccion=raycaster.intersectObjects(environment.children,true);
-  var T=seleccion.point.x;
-  console.log(T);
   if(seleccion.length>0)
   {
     seleccion[0].object.material.color.setHex(0x00ff00);
     var x=seleccion[0].point.x;
     var y=seleccion[0].point.y;
-    if(-40<x<-30)
-      x=-35;
-    else if(-30<x<-20)
-      x=-25;
-    else if(-20<x<-10)
-      x=-15;
-    else if(-10<x<0)
-      x=-5;
-    else if(0<x<10)
-      x=5;
-    else if(10<x<20)
-      x=15;
-    else if(20<x<30)
-      x=25;
-    else if(30<x<40)
-      x=35;
-    if(-40<y<-30)
-      y=-35;
-    else if(-30<y<-20)
-      y=-25;
-    else if(-20<y<-10)
-      y=-15;
-    else if(-10<y<0)
-      y=-5;
-    else if(0<y<10)
-      y=5;
-    else if(10<y<20)
-      y=15;
-    else if(20<y<30)
-      y=25;
-    else if(30<y<40)
-      y=35;
+    if(-40<x<-30){
+      x=-35;}
+    else if(-30<x<-20){
+      x=-25;}
+    else if(-20<x<-10){
+      x=-15;}
+    else if(-10<x<0){
+      x=-5;}
+    else if(0<x<10){
+      x=5;}
+    else if(10<x<20){
+      x=15;}
+    else if(20<x<30){
+      x=25;}
+    else if(30<x<40){
+      x=35;}
+    if(-40<y<-30){
+      y=-35;}
+    else if(-30<y<-20){
+      y=-25;}
+    else if(-20<y<-10){
+      y=-15;}
+    else if(-10<y<0){
+      y=-5;}
+    else if(0<y<10){
+      y=5;}
+    else if(10<y<20){
+      y=15;}
+    else if(20<y<30){
+      y=25;}
+    else if(30<y<40){
+      y=35;}
     console.log(x);
     console.log(y);
   }
