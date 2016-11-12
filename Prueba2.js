@@ -173,7 +173,8 @@ function Peon(x,y)
   this.position.y=y;
   this.position.z=0.4;
   this.sensor=new Sensor();
-  this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  //this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshBasicMaterial({color:0xffffff}));
   this.add(this.actuator);
   this.actuator.scale.set(7,7,8);
   this.actuator.rotateX(Math.PI/2);
@@ -222,6 +223,21 @@ function Teclado()
   }
 }
 
+function onDocumentMouseDown( event ) {    
+            event.preventDefault();
+            var mouse3D = new THREE.Vector3( ( event.clientX / window.innerWidth ) * 2 - 1,   
+                                    -( event.clientY / window.innerHeight ) * 2 + 1,  
+                                    0.5 );     
+            var raycaster =  new THREE.Raycaster();                                        
+            raycaster.setFromCamera( mouse3D, camera );
+            var intersects = raycaster.intersectObjects( environment.children,true );
+
+            if ( intersects.length > 0 ) {
+                intersects[ 0 ].object.material.color.setHex( Math.random() * 0xffffff );
+            }
+        }
+
+
 function setup()
 {
   document.documentElement.style.overflow = 'hidden';
@@ -255,6 +271,8 @@ function setup()
   environment.setMapPiezas(Piezas);
   
   document.addEventListener('keydown',Teclado,false);
+  document.addEventListener( 'mousedown', onDocumentMouseDown );
+  
   var c = environment.children;
   console.log(c);
     //////CAMARA////
