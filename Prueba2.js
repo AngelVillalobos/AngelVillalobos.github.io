@@ -225,7 +225,7 @@ function onDocumentMouseDown( event ) {
             event.preventDefault();
             var mouse3D = new THREE.Vector3( ( event.clientX / window.innerWidth ) * 2 - 1,   
                                     -( event.clientY / window.innerHeight ) * 2 + 1,  
-                                    0.5 );     
+                                    0 );     
             var raycaster =  new THREE.Raycaster();                                        
             raycaster.setFromCamera( mouse3D, camara );
             intersects = raycaster.intersectObjects( environment.children,true );
