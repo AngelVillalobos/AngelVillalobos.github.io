@@ -234,7 +234,7 @@ function SeleccionD(event)
     var y=seleccion[0].point.y;
     if(-40<x<-30){
       x=-35;}
-    else if(-30<x<-20){
+    /*else if(-30<x<-20){
       x=-25;}
     else if(-20<x<-10){
       x=-15;}
@@ -247,10 +247,10 @@ function SeleccionD(event)
     else if(20<x<30){
       x=25;}
     else if(30<x<40){
-      x=35;}
+      x=35;}*/
     if(-40<y<-30){
       y=-35;}
-    else if(-30<y<-20){
+    /*else if(-30<y<-20){
       y=-25;}
     else if(-20<y<-10){
       y=-15;}
@@ -263,7 +263,7 @@ function SeleccionD(event)
     else if(20<y<30){
       y=25;}
     else if(30<y<40){
-      y=35;}
+      y=35;}*/
     console.log(x);
     console.log(y);
   }
