@@ -236,7 +236,7 @@ function onDocumentMouseDown( event ) {
                 intersects[ 0 ].object.material.color.setHex( 0x00ff00 );
               //var pos=intersects[0].position.get();
               //console.log(pos);
-              intersects[ 0 ].updateMatrixWorld(true);
+              environment.updateMatrixWorld(true);
               var vector = new THREE.Vector3();
               vector.setFromMatrixPosition( intersects[ 0 ].matrixWorld );
               //alert(position.x + ',' + position.y + ',' + position.z);
