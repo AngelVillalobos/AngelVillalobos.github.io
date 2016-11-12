@@ -234,6 +234,8 @@ function onDocumentMouseDown( event ) {
 
             if ( intersects.length > 0 ) {
                 intersects[ 0 ].object.material.color.setHex( Math.random() * 0xffffff );
+              var pos=intersects[0].position;
+              console.log(pos);
             }
         }
 
