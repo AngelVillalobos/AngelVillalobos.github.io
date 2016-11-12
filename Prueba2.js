@@ -233,7 +233,7 @@ function onDocumentMouseDown( event ) {
 
             if ( intersects.length > 0 ) {
                 intersects[ 0 ].object.material.color.setHex( 0x00ff00 );
-              var pos=GetScreenCordinates(intersects[ 0 ]);
+              var pos=GetScreenCordinates(environment.children[100]);
               console.log(mouse3D);
               //console.log(pos);
             }
