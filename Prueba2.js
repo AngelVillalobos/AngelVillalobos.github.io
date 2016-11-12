@@ -310,7 +310,7 @@ function setup()
   environment.setMapPiezas(Piezas);
   
   document.addEventListener('keydown',Teclado);
-  document.addEventListener('mousedown',SelecionD);
+  document.addEventListener('mousedown',SeleccionD);
   document.addEventListener('mouseup',SeleccionU);
 
   ////CAMARA////
