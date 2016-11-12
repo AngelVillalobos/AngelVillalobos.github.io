@@ -237,7 +237,7 @@ function onDocumentMouseDown( event ) {
                 intersects[ 0 ].object.material.color.setHex( 0x00ff00 );
               //getX(intersects[0]);
               var M=intersects[0].offsetLeft;
-              //console.log(iReturnValue);
+              console.log(M);
             }
         }
 
