@@ -235,7 +235,7 @@ function onDocumentMouseDown( event ) {
                 intersects[ 0 ].object.material.color.setHex( 0x00ff00 );
               var pos=GetScreenCordinates(intersects[ 0 ]);
               console.log(mouse3D);
-              console.log(pos);
+              //console.log(pos);
             }
         }
 
@@ -258,7 +258,9 @@ function onDocumentMouseup( event ) {
                 obj = obj.offsetParent;
             }
         }
-        return {p};
+      console.log(p.x);
+      console.log(p.y);
+        //return {p};
     }
 
 
