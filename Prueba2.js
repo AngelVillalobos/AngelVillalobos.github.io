@@ -238,7 +238,7 @@ function onDocumentMouseDown( event ) {
               //console.log(pos);
               environment.updateMatrixWorld(true);
               var position = new THREE.Vector3();
-              position.getPositionFromMatrix( objMesh.matrixWorld );
+              position.getPositionFromMatrix( intersects[0].matrixWorld );
               alert(position.x + ',' + position.y + ',' + position.z);
               
             }
