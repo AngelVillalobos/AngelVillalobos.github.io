@@ -234,15 +234,32 @@ function onDocumentMouseDown( event ) {
 
             if ( intersects.length > 0 ) {
                 intersects[ 0 ].object.material.color.setHex( 0x00ff00 );
-              //var pos=intersects[0].position.get();
-              //console.log(pos);
-              environment.updateMatrixWorld(true);
-              var vector = new THREE.Vector3();
-              vector.setFromMatrixPosition( environment.children.matrixWorld );
-              //alert(position.x + ',' + position.y + ',' + position.z);
-              console.log(vector);
+              getX(intersects[0]);
+  
+              console.log(iReturnValue);
             }
         }
+
+function getX( oElement )
+{
+  iReturnValue = 0;
+  while( oElement != null ) {
+    iReturnValue += oElement.offsetLeft;
+    oElement = oElement.offsetParent;
+  }
+  return iReturnValue;
+}
+
+/*function getY( oElement )
+{
+  var iReturnValue = 0;
+  while( oElement != null ) {
+    iReturnValue += oElement.offsetTop;
+    oElement = oElement.offsetParent;
+  }
+  return iReturnValue;
+}*/
+
 
 
 function setup()
@@ -316,7 +333,7 @@ function loop()
 }
 
 
-var environment,camara,renderizador,luzpuntual,avance;
+var environment,camara,renderizador,luzpuntual,avance,iReturnValue;
 
 setup();
 loop();
