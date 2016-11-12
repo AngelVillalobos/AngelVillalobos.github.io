@@ -174,7 +174,6 @@ function Peon(x,y)
   this.position.z=0.4;
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
-  //this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshBasicMaterial({color:0xffffff}));
   this.add(this.actuator);
   this.actuator.scale.set(7,7,8);
   this.actuator.rotateX(Math.PI/2);
@@ -221,29 +220,59 @@ function Teclado()
   }
 }
 
-function onDocumentMouseDown( event ) { 
-            event.preventDefault();
-            var mouse3D = new THREE.Vector3( ( event.clientX / window.innerWidth ) * 2 - 1,   
-                                    -( event.clientY / window.innerHeight ) * 2 + 1,  
-                                    0 );     
-            var raycaster =  new THREE.Raycaster();                                        
-            raycaster.setFromCamera( mouse3D, camara );
-            intersects = raycaster.intersectObjects( environment.children,true );
-            
+function SeleccionD(event)
+{ 
+  //event.preventDefault();
+  var mouse3D=new THREE.Vector3((event.clientX/window.innerWidth)*2-1,-(event.clientY/window.innerHeight)*2+1,0);     
+  var raycaster=new THREE.Raycaster();                                        
+  raycaster.setFromCamera(mouse3D,camara);
+  seleccion=raycaster.intersectObjects(environment.children,true);
+  if(seleccion.length>0)
+  {
+    selecion[0].object.material.color.setHex(0x00ff00);
+    var x=seleccion[0].point.x;
+    var y=seleccion[0].point.y;
+    if(-40<x<-30)
+      x=-35;
+    else if(-30<x<-20)
+      x=-25;
+    else if(-20<x<-10)
+      x=-15;
+    else if(-10<x<0)
+      x=-5;
+    else if(0<x<10)
+      x=5;
+    else if(10<x<20)
+      x=15;
+    else if(20<x<30)
+      x=25;
+    else if(30<x<40)
+      x=35;
+    if(-40<y<-30)
+      y=-35;
+    else if(-30<y<-20)
+      y=-25;
+    else if(-20<y<-10)
+      y=-15;
+    else if(-10<y<0)
+      y=-5;
+    else if(0<y<10)
+      y=5;
+    else if(10<y<20)
+      y=15;
+    else if(20<y<30)
+      y=25;
+    else if(30<y<40)
+      y=35;
+    console.log(x);
+    console.log(y);
+  }
+}
 
-            if ( intersects.length > 0 ) {
-                intersects[ 0 ].object.material.color.setHex( 0x00ff00 );
-              //environment.children(intersects[0]).geometry.computeBoundingSphere();
-              var x=intersects[0].point.x;
-              console.log(intersects[0]);
-              console.log(x);
-              //console.log(pos);
-            }
-        }
-
-function onDocumentMouseup( event ) { 
-  intersects[ 0 ].object.material.color.setHex( 0xffffff );
-        }
+function SeleccionU(event) 
+{
+  seleccion[0].object.material.color.setHex(0xffffff);
+}
 
 
 
@@ -280,13 +309,11 @@ function setup()
   environment.setMapCasilla(tablero);
   environment.setMapPiezas(Piezas);
   
-  document.addEventListener('keydown',Teclado,false);
-  document.addEventListener( 'mousedown', onDocumentMouseDown );
-  document.addEventListener( 'mouseup', onDocumentMouseup );
-  
-  //var c = environment.children;
-  //console.log(c);
-    //////CAMARA////
+  document.addEventListener('keydown',Teclado);
+  document.addEventListener('mousedown',SelecionD);
+  document.addEventListener('mouseup',SeleccionU);
+
+  ////CAMARA////
   var campoVision=45;
   var relacionAspecto=window.innerWidth/window.innerHeight;
   var planoCercano=1;
@@ -308,7 +335,6 @@ function setup()
   luzPuntual.castShadow=true;
   environment.add(camara);
   environment.add(luzPuntual); 
-  //environment.add(Peon);
 }
 function loop()
 {
@@ -321,7 +347,7 @@ function loop()
 
 
 
-var environment,camara,renderizador,luzpuntual,avance,C,intersects;
+var environment,camara,renderizador,luzpuntual,avance,seleccion;
 
 setup();
 loop();
