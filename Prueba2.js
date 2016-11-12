@@ -229,7 +229,7 @@ function onDocumentMouseDown( event ) {
                                     -( event.clientY / window.innerHeight ) * 2 + 1,  
                                     0.5 );     
             var raycaster =  new THREE.Raycaster();                                        
-            raycaster.setFromCamera( mouse3D, camera );
+            raycaster.setFromCamera( mouse3D, camara );
             var intersects = raycaster.intersectObjects( environment.children,true );
 
             if ( intersects.length > 0 ) {
