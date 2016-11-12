@@ -235,11 +235,11 @@ function onDocumentMouseDown( event ) {
 
             if ( intersects.length > 0 ) {
                 intersects[ 0 ].object.material.color.setHex( 0x00ff00 );
-                environment.updateMatrixWorld();
-                intersects[0].geometry.computeBoundingBox();
+
+                
                 //console.log(W);                     
             }
-            intersects[ 0 ].object.material.color.setHex( 0xffffff );
+            intersects[ 0 ].object.material.color.setHex( 0xff00ff );
         }
 
 
