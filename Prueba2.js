@@ -235,7 +235,9 @@ function onDocumentMouseDown( event ) {
 
             if ( intersects.length > 0 ) {
                 intersects[ 0 ].object.material.color.setHex( 0x00ff00 );
-                console.log(mouse3D);                     
+                environment.updateMatrixWorld();
+              var W=intersects[ 0 ].position.y;
+                console.log(W);                     
             }
             intersects[ 0 ].object.material.color.setHex( 0xffffff );
         }
