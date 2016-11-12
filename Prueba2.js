@@ -258,7 +258,7 @@ function onDocumentMouseup( event ) {
                 obj = obj.offsetParent;
             }
         }
-        return {p.x,p.y};
+        return {p};
     }
 
 
