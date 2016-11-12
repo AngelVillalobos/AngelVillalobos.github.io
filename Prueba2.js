@@ -236,10 +236,10 @@ function onDocumentMouseDown( event ) {
 
             if ( intersects.length > 0 ) {
                 intersects[ 0 ].object.material.color.setHex( 0x00ff00 );
-                
+                var CA=intersects[ 0 ].matrixWorld.getPosition()
           var x = getOffset(intersects[0]).left;
             var y = getOffset(intersects[0]).top;
-                //console.log(W);                     
+                console.log(CA);                     
             }
         }
 
