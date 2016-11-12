@@ -255,7 +255,8 @@ function setup()
   environment.setMapPiezas(Piezas);
   
   document.addEventListener('keydown',Teclado,false);
-  
+  var c = document.body.childNodes;
+  console.log(c);
     //////CAMARA////
   var campoVision=45;
   var relacionAspecto=window.innerWidth/window.innerHeight;
