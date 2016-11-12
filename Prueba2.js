@@ -235,6 +235,7 @@ function onDocumentMouseDown( event ) {
                 intersects[ 0 ].object.material.color.setHex( 0x00ff00 );
               //environment.children(intersects[0]).geometry.computeBoundingSphere();
               console.log(intersects[0]);
+              console.log(mouse3D);
               //console.log(pos);
             }
         }
