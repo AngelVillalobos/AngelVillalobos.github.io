@@ -29,7 +29,7 @@
                                     0.5 );     
             var raycaster =  new THREE.Raycaster();                                        
             raycaster.setFromCamera( mouse3D, camera );
-            var intersects = raycaster.intersectObjects( objects );
+            var intersects = raycaster.intersectObjects( scene );
 
             if ( intersects.length > 0 ) {
                 intersects[ 0 ].object.material.color.setHex( Math.random() * 0xffffff );
