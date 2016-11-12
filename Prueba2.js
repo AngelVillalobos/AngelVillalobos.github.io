@@ -236,36 +236,28 @@ function onDocumentMouseDown( event ) {
 
             if ( intersects.length > 0 ) {
                 intersects[ 0 ].object.material.color.setHex( 0x00ff00 );
-                var posicion = intersects[0].getBoundingClientRect();
- 
-            console.log(posicion.top, posicion.right, posicion.bottom, posicion.left);
+                
+          var x = getOffset(intersects[0]).left;
+            var y = getOffset(intersects[0]).top;
                 //console.log(W);                     
             }
         }
 
 function onDocumentMouseup( event ) { 
   intersects[ 0 ].object.material.color.setHex( 0xffffff );
-            /*C=0;
-            event.preventDefault();
-            var mouse3D = new THREE.Vector3( ( event.clientX / window.innerWidth ) * 2 - 1,   
-                                    -( event.clientY / window.innerHeight ) * 2 + 1,  
-                                    0.5 );     
-            var raycaster =  new THREE.Raycaster();                                        
-            raycaster.setFromCamera( mouse3D, camara );
-            intersects = raycaster.intersectObjects( environment.children,true );
-
-            if ( intersects.length > 0 && C===0) {
-                intersects[ 0 ].object.material.color.setHex( 0x00ff00 );
-                C=1;
-                
-                //console.log(W);                     
-            }
-            if(C===1){
-              intersects[ 0 ].object.material.color.setHex( 0xffffff );
-              C=0;
-            }*/
         }
 
+function getOffset( el ) {
+    var _x = 0;
+    var _y = 0;
+    while( el &amp;&amp; !isNaN( el.offsetLeft ) &amp;&amp; !isNaN( el.offsetTop ) ) {
+        _x += el.offsetLeft - el.scrollLeft;
+        _y += el.offsetTop - el.scrollTop;
+        el = el.offsetParent;
+    }
+    return { top: _y, left: _x };
+}
+ 
 
 
 
