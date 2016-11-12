@@ -234,8 +234,8 @@ function onDocumentMouseDown( event ) {
             if ( intersects.length > 0 ) {
                 intersects[ 0 ].object.material.color.setHex( 0x00ff00 );
                 
-          var x = findPos(intersects[0]).curleft;
-            var y = findPos(intersects[0]).curtop;
+          var x = getOffsetSum(intersects[0]).left;
+            //var y = findPos(intersects[0]).curtop;
                 console.log(x);                     
             }
         }
@@ -244,16 +244,16 @@ function onDocumentMouseup( event ) {
   intersects[ 0 ].object.material.color.setHex( 0xffffff );
         }
 
-function findPos(obj) {
-	var curleft = curtop = 0;
-  if (obj.offsetParent) {
-    do {
-			curleft += obj.offsetLeft;
-			curtop += obj.offsetTop;
-      } while (obj = obj.offsetParent);
+function getOffsetSum(elem) {
+  var top=0, left=0
+  while(elem) {
+    top = top + parseInt(elem.offsetTop)
+    left = left + parseInt(elem.offsetLeft)
+    elem = elem.offsetParent       
   }
- return [curleft,curtop];
+  return {top: top, left: left}
 }
+
 
 
 
