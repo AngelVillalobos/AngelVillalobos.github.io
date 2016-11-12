@@ -225,7 +225,6 @@ function Teclado()
 }
 
 function onDocumentMouseDown( event ) { 
-            C=0;
             event.preventDefault();
             var mouse3D = new THREE.Vector3( ( event.clientX / window.innerWidth ) * 2 - 1,   
                                     -( event.clientY / window.innerHeight ) * 2 + 1,  
@@ -234,15 +233,11 @@ function onDocumentMouseDown( event ) {
             raycaster.setFromCamera( mouse3D, camara );
             intersects = raycaster.intersectObjects( environment.children,true );
 
-            if ( intersects.length > 0 && C===0) {
+            if ( intersects.length > 0 ) {
                 intersects[ 0 ].object.material.color.setHex( 0x00ff00 );
                 C=1;
                 
                 //console.log(W);                     
-            }
-            if(C===1){
-              intersects[ 0 ].object.material.color.setHex( 0xffffff );
-              C=0;
             }
         }
 
