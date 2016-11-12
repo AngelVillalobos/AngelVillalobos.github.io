@@ -179,8 +179,6 @@ function Peon(x,y)
   this.actuator.scale.set(7,7,8);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castshadow=true;
-  
-  //document.addEventListener( 'click', onDocumentMouseDown, false );
 }
 Peon.prototype=new Agent();
 
@@ -236,8 +234,8 @@ function onDocumentMouseDown( event ) {
             if ( intersects.length > 0 ) {
                 intersects[ 0 ].object.material.color.setHex( 0x00ff00 );
                 
-          var x = getOffset(intersects[0]).left;
-            var y = getOffset(intersects[0]).top;
+          var x = findPos(intersects[0]).curleft;
+            var y = findPos(intersects[0]).curtop;
                 console.log(x);                     
             }
         }
@@ -246,18 +244,16 @@ function onDocumentMouseup( event ) {
   intersects[ 0 ].object.material.color.setHex( 0xffffff );
         }
 
-function getOffset( el ) {
-    var _x = 0;
-    var _y = 0;
-    while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
-        _x += el.offsetLeft - el.scrollLeft;
-        _y += el.offsetTop - el.scrollTop;
-        el = el.offsetParent;
-    }
-    return { top: _y, left: _x };
+function findPos(obj) {
+	var curleft = curtop = 0;
+  if (obj.offsetParent) {
+    do {
+			curleft += obj.offsetLeft;
+			curtop += obj.offsetTop;
+      } while (obj = obj.offsetParent);
+  }
+ return [curleft,curtop];
 }
- 
-
 
 
 
