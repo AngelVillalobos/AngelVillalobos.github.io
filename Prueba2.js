@@ -240,8 +240,10 @@ function onDocumentMouseDown( event ) {
                 
                 //console.log(W);                     
             }
-            if(C===1)
+            if(C===1){
               intersects[ 0 ].object.material.color.setHex( 0xffffff );
+              C=0;
+            }
         }
 
 
