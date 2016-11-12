@@ -173,8 +173,8 @@ function Peon(x,y)
   this.position.y=y;
   this.position.z=0.4;
   this.sensor=new Sensor();
-  //this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
-  this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshBasicMaterial({color:0xffffff}));
+  this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  //this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshBasicMaterial({color:0xffffff}));
   this.add(this.actuator);
   this.actuator.scale.set(7,7,8);
   this.actuator.rotateX(Math.PI/2);
@@ -234,7 +234,7 @@ function onDocumentMouseDown( event ) {
 
             if ( intersects.length > 0 ) {
                 intersects[ 0 ].object.material.color.setHex( 0x00ff00 );
-              var pos=intersects[0].position;
+              var pos=intersects[0].get.position;
               console.log(pos);
             }
         }
@@ -275,8 +275,8 @@ function setup()
   document.addEventListener('keydown',Teclado,false);
   document.addEventListener( 'mousedown', onDocumentMouseDown );
   
-  var c = environment.children;
-  console.log(c);
+  //var c = environment.children;
+  //console.log(c);
     //////CAMARA////
   var campoVision=45;
   var relacionAspecto=window.innerWidth/window.innerHeight;
