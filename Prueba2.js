@@ -233,7 +233,7 @@ function onDocumentMouseDown( event ) {
 
             if ( intersects.length > 0 ) {
                 intersects[ 0 ].object.material.color.setHex( 0x00ff00 );
-              var pos=GetScreenCordinates(environment.children[100]);
+              environment.children(intersects[0]).geometry.computeBoundingSphere();
               console.log(mouse3D);
               //console.log(pos);
             }
@@ -243,25 +243,6 @@ function onDocumentMouseup( event ) {
   intersects[ 0 ].object.material.color.setHex( 0xffffff );
         }
 
-
-    function GetScreenCordinates(obj) {
-        var p = {};
-        p.x = obj.offsetLeft;
-        p.y = obj.offsetTop;
-        while (obj.offsetParent) {
-            p.x = p.x + obj.offsetParent.offsetLeft;
-            p.y = p.y + obj.offsetParent.offsetTop;
-            if (obj == document.getElementsByTagName("body")[0]) {
-                break;
-            }
-            else {
-                obj = obj.offsetParent;
-            }
-        }
-      console.log(p.x);
-      console.log(p.y);
-        //return {p};
-    }
 
 
 
