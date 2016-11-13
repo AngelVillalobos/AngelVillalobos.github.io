@@ -198,10 +198,9 @@ Peon.prototype.plan=function(environment)
     this.actuator.commands.push('rotateCCW');
   else
   {
+    this.actuator.commands.push('goStraight');
     if(activar===true)
-      this.actuator.commands.push('stop');
-    else
-      this.actuator.commands.push('goStraight');
+      this.actuator.commands.push('stop'); 
   }
 };
 
