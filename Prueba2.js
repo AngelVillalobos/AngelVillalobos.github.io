@@ -230,8 +230,8 @@ function SeleccionD(event)
   if(seleccion.length>0)
   {
     seleccion[0].object.material.color.setHex(0x00ff00);
-    var x=seleccion[0].point.x;
-    var y=seleccion[0].point.y;
+    x=seleccion[0].point.x;
+    y=seleccion[0].point.y;
     if(30<x<40){
       x=-35;}
     /*else if(-30<x<-20){
@@ -272,6 +272,8 @@ function SeleccionD(event)
 function SeleccionU(event) 
 {
   seleccion[0].object.material.color.setHex(0xffffff);
+  x=0;
+  y=0;
 }
 
 
@@ -347,7 +349,7 @@ function loop()
 
 
 
-var environment,camara,renderizador,luzpuntual,avance,seleccion;
+var environment,camara,renderizador,luzpuntual,avance,seleccion,x,y;
 
 setup();
 loop();
