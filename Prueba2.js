@@ -232,7 +232,7 @@ function SeleccionD(event)
     seleccion[0].object.material.color.setHex(0x00ff00);
     x=seleccion[0].point.x;
     y=seleccion[0].point.y;
-    if(-40<x<-30){
+    if(-30<x<-40){
       x=-35;}
     /*else if(-30<x<-20){
       x=-25;}
@@ -272,8 +272,8 @@ function SeleccionD(event)
 function SeleccionU(event) 
 {
   seleccion[0].object.material.color.setHex(0xffffff);
-  x=0;
-  y=0;
+  //x=0;
+  //y=0;
 }
 
 
