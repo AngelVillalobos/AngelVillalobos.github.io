@@ -229,41 +229,46 @@ function SeleccionD(event)
   seleccion=raycaster.intersectObjects(environment.children,true);
   if(seleccion.length>0)
   {
-    seleccion[0].object.material.color.setHex(0x00ff00);
     x=seleccion[0].point.x;
     y=seleccion[0].point.y;
-    if(-40<x&&x<-30){
-      x=-35;}
-    else if(-30<x&&x<-20){
-      x=-25;}
-    else if(-20<x&&x<-10){
-      x=-15;}
-    else if(-10<x&&x<0){
-      x=-5;}
-    else if(0<x&&x<10){
+    
+    if((-50<x&&x<50&&40<y&&y<50))
+      seleccion[0].object.material.color.setHex(0x00ff00);
+    else
+      seleccion[0].object.material.color.setHex(0xffffff);
+    
+    if(-40<x&&x<-30)
+      x=-35;
+    else if(-30<x&&x<-20)
+      x=-25;
+    else if(-20<x&&x<-10)
+      x=-15;
+    else if(-10<x&&x<0)
+      x=-5;
+    else if(0<x&&x<10)
       x=5;}
-    else if(10<x&&x<20){
-      x=15;}
-    else if(20<x&&x<30){
-      x=25;}
-    else if(30<x&&x<40){
-      x=35;}
-    if(-40<y&&y<-30){
-      y=-35;}
-    else if(-30<y&&y<-20){
-      y=-25;}
-    else if(-20<y&&y<-10){
-      y=-15;}
-    else if(-10<y&&y<0){
-      y=-5;}
-    else if(0<y&&y<10){
-      y=5;}
-    else if(10<y&&y<20){
-      y=15;}
-    else if(20<y&&y<30){
-      y=25;}
-    else if(30<y&&y<40){
-      y=35;}
+    else if(10<x&&x<20)
+      x=15;
+    else if(20<x&&x<30)
+      x=25;
+    else if(30<x&&x<40)
+      x=35;
+    if(-40<y&&y<-30)
+      y=-35;
+    else if(-30<y&&y<-20)
+      y=-25;
+    else if(-20<y&&y<-10)
+      y=-15;
+    else if(-10<y&&y<0)
+      y=-5;
+    else if(0<y&&y<10)
+      y=5;
+    else if(10<y&&y<20)
+      y=15;
+    else if(20<y&&y<30)
+      y=25;
+    else if(30<y&&y<40)
+      y=35;
     console.log(x);
     console.log(y);
   }
