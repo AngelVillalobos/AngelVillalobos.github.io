@@ -350,14 +350,14 @@ function setup()
   
   var Piezas=new Array();
   Piezas[0]="          ";
-  Piezas[1]="          ";
-  Piezas[2]="          ";
+  Piezas[1]=" pppppppp ";
+  Piezas[2]=" pppppppp ";
   Piezas[3]="          ";
   Piezas[4]="          ";
   Piezas[5]="          ";
   Piezas[6]="          ";
-  Piezas[7]="  pp      ";
-  Piezas[8]="          ";
+  Piezas[7]=" pppppppp ";
+  Piezas[8]=" pppppppp ";
   Piezas[9]="          ";
      
   environment=new Environment();
