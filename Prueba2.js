@@ -335,6 +335,7 @@ function SeleccionU(event)
 
 function setup()
 {
+  console.log(environment.children[100].position.x);
   document.documentElement.style.overflow = 'hidden';
   var Peon=new Array();
   /*var tablero=new Array();
