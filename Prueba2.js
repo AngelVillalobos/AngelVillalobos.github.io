@@ -49,29 +49,29 @@ Environment.prototype=new THREE.Scene();
 
 Environment.prototype.sense=function()
 {
-  for(var i=0;i<this.children.length;i++)
-  {
-    if(this.children[i].sense!==undefined)
-      this.children[i].sense(this);
-  }
+  //for(var i=0;i<this.children.length;i++)
+  //{
+    if(this.children[0].sense!==undefined)
+      this.children[0].sense(this);
+  //}
 }
 
 Environment.prototype.plan=function()
 {
-  for(var i=0;i<this.children.length;i++)
-  {
-    if(this.children[i].plan!==undefined)
-      this.children[i].plan(this);
-  }
+  //for(var i=0;i<this.children.length;i++)
+  //{
+    if(this.children[0].plan!==undefined)
+      this.children[0].plan(this);
+  //}
 }
 
 Environment.prototype.act=function()
 {
-  for(var i=0;i<this.children.length;i++)
-  {
-    if(this.children[i].act!==undefined)
-      this.children[i].act(this);
-  }
+  //for(var i=0;i<this.children.length;i++)
+  //{
+    if(this.children[0].act!==undefined)
+      this.children[0].act(this);
+  //}
 }
 ///////////////CASILLA BLANCA///////////////
 function CasillaBlanca(size,x,y)
@@ -350,14 +350,14 @@ function setup()
   
   var Piezas=new Array();
   Piezas[0]="          ";
-  Piezas[1]=" pppppppp ";
-  Piezas[2]=" pppppppp ";
+  Piezas[1]="   p      ";
+  Piezas[2]="          ";
   Piezas[3]="          ";
   Piezas[4]="          ";
   Piezas[5]="          ";
   Piezas[6]="          ";
-  Piezas[7]=" pppppppp ";
-  Piezas[8]=" pppppppp ";
+  Piezas[7]="          ";
+  Piezas[8]="      p   ";
   Piezas[9]="          ";
      
   environment=new Environment();
