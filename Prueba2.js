@@ -198,7 +198,7 @@ Peon.prototype.plan=function(environment)
     this.actuator.commands.push('rotateCCW');
   else
   {
-    if(x!===35)
+    if(x!==35)
       this.actuator.commands.push('goStraight');
     else
       this.actuator.commands.push('stop');
