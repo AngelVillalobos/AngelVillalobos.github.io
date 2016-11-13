@@ -67,11 +67,11 @@ Environment.prototype.plan=function()
 
 Environment.prototype.act=function()
 {
-  for(var i=0;i<this.children.length;i++)
+  /*for(var i=0;i<this.children.length;i++)
   {
     if(this.children[i].act!==undefined)
       this.children[i].act(this);
-  }
+  }*/
 }
 ///////////////CASILLA BLANCA///////////////
 function CasillaBlanca(size,x,y)
