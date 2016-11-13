@@ -324,7 +324,7 @@ function setup()
 {
   document.documentElement.style.overflow = 'hidden';
   var Peon=new Array();
-  var tablero=new Array();
+  /*var tablero=new Array();
   tablero[0]="BBBBBBBBBB";
   tablero[1]="B        B";
   tablero[2]="B        B";
@@ -334,9 +334,9 @@ function setup()
   tablero[6]="B        B";
   tablero[7]="B        B";
   tablero[8]="B        B";
-  tablero[9]="BBBBBBBBBB";
+  tablero[9]="BBBBBBBBBB";*/
   
-  /*var tablero=new Array();
+  var tablero=new Array();
   tablero[0]="BBBBBBBBBB";
   tablero[1]="BbnbnbnbnB";
   tablero[2]="BnbnbnbnbB";
@@ -346,7 +346,7 @@ function setup()
   tablero[6]="BnbnbnbnbB";
   tablero[7]="BbnbnbnbnB";
   tablero[8]="BnbnbnbnbB";
-  tablero[9]="BBBBBBBBBB";*/
+  tablero[9]="BBBBBBBBBB";
   
   var Piezas=new Array();
   Piezas[0]="          ";
