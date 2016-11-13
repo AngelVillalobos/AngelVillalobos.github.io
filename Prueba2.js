@@ -413,8 +413,10 @@ function loop()
   if(activar)
     environment.act();
   renderizador.render(environment,camara);
-  if(environment.children[100].position.x===35)
-    activar2=true;
+  X=environment.children[100].position.x;
+  console.log(X);
+  //if(===35)
+  //  activar2=true;
 }
 
 
