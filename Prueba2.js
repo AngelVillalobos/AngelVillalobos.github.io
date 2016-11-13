@@ -185,7 +185,7 @@ Peon.prototype.sense=function(environment)
 {
   this.sensor.set(this.position,new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0));
   var obstaculo=this.sensor.intersectObjects(environment.children,true);
-  if((obstaculo.length>0 && (obstaculo[0].distance<=2)))
+  if((obstaculo.length>0 && (obstaculo[0].distance<=2.05)))
     this.sensor.colision=true;
   else
     this.sensor.colision=false;
@@ -225,14 +225,14 @@ Peon.prototype.operations.rotateCW=function(pieza,angle)
 {
   if(angle===undefined)
     angle=-Math.PI/2;
-  //pieza.rotation.z+=angle;
+  pieza.rotation.z+=angle;
 };
 
 Peon.prototype.operations.rotateCCW=function(pieza,angle)
 {
   if(angle===undefined)
     angle=Math.PI/2;
-  //pieza.rotation.z+=angle;
+  pieza.rotation.z+=angle;
 };
 
 function Teclado()
