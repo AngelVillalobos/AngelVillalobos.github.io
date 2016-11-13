@@ -198,7 +198,7 @@ Peon.prototype.plan=function(environment)
     this.actuator.commands.push('rotateCCW');
   else
   {
-    if(x!==35)
+    if(seleccion[0].point.x!==35)
       this.actuator.commands.push('goStraight');
     else
       this.actuator.commands.push('stop');
@@ -275,7 +275,7 @@ function SeleccionD(event)
     x=seleccion[0].point.x;
     y=seleccion[0].point.y;
     
-    console.log(seleccion[0]);
+    console.log(x);
     
     if((-50<x&&x<50&&40<y&&y<50)||(-50<x&&x<50&&-50<y&&y<-40)||(-50<y&&y<50&&-50<x&&x<-40)||(-50<y&&y<50&&40<x&&x<50)){
       
