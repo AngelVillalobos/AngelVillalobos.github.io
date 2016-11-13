@@ -268,12 +268,15 @@ function SeleccionD(event)
     x=seleccion[0].point.x;
     y=seleccion[0].point.y;
     
-    if((-50<x&&x<50&&40<y&&y<50)||(-50<x&&x<50&&-50<y&&y<-40)||(-50<y&&y<50&&-50<x&&x<-40)||(-50<y&&y<50&&40<x&&x<50))
-      seleccion[0].object.material.color.setHex(0xffffff);
+    console.log(seleccion[0]);
+    
+    if((-50<x&&x<50&&40<y&&y<50)||(-50<x&&x<50&&-50<y&&y<-40)||(-50<y&&y<50&&-50<x&&x<-40)||(-50<y&&y<50&&40<x&&x<50)){
+      
+      seleccion[0].object.material.color.setHex(0xffffff);}
     else
       seleccion[0].object.material.color.setHex(0x00ff00);
     
-    if(-40<x&&x<-30)
+    /*if(-40<x&&x<-30)
       x=-35;
     else if(-30<x&&x<-20)
       x=-25;
@@ -306,7 +309,7 @@ function SeleccionD(event)
     else if(30<y&&y<40)
       y=35;
     console.log(x);
-    console.log(y);
+    console.log(y);*/
   }
 }
 
