@@ -185,7 +185,7 @@ Peon.prototype.sense=function(environment)
 {
   this.sensor.set(this.position,new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0));
   var obstaculo=this.sensor.intersectObjects(environment.children,true);
-  if((obstaculo.length>0 && (obstaculo[0].distance<=0.5)))
+  if((obstaculo.length>0 && (obstaculo[0].distance<=5)))
     this.sensor.colision=true;
   else
     this.sensor.colision=false;
@@ -216,7 +216,7 @@ Peon.prototype.operations={};
 Peon.prototype.operations.goStraight=function(pieza,distance)
 {
   if(distance===undefined)
-    distance=0.05;
+    distance=0.1;
   pieza.position.x+=distance*Math.cos(pieza.rotation.z);
   pieza.position.y+=distance*Math.sin(pieza.rotation.z);
 };
