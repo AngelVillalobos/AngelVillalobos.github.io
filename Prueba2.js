@@ -198,10 +198,10 @@ Peon.prototype.plan=function(environment)
     this.actuator.commands.push('rotateCCW');
   else
   {
-    if(this.actuator.position.x!==35)
-      this.actuator.commands.push('goStraight');
-    else
+    if(activar===true)
       this.actuator.commands.push('stop');
+    else
+      this.actuator.commands.push('goStraight');
   }
 };
 
@@ -414,12 +414,13 @@ function loop()
   if(activar)
     environment.act();
   renderizador.render(environment,camara);
-  console.log(environment.children[100].position.x);
+  if(environment.children[100].position.x===35)
+    activar2=true;
 }
 
 
 
-var environment,camara,renderizador,luzpuntual,avance,seleccion,x,y,activar=false;
+var environment,camara,renderizador,luzpuntual,avance,seleccion,x,y,activar=activar2=false;
 
 setup();
 loop();
