@@ -181,24 +181,60 @@ function Peon(x,y)
 }
 Peon.prototype=new Agent();
 
-/*Peon.prototype.sense=function(environment)
+Peon.prototype.sense=function(environment)
 {
-  this.sensor.set(this.position,new THREE.Vector3(1,0,0));
+  this.sensor.set(this.position,new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0));
   var obstaculo=this.sensor.intersectObjects(environment.children,true);
-  if((obstaculo.length>0 && (obstaculo[0].distance<=3)))
+  if((obstaculo.length>0 && (obstaculo[0].distance<=0.5)))
     this.sensor.colision=true;
   else
     this.sensor.colision=false;
 };
+
 Peon.prototype.plan=function(environment)
 {
-  //this.actuator.commands=[];
+  this.actuator.commands=[];
   if(this.sensor.colision==true)
-    avance=0;
+    this.actuator.commands.push('rotateCCW');
   else
-    avance=0.4;
+    this.actuator.commands.push('goStraight');
 };
-*/
+
+Robot.prototype.act=function(environment)
+{
+  var command = this.actuator.commands.pop();
+  if(command===undefined)
+    console.log('Undefined command');
+  else if(command in this.operations)
+    this.operations[command](this);
+  else
+    console.log('Unknown command');
+};
+
+Peon.prototype.operations={};
+
+Peon.prototype.operations.goStraight=function(pieza,distance)
+{
+  if(distance===undefined)
+    distance=0.05;
+  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
+  pieza.position.y+=distance*Math.sin(pieza.rotation.z);
+};
+
+Peon.prototype.operations.rotateCW=function(pieza,angle)
+{
+  if(angle===undefined)
+    angle=-Math.PI/2;
+  pieza.rotation.z+=angle;
+};
+
+Peon.prototype.operations.rotateCCW=function(pieza,angle)
+{
+  if(angle===undefined)
+    angle=Math.PI/2;
+  pieza.rotation.z+=angle;
+};
+
 function Teclado()
 {
   var avance=0.4;
@@ -290,6 +326,18 @@ function setup()
   var Peon=new Array();
   var tablero=new Array();
   tablero[0]="BBBBBBBBBB";
+  tablero[1]="B        B";
+  tablero[2]="B        B";
+  tablero[3]="B        B";
+  tablero[4]="B        B";
+  tablero[5]="B        B";
+  tablero[6]="B        B";
+  tablero[7]="B        B";
+  tablero[8]="B        B";
+  tablero[9]="BBBBBBBBBB";
+  
+  /*var tablero=new Array();
+  tablero[0]="BBBBBBBBBB";
   tablero[1]="BbnbnbnbnB";
   tablero[2]="BnbnbnbnbB";
   tablero[3]="BbnbnbnbnB";
@@ -298,7 +346,7 @@ function setup()
   tablero[6]="BnbnbnbnbB";
   tablero[7]="BbnbnbnbnB";
   tablero[8]="BnbnbnbnbB";
-  tablero[9]="BBBBBBBBBB";
+  tablero[9]="BBBBBBBBBB";*/
   
   var Piezas=new Array();
   Piezas[0]="          ";
