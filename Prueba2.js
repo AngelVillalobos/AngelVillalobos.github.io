@@ -316,6 +316,7 @@ function SeleccionD(event)
 
 function SeleccionU(event) 
 {
+  activar=true;
   event.preventDefault();
   //environment.children[100].act();
   seleccion[0].object.material.color.setHex(0xffffff);
@@ -402,13 +403,14 @@ function loop()
   requestAnimationFrame(loop);
   environment.sense();
   environment.plan();
-  environment.act();
+  if(activar)
+    environment.act();
   renderizador.render(environment,camara);
 }
 
 
 
-var environment,camara,renderizador,luzpuntual,avance,seleccion,x,y;
+var environment,camara,renderizador,luzpuntual,avance,seleccion,x,y,activar=false;
 
 setup();
 loop();
