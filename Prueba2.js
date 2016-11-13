@@ -404,7 +404,7 @@ function setup()
   luzPuntual.castShadow=true;
   environment.add(camara);
   environment.add(luzPuntual); 
-  console.log(environment.children[100].position.x);
+  
 }
 function loop()
 {
@@ -414,6 +414,7 @@ function loop()
   if(activar)
     environment.act();
   renderizador.render(environment,camara);
+  console.log(environment.children[100].position.x);
 }
 
 
