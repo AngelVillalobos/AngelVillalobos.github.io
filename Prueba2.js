@@ -335,7 +335,7 @@ function SeleccionU(event)
 
 function setup()
 {
-  console.log(environment.children[100].position.x);
+  
   document.documentElement.style.overflow = 'hidden';
   var Peon=new Array();
   /*var tablero=new Array();
@@ -404,6 +404,7 @@ function setup()
   luzPuntual.castShadow=true;
   environment.add(camara);
   environment.add(luzPuntual); 
+  console.log(environment.children[100].position.x);
 }
 function loop()
 {
