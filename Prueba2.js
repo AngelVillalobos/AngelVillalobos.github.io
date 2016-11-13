@@ -200,7 +200,7 @@ Peon.prototype.plan=function(environment)
     this.actuator.commands.push('goStraight');
 };
 
-Robot.prototype.act=function(environment)
+Peon.prototype.act=function(environment)
 {
   var command = this.actuator.commands.pop();
   if(command===undefined)
