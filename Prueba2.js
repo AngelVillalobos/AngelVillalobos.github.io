@@ -206,8 +206,8 @@ Peon.prototype.plan=function(environment)
   { 
     if(X!==x){
       //this.actuator.commands.push('stopX');
-      this.actuator.commands.push('goStraightY');}
-    else if(Y===y)//{
+      this.actuator.commands.push('goStraightX');}
+    else //{
       this.actuator.commands.push('stop');
       //this.actuator.commands.push('goStraightX');}
     
