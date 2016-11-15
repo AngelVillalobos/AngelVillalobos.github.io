@@ -249,7 +249,7 @@ Peon.prototype.operations.goStraightY=function(pieza,distance)
   pieza.position.y+=distance*Math.cos(pieza.rotation.z);
 };
 
-Peon.prototype.operations.goStraightY=function(pieza,distance)
+Peon.prototype.operations.goStraight=function(pieza,distance)
 {
   if(distance===undefined)
       distance=-0.5; 
