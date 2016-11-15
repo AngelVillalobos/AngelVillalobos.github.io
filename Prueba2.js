@@ -197,10 +197,12 @@ Peon.prototype.plan=function(environment)
   this.actuator.commands=[];
   if(this.sensor.colision==true)
     this.actuator.commands.push('rotateCCW');
-  else if(X===x)
+  else if(X===x){
     this.actuator.commands.push('stopX');
-  else if(Y===y)
+    this.actuator.commands.push('goStraightY');}
+  else if(Y===y){
     this.actuator.commands.push('stopY');
+    this.actuator.commands.push('goStraightX');}
   else 
     this.actuator.commands.push('goStraight');
 };
@@ -223,6 +225,22 @@ Peon.prototype.operations.goStraight=function(pieza,distance)
   if(distance===undefined)
     distance=0.5;
   pieza.position.x+=distance*Math.cos(pieza.rotation.z);
+  pieza.position.y+=distance*Math.sin(pieza.rotation.z);
+};
+
+Peon.prototype.operations.goStraightX=function(pieza,distance)
+{
+  if(distance===undefined)
+    distance=0.5;
+  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
+  //pieza.position.y+=distance*Math.sin(pieza.rotation.z);
+};
+
+Peon.prototype.operations.goStraightY=function(pieza,distance)
+{
+  if(distance===undefined)
+    distance=0.5;
+  //pieza.position.x+=distance*Math.cos(pieza.rotation.z);
   pieza.position.y+=distance*Math.sin(pieza.rotation.z);
 };
 
