@@ -404,11 +404,11 @@ function loop()
   environment.plan();
   if(activar===true)
     environment.act();
-  console.log(activar);
+  
   renderizador.render(environment,camara);
   X=environment.children[100].position.x;
-  
-  if(X===35)
+  console.log(X);
+  //if(X===35)
     //activar2=true;
 }
 
