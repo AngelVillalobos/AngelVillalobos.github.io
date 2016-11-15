@@ -208,8 +208,8 @@ Peon.prototype.plan=function(environment)
     if(X!==x){
       //this.actuator.commands.push('stopX');
       this.actuator.commands.push('goStraightX');}
-    else //{
-      this.actuator.commands.push('stop');
+    else if(X===x&&Y!==y) //{
+      this.actuator.commands.push('goStraightY');
       //this.actuator.commands.push('goStraightX');}
     
   }
@@ -241,17 +241,23 @@ Peon.prototype.operations.goStraightX=function(pieza,distance)
   if(distance===undefined)
     distance=0.5;
   pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-  //pieza.position.y+=distance*Math.sin(pieza.rotation.z);
 };
 
-Peon.prototype.operations.stopX=function(pieza,distanceX)
+Peon.prototype.operations.goStraightY=function(pieza,distance)
+{
+  if(distance===undefined)
+    distance=0.5;
+  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
+};
+
+/*Peon.prototype.operations.stopX=function(pieza,distanceX)
 {
   var distanceY=0.5
   if(distanceX===undefined)
     distanceX=0;
   pieza.position.x+=distanceX*Math.cos(pieza.rotation.z);
   pieza.position.y+=distanceY*Math.sin(pieza.rotation.z);
-};
+};*/
 
 Peon.prototype.operations.stop=function(pieza,distance)
 {
