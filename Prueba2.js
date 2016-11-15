@@ -1,4 +1,3 @@
-
 ///////////////CONSTRUCTOR PEON///////////////
 PeonGeometry=function()
 {
@@ -199,12 +198,10 @@ Peon.prototype.plan=function(environment)
     this.actuator.commands.push('rotateCCW');
   else
   { 
-    if(X!==x){
-      //this.actuator.commands.push('stopX');
-      this.actuator.commands.push('goStraightX');}
-    else if(X===x&&Y!==y) //{
+    if(X!==x)
+      this.actuator.commands.push('goStraightX');
+    else if(X===x&&Y!==y) 
       this.actuator.commands.push('goStraightY');
-      //this.actuator.commands.push('goStraightX');}
     else
        this.actuator.commands.push('stop');
   }
