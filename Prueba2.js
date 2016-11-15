@@ -205,13 +205,12 @@ Peon.prototype.plan=function(environment)
     this.actuator.commands.push('goStraightX');}*/
   else
   { 
-    this.actuator.commands.push('goStraight');
-    if(X===x){
-      this.actuator.commands.push('stopX');
+    if(X!==x){
+      //this.actuator.commands.push('stopX');
       this.actuator.commands.push('goStraightY');}
-    else if(Y===y){
-      this.actuator.commands.push('stopX');
-      this.actuator.commands.push('goStraightY');}
+    else if(Y===y)//{
+      this.actuator.commands.push('stop');
+      //this.actuator.commands.push('goStraightX');}
     
   }
 };
@@ -245,14 +244,6 @@ Peon.prototype.operations.goStraightX=function(pieza,distance)
   //pieza.position.y+=distance*Math.sin(pieza.rotation.z);
 };
 
-Peon.prototype.operations.goStraightY=function(pieza,distance)
-{
-  if(distance===undefined)
-    distance=0.5;
-  //pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-  pieza.position.y+=distance*Math.sin(pieza.rotation.z);
-};
-
 Peon.prototype.operations.stopX=function(pieza,distanceX)
 {
   var distanceY=0.5
@@ -262,13 +253,12 @@ Peon.prototype.operations.stopX=function(pieza,distanceX)
   pieza.position.y+=distanceY*Math.sin(pieza.rotation.z);
 };
 
-Peon.prototype.operations.stopY=function(pieza,distanceY)
+Peon.prototype.operations.stop=function(pieza,distance)
 {
-  var distanceX=0.5
-  if(distanceY===undefined)
-    distanceY=0;
-  pieza.position.x+=distanceX*Math.cos(pieza.rotation.z);
-  pieza.position.y+=distanceY*Math.sin(pieza.rotation.z);
+  if(distance===undefined)
+    distance=0;
+  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
+  pieza.position.y+=distance*Math.sin(pieza.rotation.z);
 };
 
 Peon.prototype.operations.rotateCCW=function(pieza,angle)
