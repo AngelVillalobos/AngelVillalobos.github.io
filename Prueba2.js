@@ -196,8 +196,10 @@ Peon.prototype.plan=function(environment)
   this.actuator.commands=[];
   if(this.sensor.colision==true)
     this.actuator.commands.push('rotateCCW');
-  else if(X===x)
-    this.actuator.commands.push('stop');
+  else if(this.sensor.colision==true&&X===x)
+    this.actuator.commands.push('stopX');
+  else if(this.sensor.colision==true&&Y===y)
+    this.actuator.commands.push('stopY');
   else 
     this.actuator.commands.push('goStraight');
 };
@@ -223,12 +225,22 @@ Peon.prototype.operations.goStraight=function(pieza,distance)
   pieza.position.y+=distance*Math.sin(pieza.rotation.z);
 };
 
-Peon.prototype.operations.stop=function(pieza,distance)
+Peon.prototype.operations.stopX=function(pieza,distanceX)
 {
-  if(distance===undefined)
-    distance=0;
-  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-  pieza.position.y+=distance*Math.sin(pieza.rotation.z);
+  var distanceY=0.5
+  if(distanceX===undefined)
+    distanceX=0;
+  pieza.position.x+=distanceX*Math.cos(pieza.rotation.z);
+  pieza.position.y+=distanceY*Math.sin(pieza.rotation.z);
+};
+
+Peon.prototype.operations.stopY=function(pieza,distanceY)
+{
+  var distanceX=0.5
+  if(distanceY===undefined)
+    distanceY=0;
+  pieza.position.x+=distanceX*Math.cos(pieza.rotation.z);
+  pieza.position.y+=distanceY*Math.sin(pieza.rotation.z);
 };
 
 Peon.prototype.operations.rotateCCW=function(pieza,angle)
@@ -409,6 +421,7 @@ function loop()
   
   renderizador.render(environment,camara);
   X=environment.children[100].position.x;
+  Y=environment.children[100].position.y;
   console.log(X);
   //if(X===35)
     //activar2=true;
@@ -416,7 +429,7 @@ function loop()
 
 
 
-var environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,y,activar=false;
+var environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,y,activar=false;
 
 setup();
 loop();
