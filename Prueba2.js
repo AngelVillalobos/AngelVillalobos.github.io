@@ -201,7 +201,7 @@ Peon.prototype.plan=function(environment)
   { 
     if(X!==x)
       this.actuator.commands.push('goStraightX');
-    else if(X===xf&&Y!==y) 
+    else if(X===x&&Y!==y) 
       this.actuator.commands.push('goStraightY');
     else
        this.actuator.commands.push('stop');
