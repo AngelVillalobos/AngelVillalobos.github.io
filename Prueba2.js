@@ -198,6 +198,7 @@ Peon.prototype.plan=function(environment)
     this.actuator.commands.push('rotateCCW');
   else
   { 
+    this.actuator.commands.push('goStraight');
     if(X!==x)
       this.actuator.commands.push('goStraightX');
     else if(X===x&&Y!==y) 
@@ -219,19 +220,6 @@ Peon.prototype.act=function(environment)
 };
 
 Peon.prototype.operations={};
-
-/*Peon.prototype.operations.goStraight=function(pieza,distance)
-{
-  if(distance===undefined)
-  {
-    if(X<x)
-      distance=0.5;
-    else if(X===x)
-      
-  }
-  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-  pieza.position.y+=distance*Math.sin(pieza.rotation.z);
-};*/
 
 Peon.prototype.operations.goStraightX=function(pieza,distance)
 {
@@ -261,14 +249,13 @@ Peon.prototype.operations.goStraightY=function(pieza,distance)
   pieza.position.y+=distance*Math.cos(pieza.rotation.z);
 };
 
-/*Peon.prototype.operations.stopX=function(pieza,distanceX)
+Peon.prototype.operations.goStraightY=function(pieza,distance)
 {
-  var distanceY=0.5
-  if(distanceX===undefined)
-    distanceX=0;
-  pieza.position.x+=distanceX*Math.cos(pieza.rotation.z);
-  pieza.position.y+=distanceY*Math.sin(pieza.rotation.z);
-};*/
+  if(distance===undefined)
+      distance=-0.5; 
+  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
+  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
+};
 
 Peon.prototype.operations.stop=function(pieza,distance)
 {
@@ -318,9 +305,7 @@ function SeleccionD(event)
   {
     x=seleccion[0].point.x;
     y=seleccion[0].point.y;
-    
-    //console.log(x);
-    
+
     if((-50<x&&x<50&&40<y&&y<50)||(-50<x&&x<50&&-50<y&&y<-40)||(-50<y&&y<50&&-50<x&&x<-40)||(-50<y&&y<50&&40<x&&x<50))
       seleccion[0].object.material.color.setHex(0xffffff);
     else
@@ -453,13 +438,9 @@ function loop()
   environment.plan();
   if(activar===true)
     environment.act();
-  
   renderizador.render(environment,camara);
   X=environment.children[100].position.x;
   Y=environment.children[100].position.y;
-  console.log(X);
-  //if(X===35)
-    //activar2=true;
 }
 
 
