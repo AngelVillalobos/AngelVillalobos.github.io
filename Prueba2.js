@@ -197,11 +197,7 @@ Peon.prototype.plan=function(environment)
   if(this.sensor.colision==true)
     this.actuator.commands.push('rotateCCW');
   else
-  {
     this.actuator.commands.push('goStraight');
-    if(activar===true)
-      this.actuator.commands.push('stop'); 
-  }
 };
 
 Peon.prototype.act=function(environment)
@@ -276,8 +272,8 @@ function SeleccionD(event)
     
     //console.log(x);
     
-    if((-50<x&&x<50&&40<y&&y<50)||(-50<x&&x<50&&-50<y&&y<-40)||(-50<y&&y<50&&-50<x&&x<-40)||(-50<y&&y<50&&40<x&&x<50)){
-      seleccion[0].object.material.color.setHex(0xffffff);}
+    if((-50<x&&x<50&&40<y&&y<50)||(-50<x&&x<50&&-50<y&&y<-40)||(-50<y&&y<50&&-50<x&&x<-40)||(-50<y&&y<50&&40<x&&x<50))
+      seleccion[0].object.material.color.setHex(0xffffff);
     else
       seleccion[0].object.material.color.setHex(0x00ff00);
     
@@ -322,10 +318,7 @@ function SeleccionU(event)
 {
   activar=true;
   event.preventDefault();
-  //environment.children[100].act();
   seleccion[0].object.material.color.setHex(0xffffff);
-  //x=0;
-  //y=0;
 }
 
 
@@ -416,12 +409,12 @@ function loop()
   X=environment.children[100].position.x;
   
   if(X===35)
-    activar2=true;
+    //activar2=true;
 }
 
 
 
-var environment,camara,renderizador,luzpuntual,avance,seleccion,x,y,activar=activar2=false;
+var environment,camara,renderizador,luzpuntual,avance,seleccion,x,y,activar=false;
 
 setup();
 loop();
