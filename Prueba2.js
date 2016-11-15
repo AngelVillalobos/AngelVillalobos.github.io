@@ -196,12 +196,6 @@ Peon.prototype.plan=function(environment)
   this.actuator.commands=[];
   if(this.sensor.colision==true)
     this.actuator.commands.push('rotateCCW');
-  /*else if(X===x){
-    
-    this.actuator.commands.push('goStraightY');}
-  else if(Y===y){
-    this.actuator.commands.push('stopY');
-    this.actuator.commands.push('goStraightX');}*/
   else
   { 
     if(X!==x){
@@ -210,7 +204,8 @@ Peon.prototype.plan=function(environment)
     else if(X===x&&Y!==y) //{
       this.actuator.commands.push('goStraightY');
       //this.actuator.commands.push('goStraightX');}
-    
+    else
+       this.actuator.commands.push('goStraight');
   }
 };
 
