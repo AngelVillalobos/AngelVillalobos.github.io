@@ -196,9 +196,9 @@ Peon.prototype.plan=function(environment)
   this.actuator.commands=[];
   if(this.sensor.colision==true)
     this.actuator.commands.push('rotateCCW');
-  else if(this.sensor.colision==true&&X===x)
+  else if(X===x)
     this.actuator.commands.push('stopX');
-  else if(this.sensor.colision==true&&Y===y)
+  else if(Y===y)
     this.actuator.commands.push('stopY');
   else 
     this.actuator.commands.push('goStraight');
