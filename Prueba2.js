@@ -196,14 +196,23 @@ Peon.prototype.plan=function(environment)
   this.actuator.commands=[];
   if(this.sensor.colision==true)
     this.actuator.commands.push('rotateCCW');
-  else if(X===x){
-    this.actuator.commands.push('stopX');
+  /*else if(X===x){
+    
     this.actuator.commands.push('goStraightY');}
   else if(Y===y){
     this.actuator.commands.push('stopY');
-    this.actuator.commands.push('goStraightX');}
-  else 
+    this.actuator.commands.push('goStraightX');}*/
+  else
+  { 
     this.actuator.commands.push('goStraight');
+    if(X===x){
+      this.actuator.commands.push('stopX');
+      this.actuator.commands.push('goStraightY');}
+    else if(Y===y){
+      this.actuator.commands.push('stopX');
+      this.actuator.commands.push('goStraightY');}
+    
+  }
 };
 
 Peon.prototype.act=function(environment)
