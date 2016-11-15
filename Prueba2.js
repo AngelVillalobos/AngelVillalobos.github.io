@@ -199,10 +199,9 @@ Peon.prototype.plan=function(environment)
     this.actuator.commands.push('rotateCCW');
   else
   { 
-    this.actuator.commands.push('goStraight');
-    if(X!==x)
+    if(X!==xf)
       this.actuator.commands.push('goStraightX');
-    else if(X===x&&Y!==y) 
+    else if(X===xf&&Y!==yf) 
       this.actuator.commands.push('goStraightY');
     else
        this.actuator.commands.push('stop');
@@ -226,9 +225,9 @@ Peon.prototype.operations.goStraightX=function(pieza,distance)
 {
   if(distance===undefined)
   {
-    if(X<x)
+    if(X<xf)
       distance=0.5;
-    else if(X===x)
+    else if(X===xf)
       distance=0;
     else
       distance=-0.5; 
@@ -240,9 +239,9 @@ Peon.prototype.operations.goStraightY=function(pieza,distance)
 {
   if(distance===undefined)
    {
-    if(Y<y)
+    if(Y<yf)
       distance=0.5;
-    else if(Y===y)
+    else if(Y===yf)
       distance=0;
     else
       distance=-0.5; 
@@ -306,7 +305,18 @@ function SeleccionD(event)
   {
     x=seleccion[0].point.x;
     y=seleccion[0].point.y;
-
+    
+    if(seleccionF)
+    {
+      xf=seleccion[0].point.x;
+      yf=seleccion[0].point.y;
+    }
+    else
+    {
+      xf=x;
+      yf=y
+    }
+    
     if((-50<x&&x<50&&40<y&&y<50)||(-50<x&&x<50&&-50<y&&y<-40)||(-50<y&&y<50&&-50<x&&x<-40)||(-50<y&&y<50&&40<x&&x<50))
       seleccion[0].object.material.color.setHex(0xffffff);
     else
@@ -354,6 +364,7 @@ function SeleccionU(event)
   activar=true;
   event.preventDefault();
   seleccion[0].object.material.color.setHex(0xffffff);
+  seleccionF=true;
 }
 
 
@@ -446,7 +457,7 @@ function loop()
 
 
 
-var environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,y,activar=false;
+var environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,y,activar=false,seleccionO=true,seleccionF=false,xf,yf;
 
 setup();
 loop();
