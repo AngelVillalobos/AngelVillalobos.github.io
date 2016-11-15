@@ -408,7 +408,7 @@ function setup()
   Piezas[5]="          ";
   Piezas[6]="          ";
   Piezas[7]="          ";
-  Piezas[8]="        p ";
+  Piezas[8]="          ";
   Piezas[9]="          ";
      
   environment=new Environment();
