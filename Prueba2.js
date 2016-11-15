@@ -1,5 +1,3 @@
-
-
 ///////////////CONSTRUCTOR PEON///////////////
 PeonGeometry=function()
 {
