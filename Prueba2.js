@@ -197,7 +197,9 @@ Peon.prototype.plan=function(environment)
   this.actuator.commands=[];
   if(this.sensor.colision==true)
     this.actuator.commands.push('rotateCCW');
-  else
+  else if(X===35)
+    this.actuator.commands.push('stop');
+  else 
     this.actuator.commands.push('goStraight');
 };
 
@@ -415,7 +417,7 @@ function loop()
 
 
 
-var environment,camara,renderizador,luzpuntual,avance,seleccion,x,y,activar=false;
+var environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,y,activar=false;
 
 setup();
 loop();
