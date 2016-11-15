@@ -282,7 +282,7 @@ function SeleccionD(event)
     else
       seleccion[0].object.material.color.setHex(0x00ff00);
     
-    /*if(-40<x&&x<-30)
+    if(-40<x&&x<-30)
       x=-35;
     else if(-30<x&&x<-20)
       x=-25;
@@ -315,7 +315,7 @@ function SeleccionD(event)
     else if(30<y&&y<40)
       y=35;
     console.log(x);
-    console.log(y);*/
+    console.log(y);
   }
 }
 
