@@ -448,7 +448,7 @@ function loop()
   environment.sense();
   environment.plan();
   if(activar===true)
-    environment.children[100].act();//(environment.children[100]);
+    environment.children[100].act();
   renderizador.render(environment,camara);
   X=environment.children[100].position.x;
   Y=environment.children[100].position.y;
