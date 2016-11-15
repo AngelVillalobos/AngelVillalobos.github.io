@@ -274,10 +274,9 @@ function SeleccionD(event)
     x=seleccion[0].point.x;
     y=seleccion[0].point.y;
     
-    console.log(x);
+    //console.log(x);
     
     if((-50<x&&x<50&&40<y&&y<50)||(-50<x&&x<50&&-50<y&&y<-40)||(-50<y&&y<50&&-50<x&&x<-40)||(-50<y&&y<50&&40<x&&x<50)){
-      
       seleccion[0].object.material.color.setHex(0xffffff);}
     else
       seleccion[0].object.material.color.setHex(0x00ff00);
