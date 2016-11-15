@@ -206,7 +206,7 @@ Peon.prototype.plan=function(environment)
       this.actuator.commands.push('goStraightY');
       //this.actuator.commands.push('goStraightX');}
     else
-       this.actuator.commands.push('goStraight');
+       this.actuator.commands.push('stop');
   }
 };
 
