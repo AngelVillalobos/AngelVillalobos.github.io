@@ -220,25 +220,44 @@ Peon.prototype.act=function(environment)
 
 Peon.prototype.operations={};
 
-Peon.prototype.operations.goStraight=function(pieza,distance)
+/*Peon.prototype.operations.goStraight=function(pieza,distance)
 {
   if(distance===undefined)
-    distance=0.5;
+  {
+    if(X<x)
+      distance=0.5;
+    else if(X===x)
+      
+  }
   pieza.position.x+=distance*Math.cos(pieza.rotation.z);
   pieza.position.y+=distance*Math.sin(pieza.rotation.z);
-};
+};*/
 
 Peon.prototype.operations.goStraightX=function(pieza,distance)
 {
   if(distance===undefined)
-    distance=0.5;
+  {
+    if(X<x)
+      distance=0.5;
+    else if(X===x)
+      distance=0;
+    else
+      distance=-0.5; 
+  }
   pieza.position.x+=distance*Math.cos(pieza.rotation.z);
 };
 
 Peon.prototype.operations.goStraightY=function(pieza,distance)
 {
   if(distance===undefined)
-    distance=0.5;
+   {
+    if(Y<y)
+      distance=0.5;
+    else if(Y===y)
+      distance=0;
+    else
+      distance=-0.5; 
+  }
   pieza.position.y+=distance*Math.cos(pieza.rotation.z);
 };
 
