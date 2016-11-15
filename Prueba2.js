@@ -410,13 +410,13 @@ function loop()
   requestAnimationFrame(loop);
   environment.sense();
   environment.plan();
-  if(activar)
+  if(activar===true&&activar2!==true)
     environment.act();
   renderizador.render(environment,camara);
   X=environment.children[100].position.x;
   console.log(X);
-  //if(===35)
-  //  activar2=true;
+  if(X===35)
+    activar2=true;
 }
 
 
