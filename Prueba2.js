@@ -169,7 +169,6 @@ function Peon(x,y)
   Agent.call(this,x,y);
   cargador=new THREE.TextureLoader();
   textura=cargador.load('maderaN.jpg');
-  //this.castShadow=true;
   this.position.x=x;
   this.position.y=y;
   this.position.z=0.4;
@@ -177,10 +176,10 @@ function Peon(x,y)
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.add(this.actuator);
   this.actuator.scale.set(7,7,7);
-  this.actuator.setAttribute("name","Peon"+n);
+  //this.actuator.setAttribute("name","Peon"+n);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
-  n=n+1;
+  //n=n+1;
 }
 Peon.prototype=new Agent();
 
