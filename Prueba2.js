@@ -306,7 +306,7 @@ function SeleccionD(event)
     var A;
     x=seleccion[0].point.x;
     y=seleccion[0].point.y;
-    if(seleccion[0].object.geometry===PeonGeometry);//==='Peon')
+    if(seleccion[0].object.geometry===PeonGeometry)//==='Peon')
       A=1;
     else
       A=0;
