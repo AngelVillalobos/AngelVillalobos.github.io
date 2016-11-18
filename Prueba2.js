@@ -304,7 +304,8 @@ function SeleccionD(event)
   if(seleccion.length>0)
   {
     var A;
-    console.log(seleccion[0].object.geometry);
+    console.log(seleccion[0].object.children);
+    console.log(seleccion[0].object.parent);
     x=seleccion[0].point.x;
     y=seleccion[0].point.y;
    /* if(seleccion[0].object.geometry===PeonGeometry)//==='Peon')
