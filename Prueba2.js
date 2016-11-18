@@ -196,11 +196,9 @@ Peon.prototype.plan=function(environment)
 {
   this.actuator.commands=[];
   if(this.sensor.colision==true)
-    this.actuator.commands.push('rotateCCW');
+    this.actuator.commands.push('stop');
   else
   { 
-    if(this.sensor.colision==true)
-      this.actuator.commands.push('rotateCCW');
     if(X!==x)
       this.actuator.commands.push('goStraightX');
     else if(X===x&&Y!==y) 
@@ -367,6 +365,10 @@ function SeleccionD(event)
       y=25;
     else if(30<y&&y<40)
       y=35;
+    
+  }
+  
+  
   }
 }
 
@@ -464,11 +466,12 @@ function loop()
   renderizador.render(environment,camara);
   X=environment.children[100].position.x;
   Y=environment.children[100].position.y;
+  Z=environment.children[100].position.z;
 }
 
 
 
-var n=0,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,y,activar=false,seleccionO=true,seleccionF=false,xf,yf;
+var n=0,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF=false,xf,yf;
 
 setup();
 loop();
