@@ -177,8 +177,10 @@ function Peon(x,y)
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.add(this.actuator);
   this.actuator.scale.set(7,7,7);
+  this.actuator.setAttribute("name","Peon"+n);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
+  n=n+1;
 }
 Peon.prototype=new Agent();
 
@@ -466,7 +468,7 @@ function loop()
 
 
 
-var environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,y,activar=false,seleccionO=true,seleccionF=false,xf,yf;
+var n=0,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,y,activar=false,seleccionO=true,seleccionF=false,xf,yf;
 
 setup();
 loop();
