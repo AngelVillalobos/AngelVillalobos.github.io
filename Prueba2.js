@@ -304,13 +304,14 @@ function SeleccionD(event)
   if(seleccion.length>0)
   {
     var A;
+    console.log(seleccion[0].object.geometry);
     x=seleccion[0].point.x;
     y=seleccion[0].point.y;
-    if(seleccion[0].object.geometry===PeonGeometry)//==='Peon')
+   /* if(seleccion[0].object.geometry===PeonGeometry)//==='Peon')
       A=1;
     else
       A=0;
-    console.log(A);
+    console.log(A);*/
     
     /*if(seleccionF)
     {
