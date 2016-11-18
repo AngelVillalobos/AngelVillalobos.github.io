@@ -365,10 +365,7 @@ function SeleccionD(event)
       y=25;
     else if(30<y&&y<40)
       y=35;
-    
-  }
-  
-  
+     
   }
 }
 
@@ -466,7 +463,6 @@ function loop()
   renderizador.render(environment,camara);
   X=environment.children[100].position.x;
   Y=environment.children[100].position.y;
-  Z=environment.children[100].position.z;
 }
 
 
