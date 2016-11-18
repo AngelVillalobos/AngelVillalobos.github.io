@@ -201,9 +201,9 @@ Peon.prototype.plan=function(environment)
   }
   else
   { 
-    if(X!==x){//&&this.sensor.colision==false)
+    if(X!==x)//&&this.sensor.colision==false)
       this.actuator.commands.push('goStraightD');
-      this.actuator.commands.push('goStraightY');}
+      //this.actuator.commands.push('goStraightY');
     else if(X===x&&Y!==y)//&&this.sensor.colision==false) 
       this.actuator.commands.push('goStraightY');
     else if(X===x&&Y===y)//&&this.sensor.colision==false)
