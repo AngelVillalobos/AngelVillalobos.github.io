@@ -305,7 +305,7 @@ function SeleccionD(event)
   {
     x=seleccion[0].point.x;
     y=seleccion[0].point.y;
-    console.log(environment.children);//==='Peon')
+    console.log(seleccion[0]);//==='Peon')
       //var A=1;
     //console.log(environment);
     //console.log(A);
