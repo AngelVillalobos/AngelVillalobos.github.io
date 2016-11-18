@@ -303,10 +303,13 @@ function SeleccionD(event)
   seleccion=raycaster.intersectObjects(environment.children,true);
   if(seleccion.length>0)
   {
+    var A;
     x=seleccion[0].point.x;
     y=seleccion[0].point.y;
     if(seleccion[0].object.geometry===PeonGeometry);//==='Peon')
-      var A=1;
+      A=1;
+    else
+      A=0;
       //var A=1;
     //console.log(environment);
     console.log(A);
