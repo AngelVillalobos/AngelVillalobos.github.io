@@ -311,6 +311,7 @@ function SeleccionD(event)
     else
       A=0;
     console.log(A);
+    
     /*if(seleccionF)
     {
       xf=seleccion[0].point.x;
