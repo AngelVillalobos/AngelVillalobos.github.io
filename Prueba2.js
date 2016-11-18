@@ -195,15 +195,15 @@ Peon.prototype.sense=function(environment)
 Peon.prototype.plan=function(environment)
 {
   this.actuator.commands=[];
-  if(this.sensor.colision==true)
-    this.actuator.commands.push('stop');
+  if(this.sensor.colision===true)
+    this.actuator.commands.push('rotateCCW');
   else
   { 
-    if(X!==x)
+    if(X!==x&&this.sensor.colision==false)
       this.actuator.commands.push('goStraightX');
-    else if(X===x&&Y!==y) 
+    else if(X===x&&Y!==y&&this.sensor.colision==false) 
       this.actuator.commands.push('goStraightY');
-    else
+    else if(X===x&&Y===y&&this.sensor.colision==false)
        this.actuator.commands.push('stop');
   }
 };
