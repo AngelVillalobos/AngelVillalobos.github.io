@@ -201,8 +201,9 @@ Peon.prototype.plan=function(environment)
   }
   else
   { 
-    if(X!==x)//&&this.sensor.colision==false)
+    if(X!==x){//&&this.sensor.colision==false)
       this.actuator.commands.push('goStraightX');
+      this.actuator.commands.push('goStraightY');}
     else if(X===x&&Y!==y)//&&this.sensor.colision==false) 
       this.actuator.commands.push('goStraightY');
     else if(X===x&&Y===y)//&&this.sensor.colision==false)
@@ -248,7 +249,7 @@ Peon.prototype.operations.goStraightY=function(pieza,distance)
     else
       distance=-0.5; 
   }
-  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
+  pieza.position.y+=distance*Math.sin(pieza.rotation.z);
 };
 
 Peon.prototype.operations.goStraight=function(pieza,distance)
