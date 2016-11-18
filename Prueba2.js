@@ -305,10 +305,11 @@ function SeleccionD(event)
   {
     x=seleccion[0].point.x;
     y=seleccion[0].point.y;
-    console.log(seleccion[0].object.geometry);//==='Peon')
+    if(seleccion[0].object.geometry===PeonGeometry);//==='Peon')
+      var A=1;
       //var A=1;
     //console.log(environment);
-    //console.log(A);
+    console.log(A);
     /*if(seleccionF)
     {
       xf=seleccion[0].point.x;
