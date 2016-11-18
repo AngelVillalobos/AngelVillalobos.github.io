@@ -305,10 +305,10 @@ function SeleccionD(event)
   {
     x=seleccion[0].point.x;
     y=seleccion[0].point.y;
-    if(seleccion[0].object.parent==='Peon')
-      var A=1;
+    console.log(seleccion[0].object.parent);//==='Peon')
+      //var A=1;
     //console.log(environment);
-    console.log(A);
+    //console.log(A);
     /*if(seleccionF)
     {
       xf=seleccion[0].point.x;
@@ -357,8 +357,6 @@ function SeleccionD(event)
       y=25;
     else if(30<y&&y<40)
       y=35;
-    console.log(x);
-    console.log(y);
   }
 }
 
