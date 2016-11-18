@@ -309,8 +309,6 @@ function SeleccionD(event)
       A=1;
     else
       A=0;
-      //var A=1;
-    //console.log(environment);
     console.log(A);
     /*if(seleccionF)
     {
