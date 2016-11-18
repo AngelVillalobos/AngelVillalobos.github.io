@@ -307,7 +307,7 @@ function SeleccionD(event)
     //console.log(seleccion[0].object.children);
     //console.log(seleccion[0].object.parent.actuator.geometry);
     if(seleccion[0].object.parent.actuator.geometry===PeonGeometry)
-      
+      A=1;
     x=seleccion[0].point.x;
     y=seleccion[0].point.y;
    /* if(seleccion[0].object.geometry===PeonGeometry)//==='Peon')
