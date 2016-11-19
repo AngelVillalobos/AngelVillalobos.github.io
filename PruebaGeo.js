@@ -162,7 +162,7 @@ function Peon(x,y)
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.add(this.actuator);
-  this.actuator.scale.set(7,7,7);
+  this.actuator.scale.set(10,10,10);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castshadow=true;
 }
