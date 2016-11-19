@@ -2,19 +2,20 @@
 ///////////////CONSTRUCTOR PEON///////////////
 PeonGeometry=function()
 {
-  var BaseCaballo1=new THREE.BoxGeometry(0.7,0.2,0.7);
-  var CuerpoCaballo1=new THREE.BoxGeometry(0.5,1,0.5);
-  var CabezaCaballo1=new THREE.BoxGeometry(0.3,0.3,0.5);
-  BaseCaballo1.translate(0,0,0);
-  CuerpoCaballo1.translate(0,0.3,0);
-  CabezaCaballo1.translate(0.3,0.6,0);
-  var BaseCaballo=new THREE.Mesh(BaseCaballo1);
-  var CuerpoCaballo=new THREE.Mesh(CuerpoCaballo1);
-  var CabezaCaballo=new THREE.Mesh(CabezaCaballo1);
-  var CaballoForma = new THREE.Geometry();
-  this.merge(BaseCaballo.geometry,BaseCaballo.matrix);
-  this.merge(CuerpoCaballo.geometry,CuerpoCaballo.matrix);
-  this.merge(CabezaCaballo.geometry,CabezaCaballo.matrix);
+  var BaseRey1=new THREE.BoxGeometry(0.7,0.2,0.7);
+  var CuerpoRey1=new THREE.BoxGeometry(0.5,1.3,0.5);
+  var CoronaRey1=new THREE.BoxGeometry(0.3,0.3,0.3);
+  BaseRey1.translate(0,0,0);
+  CuerpoRey1.translate(0,0.5,0);
+  CoronaRey1.translate(0,1.3,0);
+  CoronaRey1.rotateY(Math.PI/4);
+  var BaseRey=new THREE.Mesh(BaseRey1);
+  var CuerpoRey=new THREE.Mesh(CuerpoRey1);
+  var CoronaRey=new THREE.Mesh(CoronaRey1);
+  var ReyForma = new THREE.Geometry();
+  this.merge(BaseRey.geometry,BaseRey.matrix);
+  this.merge(CuerpoRey.geometry,CuerpoRey.matrix);
+  this.merge(CoronaRey.geometry,CoronaRey.matrix);
 }
 PeonGeometry.prototype=new THREE.Geometry();
 ///////////////AGENTE///////////////
