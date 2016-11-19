@@ -3,7 +3,7 @@ var CuerpoCaballo1=new THREE.BoxGeometry(0.5,0.8,0.5);
 var CabezaCaballo1=new THREE.BoxGeometry(0.3,0.3,0.5);
 BaseCaballo1.translate(0,0,0);
 CuerpoCaballo1.translate(0,0.3,0);
-CabezaCaballo1.translate(0.3,0.7,0);
+CabezaCaballo1.translate(0.3,0.5,0);
 var BaseCaballo=new THREE.Mesh(BaseCaballo1);
 var CuerpoCaballo=new THREE.Mesh(CuerpoCaballo1);
 var CabezaCaballo=new THREE.Mesh(CabezaCaballo1);
