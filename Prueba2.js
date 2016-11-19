@@ -510,7 +510,7 @@ function loop()
   renderizador.render(environment,camara);
   console.log(X);
   console.log(Y);
-  console.log(seleccionarF);
+  console.log(seleccionF);
 }
 
 
