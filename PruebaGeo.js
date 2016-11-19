@@ -162,7 +162,7 @@ function Peon(x,y)
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.add(this.actuator);
-  this.actuator.scale.set(10,10,10);
+  this.actuator.scale.set(8.5,8.5,8.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castshadow=true;
 }
@@ -258,26 +258,6 @@ Peon.prototype.operations.rotateCCW=function(pieza,angle)
   pieza.rotation.z+=angle;
 };
 
-function Teclado()
-{
-  var avance=0.4;
-  if(event.keyCode==39)
-  {
-    environment.children[100].position.x+=avance;
-  }
-  else if(event.keyCode==37)
-  {
-    environment.children[100].position.x+=-avance;
-  }
-  else if(event.keyCode==38)
-  {
-    environment.children[100].position.y+=avance;
-  }
-  else if(event.keyCode==40)
-  {
-    environment.children[100].position.y+=-avance;
-  }
-}
 
 function SeleccionD(event)
 {
@@ -400,8 +380,7 @@ function setup()
   environment=new Environment();
   environment.setMapCasilla(tablero);
   environment.setMapPiezas(Piezas);
-  
-  document.addEventListener('keydown',Teclado);
+
   document.addEventListener('mousedown',SeleccionD);
   document.addEventListener('mouseup',SeleccionU);
 
