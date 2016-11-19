@@ -12,10 +12,10 @@ CaballoGeometry=function()
   var BaseCaballo=new THREE.Mesh(BaseCaballo1);
   var CuerpoCaballo=new THREE.Mesh(CuerpoCaballo1);
   var CabezaCaballo=new THREE.Mesh(CabezaCaballo1);
-  var CaballoForma = new THREE.Geometry();
-  CaballoForma.merge(BaseCaballo.geometry,BaseCaballo.matrix);
-  CaballoForma.merge(CuerpoCaballo.geometry,CuerpoCaballo.matrix);
-  CaballoForma.merge(CabezaCaballo.geometry,CabezaCabal
+  //var CaballoForma = new THREE.Geometry();
+  this.merge(BaseCaballo.geometry,BaseCaballo.matrix);
+  this.merge(CuerpoCaballo.geometry,CuerpoCaballo.matrix);
+  this.merge(CabezaCaballo.geometry,CabezaCaballo.matrix);
 }
 CaballoGeometry.prototype=new THREE.Geometry();
 ///////////////AGENTE///////////////
