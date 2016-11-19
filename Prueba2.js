@@ -206,7 +206,10 @@ Peon.prototype.plan=function(environment)
     else if(X===x&&Y!==y) 
       this.actuator.commands.push('goStraightY');
     else if(X===x&&Y===y)
-       this.actuator.commands.push('stop');
+    {
+      this.actuator.commands.push('stop');
+      seleccionF2=false;
+    }
   //}
 };
 
@@ -264,7 +267,7 @@ Peon.prototype.operations.stop=function(pieza,distance)
   if(distance===undefined)
     distance=0;
   pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-  pieza.position.y+=distance*Math.sin(pieza.rotation.z);
+  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
 };
 
 Peon.prototype.operations.rotateCCW=function(pieza,angle)
@@ -309,13 +312,11 @@ function SeleccionD(event)
     console.log(id);
     
     
-    if(seleccionF==true)
+    if(seleccionF1==true)
     {
       x=seleccion[0].point.x;
       y=seleccion[0].point.y;
-      //xf=seleccion[0].point.x;
-      //yf=seleccion[0].point.y;
-      seleccionF=true;
+      seleccionF2=true;
     }
     /*else
     {
@@ -369,7 +370,7 @@ function SeleccionU(event)
   activar=true;
   event.preventDefault();
   seleccion[0].object.material.color.setHex(0xffffff);
-  //seleccionF=true;
+  seleccionF1=true;
 }
 
 
@@ -459,8 +460,8 @@ function loop()
     {
       X=environment.children[101].position.x;
       Y=environment.children[101].position.y;
-      if(seleccionF==true)
-        environment.children[100].act();
+      if(seleccionF2==true)
+        environment.children[101].act();
       console.log(X);
       console.log(Y);
       console.log(seleccionF);
@@ -469,8 +470,8 @@ function loop()
     {
       X=environment.children[102].position.x;
       Y=environment.children[102].position.y;
-      if(seleccionF==true)
-        environment.children[101].act();
+      if(seleccionF2==true)
+        environment.children[102].act();
       console.log(X);
       console.log(Y);
       console.log(seleccionF);
@@ -519,7 +520,7 @@ function loop()
 
 
 
-var id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF=false,xf,yf;
+var id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
 
 setup();
 loop();
