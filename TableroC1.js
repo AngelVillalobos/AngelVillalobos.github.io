@@ -141,7 +141,7 @@ Environment.prototype.setMapPiezas=function(map)
     {
       if(map[i][j]==="c")
       {
-        this.add(new Pieza.prototype.CaballoN((j*10)-45,(i*10)-45));
+        this.add(new CaballoN((j*10)-45,(i*10)-45));
       }
     }
   }
@@ -152,15 +152,11 @@ function Sensor(position,direction)
   this.colision=false;
 }
 Sensor.prototype = new THREE.Raycaster();
-///////////////PIEZA///////////////
-function Pieza()
+
+///////////////CABALLO NEGRO///////////////
+function CaballoN(x,y)
 {
   Agent.call(this,x,y);
-}
-Pieza.prototype=new Agent();
-///////////////CABALLO NEGRO///////////////
-Pieza.prototype.CaballoN=function()
-{
   cargador=new THREE.TextureLoader();
   textura=cargador.load('maderaN.jpg');
   this.position.x=x;
@@ -173,9 +169,9 @@ Pieza.prototype.CaballoN=function()
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castshadow=true;
 }
-//Caballo.prototype=new Agent();
+CaballoN.prototype=new Agent();
 
-Pieza.prototype.sense=function(environment)
+CaballoN.prototype.sense=function(environment)
 {
   this.sensor.set(this.position,new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0));
   var obstaculo=this.sensor.intersectObjects(environment.children,true);
@@ -185,7 +181,7 @@ Pieza.prototype.sense=function(environment)
     this.sensor.colision=false;
 };
 
-Pieza.prototype.plan=function(environment)
+CaballoN.prototype.plan=function(environment)
 {
   this.actuator.commands=[];
   if(this.sensor.colision==true)
@@ -201,7 +197,7 @@ Pieza.prototype.plan=function(environment)
   }
 };
 
-Pieza.prototype.act=function(environment)
+CaballoN.prototype.act=function(environment)
 {
   var command = this.actuator.commands.pop();
   if(command===undefined)
@@ -212,9 +208,9 @@ Pieza.prototype.act=function(environment)
     console.log('Unknown command');
 };
 
-Pieza.prototype.operations={};
+CaballoN.prototype.operations={};
 
-Pieza.prototype.operations.goStraightX=function(pieza,distance)
+CaballoN.prototype.operations.goStraightX=function(pieza,distance)
 {
   if(distance===undefined)
   {
@@ -228,7 +224,7 @@ Pieza.prototype.operations.goStraightX=function(pieza,distance)
   pieza.position.x+=distance*Math.cos(pieza.rotation.z);
 };
 
-Pieza.prototype.operations.goStraightY=function(pieza,distance)
+CaballoN.prototype.operations.goStraightY=function(pieza,distance)
 {
   if(distance===undefined)
    {
@@ -242,7 +238,7 @@ Pieza.prototype.operations.goStraightY=function(pieza,distance)
   pieza.position.y+=distance*Math.cos(pieza.rotation.z);
 };
 
-Pieza.prototype.operations.goStraight=function(pieza,distance)
+CaballoN.prototype.operations.goStraight=function(pieza,distance)
 {
   if(distance===undefined)
       distance=-0.5; 
@@ -250,7 +246,7 @@ Pieza.prototype.operations.goStraight=function(pieza,distance)
   pieza.position.y+=distance*Math.cos(pieza.rotation.z);
 };
 
-Pieza.prototype.operations.stop=function(pieza,distance)
+CaballoN.prototype.operations.stop=function(pieza,distance)
 {
   if(distance===undefined)
     distance=0;
@@ -258,7 +254,7 @@ Pieza.prototype.operations.stop=function(pieza,distance)
   pieza.position.y+=distance*Math.sin(pieza.rotation.z);
 };
 
-Pieza.prototype.operations.rotateCCW=function(pieza,angle)
+CaballoN.prototype.operations.rotateCCW=function(pieza,angle)
 {
   if(angle===undefined)
     angle=Math.PI/2;
