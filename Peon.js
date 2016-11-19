@@ -1,5 +1,5 @@
 var BasePeon1=new THREE.BoxGeometry(0.7,0.2,0.7);
-var CuerpoPeon1=new THREE.BoxGeometry(0.0.5,0.8,0.5);
+var CuerpoPeon1=new THREE.BoxGeometry(0.5,0.8,0.5);
 CuerpoPeon1.translate(0,0,1);
 var BasePeon=new THREE.Mesh(BasePeon1);
 var CuerpoPeon=new THREE.Mesh(CuerpoPeon1);
