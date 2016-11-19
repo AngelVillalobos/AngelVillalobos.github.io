@@ -159,7 +159,7 @@ function Pieza()
 }
 Pieza.prototype=new Agent();
 ///////////////CABALLO NEGRO///////////////
-Pieza.prototype.CaballoN=function(x,y)
+Pieza.prototype.CaballoN=function()
 {
   cargador=new THREE.TextureLoader();
   textura=cargador.load('maderaN.jpg');
