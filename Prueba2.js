@@ -209,6 +209,7 @@ Peon.prototype.plan=function(environment)
     {
       this.actuator.commands.push('stop');
       seleccionF2=false;
+      seleccionF1=false;
     }
   //}
 };
@@ -308,7 +309,8 @@ function SeleccionD(event)
   seleccion=raycaster.intersectObjects(environment.children,true);
   if(seleccion.length>0)
   {
-    id=seleccion[0].object.id;
+    if(seleccionF1==false)
+      id=seleccion[0].object.id;
     console.log(id);
     
     
