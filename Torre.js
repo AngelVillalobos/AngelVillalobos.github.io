@@ -1,5 +1,5 @@
 var BaseTorre1=new THREE.BoxGeometry(0.7,0.2,0.7);
-var CuerpoTorre1=new THREE.BoxGeometry(0.6,1.2,0.7);
+var CuerpoTorre1=new THREE.BoxGeometry(0.6,1.2,0.6);
 BaseTorre1.translate(0,0,0);
 CuerpoTorre1.translate(0,0.7,0);
 var BaseTorre=new THREE.Mesh(BaseTorre1);
