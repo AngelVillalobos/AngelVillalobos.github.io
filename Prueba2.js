@@ -459,43 +459,43 @@ function loop()
       X=environment.children[101].position.x;
       Y=environment.children[101].position.y;
     }
-    if(id===121)
+    else if(id===121)
     {
       environment.children[102].act();
       X=environment.children[102].position.x;
       Y=environment.children[102].position.y;
     }
-    if(id===128)
+    else if(id===128)
     {
       environment.children[103].act();
       X=environment.children[103].position.x;
       Y=environment.children[103].position.y;
     }
-    if(id===135)
+    else if(id===135)
     {
       environment.children[104].act();
       X=environment.children[104].position.x;
       Y=environment.children[104].position.y;
     }
-    if(id===142)
+    else if(id===142)
     {  
       environment.children[105].act();
       X=environment.children[105].position.x;
       Y=environment.children[105].position.y;
     }
-    if(id===149)
+    else if(id===149)
     {
       environment.children[106].act();
       X=environment.children[106].position.x;
       Y=environment.children[106].position.y;
     }
-    if(id===156)
+    else if(id===156)
     {
       environment.children[107].act();
       X=environment.children[107].position.x;
       Y=environment.children[107].position.y;
     }
-    if(id===163)
+    else if(id===163)
     {
       environment.children[108].act();
       X=environment.children[108].position.x;
