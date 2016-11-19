@@ -405,7 +405,7 @@ function setup()
   var Piezas=new Array();
   Piezas[0]="          ";
   Piezas[1]="          ";
-  Piezas[2]=" pp       ";
+  Piezas[2]=" pppp     ";
   Piezas[3]="          ";
   Piezas[4]="          ";
   Piezas[5]="          ";
