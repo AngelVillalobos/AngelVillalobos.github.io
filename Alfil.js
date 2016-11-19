@@ -6,7 +6,7 @@ var BaseAlfil=new THREE.Mesh(BaseAlfil1);
 var CuerpoAlfil=new THREE.Mesh(CuerpoAlfil1);
 var AlfilForma = new THREE.Geometry();
 AlfilForma.merge(BaseAlfil.geometry,BaseAlfil.matrix);
-AlfilForma.merge(CuerpoAlfil.geometry,CuerpoAlfi.matrix);
+AlfilForma.merge(CuerpoAlfil.geometry,CuerpoAlfil.matrix);
 var material=new THREE.MeshNormalMaterial();
 var AlfilFinal=new THREE.Mesh(AlfilForma,material);
 //PeonFinal.rotateX(Math.PI/12);
