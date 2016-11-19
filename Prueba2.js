@@ -458,20 +458,20 @@ function loop()
   //{
     if(id===114)
     {
-      X=environment.children[101].position.x;
-      Y=environment.children[101].position.y;
+      X=environment.children[100].position.x;
+      Y=environment.children[100].position.y;
       if(seleccionF2==true)
-        environment.children[101].act();
+        environment.children[100].act();
       console.log(X);
       console.log(Y);
       //console.log(seleccionF);
     }
     else if(id===121)
     {
-      X=environment.children[102].position.x;
-      Y=environment.children[102].position.y;
+      X=environment.children[101].position.x;
+      Y=environment.children[101].position.y;
       if(seleccionF2==true)
-        environment.children[102].act();
+        environment.children[101].act();
       console.log(X);
       console.log(Y);
       //console.log(seleccionF);
