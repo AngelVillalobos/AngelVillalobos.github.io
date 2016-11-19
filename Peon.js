@@ -6,7 +6,7 @@ var BasePeon=new THREE.Mesh(BasePeon1);
 var CuerpoPeon=new THREE.Mesh(CuerpoPeon1);
 var PeonForma = new THREE.Geometry();
 PeonForma.merge(BasePeon.geometry,BasePeon.matrix);
-//PeonForma.merge(CuerpoPeon.geometry,CuerpoPeon.matrix);
+PeonForma.merge(CuerpoPeon.geometry,CuerpoPeon.matrix);
 var material=new THREE.MeshNormalMaterial();
 var PeonFinal=new THREE.Mesh(PeonForma,material);
 //PeonFinal.rotateX(Math.PI/12);
