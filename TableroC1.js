@@ -11,12 +11,26 @@ CaballoGeometry=function()
   var BaseCaballo=new THREE.Mesh(BaseCaballo1);
   var CuerpoCaballo=new THREE.Mesh(CuerpoCaballo1);
   var CabezaCaballo=new THREE.Mesh(CabezaCaballo1);
-  //var CaballoForma = new THREE.Geometry();
   this.merge(BaseCaballo.geometry,BaseCaballo.matrix);
   this.merge(CuerpoCaballo.geometry,CuerpoCaballo.matrix);
   this.merge(CabezaCaballo.geometry,CabezaCaballo.matrix);
 }
 CaballoGeometry.prototype=new THREE.Geometry();
+///////////////CONSTRUCTOR ALFIL///////////////
+AlfilGeometry=function()
+{
+  THREE.Geometry.call(this);
+  var BaseAlfil1=new THREE.BoxGeometry(0.7,0.2,0.7);
+  var CuerpoAlfil1=new THREE.ConeGeometry(0.45,1.2,4,1,false,Math.PI/4);
+  BaseAlfil1.translate(0,0,0);
+  CuerpoAlfil1.translate(0,0.7,0); 
+  var BaseAlfil=new THREE.Mesh(BaseAlfil1);
+  var CuerpoAlfil=new THREE.Mesh(CuerpoAlfil1);
+  var AlfilForma = new THREE.Geometry();
+  this.merge(BaseAlfil.geometry,BaseAlfil.matrix);
+  this.merge(CuerpoAlfil.geometry,CuerpoAlfil.matrix);
+}
+AlfilGeometry.prototype=new THREE.Geometry();
 ///////////////AGENTE///////////////
 function Agent(x=0,y=0)
 {
@@ -24,7 +38,6 @@ function Agent(x=0,y=0)
   this.position.x=x;
   this.position.y=y;
 }
-
 Agent.prototype=new THREE.Object3D();
 
 Agent.prototype.sense=function(environment){};
@@ -142,6 +155,10 @@ Environment.prototype.setMapPiezas=function(map)
         this.add(new CaballoN((j*10)-45,(i*10)-45));
       if(map[i][j]==="C")
         this.add(new CaballoB((j*10)-45,(i*10)-45));
+      if(map[i][j]==="a")
+        this.add(new AlfilN((j*10)-45,(i*10)-45));
+      if(map[i][j]==="A")
+        this.add(new AlfilB((j*10)-45,(i*10)-45));
     }
   }
 }
@@ -351,7 +368,204 @@ CaballoB.prototype.operations.rotateCCW=function(pieza,angle)
     angle=Math.PI/2;
   pieza.rotation.z+=angle;
 };
+///////////////ALFIL NEGRO///////////////
+function AlfilN(x,y)
+{
+  Agent.call(this,x,y);
+  cargador=new THREE.TextureLoader();
+  textura=cargador.load('maderaB.jpg');
+  this.position.x=x;
+  this.position.y=y;
+  this.position.z=0.4;
+  this.sensor=new Sensor();
+  this.actuator=new THREE.Mesh(new AlfilGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.add(this.actuator);
+  this.actuator.scale.set(9.5,9.5,9.5);
+  this.actuator.rotateX(Math.PI/2);
+  this.actuator.castshadow=true;
+}
+AlfilN.prototype=new Agent();
 
+AlfilN.prototype.sense=function(environment)
+{
+  this.sensor.set(this.position,new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0));
+  var obstaculo=this.sensor.intersectObjects(environment.children,true);
+  if((obstaculo.length>0 && (obstaculo[0].distance<=1)))
+    this.sensor.colision=true;
+  else
+    this.sensor.colision=false;
+};
+
+AlfilN.prototype.plan=function(environment)
+{
+  this.actuator.commands=[];
+  if(this.sensor.colision==true)
+    this.actuator.commands.push('rotateCCW');
+  else
+  { 
+    if(X!==x)
+      this.actuator.commands.push('goStraightX');
+    else if(X===x&&Y!==y) 
+      this.actuator.commands.push('goStraightY');
+    else
+       this.actuator.commands.push('stop');
+  }
+};
+
+AlfilN.prototype.act=function(environment)
+{
+  var command = this.actuator.commands.pop();
+  if(command===undefined)
+    console.log('Undefined command');
+  else if(command in this.operations)
+    this.operations[command](this);
+  else
+    console.log('Unknown command');
+};
+
+AlfilN.prototype.operations={};
+
+AlfilN.prototype.operations.goStraightX=function(pieza,distance)
+{
+  if(distance===undefined)
+  {
+    if(X<x)
+      distance=0.5;
+    else if(X===x)
+      distance=0;
+    else
+      distance=-0.5; 
+  }
+  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
+};
+
+AlfilN.prototype.operations.goStraightY=function(pieza,distance)
+{
+  if(distance===undefined)
+   {
+    if(Y<y)
+      distance=0.5;
+    else if(Y===y)
+      distance=0;
+    else
+      distance=-0.5; 
+  }
+  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
+};
+
+AlfilN.prototype.operations.stop=function(pieza,distance)
+{
+  if(distance===undefined)
+    distance=0;
+  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
+  pieza.position.y+=distance*Math.sin(pieza.rotation.z);
+};
+
+AlfilN.prototype.operations.rotateCCW=function(pieza,angle)
+{
+  if(angle===undefined)
+    angle=Math.PI/2;
+  pieza.rotation.z+=angle;
+};
+///////////////ALFIL BLANCO///////////////
+function AlfilB(x,y)
+{
+  Agent.call(this,x,y);
+  cargador=new THREE.TextureLoader();
+  textura=cargador.load('maderaB.jpg');
+  this.position.x=x;
+  this.position.y=y;
+  this.position.z=0.4;
+  this.sensor=new Sensor();
+  this.actuator=new THREE.Mesh(new AlfilGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.add(this.actuator);
+  this.actuator.scale.set(9.5,9.5,9.5);
+  this.actuator.rotateX(Math.PI/2);
+  this.actuator.castshadow=true;
+}
+AlfilB.prototype=new Agent();
+
+AlfilB.prototype.sense=function(environment)
+{
+  this.sensor.set(this.position,new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0));
+  var obstaculo=this.sensor.intersectObjects(environment.children,true);
+  if((obstaculo.length>0 && (obstaculo[0].distance<=1)))
+    this.sensor.colision=true;
+  else
+    this.sensor.colision=false;
+};
+
+AlfilB.prototype.plan=function(environment)
+{
+  this.actuator.commands=[];
+  if(this.sensor.colision==true)
+    this.actuator.commands.push('rotateCCW');
+  else
+  { 
+    if(X!==x)
+      this.actuator.commands.push('goStraightX');
+    else if(X===x&&Y!==y) 
+      this.actuator.commands.push('goStraightY');
+    else
+       this.actuator.commands.push('stop');
+  }
+};
+
+AlfilB.prototype.act=function(environment)
+{
+  var command = this.actuator.commands.pop();
+  if(command===undefined)
+    console.log('Undefined command');
+  else if(command in this.operations)
+    this.operations[command](this);
+  else
+    console.log('Unknown command');
+};
+
+AlfilB.prototype.operations={};
+
+AlfilB.prototype.operations.goStraightX=function(pieza,distance)
+{
+  if(distance===undefined)
+  {
+    if(X<x)
+      distance=0.5;
+    else if(X===x)
+      distance=0;
+    else
+      distance=-0.5; 
+  }
+  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
+};
+
+AlfilB.prototype.operations.goStraightY=function(pieza,distance)
+{
+  if(distance===undefined)
+   {
+    if(Y<y)
+      distance=0.5;
+    else if(Y===y)
+      distance=0;
+    else
+      distance=-0.5; 
+  }
+  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
+};
+
+AlfilB.prototype.operations.stop=function(pieza,distance)
+{
+  if(distance===undefined)
+    distance=0;
+  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
+  pieza.position.y+=distance*Math.sin(pieza.rotation.z);
+};
+
+AlfilB.prototype.operations.rotateCCW=function(pieza,angle)
+{
+  if(angle===undefined)
+    angle=Math.PI/2;
+  pieza.rotation.z+=angle;
+};
 
 
 function SeleccionD(event)
