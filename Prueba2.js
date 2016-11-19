@@ -455,49 +455,49 @@ function loop()
   {
     if(id===114)
     {
-      environment.children[101].act();
+      environment.children[100].act();
       //X=environment.children[101].position.x;
       //Y=environment.children[101].position.y;
     }
     else if(id===121)
     {
-      environment.children[102].act();
+      environment.children[101].act();
       //X=environment.children[102].position.x;
       //Y=environment.children[102].position.y;
     }
     else if(id===128)
     {
-      environment.children[103].act();
+      environment.children[102].act();
       //X=environment.children[103].position.x;
       //Y=environment.children[103].position.y;
     }
     else if(id===135)
     {
-      environment.children[104].act();
+      environment.children[103].act();
       //X=environment.children[104].position.x;
       //Y=environment.children[104].position.y;
     }
     else if(id===142)
     {  
-      environment.children[105].act();
+      environment.children[104].act();
       //X=environment.children[105].position.x;
       //Y=environment.children[105].position.y;
     }
     else if(id===149)
     {
-      environment.children[106].act();
+      environment.children[105].act();
       //X=environment.children[106].position.x;
       //Y=environment.children[106].position.y;
     }
     else if(id===156)
     {
-      environment.children[107].act();
+      environment.children[106].act();
       //X=environment.children[107].position.x;
       //Y=environment.children[107].position.y;
     }
     else if(id===163)
     {
-      environment.children[108].act();
+      environment.children[107].act();
       //X=environment.children[108].position.x;
       //Y=environment.children[108].position.y;
     }
