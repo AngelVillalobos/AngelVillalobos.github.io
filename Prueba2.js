@@ -369,7 +369,7 @@ function SeleccionU(event)
   activar=true;
   event.preventDefault();
   seleccion[0].object.material.color.setHex(0xffffff);
-  seleccionF=true;
+  //seleccionF=true;
 }
 
 
@@ -508,7 +508,9 @@ function loop()
   //}
     //environment.children[100].act();
   renderizador.render(environment,camara);
-  
+  console.log(X);
+  console.log(Y);
+  console.log(seleccionarF);
 }
 
 
