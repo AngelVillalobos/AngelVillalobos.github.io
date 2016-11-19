@@ -461,6 +461,9 @@ function loop()
       Y=environment.children[101].position.y;
       if(seleccionF==true)
         environment.children[100].act();
+      console.log(X);
+      console.log(Y);
+      console.log(seleccionF);
     }
     else if(id===121)
     {
@@ -468,6 +471,9 @@ function loop()
       Y=environment.children[102].position.y;
       if(seleccionF==true)
         environment.children[101].act();
+      console.log(X);
+      console.log(Y);
+      console.log(seleccionF);
     }
     else if(id===128)
     {
@@ -508,9 +514,7 @@ function loop()
   //}
     //environment.children[100].act();
   renderizador.render(environment,camara);
-  console.log(X);
-  console.log(Y);
-  console.log(seleccionF);
+
 }
 
 
