@@ -1,5 +1,5 @@
 var BaseReina1=new THREE.BoxGeometry(0.7,0.2,0.7);
-var CuerpoReina1=new THREE.CylinderGeometry(0.5,0.5,1.3);
+var CuerpoReina1=new THREE.CylinderGeometry(0.2,0.2,1.3);
 var CoronaReina1=new THREE.SphereGeometry(0.3,32,32);
 BaseReina1.translate(0,0,0);
 CuerpoReina1.translate(0,0.5,0);
