@@ -258,7 +258,7 @@ Pieza.prototype.operations.stop=function(pieza,distance)
   pieza.position.y+=distance*Math.sin(pieza.rotation.z);
 };
 
-Peon.prototype.operations.rotateCCW=function(pieza,angle)
+Pieza.prototype.operations.rotateCCW=function(pieza,angle)
 {
   if(angle===undefined)
     angle=Math.PI/2;
