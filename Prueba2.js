@@ -464,7 +464,7 @@ function loop()
         environment.children[101].act();
       console.log(X);
       console.log(Y);
-      console.log(seleccionF);
+      //console.log(seleccionF);
     }
     else if(id===121)
     {
@@ -474,7 +474,7 @@ function loop()
         environment.children[102].act();
       console.log(X);
       console.log(Y);
-      console.log(seleccionF);
+      //console.log(seleccionF);
     }
     else if(id===128)
     {
