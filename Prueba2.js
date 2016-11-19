@@ -307,15 +307,16 @@ function SeleccionD(event)
   {
     id=seleccion[0].object.id;
     console.log(id);
-    x=seleccion[0].point.x;
-    y=seleccion[0].point.y;
     
-    /*if(seleccionF)
+    
+    if(seleccionF==true)
     {
-      xf=seleccion[0].point.x;
-      yf=seleccion[0].point.y;
+      x=seleccion[0].point.x;
+      y=seleccion[0].point.y;
+      //xf=seleccion[0].point.x;
+      //yf=seleccion[0].point.y;
     }
-    else
+    /*else
     {
       xf=x;
       yf=y
@@ -358,7 +359,7 @@ function SeleccionD(event)
       y=25;
     else if(30<y&&y<40)
       y=35;
-     
+    seleccionF=true;
   }
 }
 
@@ -451,19 +452,21 @@ function loop()
   requestAnimationFrame(loop);
   environment.sense();
   environment.plan();
-  if(activar==true)
-  {
+  //if(activar==true)
+  //{
     if(id===114)
     {
-      environment.children[100].act();
       X=environment.children[101].position.x;
       Y=environment.children[101].position.y;
+      if(seleccionF==true)
+        environment.children[100].act();
     }
     else if(id===121)
     {
-      environment.children[101].act();
       X=environment.children[102].position.x;
       Y=environment.children[102].position.y;
+      if(seleccionF==true)
+        environment.children[101].act();
     }
     else if(id===128)
     {
@@ -501,7 +504,7 @@ function loop()
       //X=environment.children[108].position.x;
       //Y=environment.children[108].position.y;
     }
-  }
+  //}
     //environment.children[100].act();
   renderizador.render(environment,camara);
   
