@@ -315,6 +315,7 @@ function SeleccionD(event)
       y=seleccion[0].point.y;
       //xf=seleccion[0].point.x;
       //yf=seleccion[0].point.y;
+      seleccionF=true;
     }
     /*else
     {
@@ -359,7 +360,7 @@ function SeleccionD(event)
       y=25;
     else if(30<y&&y<40)
       y=35;
-    seleccionF=true;
+    
   }
 }
 
