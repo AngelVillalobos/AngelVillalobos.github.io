@@ -306,7 +306,7 @@ function SeleccionD(event)
   if(seleccion.length>0)
   {
     var A=0;
-    console.log(seleccion[0]);//parent);
+    console.log(seleccion[0].object.id);//parent);
     //console.log(seleccion[0].object.parent.actuator.geometry);
    // if(seleccion[0].object.geometry===PeonGeometry)
    //   A=1;
@@ -414,7 +414,7 @@ function setup()
   var Piezas=new Array();
   Piezas[0]="          ";
   Piezas[1]="          ";
-  Piezas[2]="  p   p   ";
+  Piezas[2]=" pppppppp ";
   Piezas[3]="          ";
   Piezas[4]="          ";
   Piezas[5]="          ";
@@ -461,7 +461,7 @@ function loop()
   environment.sense();
   environment.plan();
   if(activar==true)
-    environment.children[100].act();
+    //environment.children[100].act();
   renderizador.render(environment,camara);
   X=environment.children[100].position.x;
   Y=environment.children[100].position.y;
