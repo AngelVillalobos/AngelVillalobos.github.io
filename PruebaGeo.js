@@ -2,15 +2,19 @@
 ///////////////CONSTRUCTOR PEON///////////////
 PeonGeometry=function()
 {
-  var BaseTorre1=new THREE.BoxGeometry(0.7,0.2,0.7);
-  var CuerpoTorre1=new THREE.BoxGeometry(0.6,1.2,0.6);
-  BaseTorre1.translate(0,0,0);
-  CuerpoTorre1.translate(0,0.7,0);
-  var BaseTorre=new THREE.Mesh(BaseTorre1);
-  var CuerpoTorre=new THREE.Mesh(CuerpoTorre1);
-  var TorreForma = new THREE.Geometry();
-  this.merge(BaseTorre.geometry,BaseTorre.matrix);
-  this.merge(CuerpoTorre.geometry,CuerpoTorre.matrix);
+  var BaseCaballo1=new THREE.BoxGeometry(0.7,0.2,0.7);
+  var CuerpoCaballo1=new THREE.BoxGeometry(0.5,0.8,0.5);
+  var CabezaCaballo1=new THREE.BoxGeometry(0.4,0.4,0.5);
+  BaseCaballo1.translate(0,0,0);
+  CuerpoCaballo1.translate(0,0.5,0);
+  CabezaCaballo1.translate(0,0.7,-0.4);
+  var BaseCaballo=new THREE.Mesh(BaseCaballo1);
+  var CuerpoCaballo=new THREE.Mesh(CuerpoCaballo1);
+  var CabezaCaballo=new THREE.Mesh(CabezaCaballo1);
+  var CaballoForma = new THREE.Geometry();
+  this.merge(BaseCaballo.geometry,BaseCaballo.matrix);
+  this.merge(CuerpoCaballo.geometry,CuerpoCaballo.matrix);
+  this.merge(CabezaCaballo.geometry,CabezaCaballo.matrix);
 }
 PeonGeometry.prototype=new THREE.Geometry();
 ///////////////AGENTE///////////////
