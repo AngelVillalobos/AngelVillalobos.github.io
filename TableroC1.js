@@ -141,7 +141,7 @@ Environment.prototype.setMapPiezas=function(map)
     {
       if(map[i][j]==="c")
       {
-        this.add(new Pieza.CaballoN((j*10)-45,(i*10)-45));
+        this.add(new Pieza.prototype.CaballoN((j*10)-45,(i*10)-45));
       }
     }
   }
