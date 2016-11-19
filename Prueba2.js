@@ -305,7 +305,8 @@ function SeleccionD(event)
   seleccion=raycaster.intersectObjects(environment.children,true);
   if(seleccion.length>0)
   {
-    id=seleccion[0].object.id;//parent);
+    id=seleccion[0].object.id;
+    console.log(id);
     x=seleccion[0].point.x;
     y=seleccion[0].point.y;
     
