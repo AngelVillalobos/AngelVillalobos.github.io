@@ -456,14 +456,14 @@ function loop()
     if(id===114)
     {
       environment.children[100].act();
-      //X=environment.children[101].position.x;
-      //Y=environment.children[101].position.y;
+      X=environment.children[101].position.x;
+      Y=environment.children[101].position.y;
     }
     else if(id===121)
     {
       environment.children[101].act();
-      //X=environment.children[102].position.x;
-      //Y=environment.children[102].position.y;
+      X=environment.children[102].position.x;
+      Y=environment.children[102].position.y;
     }
     else if(id===128)
     {
