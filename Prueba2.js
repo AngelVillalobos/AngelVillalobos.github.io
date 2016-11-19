@@ -454,26 +454,57 @@ function loop()
   if(activar==true)
   {
     if(id===114)
-      environment.children[100].act();
-    if(id===121)
+    {
       environment.children[101].act();
-    if(id===128)
+      X=environment.children[101].position.x;
+      Y=environment.children[101].position.y;
+    }
+    if(id===121)
+    {
       environment.children[102].act();
-    if(id===135)
+      X=environment.children[102].position.x;
+      Y=environment.children[102].position.y;
+    }
+    if(id===128)
+    {
       environment.children[103].act();
-    if(id===142)
+      X=environment.children[103].position.x;
+      Y=environment.children[103].position.y;
+    }
+    if(id===135)
+    {
       environment.children[104].act();
-    if(id===149)
+      X=environment.children[104].position.x;
+      Y=environment.children[104].position.y;
+    }
+    if(id===142)
+    {  
       environment.children[105].act();
-    if(id===156)
+      X=environment.children[105].position.x;
+      Y=environment.children[105].position.y;
+    }
+    if(id===149)
+    {
       environment.children[106].act();
-    if(id===163)
+      X=environment.children[106].position.x;
+      Y=environment.children[106].position.y;
+    }
+    if(id===156)
+    {
       environment.children[107].act();
+      X=environment.children[107].position.x;
+      Y=environment.children[107].position.y;
+    }
+    if(id===163)
+    {
+      environment.children[108].act();
+      X=environment.children[108].position.x;
+      Y=environment.children[108].position.y;
+    }
   }
     //environment.children[100].act();
   renderizador.render(environment,camara);
-  X=environment.children[100].position.x;
-  Y=environment.children[100].position.y;
+  
 }
 
 
