@@ -1,4 +1,4 @@
-var BasePeon1=new THREE.BoxGeometry(0.7,0.2,0.7);
+var BasePeon1=new THREE.BoxGeometry(0.7,0.2,0.7,10,10,10);
 var CuerpoPeon1=new THREE.BoxGeometry(0.5,0.8,0.5);
 CuerpoPeon1.translate(0,0,-1);
 var BasePeon=new THREE.Mesh(BasePeon1);
