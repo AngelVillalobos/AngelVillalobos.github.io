@@ -1,6 +1,6 @@
 var BaseCaballo1=new THREE.BoxGeometry(0.7,0.2,0.7);
 var CuerpoCaballo1=new THREE.BoxGeometry(0.5,0.8,0.5);
-var CabezaCaballo1=new THREE.BoxGeometry(0.4,0.4,0.6);
+var CabezaCaballo1=new THREE.BoxGeometry(0.4,0.4,0.5);
 BaseCaballo1.translate(0,0,0);
 CuerpoCaballo1.translate(0,0.5,0);
 CabezaCaballo1.translate(0.4,0.7,0);
