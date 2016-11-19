@@ -19,7 +19,7 @@ PeonGeometry=function()
   var Base3PMalla = new THREE.Mesh(Base3PForma);
   var PeonMalla = new THREE.Mesh(PeonForma);
   var CoronaPMalla = new THREE.Mesh(CoronaPForma);
-  var PeonfForma = new THREE.Geometry();
+  //var PeonfForma = new THREE.Geometry();
   this.merge(BasePMalla.geometry,BasePMalla.matrix);
   this.merge(Base2PMalla.geometry,Base2PMalla.matrix);
   this.merge(Base3PMalla.geometry,Base3PMalla.matrix);
