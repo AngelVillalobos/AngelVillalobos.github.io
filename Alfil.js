@@ -1,5 +1,5 @@
 var BaseAlfil1=new THREE.BoxGeometry(0.7,0.2,0.7);
-var CuerpoAlfil1=new THREE.ConeGeometry(0.7,1.2,4);
+var CuerpoAlfil1=new THREE.ConeGeometry(0.7,1.2,4,64,2);
 BaseAlfil1.translate(0,0,0);
 CuerpoAlfil1.translate(0,0.4,0);
 var BaseAlfil=new THREE.Mesh(BaseAlfil1);
