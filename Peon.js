@@ -13,7 +13,6 @@ var PeonFinal=new THREE.Mesh(PeonForma,material);
 var escena = new THREE.Scene();
 escena.add(PeonFinal);
 
-
 var camara = new THREE.PerspectiveCamera();
 camara.position.z=4;
 camara.position.y=4;
