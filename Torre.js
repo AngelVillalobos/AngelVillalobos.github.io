@@ -6,7 +6,7 @@ var BaseTorre=new THREE.Mesh(BaseTorre1);
 var CuerpoTorre=new THREE.Mesh(CuerpoTorre1);
 var TorreForma = new THREE.Geometry();
 TorreForma.merge(BaseTorre.geometry,BaseTorre.matrix);
-TorreForma.merge(CuerpoATorre.geometry,CuerpoTorre.matrix);
+TorreForma.merge(CuerpoTorre.geometry,CuerpoTorre.matrix);
 var material=new THREE.MeshNormalMaterial();
 var TorreFinal=new THREE.Mesh(TorreForma,material);
 //PeonFinal.rotateX(Math.PI/12);
