@@ -169,7 +169,6 @@ function Peon(x,y)
   Agent.call(this,x,y);
   cargador=new THREE.TextureLoader();
   textura=cargador.load('maderaN.jpg');
-  this.castShadow=true;
   this.position.x=x;
   this.position.y=y;
   this.position.z=0.4;
@@ -178,7 +177,7 @@ function Peon(x,y)
   this.add(this.actuator);
   this.actuator.scale.set(7,7,7);
   this.actuator.rotateX(Math.PI/2);
-  this.actuator.castshadow=true;
+  this.actuator.castShadow=true;
 }
 Peon.prototype=new Agent();
 
@@ -272,27 +271,6 @@ Peon.prototype.operations.rotateCCW=function(pieza,angle)
   pieza.rotation.z+=angle;
 };
 
-function Teclado()
-{
-  var avance=0.4;
-  if(event.keyCode==39)
-  {
-    environment.children[100].position.x+=avance;
-  }
-  else if(event.keyCode==37)
-  {
-    environment.children[100].position.x+=-avance;
-  }
-  else if(event.keyCode==38)
-  {
-    environment.children[100].position.y+=avance;
-  }
-  else if(event.keyCode==40)
-  {
-    environment.children[100].position.y+=-avance;
-  }
-}
-
 function SeleccionD(event)
 {
   
@@ -305,17 +283,6 @@ function SeleccionD(event)
   {
     x=seleccion[0].point.x;
     y=seleccion[0].point.y;
-    
-    /*if(seleccionF)
-    {
-      xf=seleccion[0].point.x;
-      yf=seleccion[0].point.y;
-    }
-    else
-    {
-      xf=x;
-      yf=y
-    }*/
     
     if((-50<x&&x<50&&40<y&&y<50)||(-50<x&&x<50&&-50<y&&y<-40)||(-50<y&&y<50&&-50<x&&x<-40)||(-50<y&&y<50&&40<x&&x<50))
       seleccion[0].object.material.color.setHex(0xffffff);
@@ -415,7 +382,6 @@ function setup()
   environment.setMapCasilla(tablero);
   environment.setMapPiezas(Piezas);
   
-  document.addEventListener('keydown',Teclado);
   document.addEventListener('mousedown',SeleccionD);
   document.addEventListener('mouseup',SeleccionU);
 
