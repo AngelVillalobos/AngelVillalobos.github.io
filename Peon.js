@@ -16,6 +16,7 @@ escena.add(PeonFinal);
 var camara = new THREE.PerspectiveCamera();
 camara.position.z=4;
 camara.position.y=4;
+camara.lookAt(new THREE.Vector3(0,0,0));
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
 document.body.appendChild(renderizador.domElement);
