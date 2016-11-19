@@ -305,19 +305,9 @@ function SeleccionD(event)
   seleccion=raycaster.intersectObjects(environment.children,true);
   if(seleccion.length>0)
   {
-    var A=0;
-    console.log(seleccion[0].object.id);//parent);
-    //console.log(seleccion[0].object.parent.actuator.geometry);
-   // if(seleccion[0].object.geometry===PeonGeometry)
-   //   A=1;
-    //console.log(A)
+    id=seleccion[0].object.id;//parent);
     x=seleccion[0].point.x;
     y=seleccion[0].point.y;
-   /* if(seleccion[0].object.geometry===PeonGeometry)//==='Peon')
-      A=1;
-    else
-      A=0;
-    console.log(A);*/
     
     /*if(seleccionF)
     {
@@ -461,6 +451,24 @@ function loop()
   environment.sense();
   environment.plan();
   if(activar==true)
+  {
+    if(id===114)
+      environment.children[100].act();
+    if(id===121)
+      environment.children[101].act();
+    if(id===128)
+      environment.children[102].act();
+    if(id===135)
+      environment.children[103].act();
+    if(id===142)
+      environment.children[104].act();
+    if(id===149)
+      environment.children[105].act();
+    if(id===156)
+      environment.children[106].act();
+    if(id===163)
+      environment.children[107].act();
+  }
     //environment.children[100].act();
   renderizador.render(environment,camara);
   X=environment.children[100].position.x;
@@ -469,7 +477,7 @@ function loop()
 
 
 
-var n=0,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF=false,xf,yf;
+var id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF=false,xf,yf;
 
 setup();
 loop();
