@@ -3,29 +3,15 @@
 PeonGeometry=function()
 {
   THREE.Geometry.call(this);
-  var BasePForma = new THREE.CylinderGeometry(0.5,0.5,0.15,64,64);
-  var Base2PForma = new THREE.TorusGeometry(0.35,0.1,30,200);
-  var Base3PForma = new THREE.TorusGeometry(0.2,0.07,30,200);
-  var PeonForma = new THREE.CylinderGeometry(0.2,0.4,0.6,64,64);
-  var CoronaPForma = new THREE.SphereGeometry(0.36,32,32,6,6.3,6,6.3);
-  CoronaPForma.translate(0,-1,0);
-  PeonForma.translate(0,0.375,0);
-  Base2PForma.translate(0,0,-0.08);
-  Base3PForma.translate(0,0,-0.7);
-  CoronaPForma.rotateX(Math.PI);
-  Base3PForma.rotateX(Math.PI/2);
-  Base2PForma.rotateX(Math.PI/2);
-  var BasePMalla = new THREE.Mesh(BasePForma);
-  var Base2PMalla = new THREE.Mesh(Base2PForma);
-  var Base3PMalla = new THREE.Mesh(Base3PForma);
-  var PeonMalla = new THREE.Mesh(PeonForma);
-  var CoronaPMalla = new THREE.Mesh(CoronaPForma);
-  var PeonfForma = new THREE.Geometry();
-  this.merge(BasePMalla.geometry,BasePMalla.matrix);
-  this.merge(Base2PMalla.geometry,Base2PMalla.matrix);
-  this.merge(Base3PMalla.geometry,Base3PMalla.matrix);
-  this.merge(PeonMalla.geometry,PeonMalla.matrix);
-  this.merge(CoronaPMalla.geometry,CoronaPMalla.matrix);
+  var BasePeon1=new THREE.BoxGeometry(0.7,0.2,0.7);
+  var CuerpoPeon1=new THREE.BoxGeometry(0.5,0.8,0.5);
+  BasePeon1.translate(0,0,0);
+  CuerpoPeon1.translate(0,0.4,0);
+  var BasePeon=new THREE.Mesh(BasePeon1);
+  var CuerpoPeon=new THREE.Mesh(CuerpoPeon1); 
+  var PeonForma = new THREE.Geometry();
+  this.merge(BasePeon.geometry,BasePeon.matrix);
+  this.merge(CuerpoPeon.geometry,CuerpoPeon.matrix);
 }
 PeonGeometry.prototype=new THREE.Geometry();
 ///////////////AGENTE///////////////
