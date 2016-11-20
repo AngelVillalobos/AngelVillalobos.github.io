@@ -1142,7 +1142,7 @@ function loop()
   else
   {
     turno=1;
-    else if(id===182)
+    if(id===182)
       {
         X=environment.children[116].position.x;
         Y=environment.children[116].position.y;
