@@ -877,7 +877,7 @@ Peon.prototype.plan=function(environment)
     {
       if(turno===1)
         turno=0;
-      else
+      if(turno===0)
         turno=1;
       this.actuator.commands.push('stop');
       seleccionF2=false;
