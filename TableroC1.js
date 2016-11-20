@@ -317,7 +317,10 @@ Caballo.prototype.plan=function(environment)
       this.actuator.commands.push('stop');
       seleccionF2=false;
       seleccionF1=false;
-      turno=!turno;
+      if(turno===1)
+        turno=0;
+      else
+        turno=1;
     }
   //}
 };
@@ -427,7 +430,10 @@ Alfil.prototype.plan=function(environment)
       this.actuator.commands.push('stop');
       seleccionF2=false;
       seleccionF1=false;
-      turno=!turno;
+      if(turno===1)
+        turno=0;
+      else
+        turno=1;
     }
   //}
 };
@@ -536,7 +542,10 @@ Reina.prototype.plan=function(environment)
       this.actuator.commands.push('stop');
       seleccionF2=false;
       seleccionF1=false;
-      turno=!turno;
+      if(turno===1)
+        turno=0;
+      else
+        turno=1;
     }
   //}
 };
@@ -645,7 +654,10 @@ Rey.prototype.plan=function(environment)
       this.actuator.commands.push('stop');
       seleccionF2=false;
       seleccionF1=false;
-      turno=!turno;
+      if(turno===1)
+        turno=0;
+      else
+        turno=1;
     }
   //}
 };
@@ -754,7 +766,10 @@ Torre.prototype.plan=function(environment)
       this.actuator.commands.push('stop');
       seleccionF2=false;
       seleccionF1=false;
-      turno=!turno;
+      if(turno===1)
+        turno=0;
+      else
+        turno=1;
     }
   //}
 };
@@ -863,7 +878,10 @@ Peon.prototype.plan=function(environment)
       this.actuator.commands.push('stop');
       seleccionF2=false;
       seleccionF1=false;
-      turno=!turno;
+      if(turno===1)
+        turno=0;
+      else
+        turno=1;
     }
   //}
 };
@@ -934,7 +952,10 @@ function SeleccionD(event)
   if(seleccion.length>0)
   {
     console.log(turno);
-    turno=!turno;
+      if(turno===1)
+        turno=0;
+      else
+        turno=1;
     console.log(turno);
     //console.log(environment.children)
     if(seleccionF1==false)
