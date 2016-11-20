@@ -1582,14 +1582,18 @@ function setup()
 function loop()
 {
   requestAnimationFrame(loop);
-  environment.sense();
-  environment.plan();
+  //environment.sense();
+  //environment.plan();
   if(id===190)
     {
       X=environment.children[108].position.x;
       Y=environment.children[108].position.y;
       if(seleccionF2==true)
+      {
         environment.children[108].act();
+        environment.children[108].sense();
+        environment.children[108].plan();
+      }
     }
   renderizador.render(environment,camara);
   //X=environment.children[100].position.x;
