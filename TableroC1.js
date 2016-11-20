@@ -142,7 +142,7 @@ Environment.prototype.act=function()
   }
 }
 ///////////////CASILLA///////////////
-function Casilla(size,x,y)
+function Casillas(size,x,y)
 {
   cargador=new THREE.TextureLoader();
   if(sTC===1)
@@ -158,7 +158,7 @@ function Casilla(size,x,y)
   this.position.y=y;
   this.position.z=0;
 }
-Casilla.prototype=new THREE.Mesh();
+Casillas.prototype=new THREE.Mesh();
 ///////////////Armando el Tablero///////////////
 Environment.prototype.setMapCasilla=function(map)
 {
@@ -170,23 +170,23 @@ Environment.prototype.setMapCasilla=function(map)
       if(map[i][j]==="n")
       {
         sTC=1;
-        Casilla=new Casilla(10,(i*10)-45,(j*10)-45);
+        Casilla=new Casillas(10,(i*10)-45,(j*10)-45);
         Casilla.receiveShadow=true;
         this.add(Casilla);
       }
       else if(map[i][j]==="b")
       {
         sTC=2;
-        Casilla=new Casilla(10,(i*10)-45,(j*10)-45);
+        Casilla=new Casillas(10,(i*10)-45,(j*10)-45);
         Casilla.receiveShadow=true;
         this.add(Casilla);
       }
       else if(map[i][j]==="B")
       {
         sTC=3;
-        CBorde=new Casilla(10,(i*10)-45,(j*10)-45);
-        CBorde.receiveShadow=true;
-        this.add(CBorde);
+        Borde=new Casillas(10,(i*10)-45,(j*10)-45);
+        Borde.receiveShadow=true;
+        this.add(Borde);
       }
     }
   }
