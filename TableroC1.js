@@ -264,7 +264,7 @@ function CaballoN(x,y,textura)
   this.add(this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
-  this.actuator.castshadow=true;
+  this.actuator.castShadow=true;
 }
 CaballoN.prototype=new Agent();
 
