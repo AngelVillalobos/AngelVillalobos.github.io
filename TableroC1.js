@@ -68,6 +68,34 @@ ReyGeometry=function()
   this.merge(CoronaRey.geometry,CoronaRey.matrix);
 }
 ReyGeometry.prototype=new THREE.Geometry();
+///////////////CONSTRUCTOR PEON///////////////
+PeonGeometry=function()
+{
+  THREE.Geometry.call(this);
+  var BasePeon1=new THREE.BoxGeometry(0.7,0.2,0.7);
+  var CuerpoPeon1=new THREE.BoxGeometry(0.5,0.8,0.5);
+  BasePeon1.translate(0,0,0);
+  CuerpoPeon1.translate(0,0.4,0);
+  var BasePeon=new THREE.Mesh(BasePeon1);
+  var CuerpoPeon=new THREE.Mesh(CuerpoPeon1);
+  this.merge(BasePeon.geometry,BasePeon.matrix);
+  this.merge(CuerpoPeon.geometry,CuerpoPeon.matrix);
+}
+PeonGeometry.prototype=new THREE.Geometry();
+///////////////CONSTRUCTOR TORRE///////////////
+TorreGeometry=function()
+{
+  THREE.Geometry.call(this);
+  var BaseTorre1=new THREE.BoxGeometry(0.7,0.2,0.7);
+  var CuerpoTorre1=new THREE.BoxGeometry(0.6,1.2,0.6);
+  BaseTorre1.translate(0,0,0);
+  CuerpoTorre1.translate(0,0.7,0);
+  var BaseTorre=new THREE.Mesh(BaseTorre1);
+  var CuerpoTorre=new THREE.Mesh(CuerpoTorre1);
+  this.merge(BaseTorre.geometry,BaseTorre.matrix);
+  this.merge(CuerpoTorre.geometry,CuerpoTorre.matrix);
+}
+TorreGeometry.prototype=new THREE.Geometry();
 ///////////////AGENTE///////////////
 function Agent(x=0,y=0)
 {
@@ -184,14 +212,19 @@ Environment.prototype.setMapCasilla=function(map)
 ///////////////Colocando Piezas///////////////
 Environment.prototype.setMapPiezas=function(map)
 {
+  cargador=new THREE.TextureLoader();
   for(var i=0;i<map.length;i++)
   {
     for(var j=0;j<map.length;j++)
     {
       if(map[i][j]==="c")
-        this.add(new CaballoN((j*10)-45,(i*10)-45));
+      {
+        textura=cargador.load('maderaN.jpg');
+        this.add(new CaballoN((j*10)-45,(i*10)-45),textura);
+      }
       if(map[i][j]==="C")
-        this.add(new CaballoB((j*10)-45,(i*10)-45));
+        textura=cargador.load('maderaB.jpg');
+        this.add(new CaballoN((j*10)-45,(i*10)-45),textura);
       if(map[i][j]==="a")
         this.add(new AlfilN((j*10)-45,(i*10)-45));
       if(map[i][j]==="A")
@@ -215,11 +248,11 @@ function Sensor(position,direction)
 Sensor.prototype = new THREE.Raycaster();
 
 ///////////////CABALLO NEGRO///////////////
-function CaballoN(x,y)
+function CaballoN(x,y,textura)
 {
   Agent.call(this,x,y);
-  cargador=new THREE.TextureLoader();
-  textura=cargador.load('maderaN.jpg');
+  //cargador=new THREE.TextureLoader();
+  //textura=cargador.load('maderaN.jpg');
   this.position.x=x;
   this.position.y=y;
   this.position.z=0.4;
@@ -621,7 +654,7 @@ function ReinaB(x,y)
   this.position.y=y;
   this.position.z=0.4;
   this.sensor=new Sensor();
-  this.actuator=new THREE.Mesh(new AlfilGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.actuator=new THREE.Mesh(new ReinaGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.add(this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
@@ -720,7 +753,7 @@ function ReinaN(x,y)
   this.position.y=y;
   this.position.z=0.4;
   this.sensor=new Sensor();
-  this.actuator=new THREE.Mesh(new AlfilGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.actuator=new THREE.Mesh(new ReinaGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.add(this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
@@ -819,7 +852,7 @@ function ReyB(x,y)
   this.position.y=y;
   this.position.z=0.4;
   this.sensor=new Sensor();
-  this.actuator=new THREE.Mesh(new AlfilGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.actuator=new THREE.Mesh(new ReyGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.add(this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
