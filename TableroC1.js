@@ -960,7 +960,7 @@ function SeleccionU(event)
 
 function setup()
 {
-  if(turno===0)
+  if(turno===1)
     alert("Inician Negras");
   else
     alert("Inician Blancas");
