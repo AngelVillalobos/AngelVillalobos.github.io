@@ -896,7 +896,7 @@ function SeleccionD(event)
   seleccion=raycaster.intersectObjects(environment.children,true);
   if(seleccion.length>0)
   {
-    console.log(environment.children);
+    console.log(environment.children)
     if(seleccionF1==false)
       id=seleccion[0].object.id;
     console.log(id);
@@ -1027,18 +1027,230 @@ function loop()
     {
       X=environment.children[100].position.x;
       Y=environment.children[100].position.y;
-      //console.log(X);
-      //console.log(Y);
       if(seleccionF2==true)
-      {
         environment.children[100].act();
-        //environment.children[100].sense();
-        //environment.children[100].plan();
-      }
     }
+  else if(id===119)
+    {
+      X=environment.children[101].position.x;
+      Y=environment.children[101].position.y;
+      if(seleccionF2==true)
+        environment.children[101].act();
+    }
+  else if(id===123)
+    {
+      X=environment.children[102].position.x;
+      Y=environment.children[102].position.y;
+      if(seleccionF2==true)
+        environment.children[102].act();
+    }
+  else if(id===128)
+    {
+      X=environment.children[103].position.x;
+      Y=environment.children[103].position.y;
+      if(seleccionF2==true)
+        environment.children[103].act();
+    }
+  else if(id===133)
+    {
+      X=environment.children[104].position.x;
+      Y=environment.children[104].position.y;
+      if(seleccionF2==true)
+        environment.children[104].act();
+    }
+  else if(id===137)
+    {
+      X=environment.children[105].position.x;
+      Y=environment.children[105].position.y;
+      if(seleccionF2==true)
+        environment.children[105].act();
+    }
+  else if(id===142)
+    {
+      X=environment.children[106].position.x;
+      Y=environment.children[106].position.y;
+      if(seleccionF2==true)
+        environment.children[106].act();
+    }
+  else if(id===146)
+    {
+      X=environment.children[107].position.x;
+      Y=environment.children[107].position.y;
+      if(seleccionF2==true)
+        environment.children[107].act();
+    }
+  else if(id===150)
+    {
+      X=environment.children[108].position.x;
+      Y=environment.children[108].position.y;
+      if(seleccionF2==true)
+        environment.children[108].act();
+    }
+  else if(id===154)
+    {
+      X=environment.children[109].position.x;
+      Y=environment.children[109].position.y;
+      if(seleccionF2==true)
+        environment.children[109].act();
+    }
+  else if(id===158)
+    {
+      X=environment.children[110].position.x;
+      Y=environment.children[110].position.y;
+      if(seleccionF2==true)
+        environment.children[110].act();
+    }
+  else if(id===162)
+    {
+      X=environment.children[111].position.x;
+      Y=environment.children[111].position.y;
+      if(seleccionF2==true)
+        environment.children[111].act();
+    }
+  else if(id===166)
+    {
+      X=environment.children[112].position.x;
+      Y=environment.children[112].position.y;
+      if(seleccionF2==true)
+        environment.children[112].act();
+    }
+  else if(id===170)
+    {
+      X=environment.children[113].position.x;
+      Y=environment.children[113].position.y;
+      if(seleccionF2==true)
+        environment.children[113].act();
+    }
+  else if(id===174)
+    {
+      X=environment.children[114].position.x;
+      Y=environment.children[114].position.y;
+      if(seleccionF2==true)
+        environment.children[114].act();
+    }
+  else if(id===178)
+    {
+      X=environment.children[115].position.x;
+      Y=environment.children[115].position.y;
+      if(seleccionF2==true)
+        environment.children[115].act();
+    }
+  /*else if(id===119)
+    {
+      X=environment.children[116].position.x;
+      Y=environment.children[116].position.y;
+      if(seleccionF2==true)
+        environment.children[116].act();
+    }
+  else if(id===119)
+    {
+      X=environment.children[117].position.x;
+      Y=environment.children[117].position.y;
+      if(seleccionF2==true)
+        environment.children[117].act();
+    }
+  else if(id===119)
+    {
+      X=environment.children[118].position.x;
+      Y=environment.children[118].position.y;
+      if(seleccionF2==true)
+        environment.children[118].act();
+    }
+  else if(id===119)
+    {
+      X=environment.children[119].position.x;
+      Y=environment.children[119].position.y;
+      if(seleccionF2==true)
+        environment.children[119].act();
+    }
+  else if(id===119)
+    {
+      X=environment.children[120].position.x;
+      Y=environment.children[120].position.y;
+      if(seleccionF2==true)
+        environment.children[120].act();
+    }
+  else if(id===119)
+    {
+      X=environment.children[121].position.x;
+      Y=environment.children[121].position.y;
+      if(seleccionF2==true)
+        environment.children[121].act();
+    }
+  else if(id===119)
+    {
+      X=environment.children[122].position.x;
+      Y=environment.children[122].position.y;
+      if(seleccionF2==true)
+        environment.children[122].act();
+    }
+  else if(id===119)
+    {
+      X=environment.children[123].position.x;
+      Y=environment.children[123].position.y;
+      if(seleccionF2==true)
+        environment.children[123].act();
+    }
+  else if(id===119)
+    {
+      X=environment.children[124].position.x;
+      Y=environment.children[124].position.y;
+      if(seleccionF2==true)
+        environment.children[124].act();
+    }
+  else if(id===119)
+    {
+      X=environment.children[125].position.x;
+      Y=environment.children[125].position.y;
+      if(seleccionF2==true)
+        environment.children[125].act();
+    }
+  else if(id===119)
+    {
+      X=environment.children[126].position.x;
+      Y=environment.children[126].position.y;
+      if(seleccionF2==true)
+        environment.children[126].act();
+    }
+  else if(id===119)
+    {
+      X=environment.children[127].position.x;
+      Y=environment.children[127].position.y;
+      if(seleccionF2==true)
+        environment.children[127].act();
+    }
+  else if(id===119)
+    {
+      X=environment.children[128].position.x;
+      Y=environment.children[128].position.y;
+      if(seleccionF2==true)
+        environment.children[128].act();
+    }
+  else if(id===119)
+    {
+      X=environment.children[129].position.x;
+      Y=environment.children[129].position.y;
+      if(seleccionF2==true)
+        environment.children[129].act();
+    }
+  else if(id===119)
+    {
+      X=environment.children[130].position.x;
+      Y=environment.children[130].position.y;
+      if(seleccionF2==true)
+        environment.children[130].act();
+    }
+   else if(id===119)
+    {
+      X=environment.children[131].position.x;
+      Y=environment.children[131].position.y;
+      if(seleccionF2==true)
+        environment.children[131].act();
+    }
+  
+  */
   renderizador.render(environment,camara);
-  //X=environment.children[100].position.x;
-  //Y=environment.children[100].position.y;
+
 }
 
 
