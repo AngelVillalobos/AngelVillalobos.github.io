@@ -1021,8 +1021,8 @@ function setup()
 function loop()
 {
   requestAnimationFrame(loop);
-  //environment.sense();
-  //environment.plan();
+  environment.sense();
+  environment.plan();
   if(id===114)
     {
       X=environment.children[100].position.x;
@@ -1032,8 +1032,8 @@ function loop()
       if(seleccionF2==true)
       {
         environment.children[100].act();
-        environment.children[100].sense();
-        environment.children[100].plan();
+        //environment.children[100].sense();
+        //environment.children[100].plan();
       }
     }
   renderizador.render(environment,camara);
