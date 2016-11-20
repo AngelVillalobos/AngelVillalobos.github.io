@@ -76,7 +76,13 @@ Environment.prototype.act=function()
 function CasillaBlanca(size,x,y)
 {
   cargador=new THREE.TextureLoader();
-  textura=cargador.load('marmolB.jpg');
+  if(Q===1)
+    textura=cargador.load('marmolB.jpg');
+  else if (Q===2)
+    textura=cargador.load('marmolN.jpg');
+  else
+    textura=cargador.load('marmolA.jpg');
+  
   THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.3,10,10,10),new THREE.MeshLambertMaterial({map:textura}));
   this.size=size;
   this.receiveShadow=true;
@@ -121,21 +127,24 @@ Environment.prototype.setMapCasilla=function(map)
     {
       if(map[i][j]==="n")
       {
+        Q=1;
         Casilla=new CasillaBlanca(10,(i*10)-45,(j*10)-45);
         Casilla.receiveShadow=true;
         this.add(Casilla);
       }
       else if(map[i][j]==="b")
       {
-        Casilla=new CasillaNegra(10,(i*10)-45,(j*10)-45);
+        Q=2;
+        Casilla=new CasillaBlanca(10,(i*10)-45,(j*10)-45);
         Casilla.receiveShadow=true;
         this.add(Casilla);
       }
       else if(map[i][j]==="B")
       {
-        CBorde=new Borde(10,(i*10)-45,(j*10)-45);
-        CBorde.receiveShadow=true;
-        this.add(CBorde);
+        Q=3;
+        Casilla=new CasillaBlanca(10,(i*10)-45,(j*10)-45);
+        Casilla.receiveShadow=true;
+        this.add(Casilla);
       }
     }
   }
@@ -532,7 +541,7 @@ function loop()
 
 
 
-var q,id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
+var q,Q,id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
 
 setup();
 loop();
