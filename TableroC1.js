@@ -951,11 +951,12 @@ function SeleccionD(event)
   seleccion=raycaster.intersectObjects(environment.children,true);
   if(seleccion.length>0)
   {
-    console.log(turno);
+   /* console.log(turno);
       if(turno===1)
         turno=0;
       else
-        turno=1;
+        turno=1;*/
+    
     console.log(turno);
     //console.log(environment.children)
     if(seleccionF1==false)
