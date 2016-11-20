@@ -896,7 +896,7 @@ function SeleccionD(event)
   seleccion=raycaster.intersectObjects(environment.children,true);
   if(seleccion.length>0)
   {
-    //console.log(environment.children);
+    console.log(environment.children);
     if(seleccionF1==false)
       id=seleccion[0].object.id;
     console.log(id);
@@ -1027,6 +1027,8 @@ function loop()
     {
       X=environment.children[101].position.x;
       Y=environment.children[101].position.y;
+      console.log(X);
+      console.log(Y);
       //if(seleccionF2==true)
       //{
       //  environment.children[101].act();
