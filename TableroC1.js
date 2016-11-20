@@ -955,7 +955,7 @@ function SeleccionU(event)
   activar=true;
   event.preventDefault();
   seleccion[0].object.material.color.setHex(0xffffff);
-  seleccionF=true;
+  seleccionF1=true;
 }
 
 function setup()
