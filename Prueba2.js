@@ -28,7 +28,7 @@ PeonGeometry=function()
 }
 PeonGeometry.prototype=new THREE.Geometry();
 ///////////////AGENTE///////////////
-function Agent(x=0,y=0)
+function Agent(x=0,y=0,textura)
 {
   THREE.Object3D.call(this);
   this.position.x=x;
