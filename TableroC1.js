@@ -726,6 +726,7 @@ Torre.prototype.plan=function(environment)
       this.actuator.commands.push('stop');
       seleccionF2=false;
       seleccionF1=false;
+      turno=!turno;
     }
   //}
 };
@@ -1030,7 +1031,6 @@ function loop()
   {
     if(id===114)
       {
-        turno=0;
         X=environment.children[100].position.x;
         Y=environment.children[100].position.y;
         if(seleccionF2==true)
@@ -1038,7 +1038,6 @@ function loop()
       }
     else if(id===119)
       {
-        turno=0;
         X=environment.children[101].position.x;
         Y=environment.children[101].position.y;
         if(seleccionF2==true)
@@ -1046,7 +1045,6 @@ function loop()
       }
     else if(id===123)
       {
-        turno=0;
         X=environment.children[102].position.x;
         Y=environment.children[102].position.y;
         if(seleccionF2==true)
@@ -1054,7 +1052,6 @@ function loop()
       }
     else if(id===128)
       {
-        turno=0;
         X=environment.children[103].position.x;
         Y=environment.children[103].position.y;
         if(seleccionF2==true)
@@ -1062,7 +1059,6 @@ function loop()
       }
     else if(id===133)
       {
-        turno=0;
         X=environment.children[104].position.x;
         Y=environment.children[104].position.y;
         if(seleccionF2==true)
@@ -1070,7 +1066,6 @@ function loop()
       }
     else if(id===137)
       {
-        turno=0;
         X=environment.children[105].position.x;
         Y=environment.children[105].position.y;
         if(seleccionF2==true)
@@ -1078,7 +1073,6 @@ function loop()
       }
     else if(id===142)
       {
-        turno=0;
         X=environment.children[106].position.x;
         Y=environment.children[106].position.y;
         if(seleccionF2==true)
@@ -1086,7 +1080,6 @@ function loop()
       }
     else if(id===146)
       {
-        turno=0;
         X=environment.children[107].position.x;
         Y=environment.children[107].position.y;
         if(seleccionF2==true)
@@ -1094,7 +1087,6 @@ function loop()
       }
     else if(id===150)
       {
-        turno=0;
         X=environment.children[108].position.x;
         Y=environment.children[108].position.y;
         if(seleccionF2==true)
@@ -1102,7 +1094,6 @@ function loop()
       }
     else if(id===154)
       {
-        turno=0;
         X=environment.children[109].position.x;
         Y=environment.children[109].position.y;
         if(seleccionF2==true)
@@ -1110,7 +1101,6 @@ function loop()
       }
     else if(id===158)
       {
-        turno=0;
         X=environment.children[110].position.x;
         Y=environment.children[110].position.y;
         if(seleccionF2==true)
@@ -1118,7 +1108,6 @@ function loop()
       }
     else if(id===162)
       {
-        turno=0;
         X=environment.children[111].position.x;
         Y=environment.children[111].position.y;
         if(seleccionF2==true)
@@ -1126,7 +1115,6 @@ function loop()
       }
     else if(id===166)
       {
-        turno=0;
         X=environment.children[112].position.x;
         Y=environment.children[112].position.y;
         if(seleccionF2==true)
@@ -1134,7 +1122,6 @@ function loop()
       }
     else if(id===170)
       {
-        turno=0;
         X=environment.children[113].position.x;
         Y=environment.children[113].position.y;
         if(seleccionF2==true)
@@ -1142,7 +1129,6 @@ function loop()
       }
     else if(id===174)
       {
-        turno=0;
         X=environment.children[114].position.x;
         Y=environment.children[114].position.y;
         if(seleccionF2==true)
@@ -1150,7 +1136,6 @@ function loop()
       }
     else if(id===178)
       {
-        turno=0;
         X=environment.children[115].position.x;
         Y=environment.children[115].position.y;
         if(seleccionF2==true)
@@ -1161,7 +1146,6 @@ function loop()
   {
     if(id===182)
       {
-        turno=1;
         X=environment.children[116].position.x;
         Y=environment.children[116].position.y;
         if(seleccionF2==true)
@@ -1169,7 +1153,6 @@ function loop()
       }
     else if(id===186)
       {
-        turno=1;
         X=environment.children[117].position.x;
         Y=environment.children[117].position.y;
         if(seleccionF2==true)
@@ -1177,7 +1160,6 @@ function loop()
       }
     else if(id===190)
       {
-        turno=1;
         X=environment.children[118].position.x;
         Y=environment.children[118].position.y;
         if(seleccionF2==true)
@@ -1185,7 +1167,6 @@ function loop()
       }
     else if(id===194)
       {
-        turno=1;
         X=environment.children[119].position.x;
         Y=environment.children[119].position.y;
         if(seleccionF2==true)
@@ -1193,7 +1174,6 @@ function loop()
       }
     else if(id===198)
       {
-        turno=1;
         X=environment.children[120].position.x;
         Y=environment.children[120].position.y;
         if(seleccionF2==true)
@@ -1201,7 +1181,6 @@ function loop()
       }
     else if(id===202)
       {
-        turno=1;
         X=environment.children[121].position.x;
         Y=environment.children[121].position.y;
         if(seleccionF2==true)
@@ -1209,7 +1188,6 @@ function loop()
       }
     else if(id===206)
       {
-        turno=1;
         X=environment.children[122].position.x;
         Y=environment.children[122].position.y;
         if(seleccionF2==true)
@@ -1217,7 +1195,6 @@ function loop()
       }
     else if(id===210)
       {
-        turno=1;
         X=environment.children[123].position.x;
         Y=environment.children[123].position.y;
         if(seleccionF2==true)
@@ -1225,7 +1202,6 @@ function loop()
       }
     else if(id===214)
       {
-        turno=1;
         X=environment.children[124].position.x;
         Y=environment.children[124].position.y;
         if(seleccionF2==true)
@@ -1233,7 +1209,6 @@ function loop()
       }
     else if(id===219)
       {
-        turno=1;
         X=environment.children[125].position.x;
         Y=environment.children[125].position.y;
         if(seleccionF2==true)
@@ -1241,7 +1216,6 @@ function loop()
       }
     else if(id===223)
       {
-        turno=1;
         X=environment.children[126].position.x;
         Y=environment.children[126].position.y;
         if(seleccionF2==true)
@@ -1249,7 +1223,6 @@ function loop()
       }
     else if(id===228)
       {
-        turno=1;
         X=environment.children[127].position.x;
         Y=environment.children[127].position.y;
         if(seleccionF2==true)
@@ -1257,7 +1230,6 @@ function loop()
       }
     else if(id===233)
       {
-        turno=1;
         X=environment.children[128].position.x;
         Y=environment.children[128].position.y;
         if(seleccionF2==true)
@@ -1265,7 +1237,6 @@ function loop()
       }
     else if(id===237)
       {
-        turno=1;
         X=environment.children[129].position.x;
         Y=environment.children[129].position.y;
         if(seleccionF2==true)
@@ -1273,7 +1244,6 @@ function loop()
       }
     else if(id===242)
       {
-        turno=1;
         X=environment.children[130].position.x;
         Y=environment.children[130].position.y;
         if(seleccionF2==true)
@@ -1281,7 +1251,6 @@ function loop()
       }
      else if(id===246)
       {
-        turno=1;
         X=environment.children[131].position.x;
         Y=environment.children[131].position.y;
         if(seleccionF2==true)
