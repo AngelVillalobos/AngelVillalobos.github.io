@@ -150,7 +150,8 @@ Environment.prototype.setMapPiezas=function(map)
     {
       if(map[i][j]==="p")
       {
-        this.add(new Peon((j*10)-45,(i*10)-45),cargador.load("maderaN.jpg"));
+        var textura = new THREE.TextureLoader().load( "maderaN.jpg" );
+        this.add(new Peon((j*10)-45,(i*10)-45),textura);
       }
       if(map[i][j]==="P")
       {
@@ -179,10 +180,8 @@ function Peon(x,y,textura)
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.add(this.actuator);
   this.actuator.scale.set(7,7,7);
-  //this.actuator.setAttribute("name","Peon"+n);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
-  //n=n+1;
 }
 Peon.prototype=new Agent();
 
