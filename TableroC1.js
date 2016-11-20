@@ -1023,10 +1023,7 @@ function SeleccionU(event)
 
 function setup()
 {
-  if(turno===1)
-    alert("Inician Negras");
-  else
-    alert("Inician Blancas");
+ 
   document.documentElement.style.overflow = 'hidden';
     
   var tablero=new Array();
@@ -1082,7 +1079,11 @@ function setup()
   luzPuntual.castShadow=true;
   environment.add(camara);
   environment.add(luzPuntual); 
-  
+  turno=Math.round(Math.random());
+  if(turno===1)
+    alert("Inician Negras");
+  else
+    alert("Inician Blancas");
 }
 function loop()
 {
@@ -1325,8 +1326,8 @@ function loop()
 }
 
 
-var turno=Math.round(Math.random());
-var sTP,sTC,id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
+
+var turno,sTP,sTC,id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
 
 setup();
 loop();
