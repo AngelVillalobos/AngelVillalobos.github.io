@@ -34,7 +34,6 @@ function Agent(x=0,y=0,textura)
   this.position.x=x;
   this.position.y=y;
 }
-
 Agent.prototype=new THREE.Object3D();
 
 Agent.prototype.sense=function(environment){};
@@ -87,7 +86,7 @@ function CasillaBlanca(size,x,y)
 }
 CasillaBlanca.prototype=new THREE.Mesh();
 ///////////////CASILLA NEGRA///////////////
-function CasillaNegra(size,x,y,textura)
+function CasillaNegra(size,x,y)
 {
   cargador=new THREE.TextureLoader();
   textura=cargador.load('marmolN.jpg');
@@ -170,7 +169,7 @@ Sensor.prototype = new THREE.Raycaster();
 ///////////////PEON NEGRO///////////////
 function Peon(x,y,textura)
 {
-  Agent.call(this,x,y);
+  Agent.call(this,x,y,textura);
   //cargador=new THREE.TextureLoader();
   //textura=cargador.load('maderaN.jpg');
   this.position.x=x;
