@@ -857,7 +857,6 @@ Peon.prototype.plan=function(environment)
     else if(X===x&&Y===y)
     {
       this.actuator.commands.push('stop');
-      turno=!turno
       seleccionF2=false;
       seleccionF1=false;
     }
@@ -946,6 +945,11 @@ function SeleccionD(event)
       x=seleccion[0].point.x;
       y=seleccion[0].point.y;
       seleccionF2=true;
+    }
+    
+    if(X===x&&Y===y)
+    {
+      turno=!turno
     }
     
     if((-50<x&&x<50&&40<y&&y<50)||(-50<x&&x<50&&-50<y&&y<-40)||(-50<y&&y<50&&-50<x&&x<-40)||(-50<y&&y<50&&40<x&&x<50))
