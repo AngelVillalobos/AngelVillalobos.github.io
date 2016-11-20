@@ -1021,20 +1021,20 @@ function setup()
 function loop()
 {
   requestAnimationFrame(loop);
-  environment.sense();
-  environment.plan();
+  //environment.sense();
+  //environment.plan();
   if(id===114)
     {
-      X=environment.children[101].position.x;
-      Y=environment.children[101].position.y;
-      console.log(X);
-      console.log(Y);
-      //if(seleccionF2==true)
-      //{
-      //  environment.children[101].act();
-        //environment.children[100].sense();
-        //environment.children[100].plan();
-      //}
+      X=environment.children[100].position.x;
+      Y=environment.children[100].position.y;
+      //console.log(X);
+      //console.log(Y);
+      if(seleccionF2==true)
+      {
+        environment.children[100].act();
+        environment.children[100].sense();
+        environment.children[100].plan();
+      }
     }
   renderizador.render(environment,camara);
   //X=environment.children[100].position.x;
