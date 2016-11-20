@@ -1291,7 +1291,7 @@ function loop()
 }
 
 
-var turno=(int)(rnd.nextDouble() * 100);
+var turno=Math.round(Math.random());
 var sTP,sTC,id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
 
 setup();
