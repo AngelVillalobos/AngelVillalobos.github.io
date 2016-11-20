@@ -1586,10 +1586,10 @@ function loop()
   environment.plan();
   if(id===190)
     {
-      X=environment.children[100].position.x;
-      Y=environment.children[100].position.y;
+      X=environment.children[108].position.x;
+      Y=environment.children[108].position.y;
       if(seleccionF2==true)
-        environment.children[100].act();
+        environment.children[108].act();
     }
   renderizador.render(environment,camara);
   //X=environment.children[100].position.x;
