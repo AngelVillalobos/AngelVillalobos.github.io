@@ -1025,14 +1025,14 @@ function loop()
   environment.plan();
   if(id===114)
     {
-      X=environment.children[100].position.x;
-      Y=environment.children[100].position.y;
-      if(seleccionF2==true)
-      {
-        environment.children[100].act();
+      X=environment.children[101].position.x;
+      Y=environment.children[101].position.y;
+      //if(seleccionF2==true)
+      //{
+      //  environment.children[101].act();
         //environment.children[100].sense();
         //environment.children[100].plan();
-      }
+      //}
     }
   renderizador.render(environment,camara);
   //X=environment.children[100].position.x;
