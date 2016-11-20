@@ -702,7 +702,7 @@ Torre.prototype.sense=function(environment)
 {
   this.sensor.set(this.position,new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0));
   var obstaculo=this.sensor.intersectObjects(environment.children,true);
-  if((obstaculo.length>0 && (obstaculo[0].distance<=1)))
+  if((obstaculo.length>0 && (obstaculo[0].distance<=2)))
     this.sensor.colision=true;
   else
     this.sensor.colision=false;
@@ -710,18 +710,24 @@ Torre.prototype.sense=function(environment)
 
 Torre.prototype.plan=function(environment)
 {
-  this.actuator.commands=[];
-  if(this.sensor.colision==true)
-    this.actuator.commands.push('rotateCCW');
-  else
-  { 
+   this.actuator.commands=[];
+  //if(this.sensor.colision===true)
+  //{
+  //  this.actuator.commands.push('rotateCCW');
+  //}
+  //else
+  //{ 
     if(X!==x)
       this.actuator.commands.push('goStraightX');
     else if(X===x&&Y!==y) 
       this.actuator.commands.push('goStraightY');
-    else
-       this.actuator.commands.push('stop');
-  }
+    else if(X===x&&Y===y)
+    {
+      this.actuator.commands.push('stop');
+      seleccionF2=false;
+      seleccionF1=false;
+    }
+  //}
 };
 
 Torre.prototype.act=function(environment)
@@ -770,7 +776,7 @@ Torre.prototype.operations.stop=function(pieza,distance)
   if(distance===undefined)
     distance=0;
   pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-  pieza.position.y+=distance*Math.sin(pieza.rotation.z);
+  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
 };
 
 Torre.prototype.operations.rotateCCW=function(pieza,angle)
@@ -1017,15 +1023,15 @@ function loop()
   requestAnimationFrame(loop);
   //environment.sense();
   //environment.plan();
-  if(id===190)
+  if(id===114)
     {
-      X=environment.children[108].position.x;
-      Y=environment.children[108].position.y;
+      X=environment.children[100].position.x;
+      Y=environment.children[100].position.y;
       if(seleccionF2==true)
       {
-        environment.children[108].act();
-        environment.children[108].sense();
-        environment.children[108].plan();
+        environment.children[100].act();
+        environment.children[100].sense();
+        environment.children[100].plan();
       }
     }
   renderizador.render(environment,camara);
