@@ -301,18 +301,25 @@ Caballo.prototype.sense=function(environment)
 
 Caballo.prototype.plan=function(environment)
 {
-  this.actuator.commands=[];
-  if(this.sensor.colision==true)
-    this.actuator.commands.push('rotateCCW');
-  else
-  { 
+     this.actuator.commands=[];
+  //if(this.sensor.colision===true)
+  //{
+  //  this.actuator.commands.push('rotateCCW');
+  //}
+  //else
+  //{ 
     if(X!==x)
       this.actuator.commands.push('goStraightX');
     else if(X===x&&Y!==y) 
       this.actuator.commands.push('goStraightY');
-    else
-       this.actuator.commands.push('stop');
-  }
+    else if(X===x&&Y===y)
+    {
+      this.actuator.commands.push('stop');
+      seleccionF2=false;
+      seleccionF1=false;
+      turno=!turno;
+    }
+  //}
 };
 
 Caballo.prototype.act=function(environment)
@@ -361,7 +368,7 @@ Caballo.prototype.operations.stop=function(pieza,distance)
   if(distance===undefined)
     distance=0;
   pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-  pieza.position.y+=distance*Math.sin(pieza.rotation.z);
+  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
 };
 
 Caballo.prototype.operations.rotateCCW=function(pieza,angle)
@@ -404,18 +411,25 @@ Alfil.prototype.sense=function(environment)
 
 Alfil.prototype.plan=function(environment)
 {
-  this.actuator.commands=[];
-  if(this.sensor.colision==true)
-    this.actuator.commands.push('rotateCCW');
-  else
-  { 
+     this.actuator.commands=[];
+  //if(this.sensor.colision===true)
+  //{
+  //  this.actuator.commands.push('rotateCCW');
+  //}
+  //else
+  //{ 
     if(X!==x)
       this.actuator.commands.push('goStraightX');
     else if(X===x&&Y!==y) 
       this.actuator.commands.push('goStraightY');
-    else
-       this.actuator.commands.push('stop');
-  }
+    else if(X===x&&Y===y)
+    {
+      this.actuator.commands.push('stop');
+      seleccionF2=false;
+      seleccionF1=false;
+      turno=!turno;
+    }
+  //}
 };
 
 Alfil.prototype.act=function(environment)
@@ -464,7 +478,7 @@ Alfil.prototype.operations.stop=function(pieza,distance)
   if(distance===undefined)
     distance=0;
   pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-  pieza.position.y+=distance*Math.sin(pieza.rotation.z);
+  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
 };
 
 Alfil.prototype.operations.rotateCCW=function(pieza,angle)
@@ -506,18 +520,25 @@ Reina.prototype.sense=function(environment)
 
 Reina.prototype.plan=function(environment)
 {
-  this.actuator.commands=[];
-  if(this.sensor.colision==true)
-    this.actuator.commands.push('rotateCCW');
-  else
-  { 
+     this.actuator.commands=[];
+  //if(this.sensor.colision===true)
+  //{
+  //  this.actuator.commands.push('rotateCCW');
+  //}
+  //else
+  //{ 
     if(X!==x)
       this.actuator.commands.push('goStraightX');
     else if(X===x&&Y!==y) 
       this.actuator.commands.push('goStraightY');
-    else
-       this.actuator.commands.push('stop');
-  }
+    else if(X===x&&Y===y)
+    {
+      this.actuator.commands.push('stop');
+      seleccionF2=false;
+      seleccionF1=false;
+      turno=!turno;
+    }
+  //}
 };
 
 Reina.prototype.act=function(environment)
@@ -566,7 +587,7 @@ Reina.prototype.operations.stop=function(pieza,distance)
   if(distance===undefined)
     distance=0;
   pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-  pieza.position.y+=distance*Math.sin(pieza.rotation.z);
+  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
 };
 
 Reina.prototype.operations.rotateCCW=function(pieza,angle)
@@ -608,18 +629,25 @@ Rey.prototype.sense=function(environment)
 
 Rey.prototype.plan=function(environment)
 {
-  this.actuator.commands=[];
-  if(this.sensor.colision==true)
-    this.actuator.commands.push('rotateCCW');
-  else
-  { 
+     this.actuator.commands=[];
+  //if(this.sensor.colision===true)
+  //{
+  //  this.actuator.commands.push('rotateCCW');
+  //}
+  //else
+  //{ 
     if(X!==x)
       this.actuator.commands.push('goStraightX');
     else if(X===x&&Y!==y) 
       this.actuator.commands.push('goStraightY');
-    else
-       this.actuator.commands.push('stop');
-  }
+    else if(X===x&&Y===y)
+    {
+      this.actuator.commands.push('stop');
+      seleccionF2=false;
+      seleccionF1=false;
+      turno=!turno;
+    }
+  //}
 };
 
 Rey.prototype.act=function(environment)
@@ -668,7 +696,7 @@ Rey.prototype.operations.stop=function(pieza,distance)
   if(distance===undefined)
     distance=0;
   pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-  pieza.position.y+=distance*Math.sin(pieza.rotation.z);
+  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
 };
 
 Rey.prototype.operations.rotateCCW=function(pieza,angle)
@@ -819,17 +847,25 @@ Peon.prototype.sense=function(environment)
 
 Peon.prototype.plan=function(environment)
 {
-  this.actuator.commands=[];
-  if(X!==x)
-    this.actuator.commands.push('goStraightX');
-  else if(X===x&&Y!==y) 
-    this.actuator.commands.push('goStraightY');
-  else if(X===x&&Y===y)
-  {
-    this.actuator.commands.push('stop');
-    seleccionF2=false;
-    seleccionF1=false;
-  }
+     this.actuator.commands=[];
+  //if(this.sensor.colision===true)
+  //{
+  //  this.actuator.commands.push('rotateCCW');
+  //}
+  //else
+  //{ 
+    if(X!==x)
+      this.actuator.commands.push('goStraightX');
+    else if(X===x&&Y!==y) 
+      this.actuator.commands.push('goStraightY');
+    else if(X===x&&Y===y)
+    {
+      this.actuator.commands.push('stop');
+      seleccionF2=false;
+      seleccionF1=false;
+      turno=!turno;
+    }
+  //}
 };
 
 Peon.prototype.act=function(environment)
