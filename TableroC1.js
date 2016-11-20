@@ -856,8 +856,9 @@ Peon.prototype.plan=function(environment)
     else if(X===x&&Y===y)
     {
       this.actuator.commands.push('stop');
-      //seleccionF2=false;
-      //seleccionF1=false;
+      turno=!turno
+      seleccionF2=false;
+      seleccionF1=false;
     }
   //}
 };
@@ -909,7 +910,6 @@ Peon.prototype.operations.stop=function(pieza,distance)
     distance=0;
   pieza.position.x+=distance*Math.cos(pieza.rotation.z);
   pieza.position.y+=distance*Math.cos(pieza.rotation.z);
-  turno=!turno;
 };
 
 Peon.prototype.operations.rotateCCW=function(pieza,angle)
