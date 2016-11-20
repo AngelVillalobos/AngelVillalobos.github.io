@@ -960,7 +960,10 @@ function SeleccionU(event)
 
 function setup()
 {
-  console.log(turno);
+  if(turno===0)
+    alert("Inician Negras");
+  else
+    alert("Inician Blancas");
   document.documentElement.style.overflow = 'hidden';
     
   var tablero=new Array();
