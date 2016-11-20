@@ -97,7 +97,7 @@ TorreGeometry=function()
 }
 TorreGeometry.prototype=new THREE.Geometry();
 ///////////////AGENTE///////////////
-function Agent(x=0,y=0,textura)
+function Agent(x=0,y=0)
 {
   THREE.Object3D.call(this);
   this.position.x=x;
@@ -212,21 +212,14 @@ Environment.prototype.setMapCasilla=function(map)
 ///////////////Colocando Piezas///////////////
 Environment.prototype.setMapPiezas=function(map)
 {
-  cargador=new THREE.TextureLoader();
   for(var i=0;i<map.length;i++)
   {
     for(var j=0;j<map.length;j++)
     {
       if(map[i][j]==="c")
-      {
-        texturacn=cargador.load('maderaN.jpg');
-        this.add(new CaballoN((j*10)-45,(i*10)-45),texturacn);
-      }
+        this.add(new CaballoN((j*10)-45,(i*10)-45));
       if(map[i][j]==="C")
-      {
-        texturacb=cargador.load('maderaB.jpg');
-        this.add(new CaballoN((j*10)-45,(i*10)-45),texturacb);
-      }
+        this.add(new CaballoB((j*10)-45,(i*10)-45));
       if(map[i][j]==="a")
         this.add(new AlfilN((j*10)-45,(i*10)-45));
       if(map[i][j]==="A")
@@ -252,9 +245,9 @@ Sensor.prototype = new THREE.Raycaster();
 ///////////////CABALLO NEGRO///////////////
 function CaballoN(x,y,textura)
 {
-  Agent.call(this,x,y,textura);
-  //cargador=new THREE.TextureLoader();
-  //textura=cargador.load('maderaN.jpg');
+  Agent.call(this,x,y);
+  cargador=new THREE.TextureLoader();
+  textura=cargador.load('maderaN.jpg');
   this.position.x=x;
   this.position.y=y;
   this.position.z=0.4;
@@ -953,7 +946,7 @@ function ReyN(x,y)
   this.position.y=y;
   this.position.z=0.4;
   this.sensor=new Sensor();
-  this.actuator=new THREE.Mesh(new AlfilGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.actuator=new THREE.Mesh(new ReyGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.add(this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
