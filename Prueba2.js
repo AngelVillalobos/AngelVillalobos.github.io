@@ -28,7 +28,7 @@ PeonGeometry=function()
 }
 PeonGeometry.prototype=new THREE.Geometry();
 ///////////////AGENTE///////////////
-function Agent(x=0,y=0,textura)
+function Agent(x=0,y=0)
 {
   THREE.Object3D.call(this);
   this.position.x=x;
@@ -149,12 +149,13 @@ Environment.prototype.setMapPiezas=function(map)
     {
       if(map[i][j]==="p")
       {
-        var textura = new THREE.TextureLoader().load( "maderaN.jpg" );
-        this.add(new Peon((j*10)-45,(i*10)-45),textura);
+        q=1;
+        this.add(new Peon((j*10)-45,(i*10)-45));
       }
       if(map[i][j]==="P")
       {
-        this.add(new Peon((j*10)-45,(i*10)-45),cargador.load("maderaB.jpg"));
+        q=2;
+        this.add(new Peon((j*10)-45,(i*10)-45));
       }
     }
   }
@@ -167,11 +168,17 @@ function Sensor(position,direction)
 Sensor.prototype = new THREE.Raycaster();
 
 ///////////////PEON NEGRO///////////////
-function Peon(x,y,textura)
+function Peon(x,y)
 {
-  Agent.call(this,x,y,textura);
-  //cargador=new THREE.TextureLoader();
-  //textura=cargador.load('maderaN.jpg');
+  cargador=new THREE.TextureLoader();
+  Agent.call(this,x,y);
+  if(q===1)
+    textura=cargador.load('maderaN.jpg');
+  else
+    textura=cargador.load('maderaB.jpg');
+    
+  //
+  //
   this.position.x=x;
   this.position.y=y;
   this.position.z=0.4;
@@ -525,7 +532,7 @@ function loop()
 
 
 
-var id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
+var q,id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
 
 setup();
 loop();
