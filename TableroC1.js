@@ -364,7 +364,7 @@ function CaballoB(x,y)
   this.add(this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
-  this.actuator.castshadow=true;
+  this.actuator.castShadow=true;
 }
 CaballoB.prototype=new Agent();
 
@@ -463,7 +463,7 @@ function AlfilN(x,y)
   this.add(this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
-  this.actuator.castshadow=true;
+  this.actuator.castShadow=true;
 }
 AlfilN.prototype=new Agent();
 
@@ -562,7 +562,7 @@ function AlfilB(x,y)
   this.add(this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
-  this.actuator.castshadow=true;
+  this.actuator.castShadow=true;
 }
 AlfilB.prototype=new Agent();
 
@@ -661,7 +661,7 @@ function ReinaB(x,y)
   this.add(this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
-  this.actuator.castshadow=true;
+  this.actuator.castShadow=true;
 }
 ReinaB.prototype=new Agent();
 
@@ -760,7 +760,7 @@ function ReinaN(x,y)
   this.add(this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
-  this.actuator.castshadow=true;
+  this.actuator.castShadow=true;
 }
 ReinaN.prototype=new Agent();
 
@@ -859,7 +859,7 @@ function ReyB(x,y)
   this.add(this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
-  this.actuator.castshadow=true;
+  this.actuator.castShadow=true;
 }
 ReyB.prototype=new Agent();
 
@@ -958,7 +958,7 @@ function ReyN(x,y)
   this.add(this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
-  this.actuator.castshadow=true;
+  this.actuator.castShadow=true;
 }
 ReyN.prototype=new Agent();
 
@@ -1057,7 +1057,7 @@ function TorreB(x,y)
   this.add(this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
-  this.actuator.castshadow=true;
+  this.actuator.castShadow=true;
 }
 TorreB.prototype=new Agent();
 
@@ -1156,7 +1156,7 @@ function TorreN(x,y)
   this.add(this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
-  this.actuator.castshadow=true;
+  this.actuator.castShadow=true;
 }
 TorreN.prototype=new Agent();
 
@@ -1255,7 +1255,7 @@ function PeonB(x,y)
   this.add(this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
-  this.actuator.castshadow=true;
+  this.actuator.castShadow=true;
 }
 PeonB.prototype=new Agent();
 
@@ -1354,7 +1354,7 @@ function PeonN(x,y)
   this.add(this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
-  this.actuator.castshadow=true;
+  this.actuator.castShadow=true;
 }
 PeonN.prototype=new Agent();
 
@@ -1565,7 +1565,6 @@ function setup()
   camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
   camara.position.z=120;
   camara.position.y=-90;
-  camara.position.x=-90;
   camara.lookAt(new THREE.Vector3(0,0,0));
   /////RENDERIZADOR////
   renderizador = new THREE.WebGLRenderer();
