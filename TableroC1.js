@@ -219,12 +219,14 @@ Environment.prototype.setMapPiezas=function(map)
     {
       if(map[i][j]==="c")
       {
-        textura=cargador.load('maderaN.jpg');
-        this.add(new CaballoN((j*10)-45,(i*10)-45),textura);
+        texturacn=cargador.load('maderaN.jpg');
+        this.add(new CaballoN((j*10)-45,(i*10)-45),texturacn);
       }
       if(map[i][j]==="C")
-        textura=cargador.load('maderaB.jpg');
-        this.add(new CaballoN((j*10)-45,(i*10)-45),textura);
+      {
+        texturacb=cargador.load('maderaB.jpg');
+        this.add(new CaballoN((j*10)-45,(i*10)-45),texturacb);
+      }
       if(map[i][j]==="a")
         this.add(new AlfilN((j*10)-45,(i*10)-45));
       if(map[i][j]==="A")
