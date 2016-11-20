@@ -97,7 +97,7 @@ TorreGeometry=function()
 }
 TorreGeometry.prototype=new THREE.Geometry();
 ///////////////AGENTE///////////////
-function Agent(x=0,y=0)
+function Agent(x=0,y=0,textura)
 {
   THREE.Object3D.call(this);
   this.position.x=x;
@@ -252,7 +252,7 @@ Sensor.prototype = new THREE.Raycaster();
 ///////////////CABALLO NEGRO///////////////
 function CaballoN(x,y,textura)
 {
-  Agent.call(this,x,y);
+  Agent.call(this,x,y,textura);
   //cargador=new THREE.TextureLoader();
   //textura=cargador.load('maderaN.jpg');
   this.position.x=x;
