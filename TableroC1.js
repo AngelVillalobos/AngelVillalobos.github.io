@@ -909,6 +909,7 @@ Peon.prototype.operations.stop=function(pieza,distance)
     distance=0;
   pieza.position.x+=distance*Math.cos(pieza.rotation.z);
   pieza.position.y+=distance*Math.cos(pieza.rotation.z);
+  turno=!turno;
 };
 
 Peon.prototype.operations.rotateCCW=function(pieza,angle)
@@ -993,12 +994,7 @@ function SeleccionU(event)
   activar=true;
   event.preventDefault();
   seleccion[0].object.material.color.setHex(0xffffff);
-  seleccionF1=true;
-  if(seleccionF2==true&&turno===1)
-    turno=0;
-  if(seleccionF2==true&&turno===0)
-    turno=1;
-    
+  seleccionF1=true;   
 }
 
 function setup()
@@ -1059,18 +1055,13 @@ function setup()
   luzPuntual.castShadow=true;
   environment.add(camara);
   environment.add(luzPuntual); 
-  turno=Math.round(Math.random());
-  if(turno===1)
-    alert("Inician Negras");
-  else
-    alert("Inician Blancas");
 }
 function loop()
 {
   requestAnimationFrame(loop);
   environment.sense();
   environment.plan();
-  if(turno===1)
+  if(turno==false)
   {
     if(id===114)
       {
@@ -1183,13 +1174,6 @@ function loop()
         Y=environment.children[115].position.y;
         if(seleccionF2==true)
           environment.children[115].act();
-        if(X==x&&Y==y)
-        {
-          if(turno===0)
-            turno=1;
-          if(turno===1)
-            turno=0;
-        }  
       }
   }
   else
@@ -1314,7 +1298,7 @@ function loop()
 
 
 
-var turno,sTP,sTC,id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
+var turno=true,sTP,sTC,id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
 
 setup();
 loop();
