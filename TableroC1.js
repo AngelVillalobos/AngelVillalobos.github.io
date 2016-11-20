@@ -1272,16 +1272,15 @@ PeonB.prototype.sense=function(environment)
 PeonB.prototype.plan=function(environment)
 {
   this.actuator.commands=[];
-  if(this.sensor.colision==true)
-    this.actuator.commands.push('rotateCCW');
-  else
-  { 
-    if(X!==x)
-      this.actuator.commands.push('goStraightX');
-    else if(X===x&&Y!==y) 
-      this.actuator.commands.push('goStraightY');
-    else
-       this.actuator.commands.push('stop');
+  if(X!==x)
+    this.actuator.commands.push('goStraightX');
+  else if(X===x&&Y!==y) 
+    this.actuator.commands.push('goStraightY');
+  else if(X===x&&Y===y)
+  {
+    this.actuator.commands.push('stop');
+    seleccionF2=false;
+    seleccionF1=false;
   }
 };
 
@@ -1331,7 +1330,7 @@ PeonB.prototype.operations.stop=function(pieza,distance)
   if(distance===undefined)
     distance=0;
   pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-  pieza.position.y+=distance*Math.sin(pieza.rotation.z);
+  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
 };
 
 PeonB.prototype.operations.rotateCCW=function(pieza,angle)
@@ -1453,19 +1452,18 @@ function SeleccionD(event)
   seleccion=raycaster.intersectObjects(environment.children,true);
   if(seleccion.length>0)
   {
-    x=seleccion[0].point.x;
-    y=seleccion[0].point.y;
+
+    if(seleccionF1==false)
+      id=seleccion[0].object.id;
+    console.log(id);
     
-    /*if(seleccionF)
+    if(seleccionF1==true)
     {
-      xf=seleccion[0].point.x;
-      yf=seleccion[0].point.y;
+      x=seleccion[0].point.x;
+      y=seleccion[0].point.y;
+      seleccionF2=true;
     }
-    else
-    {
-      xf=x;
-      yf=y
-    }*/
+
     
     if((-50<x&&x<50&&40<y&&y<50)||(-50<x&&x<50&&-50<y&&y<-40)||(-50<y&&y<50&&-50<x&&x<-40)||(-50<y&&y<50&&40<x&&x<50))
       seleccion[0].object.material.color.setHex(0xffffff);
@@ -1584,10 +1582,15 @@ function setup()
 function loop()
 {
   requestAnimationFrame(loop);
-  //environment.sense();
-  //environment.plan();
-  //if(activar===true)
-  //  environment.children[100].act();
+  environment.sense();
+  environment.plan();
+  if(id===114)
+    {
+      X=environment.children[100].position.x;
+      Y=environment.children[100].position.y;
+      if(seleccionF2==true)
+        environment.children[100].act();
+    }
   renderizador.render(environment,camara);
   //X=environment.children[100].position.x;
   //Y=environment.children[100].position.y;
@@ -1595,7 +1598,7 @@ function loop()
 
 
 
-var environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,y,activar=false,seleccionO=true,seleccionF=false,xf,yf;
+var id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
 
 setup();
 loop();
