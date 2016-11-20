@@ -960,7 +960,7 @@ function SeleccionU(event)
 
 function setup()
 {
-  
+  console.log(turno);
   document.documentElement.style.overflow = 'hidden';
     
   var tablero=new Array();
@@ -1291,8 +1291,8 @@ function loop()
 }
 
 
-
-var turno,sTP,sTC,id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
+var turno=(int)(rnd.nextDouble() * 100);
+var sTP,sTC,id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
 
 setup();
 loop();
