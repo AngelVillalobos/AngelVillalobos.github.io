@@ -31,6 +31,43 @@ AlfilGeometry=function()
   this.merge(CuerpoAlfil.geometry,CuerpoAlfil.matrix);
 }
 AlfilGeometry.prototype=new THREE.Geometry();
+///////////////CONSTRUCTOR REINA///////////////
+ReinaGeometry=function()
+{
+  THREE.Geometry.call(this);
+  var BaseReina1=new THREE.BoxGeometry(0.7,0.2,0.7);
+  var CuerpoReina1=new THREE.CylinderGeometry(0.3,0.3,1.3,32);
+  var CoronaReina1=new THREE.SphereGeometry(0.23,32,32);
+  BaseReina1.translate(0,0,0);
+  CuerpoReina1.translate(0,0.5,0);
+  CoronaReina1.translate(0,1.3,0);
+  var BaseReina=new THREE.Mesh(BaseReina1);
+  var CuerpoReina=new THREE.Mesh(CuerpoReina1);
+  var CoronaReina=new THREE.Mesh(CoronaReina1);
+  this.merge(BaseReina.geometry,BaseReina.matrix);
+  this.merge(CuerpoReina.geometry,CuerpoReina.matrix);
+  this.merge(CoronaReina.geometry,CoronaReina.matrix);
+}
+ReinaGeometry.prototype=new THREE.Geometry();
+///////////////CONSTRUCTOR REINA///////////////
+ReyGeometry=function()
+{
+  THREE.Geometry.call(this);
+  var BaseRey1=new THREE.BoxGeometry(0.7,0.2,0.7);
+  var CuerpoRey1=new THREE.BoxGeometry(0.5,1.3,0.5);
+  var CoronaRey1=new THREE.BoxGeometry(0.3,0.3,0.3);
+  BaseRey1.translate(0,0,0);
+  CuerpoRey1.translate(0,0.5,0);
+  CoronaRey1.translate(0,1.3,0);
+  CoronaRey1.rotateY(Math.PI/4);
+  var BaseRey=new THREE.Mesh(BaseRey1);
+  var CuerpoRey=new THREE.Mesh(CuerpoRey1);
+  var CoronaRey=new THREE.Mesh(CoronaRey1);
+  this.merge(BaseRey.geometry,BaseRey.matrix);
+  this.merge(CuerpoRey.geometry,CuerpoRey.matrix);
+  this.merge(CoronaRey.geometry,CoronaRey.matrix);
+}
+ReyGeometry.prototype=new THREE.Geometry();
 ///////////////AGENTE///////////////
 function Agent(x=0,y=0)
 {
@@ -159,6 +196,14 @@ Environment.prototype.setMapPiezas=function(map)
         this.add(new AlfilN((j*10)-45,(i*10)-45));
       if(map[i][j]==="A")
         this.add(new AlfilB((j*10)-45,(i*10)-45));
+      if(map[i][j]==="x")
+        this.add(new ReinaN((j*10)-45,(i*10)-45));
+      if(map[i][j]==="X")
+        this.add(new ReinaB((j*10)-45,(i*10)-45));
+      if(map[i][j]==="r")
+        this.add(new ReyN((j*10)-45,(i*10)-45));
+      if(map[i][j]==="R")
+        this.add(new ReyB((j*10)-45,(i*10)-45));
     }
   }
 }
@@ -373,7 +418,7 @@ function AlfilN(x,y)
 {
   Agent.call(this,x,y);
   cargador=new THREE.TextureLoader();
-  textura=cargador.load('maderaB.jpg');
+  textura=cargador.load('maderaN.jpg');
   this.position.x=x;
   this.position.y=y;
   this.position.z=0.4;
@@ -566,6 +611,405 @@ AlfilB.prototype.operations.rotateCCW=function(pieza,angle)
     angle=Math.PI/2;
   pieza.rotation.z+=angle;
 };
+///////////////REINA BLANCA///////////////
+function ReinaB(x,y)
+{
+  Agent.call(this,x,y);
+  cargador=new THREE.TextureLoader();
+  textura=cargador.load('maderaB.jpg');
+  this.position.x=x;
+  this.position.y=y;
+  this.position.z=0.4;
+  this.sensor=new Sensor();
+  this.actuator=new THREE.Mesh(new AlfilGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.add(this.actuator);
+  this.actuator.scale.set(9.5,9.5,9.5);
+  this.actuator.rotateX(Math.PI/2);
+  this.actuator.castshadow=true;
+}
+ReinaB.prototype=new Agent();
+
+ReinaB.prototype.sense=function(environment)
+{
+  this.sensor.set(this.position,new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0));
+  var obstaculo=this.sensor.intersectObjects(environment.children,true);
+  if((obstaculo.length>0 && (obstaculo[0].distance<=1)))
+    this.sensor.colision=true;
+  else
+    this.sensor.colision=false;
+};
+
+ReinaB.prototype.plan=function(environment)
+{
+  this.actuator.commands=[];
+  if(this.sensor.colision==true)
+    this.actuator.commands.push('rotateCCW');
+  else
+  { 
+    if(X!==x)
+      this.actuator.commands.push('goStraightX');
+    else if(X===x&&Y!==y) 
+      this.actuator.commands.push('goStraightY');
+    else
+       this.actuator.commands.push('stop');
+  }
+};
+
+ReinaB.prototype.act=function(environment)
+{
+  var command = this.actuator.commands.pop();
+  if(command===undefined)
+    console.log('Undefined command');
+  else if(command in this.operations)
+    this.operations[command](this);
+  else
+    console.log('Unknown command');
+};
+
+ReinaB.prototype.operations={};
+
+ReinaB.prototype.operations.goStraightX=function(pieza,distance)
+{
+  if(distance===undefined)
+  {
+    if(X<x)
+      distance=0.5;
+    else if(X===x)
+      distance=0;
+    else
+      distance=-0.5; 
+  }
+  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
+};
+
+ReinaB.prototype.operations.goStraightY=function(pieza,distance)
+{
+  if(distance===undefined)
+   {
+    if(Y<y)
+      distance=0.5;
+    else if(Y===y)
+      distance=0;
+    else
+      distance=-0.5; 
+  }
+  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
+};
+
+ReinaB.prototype.operations.stop=function(pieza,distance)
+{
+  if(distance===undefined)
+    distance=0;
+  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
+  pieza.position.y+=distance*Math.sin(pieza.rotation.z);
+};
+
+ReinaB.prototype.operations.rotateCCW=function(pieza,angle)
+{
+  if(angle===undefined)
+    angle=Math.PI/2;
+  pieza.rotation.z+=angle;
+};
+///////////////REINA NEGRA///////////////
+function ReinaN(x,y)
+{
+  Agent.call(this,x,y);
+  cargador=new THREE.TextureLoader();
+  textura=cargador.load('maderaN.jpg');
+  this.position.x=x;
+  this.position.y=y;
+  this.position.z=0.4;
+  this.sensor=new Sensor();
+  this.actuator=new THREE.Mesh(new AlfilGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.add(this.actuator);
+  this.actuator.scale.set(9.5,9.5,9.5);
+  this.actuator.rotateX(Math.PI/2);
+  this.actuator.castshadow=true;
+}
+ReinaN.prototype=new Agent();
+
+ReinaN.prototype.sense=function(environment)
+{
+  this.sensor.set(this.position,new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0));
+  var obstaculo=this.sensor.intersectObjects(environment.children,true);
+  if((obstaculo.length>0 && (obstaculo[0].distance<=1)))
+    this.sensor.colision=true;
+  else
+    this.sensor.colision=false;
+};
+
+ReinaN.prototype.plan=function(environment)
+{
+  this.actuator.commands=[];
+  if(this.sensor.colision==true)
+    this.actuator.commands.push('rotateCCW');
+  else
+  { 
+    if(X!==x)
+      this.actuator.commands.push('goStraightX');
+    else if(X===x&&Y!==y) 
+      this.actuator.commands.push('goStraightY');
+    else
+       this.actuator.commands.push('stop');
+  }
+};
+
+ReinaN.prototype.act=function(environment)
+{
+  var command = this.actuator.commands.pop();
+  if(command===undefined)
+    console.log('Undefined command');
+  else if(command in this.operations)
+    this.operations[command](this);
+  else
+    console.log('Unknown command');
+};
+
+ReinaN.prototype.operations={};
+
+ReinaN.prototype.operations.goStraightX=function(pieza,distance)
+{
+  if(distance===undefined)
+  {
+    if(X<x)
+      distance=0.5;
+    else if(X===x)
+      distance=0;
+    else
+      distance=-0.5; 
+  }
+  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
+};
+
+ReinaN.prototype.operations.goStraightY=function(pieza,distance)
+{
+  if(distance===undefined)
+   {
+    if(Y<y)
+      distance=0.5;
+    else if(Y===y)
+      distance=0;
+    else
+      distance=-0.5; 
+  }
+  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
+};
+
+ReinaN.prototype.operations.stop=function(pieza,distance)
+{
+  if(distance===undefined)
+    distance=0;
+  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
+  pieza.position.y+=distance*Math.sin(pieza.rotation.z);
+};
+
+ReinaN.prototype.operations.rotateCCW=function(pieza,angle)
+{
+  if(angle===undefined)
+    angle=Math.PI/2;
+  pieza.rotation.z+=angle;
+};
+///////////////REY BLANCO///////////////
+function ReyB(x,y)
+{
+  Agent.call(this,x,y);
+  cargador=new THREE.TextureLoader();
+  textura=cargador.load('maderaB.jpg');
+  this.position.x=x;
+  this.position.y=y;
+  this.position.z=0.4;
+  this.sensor=new Sensor();
+  this.actuator=new THREE.Mesh(new AlfilGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.add(this.actuator);
+  this.actuator.scale.set(9.5,9.5,9.5);
+  this.actuator.rotateX(Math.PI/2);
+  this.actuator.castshadow=true;
+}
+ReyB.prototype=new Agent();
+
+ReyB.prototype.sense=function(environment)
+{
+  this.sensor.set(this.position,new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0));
+  var obstaculo=this.sensor.intersectObjects(environment.children,true);
+  if((obstaculo.length>0 && (obstaculo[0].distance<=1)))
+    this.sensor.colision=true;
+  else
+    this.sensor.colision=false;
+};
+
+ReyB.prototype.plan=function(environment)
+{
+  this.actuator.commands=[];
+  if(this.sensor.colision==true)
+    this.actuator.commands.push('rotateCCW');
+  else
+  { 
+    if(X!==x)
+      this.actuator.commands.push('goStraightX');
+    else if(X===x&&Y!==y) 
+      this.actuator.commands.push('goStraightY');
+    else
+       this.actuator.commands.push('stop');
+  }
+};
+
+ReyB.prototype.act=function(environment)
+{
+  var command = this.actuator.commands.pop();
+  if(command===undefined)
+    console.log('Undefined command');
+  else if(command in this.operations)
+    this.operations[command](this);
+  else
+    console.log('Unknown command');
+};
+
+ReyB.prototype.operations={};
+
+ReyB.prototype.operations.goStraightX=function(pieza,distance)
+{
+  if(distance===undefined)
+  {
+    if(X<x)
+      distance=0.5;
+    else if(X===x)
+      distance=0;
+    else
+      distance=-0.5; 
+  }
+  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
+};
+
+ReyB.prototype.operations.goStraightY=function(pieza,distance)
+{
+  if(distance===undefined)
+   {
+    if(Y<y)
+      distance=0.5;
+    else if(Y===y)
+      distance=0;
+    else
+      distance=-0.5; 
+  }
+  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
+};
+
+ReyB.prototype.operations.stop=function(pieza,distance)
+{
+  if(distance===undefined)
+    distance=0;
+  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
+  pieza.position.y+=distance*Math.sin(pieza.rotation.z);
+};
+
+ReyB.prototype.operations.rotateCCW=function(pieza,angle)
+{
+  if(angle===undefined)
+    angle=Math.PI/2;
+  pieza.rotation.z+=angle;
+};
+///////////////REY NEGRO///////////////
+function ReyN(x,y)
+{
+  Agent.call(this,x,y);
+  cargador=new THREE.TextureLoader();
+  textura=cargador.load('maderaN.jpg');
+  this.position.x=x;
+  this.position.y=y;
+  this.position.z=0.4;
+  this.sensor=new Sensor();
+  this.actuator=new THREE.Mesh(new AlfilGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.add(this.actuator);
+  this.actuator.scale.set(9.5,9.5,9.5);
+  this.actuator.rotateX(Math.PI/2);
+  this.actuator.castshadow=true;
+}
+ReyN.prototype=new Agent();
+
+ReyN.prototype.sense=function(environment)
+{
+  this.sensor.set(this.position,new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0));
+  var obstaculo=this.sensor.intersectObjects(environment.children,true);
+  if((obstaculo.length>0 && (obstaculo[0].distance<=1)))
+    this.sensor.colision=true;
+  else
+    this.sensor.colision=false;
+};
+
+ReyN.prototype.plan=function(environment)
+{
+  this.actuator.commands=[];
+  if(this.sensor.colision==true)
+    this.actuator.commands.push('rotateCCW');
+  else
+  { 
+    if(X!==x)
+      this.actuator.commands.push('goStraightX');
+    else if(X===x&&Y!==y) 
+      this.actuator.commands.push('goStraightY');
+    else
+       this.actuator.commands.push('stop');
+  }
+};
+
+ReyN.prototype.act=function(environment)
+{
+  var command = this.actuator.commands.pop();
+  if(command===undefined)
+    console.log('Undefined command');
+  else if(command in this.operations)
+    this.operations[command](this);
+  else
+    console.log('Unknown command');
+};
+
+ReyN.prototype.operations={};
+
+ReyN.prototype.operations.goStraightX=function(pieza,distance)
+{
+  if(distance===undefined)
+  {
+    if(X<x)
+      distance=0.5;
+    else if(X===x)
+      distance=0;
+    else
+      distance=-0.5; 
+  }
+  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
+};
+
+ReyN.prototype.operations.goStraightY=function(pieza,distance)
+{
+  if(distance===undefined)
+   {
+    if(Y<y)
+      distance=0.5;
+    else if(Y===y)
+      distance=0;
+    else
+      distance=-0.5; 
+  }
+  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
+};
+
+ReyN.prototype.operations.stop=function(pieza,distance)
+{
+  if(distance===undefined)
+    distance=0;
+  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
+  pieza.position.y+=distance*Math.sin(pieza.rotation.z);
+};
+
+ReyN.prototype.operations.rotateCCW=function(pieza,angle)
+{
+  if(angle===undefined)
+    angle=Math.PI/2;
+  pieza.rotation.z+=angle;
+};
+
+
+
 
 
 function SeleccionD(event)
@@ -665,14 +1109,14 @@ function setup()
   
   var Piezas=new Array();
   Piezas[0]="          ";
-  Piezas[1]="  ca  ac  ";
+  Piezas[1]="  caxrac  ";
   Piezas[2]="          ";
   Piezas[3]="          ";
   Piezas[4]="          ";
   Piezas[5]="          ";
   Piezas[6]="          ";
   Piezas[7]="          ";
-  Piezas[8]="  CA  AC  ";
+  Piezas[8]="  CAXRAC  ";
   Piezas[9]="          ";
      
   environment=new Environment();
