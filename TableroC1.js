@@ -1565,6 +1565,7 @@ function setup()
   camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
   camara.position.z=120;
   camara.position.y=-90;
+  camara.position.x=-90;
   camara.lookAt(new THREE.Vector3(0,0,0));
   /////RENDERIZADOR////
   renderizador = new THREE.WebGLRenderer();
