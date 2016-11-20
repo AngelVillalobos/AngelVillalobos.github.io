@@ -1203,6 +1203,13 @@ function loop()
         Y=environment.children[115].position.y;
         if(seleccionF2==true)
           environment.children[115].act();
+        if(X==x&&Y==y)
+        {
+          if(turno===0)
+            turno=1;
+          if(turno===1)
+            turno=0;
+        }  
       }
   }
   else
@@ -1213,6 +1220,13 @@ function loop()
         Y=environment.children[116].position.y;
         if(seleccionF2==true)
           environment.children[116].act();
+        if(X==x&&Y==y)
+        {
+          if(turno===0)
+            turno=1;
+          if(turno===1)
+            turno=0;
+        }  
       }
     else if(id===186)
       {
