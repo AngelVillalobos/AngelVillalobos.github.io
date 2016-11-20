@@ -150,7 +150,11 @@ Environment.prototype.setMapPiezas=function(map)
     {
       if(map[i][j]==="p")
       {
-        this.add(new Peon((j*10)-45,(i*10)-45));
+        this.add(new Peon((j*10)-45,(i*10)-45),cargador.load("maderaN.jpg"));
+      }
+      if(map[i][j]==="P")
+      {
+        this.add(new Peon((j*10)-45,(i*10)-45),cargador.load("maderaB.jpg"));
       }
     }
   }
@@ -163,11 +167,11 @@ function Sensor(position,direction)
 Sensor.prototype = new THREE.Raycaster();
 
 ///////////////PEON NEGRO///////////////
-function Peon(x,y)
+function Peon(x,y,textura)
 {
   Agent.call(this,x,y);
-  cargador=new THREE.TextureLoader();
-  textura=cargador.load('maderaN.jpg');
+  //cargador=new THREE.TextureLoader();
+  //textura=cargador.load('maderaN.jpg');
   this.position.x=x;
   this.position.y=y;
   this.position.z=0.4;
@@ -410,7 +414,7 @@ function setup()
   var Piezas=new Array();
   Piezas[0]="          ";
   Piezas[1]="          ";
-  Piezas[2]=" pp       ";
+  Piezas[2]=" p   P    ";
   Piezas[3]="          ";
   Piezas[4]="          ";
   Piezas[5]="          ";
