@@ -933,7 +933,10 @@ function SeleccionD(event)
   seleccion=raycaster.intersectObjects(environment.children,true);
   if(seleccion.length>0)
   {
-    console.log(environment.children)
+    console.log(turno);
+    turno=!turno;
+    console.log(turno);
+    //console.log(environment.children)
     if(seleccionF1==false)
       id=seleccion[0].object.id;
     console.log(id);
