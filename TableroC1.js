@@ -856,8 +856,8 @@ Peon.prototype.plan=function(environment)
     else if(X===x&&Y===y)
     {
       this.actuator.commands.push('stop');
-      seleccionF2=false;
-      seleccionF1=false;
+      //seleccionF2=false;
+      //seleccionF1=false;
     }
   //}
 };
