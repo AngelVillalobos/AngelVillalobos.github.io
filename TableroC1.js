@@ -317,10 +317,6 @@ Caballo.prototype.plan=function(environment)
       this.actuator.commands.push('stop');
       seleccionF2=false;
       seleccionF1=false;
-      if(turno===1)
-        turno=0;
-      else
-        turno=1;
     }
   //}
 };
@@ -430,10 +426,6 @@ Alfil.prototype.plan=function(environment)
       this.actuator.commands.push('stop');
       seleccionF2=false;
       seleccionF1=false;
-      if(turno===1)
-        turno=0;
-      else
-        turno=1;
     }
   //}
 };
@@ -542,10 +534,6 @@ Reina.prototype.plan=function(environment)
       this.actuator.commands.push('stop');
       seleccionF2=false;
       seleccionF1=false;
-      if(turno===1)
-        turno=0;
-      else
-        turno=1;
     }
   //}
 };
@@ -654,10 +642,6 @@ Rey.prototype.plan=function(environment)
       this.actuator.commands.push('stop');
       seleccionF2=false;
       seleccionF1=false;
-      if(turno===1)
-        turno=0;
-      else
-        turno=1;
     }
   //}
 };
@@ -766,10 +750,6 @@ Torre.prototype.plan=function(environment)
       this.actuator.commands.push('stop');
       seleccionF2=false;
       seleccionF1=false;
-      if(turno===1)
-        turno=0;
-      else
-        turno=1;
     }
   //}
 };
@@ -875,14 +855,9 @@ Peon.prototype.plan=function(environment)
       this.actuator.commands.push('goStraightY');
     else if(X===x&&Y===y)
     {
-      if(turno===1)
-        turno=0;
-      if(turno===0)
-        turno=1;
       this.actuator.commands.push('stop');
       seleccionF2=false;
       seleccionF1=false;
-      console.log(turno);
     }
   //}
 };
@@ -952,11 +927,11 @@ function SeleccionD(event)
   seleccion=raycaster.intersectObjects(environment.children,true);
   if(seleccion.length>0)
   {
-   /* console.log(turno);
+     console.log(turno);
       if(turno===1)
         turno=0;
       else
-        turno=1;*/
+        turno=1;
     
     console.log(turno);
     //console.log(environment.children)
@@ -1019,6 +994,11 @@ function SeleccionU(event)
   event.preventDefault();
   seleccion[0].object.material.color.setHex(0xffffff);
   seleccionF1=true;
+  if(seleccionF2==true&&turno===1)
+    turno=0;
+  if(seleccionF2==true&&turno===0)
+    turno=1;
+    
 }
 
 function setup()
@@ -1219,14 +1199,7 @@ function loop()
         X=environment.children[116].position.x;
         Y=environment.children[116].position.y;
         if(seleccionF2==true)
-          environment.children[116].act();
-        if(X==x&&Y==y)
-        {
-          if(turno===0)
-            turno=1;
-          if(turno===1)
-            turno=0;
-        }  
+          environment.children[116].act(); 
       }
     else if(id===186)
       {
