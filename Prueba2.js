@@ -473,8 +473,8 @@ function setup()
 function loop()
 {
   requestAnimationFrame(loop);
-  environment.sense();
-  environment.plan();
+  
+  
   //if(activar==true)
   //{
     if(id===114)
@@ -482,7 +482,11 @@ function loop()
       X=environment.children[100].position.x;
       Y=environment.children[100].position.y;
       if(seleccionF2==true)
+      {
+        environment.children[100].sense();
+        environment.children[100].plan();
         environment.children[100].act();
+      }
       console.log(X);
       console.log(Y);
       //console.log(seleccionF);
@@ -492,7 +496,11 @@ function loop()
       X=environment.children[101].position.x;
       Y=environment.children[101].position.y;
       if(seleccionF2==true)
+      {
+        environment.children[101].sense();
+        environment.children[101].plan();
         environment.children[101].act();
+      }
       console.log(X);
       console.log(Y);
       //console.log(seleccionF);
