@@ -493,9 +493,6 @@ function loop()
         //environment.children[100].plan();
         environment.children[100].act();
       }
-      console.log(X);
-      console.log(Y);
-      //console.log(seleccionF);
     }
     else if(id===121)
     {
@@ -509,9 +506,6 @@ function loop()
         //environment.children[101].plan();
         environment.children[101].act();
       }
-      console.log(X);
-      console.log(Y);
-      //console.log(seleccionF);
     }
 
   renderizador.render(environment,camara);
