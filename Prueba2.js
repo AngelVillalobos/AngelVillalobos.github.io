@@ -485,8 +485,9 @@ function loop()
       if(seleccionF2==true)
       {
         environment.sense();
+        environment.plan();
         //environment.children[100].sense();
-        environment.children[100].plan();
+        //environment.children[100].plan();
         environment.children[100].act();
       }
       console.log(X);
@@ -500,8 +501,9 @@ function loop()
       if(seleccionF2==true)
       {
         environment.sense();
+        environment.plan();
         //environment.children[101].sense();
-        environment.children[101].plan();
+        //environment.children[101].plan();
         environment.children[101].act();
       }
       console.log(X);
