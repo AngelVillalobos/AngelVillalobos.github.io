@@ -484,7 +484,7 @@ function loop()
       Y=environment.children[100].position.y;
       if(seleccionF2==true)
       {
-        environment.children.sense();
+        environment.sense();
         //environment.children[100].sense();
         environment.children[100].plan();
         environment.children[100].act();
@@ -499,7 +499,7 @@ function loop()
       Y=environment.children[101].position.y;
       if(seleccionF2==true)
       {
-        environment.children.sense();
+        environment.sense();
         //environment.children[101].sense();
         environment.children[101].plan();
         environment.children[101].act();
