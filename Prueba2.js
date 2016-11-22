@@ -206,7 +206,7 @@ Peon.prototype.sense=function(environment)
   this.sensor.set(this.position,new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0));
   var obstaculo=this.sensor.intersectObjects(environment.children,true);
   console.log(obstaculo[0].distance)
-  if((obstaculo.length>0 && (obstaculo[0].distance<=2.1)))
+  if((obstaculo.length>0 && (obstaculo[0].distance<=2)))
   {console.log(obstaculo[0].distance)
     this.sensor.colision=true;}
   else
@@ -456,7 +456,7 @@ function setup()
   var planoLejano=1000;
   camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
   camara.position.z=120;
-  camara.position.y=-90;
+  //camara.position.y=-90;
   camara.lookAt(new THREE.Vector3(0,0,0));
   /////RENDERIZADOR////
   renderizador = new THREE.WebGLRenderer();
