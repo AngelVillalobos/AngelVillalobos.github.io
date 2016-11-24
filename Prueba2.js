@@ -204,7 +204,7 @@ Peon.prototype=new Agent();
 
 Peon.prototype.sense=function(environment)
 {
-  this.sensor.set(this.position,new THREE.Vector3(2*Math.cos(this.rotation.z),2*Math.sin(this.rotation.z),0));
+  this.sensor.set(this.position,new THREE.Vector3(0.2*Math.cos(this.rotation.z),0.2*Math.sin(this.rotation.z),0));
   var obstaculo=this.sensor.intersectObjects(environment.children,true);
   //console.log(obstaculo[0].distance)
   if((obstaculo.length>0 && (obstaculo[0].distance<=0.1)))
