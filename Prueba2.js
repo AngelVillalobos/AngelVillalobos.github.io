@@ -210,8 +210,8 @@ Peon.prototype.sense=function(environment)
   {console.log(obstaculo[0])
     this.sensor.colision=true;}
   else
-    //console.log(obstaculo[0].distance)
-    this.sensor.colision=false;
+  {console.log(obstaculo[0].distance);
+    this.sensor.colision=false;}
 };
 
 Peon.prototype.plan=function(environment)
