@@ -362,10 +362,23 @@ function Peon(sTP,x,y)
   this.position.z=0.4;
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
-  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
-  this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(5,1,1));
-  this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(5,1,1));
+  this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(10,15,1));
+  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(10,15,1));
+  this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(15,10,1));
+  this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(15,10,1));
+  this.piernaizq.position.z=2.5;
+  this.piernaizq.position.y=-5;
+  this.piernaizq.position.x=-1.8;
+  this.piernader.position.x=1.8;
+  this.piernader.position.z=2.5;
+  this.piernader.position.y=-5;
+  
+  this.brazoizq.position.z=2.5;
+  this.brazoizq.position.y=2;
+  this.brazoizq.position.x=-2.5;
+  this.brazoder.position.x=2.5;
+  this.brazoder.position.z=2.5;
+  this.brazoder.position.y=2;
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
