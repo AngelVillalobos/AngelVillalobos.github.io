@@ -38,7 +38,7 @@ function loop()
   a=a+1;
   //pieza.rotateY(0.1);
   pieza.piernaizq.rotateX(0.01*b);
-  if (a>=100)
+  if (a>=80)
   {
     b=-1;
     if(a>=200)
