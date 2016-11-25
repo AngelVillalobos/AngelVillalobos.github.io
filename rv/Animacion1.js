@@ -15,11 +15,11 @@ function Pieza()
   this.piernader.position.y=-5;
   
   this.brazoizq.position.z=6;
-  this.brazoizq.position.y=-5;
+  this.brazoizq.position.y=5;
   this.brazoizq.position.x=-1.8;
   this.brazoder.position.x=1.8;
   this.brazoder.position.z=6;
-  this.brazoder.position.y=-5;
+  this.brazoder.position.y=5;
   cuerpo.position.z=2.5;
 }
 Pieza.prototype=new THREE.Object3D;
