@@ -331,7 +331,7 @@ function Peon(sTP,x,y)
   this.add(this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
-  P.add(this.actuator.brazoizq,this.actuator.brazoder,this.actuator.piernaizq,this.actuator.piernader,this.actuator);
+  //P.add(this.actuator.brazoizq,this.actuator.brazoder,this.actuator.piernaizq,this.actuator.piernader,this.actuator);
   this.actuator.castShadow=true;
 }
 Peon.prototype=new Agent();
