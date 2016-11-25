@@ -331,7 +331,7 @@ function Peon(sTP,x,y)
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(5,8,5),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(5,2,2),new THREE.MeshLambertMaterial({map:textura}));
+  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(2,2,5),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(8,5,5)),new THREE.MeshLambertMaterial({map:textura});
   this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(8,5,5),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq.position.set(-5,10,2.5)
@@ -539,7 +539,7 @@ function setup()
   var planoCercano=1;
   var planoLejano=1000;
   camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
-  camara.position.z=10;
+  camara.position.z=120;
   camara.position.y=-90;
   camara.lookAt(new THREE.Vector3(0,0,0));
   /////RENDERIZADOR////
