@@ -325,8 +325,8 @@ function PB(pieza)
   this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
   this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(5,1,1));
   this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(5,1,1));
-  var cuerpo=new THREE.Mesh(new THREE.BoxGeometry(0.1,0.1,0.1));
-  this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,pieza);
+  this.pieza=pieza;
+  this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.pieza);
   this.piernaizq.position.z=2.5;
   this.piernaizq.position.y=-5;
   this.piernaizq.position.x=-1.8;
