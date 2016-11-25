@@ -29,7 +29,7 @@ function setup()
 }
 
 var a=0;
-var b=1;
+var b=0;
 
 function loop()
 {
@@ -40,7 +40,7 @@ function loop()
   if (a>=150)
   {
     b=-1;
-    if(a>=400)
+    if(a>=300)
     {
       a=0;
     }
