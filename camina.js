@@ -40,7 +40,6 @@ function Agent(x=0,y=0)
   this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
   this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(5,1,1));
   this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(5,1,1));
-  this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this);
 }
 Agent.prototype=new THREE.Object3D();
 
@@ -317,6 +316,7 @@ function Peon(sTP,x,y)
   this.add(this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
+  this.add(this.actuator.brazoizq,this.actuator.brazoder,this.actuator.piernaizq,this.actuator.piernader,this.actuator);
   this.actuator.castShadow=true;
 }
 Peon.prototype=new Agent();
