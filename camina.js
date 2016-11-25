@@ -307,7 +307,7 @@ function PB(pieza)
   this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(5,1,1));
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,PIEZA);
 }
-
+PB.prototype=new THREE.Object3D;
 
 
 
