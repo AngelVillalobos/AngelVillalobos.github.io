@@ -31,12 +31,17 @@ PeonGeometry=function()
 }
 PeonGeometry.prototype=new THREE.Geometry();
 ///////////////AGENTE///////////////
-function Agent(x=0,y=0,P)
+function Agent(x=0,y=0)
 {
   THREE.Object3D.call(this);
   this.position.x=x;
   this.position.y=y;
-  this.add(P);
+  this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
+  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
+  this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(5,1,1));
+  this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(5,1,1));
+  var cuerpo=new THREE.Mesh(new THREE.BoxGeometry(5,10,5));
+  this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,cuerpo);
 }
 Agent.prototype=new THREE.Object3D();
 
