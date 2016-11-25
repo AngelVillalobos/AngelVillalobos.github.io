@@ -560,13 +560,13 @@ function loop()
   if(turno==false)
   {
     switch(id){
-      case 111:
+      case 127:
         X=environment.children[100].position.x;
         Y=environment.children[100].position.y;
         if(seleccionF2==true)
           environment.children[100].act();
       break;
-      case 115:
+      case 137:
         X=environment.children[101].position.x;
         Y=environment.children[101].position.y;
         if(seleccionF2==true)
@@ -577,13 +577,13 @@ function loop()
   else
   {
     switch(id){
-      case 119:
+      case 147:
         X=environment.children[102].position.x;
         Y=environment.children[102].position.y;
         if(seleccionF2==true)
           environment.children[102].act(); 
       break;
-      case 124:
+      case 157:
         X=environment.children[103].position.x;
         Y=environment.children[103].position.y;
         if(seleccionF2==true)
