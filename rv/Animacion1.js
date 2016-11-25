@@ -30,7 +30,7 @@ function setup()
   pieza.rotateY(0.2);
   pieza.piernaizq.rotateX(-Math.PI/6);
   pieza.piernader.rotateX(Math.PI/6);
-  pieza.brazoizq.rotateY(-Math.PI/6);
+  pieza.brazoizq.rotateY(Math.PI/6);
   pieza.brazoder.rotateY(Math.PI/6);
   escena = new THREE.Scene();
   escena.add(pieza);
