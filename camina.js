@@ -327,7 +327,7 @@ function Peon(sTP,x,y)
     textura=cargador.load('maderaB.jpg');
   this.position.x=x;
   this.position.y=y;
-  this.position.z=0.4;
+  this.position.z=4;
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(5,8,5),new THREE.MeshLambertMaterial({map:textura}));
@@ -540,7 +540,7 @@ function setup()
   var planoLejano=1000;
   camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
   camara.position.z=120;
-  camara.position.y=-90;
+  //camara.position.y=-90;
   camara.lookAt(new THREE.Vector3(0,0,0));
   /////RENDERIZADOR////
   renderizador = new THREE.WebGLRenderer();
