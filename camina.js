@@ -331,11 +331,11 @@ function Peon(sTP,x,y)
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(5,8,5),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(2,2,10),new THREE.MeshLambertMaterial({map:textura}));
+  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,7),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(8,5,5)),new THREE.MeshLambertMaterial({map:textura});
   this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(8,5,5),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq.position.set(-5,10,2.5)
-  this.piernader.position.set(2,0,-3);
+  this.piernader.position.set(2,0,-1);
   //this.piernader.rotateX(Math.PI/2);
   /*this.piernaizq.position.z=2.5;
   this.piernaizq.position.y=10;
