@@ -1,7 +1,6 @@
 ///////////////CONSTRUCTOR CABALLO///////////////
 CaballoGeometry=function()
 {
-  THREE.Geometry.call(this);
   THREE.Object3D.call(this);
   var BaseCaballo1=new THREE.BoxGeometry(0.7,0.2,0.7);
   var CuerpoCaballo1=new THREE.BoxGeometry(0.5,1,0.5);
@@ -9,14 +8,15 @@ CaballoGeometry=function()
   BaseCaballo1.translate(0,0,0);
   CuerpoCaballo1.translate(0,0.3,0);
   CabezaCaballo1.translate(0.3,0.6,0);
-  var BaseCaballo=new THREE.Mesh(BaseCaballo1);
-  var CuerpoCaballo=new THREE.Mesh(CuerpoCaballo1);
-  var CabezaCaballo=new THREE.Mesh(CabezaCaballo1);
-  this.merge(BaseCaballo.geometry,BaseCaballo.matrix);
-  this.merge(CuerpoCaballo.geometry,CuerpoCaballo.matrix);
-  this.merge(CabezaCaballo.geometry,CabezaCaballo.matrix);
+  this.BaseCaballo=new THREE.Mesh(BaseCaballo1);
+  this.CuerpoCaballo=new THREE.Mesh(CuerpoCaballo1);
+  this.CabezaCaballo=new THREE.Mesh(CabezaCaballo1);
+  this.add(this.BaseCaballo,this.CuerpoCaballo,this.CabezaCaballo)
+  //this.merge(BaseCaballo.geometry,BaseCaballo.matrix);
+  //this.merge(CuerpoCaballo.geometry,CuerpoCaballo.matrix);
+  //this.merge(CabezaCaballo.geometry,CabezaCaballo.matrix);
 }
-CaballoGeometry.prototype=new THREE.Geometry();
+CaballoGeometry.prototype=new THREE.Object3D();
 ///////////////CONSTRUCTOR PEON///////////////
 PeonGeometry=function()
 {
