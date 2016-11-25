@@ -31,7 +31,7 @@ function loop()
 {
   a=a+1;
   //pieza.rotateY(0.1);
-  pieza.piernaIzq.rotateZ(0.01*b);
+  pieza.piernaizq.rotateZ(0.01*b);
   if (a>=100)
   {
     b=-1;
