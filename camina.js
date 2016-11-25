@@ -2,6 +2,7 @@
 CaballoGeometry=function()
 {
   THREE.Geometry.call(this);
+  THREE.Object3D.call(this);
   var BaseCaballo1=new THREE.BoxGeometry(0.7,0.2,0.7);
   var CuerpoCaballo1=new THREE.BoxGeometry(0.5,1,0.5);
   var CabezaCaballo1=new THREE.BoxGeometry(0.3,0.3,0.5);
