@@ -335,7 +335,7 @@ function Peon(sTP,x,y)
   this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(8,5,5)),new THREE.MeshLambertMaterial({map:textura});
   this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(8,5,5),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq.position.set(-5,10,2.5)
-  this.piernader.position.set(5,10,2.5);
+  this.piernader.position.set(2.5,10,2.5);
   //this.piernader.rotateX(Math.PI/2);
   /*this.piernaizq.position.z=2.5;
   this.piernaizq.position.y=10;
@@ -539,7 +539,7 @@ function setup()
   var planoCercano=1;
   var planoLejano=1000;
   camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
-  //camara.position.z=10;
+  camara.position.z=10;
   camara.position.y=-50;
   camara.lookAt(new THREE.Vector3(0,0,0));
   /////RENDERIZADOR////
