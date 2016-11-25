@@ -40,7 +40,7 @@ function loop()
   if (a>=100)
   {
     b=-1;
-    if(a>=200)
+    if(a>=300)
     {
       a=0;
     }
