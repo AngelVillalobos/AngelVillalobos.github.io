@@ -1,4 +1,3 @@
-
 ///////////////CONSTRUCTOR CABALLO///////////////
 CaballoGeometry=function()
 {
@@ -108,7 +107,85 @@ Agent.prototype=new THREE.Object3D();
 
 Agent.prototype.sense=function(environment){};
 Agent.prototype.plan=function(environment){};
-Agent.prototype.act=function(environment){};
+Agent.prototype.act=function(environment)
+{
+  var command = this.actuator.commands.pop();
+  if(command===undefined)
+    console.log('Undefined command');
+  else if(command in this.operations)
+    this.operations[command](this);
+  else
+    console.log('Unknown command');
+};
+
+Agent.prototype.operations={};
+
+Agent.prototype.operations.goStraightX=function(pieza,distance)
+{
+  if(distance===undefined)
+  {
+    if(X<x)
+      distance=0.5;
+    else if(X===x)
+      distance=0;
+    else
+      distance=-0.5; 
+  }
+  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
+};
+
+Agent.prototype.operations.goStraightY=function(pieza,distance)
+{
+  if(distance===undefined)
+   {
+    if(Y<y)
+      distance=0.5;
+    else if(Y===y)
+      distance=0;
+    else
+      distance=-0.5; 
+  }
+  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
+};
+
+Agent.prototype.operations.goDiagonal=function(pieza,distance)
+{
+  if(distance===undefined)
+   {
+    if(Y<y&&X<x){
+      distance=0.5;
+      pieza.position.x+=distance*Math.cos(pieza.rotation.z);
+      pieza.position.y+=distance*Math.cos(pieza.rotation.z);
+    }
+     else if(Y<y&&X>x){
+      distance=0.5;
+      pieza.position.x-=distance*Math.cos(pieza.rotation.z);
+      pieza.position.y+=distance*Math.cos(pieza.rotation.z);
+     }
+     else if(Y>y&&X<x){
+      distance=0.5;
+      pieza.position.x+=distance*Math.cos(pieza.rotation.z);
+      pieza.position.y-=distance*Math.cos(pieza.rotation.z);
+     }
+     else if(Y>y&&X>x){
+      distance=0.5;
+      pieza.position.x-=distance*Math.cos(pieza.rotation.z);
+      pieza.position.y-=distance*Math.cos(pieza.rotation.z);
+     }
+    else if(Y===y)
+      distance=0;
+    else
+      distance=-0.5; 
+  }
+};
+
+Agent.prototype.operations.stop=function(pieza,distance)
+{
+  if(distance===undefined)
+    distance=0;
+  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
+  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
+};
 
 function Environment()
 {
@@ -147,11 +224,11 @@ function Casillas(size,x,y)
 {
   cargador=new THREE.TextureLoader();
   if(sTC===1)
-    textura=cargador.load('marmolB.jpg');
+    textura=cargador.load('marmol_blanco.jpg');
   else if (sTC===2)
-    textura=cargador.load('marmolN.jpg');
+    textura=cargador.load('marmol_negro.jpg');
   else
-    textura=cargador.load('marmolA.jpg');
+    textura=cargador.load('marmol_gris.jpg');
   THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.4,10,10,10),new THREE.MeshLambertMaterial({map:textura}));
   this.size=size;
   this.receiveShadow=true;
@@ -201,63 +278,51 @@ Environment.prototype.setMapPiezas=function(map)
     {
       if(map[i][j]==="c")
       {
-        sTP=1;
-        this.add(new Caballo((j*10)-45,(i*10)-45));
+        this.add(new Caballo(true,(j*10)-45,(i*10)-45));
       }
       if(map[i][j]==="C")
       {
-        sTP=2;
-        this.add(new Caballo((j*10)-45,(i*10)-45));
+        this.add(new Caballo(false,(j*10)-45,(i*10)-45));
       }
       if(map[i][j]==="a")
       {
-        sTP=1;
-        this.add(new Alfil((j*10)-45,(i*10)-45));
+        this.add(new Alfil(true,(j*10)-45,(i*10)-45));
       }
       if(map[i][j]==="A")
       {
-        sTP=2;
-        this.add(new Alfil((j*10)-45,(i*10)-45));
+        this.add(new Alfil(false,(j*10)-45,(i*10)-45));
       }
       if(map[i][j]==="x")
       {
-        sTP=1;
-        this.add(new Reina((j*10)-45,(i*10)-45));
+        this.add(new Reina(true,(j*10)-45,(i*10)-45));
       }
       if(map[i][j]==="X")
       {
-        sTP=2;
-        this.add(new Reina((j*10)-45,(i*10)-45));
+        this.add(new Reina(false,(j*10)-45,(i*10)-45));
       }
       if(map[i][j]==="r")
       {
-        sTP=1;
-        this.add(new Rey((j*10)-45,(i*10)-45));
+        this.add(new Rey(true,(j*10)-45,(i*10)-45));
       }
       if(map[i][j]==="R")
       {
-        sTP=2;
-        this.add(new Rey((j*10)-45,(i*10)-45));
+        this.add(new Rey(false,(j*10)-45,(i*10)-45));
       }
       if(map[i][j]==="t")
       {
-        sTP=1;
-        this.add(new Torre((j*10)-45,(i*10)-45));
+        this.add(new Torre(true,(j*10)-45,(i*10)-45));
       }
       if(map[i][j]==="T")
       {
-        sTP=2;
-        this.add(new Torre((j*10)-45,(i*10)-45));
+        this.add(new Torre(false,(j*10)-45,(i*10)-45));
       }
       if(map[i][j]==="p")
       {
-        sTP=1;
-        this.add(new Peon((j*10)-45,(i*10)-45));
+        this.add(new Peon(true,(j*10)-45,(i*10)-45));
       }
       if(map[i][j]==="P")
       {
-        sTP=2;
-        this.add(new Peon((j*10)-45,(i*10)-45));
+        this.add(new Peon(false,(j*10)-45,(i*10)-45));
       }
     }
   }
@@ -270,17 +335,19 @@ function Sensor(position,direction)
 Sensor.prototype = new THREE.Raycaster();
 
 ///////////////CABALLO///////////////
-function Caballo(x,y,textura)
+function Caballo(sTP,x,y)
 {
   cargador=new THREE.TextureLoader();
   Agent.call(this,x,y);
-  if(sTP===1)
+  this.sTP = sTP;
+  if(this.sTP===true)
     textura=cargador.load('maderaN.jpg');
   else
     textura=cargador.load('maderaB.jpg');
   this.position.x=x;
   this.position.y=y;
   this.position.z=0.4;
+  this.cnt = 0;
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new CaballoGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.add(this.actuator);
@@ -302,73 +369,21 @@ Caballo.prototype.sense=function(environment)
 
 Caballo.prototype.plan=function(environment)
 {
-     this.actuator.commands=[];
-  //if(this.sensor.colision===true)
-  //{
-  //  this.actuator.commands.push('rotateCCW');
-  //}
-  //else
-  //{ 
-    if(X!==x)
+  this.actuator.commands=[];
+  if( ((Math.abs(x-X)<=20 && Math.abs(y-Y)<=10) || (Math.abs(x-X)<=10 && Math.abs(y-Y)<=20)) && Math.abs(x-X)!==Math.abs(y-Y) ){
+    if(X!==x&&Y!==y){
       this.actuator.commands.push('goStraightX');
-    else if(X===x&&Y!==y) 
+      this.cnt = 1;}
+    else if (X===X&&Y!==y&&this.cnt!==0)
       this.actuator.commands.push('goStraightY');
-    else if(X===x&&Y===y)
+  }
+  else if(X===x&&Y===y)
     {
       this.actuator.commands.push('stop');
+      this.cnt = 0;
       seleccionF2=false;
       seleccionF1=false;
     }
-  //}
-};
-
-Caballo.prototype.act=function(environment)
-{
-  var command = this.actuator.commands.pop();
-  if(command===undefined)
-    console.log('Undefined command');
-  else if(command in this.operations)
-    this.operations[command](this);
-  else
-    console.log('Unknown command');
-};
-
-Caballo.prototype.operations={};
-
-Caballo.prototype.operations.goStraightX=function(pieza,distance)
-{
-  if(distance===undefined)
-  {
-    if(X<x)
-      distance=0.5;
-    else if(X===x)
-      distance=0;
-    else
-      distance=-0.5; 
-  }
-  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-};
-
-Caballo.prototype.operations.goStraightY=function(pieza,distance)
-{
-  if(distance===undefined)
-   {
-    if(Y<y)
-      distance=0.5;
-    else if(Y===y)
-      distance=0;
-    else
-      distance=-0.5; 
-  }
-  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
-};
-
-Caballo.prototype.operations.stop=function(pieza,distance)
-{
-  if(distance===undefined)
-    distance=0;
-  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
 };
 
 Caballo.prototype.operations.rotateCCW=function(pieza,angle)
@@ -379,11 +394,12 @@ Caballo.prototype.operations.rotateCCW=function(pieza,angle)
 };
 
 ///////////////ALFIL///////////////
-function Alfil(x,y)
+function Alfil(sTP,x,y)
 {
   cargador=new THREE.TextureLoader();
   Agent.call(this,x,y);
-  if(sTP===1)
+  this.sTP = sTP;
+  if(this.sTP===true)
     textura=cargador.load('maderaN.jpg');
   else
     textura=cargador.load('maderaB.jpg');
@@ -411,73 +427,16 @@ Alfil.prototype.sense=function(environment)
 
 Alfil.prototype.plan=function(environment)
 {
-     this.actuator.commands=[];
-  //if(this.sensor.colision===true)
-  //{
-  //  this.actuator.commands.push('rotateCCW');
-  //}
-  //else
-  //{ 
-    if(X!==x)
-      this.actuator.commands.push('goStraightX');
-    else if(X===x&&Y!==y) 
-      this.actuator.commands.push('goStraightY');
+    this.actuator.commands=[];
+    if(X!==x&&Y!==y&&Math.abs(y-Y)===Math.abs(x-X)){
+      this.actuator.commands.push('goDiagonal');
+    }
     else if(X===x&&Y===y)
     {
       this.actuator.commands.push('stop');
       seleccionF2=false;
       seleccionF1=false;
     }
-  //}
-};
-
-Alfil.prototype.act=function(environment)
-{
-  var command = this.actuator.commands.pop();
-  if(command===undefined)
-    console.log('Undefined command');
-  else if(command in this.operations)
-    this.operations[command](this);
-  else
-    console.log('Unknown command');
-};
-
-Alfil.prototype.operations={};
-
-Alfil.prototype.operations.goStraightX=function(pieza,distance)
-{
-  if(distance===undefined)
-  {
-    if(X<x)
-      distance=0.5;
-    else if(X===x)
-      distance=0;
-    else
-      distance=-0.5; 
-  }
-  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-};
-
-Alfil.prototype.operations.goStraightY=function(pieza,distance)
-{
-  if(distance===undefined)
-   {
-    if(Y<y)
-      distance=0.5;
-    else if(Y===y)
-      distance=0;
-    else
-      distance=-0.5; 
-  }
-  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
-};
-
-Alfil.prototype.operations.stop=function(pieza,distance)
-{
-  if(distance===undefined)
-    distance=0;
-  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
 };
 
 Alfil.prototype.operations.rotateCCW=function(pieza,angle)
@@ -487,11 +446,12 @@ Alfil.prototype.operations.rotateCCW=function(pieza,angle)
   pieza.rotation.z+=angle;
 };
 ///////////////REINA///////////////
-function Reina(x,y)
+function Reina(sTP,x,y)
 {
   cargador=new THREE.TextureLoader();
   Agent.call(this,x,y);
-  if(sTP===1)
+  this.sTP = sTP;
+  if(this.sTP===true)
     textura=cargador.load('maderaN.jpg');
   else
     textura=cargador.load('maderaB.jpg');
@@ -519,73 +479,19 @@ Reina.prototype.sense=function(environment)
 
 Reina.prototype.plan=function(environment)
 {
-     this.actuator.commands=[];
-  //if(this.sensor.colision===true)
-  //{
-  //  this.actuator.commands.push('rotateCCW');
-  //}
-  //else
-  //{ 
-    if(X!==x)
+    this.actuator.commands=[]; 
+    if(X!==x&&Y===y)
       this.actuator.commands.push('goStraightX');
-    else if(X===x&&Y!==y) 
+    else if(Y!==y&&X===x) 
       this.actuator.commands.push('goStraightY');
+    else if(Y!==y&&X!==x&&Math.abs(y-Y)===Math.abs(x-X))
+      this.actuator.commands.push('goDiagonal');
     else if(X===x&&Y===y)
     {
       this.actuator.commands.push('stop');
       seleccionF2=false;
       seleccionF1=false;
     }
-  //}
-};
-
-Reina.prototype.act=function(environment)
-{
-  var command = this.actuator.commands.pop();
-  if(command===undefined)
-    console.log('Undefined command');
-  else if(command in this.operations)
-    this.operations[command](this);
-  else
-    console.log('Unknown command');
-};
-
-Reina.prototype.operations={};
-
-Reina.prototype.operations.goStraightX=function(pieza,distance)
-{
-  if(distance===undefined)
-  {
-    if(X<x)
-      distance=0.5;
-    else if(X===x)
-      distance=0;
-    else
-      distance=-0.5; 
-  }
-  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-};
-
-Reina.prototype.operations.goStraightY=function(pieza,distance)
-{
-  if(distance===undefined)
-   {
-    if(Y<y)
-      distance=0.5;
-    else if(Y===y)
-      distance=0;
-    else
-      distance=-0.5; 
-  }
-  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
-};
-
-Reina.prototype.operations.stop=function(pieza,distance)
-{
-  if(distance===undefined)
-    distance=0;
-  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
 };
 
 Reina.prototype.operations.rotateCCW=function(pieza,angle)
@@ -595,11 +501,12 @@ Reina.prototype.operations.rotateCCW=function(pieza,angle)
   pieza.rotation.z+=angle;
 };
 ///////////////REY///////////////
-function Rey(x,y)
+function Rey(sTP,x,y)
 {
   cargador=new THREE.TextureLoader();
   Agent.call(this,x,y);
-  if(sTP===1)
+  this.sTP = sTP;
+  if(this.sTP===true)
     textura=cargador.load('maderaN.jpg');
   else
     textura=cargador.load('maderaB.jpg');
@@ -634,66 +541,22 @@ Rey.prototype.plan=function(environment)
   //}
   //else
   //{ 
-    if(X!==x)
-      this.actuator.commands.push('goStraightX');
-    else if(X===x&&Y!==y) 
-      this.actuator.commands.push('goStraightY');
-    else if(X===x&&Y===y)
-    {
-      this.actuator.commands.push('stop');
-      seleccionF2=false;
-      seleccionF1=false;
+  // 
+    if( Math.abs(x-X)<=10 && Math.abs(y-Y)<=10 ){ 
+      if (x!==X && y!==Y && Math.abs(y-Y)===Math.abs(x-X))
+        this.actuator.commands.push('goDiagonal');
+      else if(x===X && y!==Y) 
+        this.actuator.commands.push('goStraightY');
+      else if(x!==X && y===Y)
+        this.actuator.commands.push('goStraightX');
+      else if(X===x&&Y===y)
+      {
+        this.actuator.commands.push('stop');
+        seleccionF2=false;
+        seleccionF1=false;
+      }
     }
   //}
-};
-
-Rey.prototype.act=function(environment)
-{
-  var command = this.actuator.commands.pop();
-  if(command===undefined)
-    console.log('Undefined command');
-  else if(command in this.operations)
-    this.operations[command](this);
-  else
-    console.log('Unknown command');
-};
-
-Rey.prototype.operations={};
-
-Rey.prototype.operations.goStraightX=function(pieza,distance)
-{
-  if(distance===undefined)
-  {
-    if(X<x)
-      distance=0.5;
-    else if(X===x)
-      distance=0;
-    else
-      distance=-0.5; 
-  }
-  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-};
-
-Rey.prototype.operations.goStraightY=function(pieza,distance)
-{
-  if(distance===undefined)
-   {
-    if(Y<y)
-      distance=0.5;
-    else if(Y===y)
-      distance=0;
-    else
-      distance=-0.5; 
-  }
-  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
-};
-
-Rey.prototype.operations.stop=function(pieza,distance)
-{
-  if(distance===undefined)
-    distance=0;
-  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
 };
 
 Rey.prototype.operations.rotateCCW=function(pieza,angle)
@@ -703,11 +566,12 @@ Rey.prototype.operations.rotateCCW=function(pieza,angle)
   pieza.rotation.z+=angle;
 };
 ///////////////TORRE///////////////
-function Torre(x,y)
+function Torre(sTP,x,y)
 {
   cargador=new THREE.TextureLoader();
   Agent.call(this,x,y);
-  if(sTP===1)
+  this.sTP = sTP;
+  if(this.sTP===true)
     textura=cargador.load('maderaN.jpg');
   else
     textura=cargador.load('maderaB.jpg');
@@ -735,73 +599,17 @@ Torre.prototype.sense=function(environment)
 
 Torre.prototype.plan=function(environment)
 {
-   this.actuator.commands=[];
-  //if(this.sensor.colision===true)
-  //{
-  //  this.actuator.commands.push('rotateCCW');
-  //}
-  //else
-  //{ 
-    if(X!==x)
+    this.actuator.commands=[];
+    if(X!==x&&Y===y)
       this.actuator.commands.push('goStraightX');
-    else if(X===x&&Y!==y) 
+     else if(Y!==y&&X===x) 
       this.actuator.commands.push('goStraightY');
-    else if(X===x&&Y===y)
+     else if(X===x&&Y===y)
     {
       this.actuator.commands.push('stop');
       seleccionF2=false;
       seleccionF1=false;
     }
-  //}
-};
-
-Torre.prototype.act=function(environment)
-{
-  var command = this.actuator.commands.pop();
-  if(command===undefined)
-    console.log('Undefined command');
-  else if(command in this.operations)
-    this.operations[command](this);
-  else
-    console.log('Unknown command');
-};
-
-Torre.prototype.operations={};
-
-Torre.prototype.operations.goStraightX=function(pieza,distance)
-{
-  if(distance===undefined)
-  {
-    if(X<x)
-      distance=0.5;
-    else if(X===x)
-      distance=0;
-    else
-      distance=-0.5; 
-  }
-  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-};
-
-Torre.prototype.operations.goStraightY=function(pieza,distance)
-{
-  if(distance===undefined)
-   {
-    if(Y<y)
-      distance=0.5;
-    else if(Y===y)
-      distance=0;
-    else
-      distance=-0.5; 
-  }
-  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
-};
-
-Torre.prototype.operations.stop=function(pieza,distance)
-{
-  if(distance===undefined)
-    distance=0;
-  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
 };
 
 Torre.prototype.operations.rotateCCW=function(pieza,angle)
@@ -811,11 +619,12 @@ Torre.prototype.operations.rotateCCW=function(pieza,angle)
   pieza.rotation.z+=angle;
 };
 ///////////////PEON///////////////
-function Peon(x,y)
+function Peon(sTP,x,y)
 {
   cargador=new THREE.TextureLoader();
   Agent.call(this,x,y);
-  if(sTP===1)
+  this.sTP = sTP;
+  if(this.sTP===true)
     textura=cargador.load('maderaN.jpg');
   else
     textura=cargador.load('maderaB.jpg');
@@ -849,67 +658,34 @@ Peon.prototype.plan=function(environment)
   //  this.actuator.commands.push('rotateCCW');
   //}
   //else
-  //{ 
-    if(X!==x)
-      this.actuator.commands.push('goStraightX');
-    else if(X===x&&Y!==y) 
-      this.actuator.commands.push('goStraightY');
-    else if(X===x&&Y===y)
+  //{
+  if (this.sTP===true){
+    if(Y>=-25 && Y<-15) {
+      if( y-Y<=20 && y-Y>0 && x===X ) 
+        this.actuator.commands.push('goStraightY');
+    }
+    else{ 
+      if(y-Y<=10 && y-Y>0 && x===X)
+        this.actuator.commands.push('goStraightY');
+    }
+  }
+  else{
+    if(Y<=25 && Y>15) {
+      if( Y-y<=20 && Y-y>0 && x===X ) 
+        this.actuator.commands.push('goStraightY');
+    }
+    else{ 
+      if(Y-y<=10 && Y-y>0 && x===X)
+        this.actuator.commands.push('goStraightY');
+    }
+  }
+  if(X===x&&Y===y)
     {
       this.actuator.commands.push('stop');
       seleccionF2=false;
       seleccionF1=false;
     }
   //}
-};
-
-Peon.prototype.act=function(environment)
-{
-  var command = this.actuator.commands.pop();
-  if(command===undefined)
-    console.log('Undefined command');
-  else if(command in this.operations)
-    this.operations[command](this);
-  else
-    console.log('Unknown command');
-};
-
-Peon.prototype.operations={};
-
-Peon.prototype.operations.goStraightX=function(pieza,distance)
-{
-  if(distance===undefined)
-  {
-    if(X<x)
-      distance=0.5;
-    else if(X===x)
-      distance=0;
-    else
-      distance=-0.5; 
-  }
-  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-};
-
-Peon.prototype.operations.goStraightY=function(pieza,distance)
-{
-  if(distance===undefined)
-   {
-    if(Y<y)
-      distance=0.5;
-    else if(Y===y)
-      distance=0;
-    else
-      distance=-0.5; 
-  }
-  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
-};
-
-Peon.prototype.operations.stop=function(pieza,distance)
-{
-  if(distance===undefined)
-    distance=0;
-  pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-  pieza.position.y+=distance*Math.cos(pieza.rotation.z);
 };
 
 Peon.prototype.operations.rotateCCW=function(pieza,angle)
@@ -1021,14 +797,14 @@ function setup()
   
   var Piezas=new Array();
   Piezas[0]="          ";
-  Piezas[1]=" tcaxract ";
+  Piezas[1]=" tcarxact ";
   Piezas[2]=" pppppppp ";
   Piezas[3]="          ";
   Piezas[4]="          ";
   Piezas[5]="          ";
   Piezas[6]="          ";
   Piezas[7]=" PPPPPPPP ";
-  Piezas[8]=" TCAXRACT ";
+  Piezas[8]=" TCARXACT ";
   Piezas[9]="          ";
      
   environment=new Environment();
@@ -1068,242 +844,210 @@ function loop()
   environment.plan();
   if(turno==false)
   {
-    if(id===114)
-      {
+    switch(id){
+      case 114:
         X=environment.children[100].position.x;
         Y=environment.children[100].position.y;
         if(seleccionF2==true)
           environment.children[100].act();
-      }
-    else if(id===119)
-      {
+      break;
+      case 119:
         X=environment.children[101].position.x;
         Y=environment.children[101].position.y;
         if(seleccionF2==true)
           environment.children[101].act();
-      }
-    else if(id===123)
-      {
+      break;
+      case 123:
         X=environment.children[102].position.x;
         Y=environment.children[102].position.y;
         if(seleccionF2==true)
           environment.children[102].act();
-      }
-    else if(id===128)
-      {
+      break;
+      case 128:
         X=environment.children[103].position.x;
         Y=environment.children[103].position.y;
         if(seleccionF2==true)
           environment.children[103].act();
-      }
-    else if(id===133)
-      {
+      break;
+      case 133:
         X=environment.children[104].position.x;
         Y=environment.children[104].position.y;
         if(seleccionF2==true)
           environment.children[104].act();
-      }
-    else if(id===137)
-      {
+      break;
+      case 137:
         X=environment.children[105].position.x;
         Y=environment.children[105].position.y;
         if(seleccionF2==true)
           environment.children[105].act();
-      }
-    else if(id===142)
-      {
+      break;
+      case 142:
         X=environment.children[106].position.x;
         Y=environment.children[106].position.y;
         if(seleccionF2==true)
           environment.children[106].act();
-      }
-    else if(id===146)
-      {
+      break;
+      case 146:
         X=environment.children[107].position.x;
         Y=environment.children[107].position.y;
         if(seleccionF2==true)
           environment.children[107].act();
-      }
-    else if(id===150)
-      {
+      break;
+      case 150:
         X=environment.children[108].position.x;
         Y=environment.children[108].position.y;
         if(seleccionF2==true)
           environment.children[108].act();
-      }
-    else if(id===154)
-      {
+      break;
+      case 154:
         X=environment.children[109].position.x;
         Y=environment.children[109].position.y;
         if(seleccionF2==true)
           environment.children[109].act();
-      }
-    else if(id===158)
-      {
+      break;
+      case 158:
         X=environment.children[110].position.x;
         Y=environment.children[110].position.y;
         if(seleccionF2==true)
           environment.children[110].act();
-      }
-    else if(id===162)
-      {
+      break;
+      case 162:
         X=environment.children[111].position.x;
         Y=environment.children[111].position.y;
         if(seleccionF2==true)
           environment.children[111].act();
-      }
-    else if(id===166)
-      {
+      break;
+      case 166:
         X=environment.children[112].position.x;
         Y=environment.children[112].position.y;
         if(seleccionF2==true)
           environment.children[112].act();
-      }
-    else if(id===170)
-      {
+      break;
+      case 170:
         X=environment.children[113].position.x;
         Y=environment.children[113].position.y;
         if(seleccionF2==true)
           environment.children[113].act();
-      }
-    else if(id===174)
-      {
+      break;
+      case 174:
         X=environment.children[114].position.x;
         Y=environment.children[114].position.y;
         if(seleccionF2==true)
           environment.children[114].act();
-      }
-    else if(id===178)
-      {
+      break;
+      case 178:
         X=environment.children[115].position.x;
         Y=environment.children[115].position.y;
         if(seleccionF2==true)
           environment.children[115].act();
-      }
+      break;
+    }
   }
   else
   {
-    if(id===182)
-      {
+    switch(id){
+      case 182:
         X=environment.children[116].position.x;
         Y=environment.children[116].position.y;
         if(seleccionF2==true)
           environment.children[116].act(); 
-      }
-    else if(id===186)
-      {
+      break;
+      case 186:
         X=environment.children[117].position.x;
         Y=environment.children[117].position.y;
         if(seleccionF2==true)
           environment.children[117].act();
-      }
-    else if(id===190)
-      {
+      break;
+      case 190:
         X=environment.children[118].position.x;
         Y=environment.children[118].position.y;
         if(seleccionF2==true)
           environment.children[118].act();
-      }
-    else if(id===194)
-      {
+      break;
+      case 194:
         X=environment.children[119].position.x;
         Y=environment.children[119].position.y;
         if(seleccionF2==true)
           environment.children[119].act();
-      }
-    else if(id===198)
-      {
+      break;
+      case 198:
         X=environment.children[120].position.x;
         Y=environment.children[120].position.y;
         if(seleccionF2==true)
           environment.children[120].act();
-      }
-    else if(id===202)
-      {
+      break;
+      case 202:
         X=environment.children[121].position.x;
         Y=environment.children[121].position.y;
         if(seleccionF2==true)
           environment.children[121].act();
-      }
-    else if(id===206)
-      {
+      break;
+      case 206:
         X=environment.children[122].position.x;
         Y=environment.children[122].position.y;
         if(seleccionF2==true)
           environment.children[122].act();
-      }
-    else if(id===210)
-      {
+      break;
+      case 210:
         X=environment.children[123].position.x;
         Y=environment.children[123].position.y;
         if(seleccionF2==true)
           environment.children[123].act();
-      }
-    else if(id===214)
-      {
+      break;
+      case 214:
         X=environment.children[124].position.x;
         Y=environment.children[124].position.y;
         if(seleccionF2==true)
           environment.children[124].act();
-      }
-    else if(id===219)
-      {
+      break;
+      case 219:
         X=environment.children[125].position.x;
         Y=environment.children[125].position.y;
         if(seleccionF2==true)
           environment.children[125].act();
-      }
-    else if(id===223)
-      {
+      break;
+      case 223:
         X=environment.children[126].position.x;
         Y=environment.children[126].position.y;
         if(seleccionF2==true)
           environment.children[126].act();
-      }
-    else if(id===228)
-      {
+      break;
+      case 228:
         X=environment.children[127].position.x;
         Y=environment.children[127].position.y;
         if(seleccionF2==true)
           environment.children[127].act();
-      }
-    else if(id===233)
-      {
+      break;
+      case 233:
         X=environment.children[128].position.x;
         Y=environment.children[128].position.y;
         if(seleccionF2==true)
           environment.children[128].act();
-      }
-    else if(id===237)
-      {
+      break;
+      case 237:
         X=environment.children[129].position.x;
         Y=environment.children[129].position.y;
         if(seleccionF2==true)
           environment.children[129].act();
-      }
-    else if(id===242)
-      {
+      break;
+      case 242:
         X=environment.children[130].position.x;
         Y=environment.children[130].position.y;
         if(seleccionF2==true)
           environment.children[130].act();
-      }
-     else if(id===246)
-      {
+      break;
+      case 246:
         X=environment.children[131].position.x;
         Y=environment.children[131].position.y;
         if(seleccionF2==true)
           environment.children[131].act();
-      }
-  }
-  
+      break;
+    }
+  }   
   renderizador.render(environment,camara);
-
 }
 
-
-
-var turno=false,sTP,sTC,id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
+var turno=false,sTC,id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
 
 setup();
 loop();
