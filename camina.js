@@ -539,7 +539,8 @@ function setup()
   var planoCercano=1;
   var planoLejano=1000;
   camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
-  camara.position.z=10;
+  //120 -90
+  camara.position.z=80;
   camara.position.y=-50;
   camara.lookAt(new THREE.Vector3(0,0,0));
   /////RENDERIZADOR////
