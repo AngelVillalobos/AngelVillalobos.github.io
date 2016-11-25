@@ -55,11 +55,5 @@ setup();
 loop();
 
 
-function loop(){
-  requestAnimationFrame(loop);
- 
-}
 
-setup();
-loop();
 
