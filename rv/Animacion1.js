@@ -29,17 +29,37 @@ function setup()
 }
 function loop()
 {
-  requestAnimationFrame(loop);
-  //pieza.rotateY(0.025);
-  pieza.piernaizq.rotateX(0.025)
-  setTimeout(function() {
-    pieza.piernaizq.rotateX(-0.025);
-}, 2000);
-  
-  renderizador.render(escena,camara);
+  a=a+1;
+  //pieza.rotateY(0.1);
+  pieza.piernaIzq.rotateZ(0.01*b);
+  if (a>=100)
+  {
+    b=-1;
+    if(a>=200)
+    {
+      a=0;
+    }
+  }
+  else
+  {
+    b=1;
+  }
+
+  renderizador.render(escena, camara);
 }
+
+var a=0;
+var b=0;
 
 setup();
 loop();
 
+
+function loop(){
+  requestAnimationFrame(loop);
+ 
+}
+
+setup();
+loop();
 
