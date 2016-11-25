@@ -362,10 +362,10 @@ function Peon(sTP,x,y)
   this.position.z=0.4;
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(10,15,1));
-  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(10,15,1));
-  this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(15,10,1));
-  this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(15,10,1));
+  this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(5,8,5),new THREE.MeshLambertMaterial({map:textura}));
+  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(5,8,5),new THREE.MeshLambertMaterial({map:textura}));
+  this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(8,5,5)),new THREE.MeshLambertMaterial({map:textura});
+  this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(8,5,5),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq.position.z=2.5;
   this.piernaizq.position.y=-5;
   this.piernaizq.position.x=-1.8;
@@ -592,13 +592,13 @@ function loop()
   if(turno==false)
   {
     switch(id){
-      case 127:
+      case 112:
         X=environment.children[100].position.x;
         Y=environment.children[100].position.y;
         if(seleccionF2==true)
           environment.children[100].act();
       break;
-      case 137:
+      case 116:
         X=environment.children[101].position.x;
         Y=environment.children[101].position.y;
         if(seleccionF2==true)
@@ -609,13 +609,13 @@ function loop()
   else
   {
     switch(id){
-      case 147:
+      case 124:
         X=environment.children[102].position.x;
         Y=environment.children[102].position.y;
         if(seleccionF2==true)
           environment.children[102].act(); 
       break;
-      case 157:
+      case 133:
         X=environment.children[103].position.x;
         Y=environment.children[103].position.y;
         if(seleccionF2==true)
