@@ -51,24 +51,20 @@ function loop()
   requestAnimationFrame(loop);
   a=a+1;
   //pieza.rotateY(0.1);
-  pieza.piernaizq.rotateX(0.05*b);
-  pieza.piernader.rotateX(-0.05*b);
-  pieza.brazoizq.rotateY(0.05*b);
-  pieza.brazoder.rotateY(-0.05*b);
-  if (a>=40)
+  pieza.piernaizq.rotateX(0.01*b);
+  pieza.piernader.rotateX(-0.01*b);
+  pieza.brazoizq.rotateY(0.01*b);
+  pieza.brazoder.rotateY(-0.01);
+  if (a>=100)
   {
     b=-1;
-    if(a>=80)
+    if(a>=200)
     {
       a=0;
     }
   }
   else
   {
-    pieza.piernaizq.rotateX(0.05*b);
-  pieza.piernader.rotateX(-0.05*b);
-  pieza.brazoizq.rotateY(0.05*b);
-  pieza.brazoder.rotateY(-0.05*b);
     b=1;
   }
 
