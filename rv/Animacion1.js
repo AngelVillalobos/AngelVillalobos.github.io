@@ -8,7 +8,7 @@ function Pieza()
   this.piernaizq.position.z=2.5;
   this.piernaizq.position.y=-5;
   this.piernaizq.position.x=-2;
-  this.piernader.position.x=3;
+  this.piernader.position.x=2;
   this.piernader.position.z=2.5;
   this.piernader.position.y=-5;
   cuerpo.position.z=2.5;
@@ -18,7 +18,7 @@ var pieza,escena,camara,renderizador;
 function setup()
 {
   pieza=new Pieza();
-  pieza.rotateY(Math.PI/2);
+  pieza.rotateY(0.2);
   pieza.piernaizq.rotateX(-Math.PI/6);
   escena = new THREE.Scene();
   escena.add(pieza);
@@ -38,6 +38,7 @@ function loop()
   a=a+1;
   //pieza.rotateY(0.1);
   pieza.piernaizq.rotateX(0.01*b);
+  pieza.piernader.rotateX(-0.01*b);
   if (a>=100)
   {
     b=-1;
