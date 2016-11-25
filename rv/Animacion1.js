@@ -52,10 +52,10 @@ function loop()
   pieza.piernader.rotateX(-0.05*b);
   pieza.brazoizq.rotateY(0.05*b);
   pieza.brazoder.rotateY(-0.05*b);
-  if (a>=50)
+  if (a>=40)
   {
     b=-1;
-    if(a>=100)
+    if(a>=80)
     {
       a=0;
     }
