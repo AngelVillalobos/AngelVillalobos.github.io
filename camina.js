@@ -36,7 +36,7 @@ function Agent(x=0,y=0)
   THREE.Object3D.call(this);
   this.position.x=x;
   this.position.y=y;
-  this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
+  /*this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
   this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
   this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(5,1,1));
   this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(5,1,1));
@@ -56,7 +56,7 @@ function Agent(x=0,y=0)
   this.brazoder.position.z=2.5;
   this.brazoder.position.y=2;
   cuerpo.position.z=2.5;
-  cuerpo.rotateZ(Math.PI/2);
+  cuerpo.rotateZ(Math.PI/2);*/
 }
 Agent.prototype=new THREE.Object3D();
 
@@ -321,12 +321,27 @@ Caballo.prototype.operations.rotateCCW=function(pieza,angle)
 function PB(pieza)
 {
   THREE.Object3D.call(this);
-  var PIEZA=pieza;
   this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
   this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
   this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(5,1,1));
   this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(5,1,1));
-  this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,PIEZA);
+  var cuerpo=new THREE.Mesh(new THREE.BoxGeometry(0.1,0.1,0.1));
+  this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,pieza);
+  this.piernaizq.position.z=2.5;
+  this.piernaizq.position.y=-5;
+  this.piernaizq.position.x=-1.8;
+  this.piernader.position.x=1.8;
+  this.piernader.position.z=2.5;
+  this.piernader.position.y=-5;
+  
+  this.brazoizq.position.z=2.5;
+  this.brazoizq.position.y=2;
+  this.brazoizq.position.x=-2.5;
+  this.brazoder.position.x=2.5;
+  this.brazoder.position.z=2.5;
+  this.brazoder.position.y=2;
+
+
 }
 PB.prototype=new THREE.Object3D;
 
@@ -351,6 +366,7 @@ function Peon(sTP,x,y)
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
+  PB(this.actuator);
 }
 Peon.prototype=new Agent();
 
