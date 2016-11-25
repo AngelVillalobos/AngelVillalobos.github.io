@@ -366,19 +366,22 @@ function Peon(sTP,x,y)
   this.piernader=new THREE.Mesh(new THREE.BoxGeometry(5,8,5),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(8,5,5)),new THREE.MeshLambertMaterial({map:textura});
   this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(8,5,5),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernaizq.position.z=2.5;
-  this.piernaizq.position.y=-5;
-  this.piernaizq.position.x=-1.8;
-  this.piernader.position.x=1.8;
+  this.piernaizq.position.set(-5,10,2.5)
+  this.piernader.position.set(5,10,2.5);
+  /*this.piernaizq.position.z=2.5;
+  this.piernaizq.position.y=10;
+  this.piernaizq.position.x=-5;
+  this.piernader.position.x=5;
   this.piernader.position.z=2.5;
-  this.piernader.position.y=-5;
+  this.piernader.position.y=10;
   
   this.brazoizq.position.z=2.5;
   this.brazoizq.position.y=2;
   this.brazoizq.position.x=-2.5;
   this.brazoder.position.x=2.5;
   this.brazoder.position.z=2.5;
-  this.brazoder.position.y=2;
+  this.brazoder.position.y=2;*/
+  
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
@@ -544,14 +547,14 @@ function setup()
   
   var Piezas=new Array();
   Piezas[0]="          ";
-  Piezas[1]="     c    ";
-  Piezas[2]="        p ";
+  Piezas[1]="          ";
+  Piezas[2]="          ";
   Piezas[3]="          ";
-  Piezas[4]="          ";
+  Piezas[4]="     P    ";
   Piezas[5]="          ";
   Piezas[6]="          ";
-  Piezas[7]="    P     ";
-  Piezas[8]="  C       ";
+  Piezas[7]="          ";
+  Piezas[8]="          ";
   Piezas[9]="          ";
      
   environment=new Environment();
