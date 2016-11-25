@@ -18,8 +18,8 @@ var pieza,escena,camara,renderizador;
 function setup()
 {
   pieza=new Pieza();
-  //pieza.rotateY(0.2);
-  pieza.piernaizq.rotateY(Math.PI/6);
+  pieza.rotateY(Math.PI/2);
+  pieza.piernaizq.rotateZ(-Math.PI/6);
   escena = new THREE.Scene();
   escena.add(pieza);
   camara = new THREE.PerspectiveCamera();
