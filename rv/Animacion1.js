@@ -27,8 +27,13 @@ function setup()
   renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
   document.body.appendChild(renderizador.domElement);
 }
+
+var a=0;
+var b=0;
+
 function loop()
 {
+  requestAnimationFrame(loop);
   a=a+1;
   //pieza.rotateY(0.1);
   pieza.piernaizq.rotateZ(0.01*b);
@@ -48,8 +53,7 @@ function loop()
   renderizador.render(escena, camara);
 }
 
-var a=0;
-var b=0;
+
 
 setup();
 loop();
