@@ -36,6 +36,11 @@ function Agent(x=0,y=0)
   THREE.Object3D.call(this);
   this.position.x=x;
   this.position.y=y;
+  this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
+  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
+  this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(5,1,1));
+  this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(5,1,1));
+  this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this);
 }
 Agent.prototype=new THREE.Object3D();
 
