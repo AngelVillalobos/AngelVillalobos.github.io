@@ -16,8 +16,8 @@ function Pieza()
   
   this.brazoizq.position.z=2.5;
   this.brazoizq.position.y=3.5;
-  this.brazoizq.position.x=-1.8;
-  this.brazoder.position.x=1.8;
+  this.brazoizq.position.x=-1.2;
+  this.brazoder.position.x=1.2;
   this.brazoder.position.z=2.5;
   this.brazoder.position.y=3.5;
   cuerpo.position.z=2.5;
@@ -48,6 +48,8 @@ function loop()
   //pieza.rotateY(0.1);
   pieza.piernaizq.rotateX(0.01*b);
   pieza.piernader.rotateX(-0.01*b);
+  pieza.brazoizq.rotateY(0.01*b);
+  pieza.brazoder.rotateY(-0.01*b);
   if (a>=100)
   {
     b=-1;
