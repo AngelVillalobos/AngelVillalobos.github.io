@@ -36,10 +36,6 @@ function Agent(x=0,y=0)
   THREE.Object3D.call(this);
   this.position.x=x;
   this.position.y=y;
-  this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
-  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
-  this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(5,1,1));
-  this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(5,1,1));
 }
 Agent.prototype=new THREE.Object3D();
 
@@ -298,6 +294,23 @@ Caballo.prototype.operations.rotateCCW=function(pieza,angle)
     angle=Math.PI/2;
   pieza.rotation.z+=angle;
 };
+
+
+///////////////PIERNAS Y BRAZOS///////////////
+function PB(pieza)
+{
+  THREE.Object3D.call(this);
+  var PIEZA=pieza;
+  this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
+  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
+  this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(5,1,1));
+  this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(5,1,1));
+  this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,PIEZA);
+}
+
+
+
+
 ///////////////PEON///////////////
 function Peon(sTP,x,y)
 {
@@ -316,7 +329,7 @@ function Peon(sTP,x,y)
   this.add(this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
-  this.add(this.actuator.brazoizq,this.actuator.brazoder,this.actuator.piernaizq,this.actuator.piernader,this.actuator);
+  PB(this.actuator);//this.add(this.actuator.brazoizq,this.actuator.brazoder,this.actuator.piernaizq,this.actuator.piernader,this.actuator);
   this.actuator.castShadow=true;
 }
 Peon.prototype=new Agent();
