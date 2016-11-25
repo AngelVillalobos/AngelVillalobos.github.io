@@ -362,11 +362,15 @@ function Peon(sTP,x,y)
   this.position.z=0.4;
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
-  this.add(this.actuator);
+  this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
+  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
+  this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(5,1,1));
+  this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(5,1,1));
+  this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
-  PB(this.actuator);
+  //PB(this.actuator);
 }
 Peon.prototype=new Agent();
 
