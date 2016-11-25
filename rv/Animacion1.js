@@ -29,6 +29,9 @@ function setup()
   pieza=new Pieza();
   pieza.rotateY(0.2);
   pieza.piernaizq.rotateX(-Math.PI/6);
+  pieza.piernader.rotateX(Math.PI/6);
+  pieza.brazoizq.rotateY(-Math.PI/6);
+  pieza.brazoder.rotateY(Math.PI/6);
   escena = new THREE.Scene();
   escena.add(pieza);
   camara = new THREE.PerspectiveCamera();
@@ -62,6 +65,10 @@ function loop()
   }
   else
   {
+    pieza.piernaizq.rotateX(0.05*b);
+  pieza.piernader.rotateX(-0.05*b);
+  pieza.brazoizq.rotateY(0.05*b);
+  pieza.brazoder.rotateY(-0.05*b);
     b=1;
   }
 
