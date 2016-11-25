@@ -224,11 +224,11 @@ function Casillas(size,x,y)
 {
   cargador=new THREE.TextureLoader();
   if(sTC===1)
-    textura=cargador.load('marmol_blanco.jpg');
+    textura=cargador.load('marmolB.jpg');
   else if (sTC===2)
-    textura=cargador.load('marmol_negro.jpg');
+    textura=cargador.load('marmolN.jpg');
   else
-    textura=cargador.load('marmol_gris.jpg');
+    textura=cargador.load('marmolA.jpg');
   THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.4,10,10,10),new THREE.MeshLambertMaterial({map:textura}));
   this.size=size;
   this.receiveShadow=true;
