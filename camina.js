@@ -315,38 +315,6 @@ Caballo.prototype.operations.rotateCCW=function(pieza,angle)
     angle=Math.PI/2;
   pieza.rotation.z+=angle;
 };
-
-
-///////////////PIERNAS Y BRAZOS///////////////
-function PB(pieza)
-{
-  THREE.Object3D.call(this);
-  this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
-  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
-  this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(5,1,1));
-  this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(5,1,1));
-  this.pieza=pieza;
-  this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.pieza);
-  this.piernaizq.position.z=2.5;
-  this.piernaizq.position.y=-5;
-  this.piernaizq.position.x=-1.8;
-  this.piernader.position.x=1.8;
-  this.piernader.position.z=2.5;
-  this.piernader.position.y=-5;
-  
-  this.brazoizq.position.z=2.5;
-  this.brazoizq.position.y=2;
-  this.brazoizq.position.x=-2.5;
-  this.brazoder.position.x=2.5;
-  this.brazoder.position.z=2.5;
-  this.brazoder.position.y=2;
-
-
-}
-PB.prototype=new THREE.Object3D;
-
-
-
 ///////////////PEON///////////////
 function Peon(sTP,x,y)
 {
@@ -363,11 +331,12 @@ function Peon(sTP,x,y)
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(5,8,5),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(5,8,5),new THREE.MeshLambertMaterial({map:textura}));
+  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(2,5,2),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(8,5,5)),new THREE.MeshLambertMaterial({map:textura});
   this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(8,5,5),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq.position.set(-5,10,2.5)
   this.piernader.position.set(5,10,2.5);
+  this.piernader.rotateX(Math.PI/2);
   /*this.piernaizq.position.z=2.5;
   this.piernaizq.position.y=10;
   this.piernaizq.position.x=-5;
@@ -382,7 +351,7 @@ function Peon(sTP,x,y)
   this.brazoder.position.z=2.5;
   this.brazoder.position.y=2;*/
   
-  this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
+  this.add(/*this.brazoizq,this.brazoder,this.piernaizq,*/this.piernader,this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
