@@ -16,8 +16,8 @@ function Pieza()
   
   this.brazoizq.position.z=2.5;
   this.brazoizq.position.y=3.5;
-  this.brazoizq.position.x=-1.2;
-  this.brazoder.position.x=1.2;
+  this.brazoizq.position.x=-2.2;
+  this.brazoder.position.x=2.2;
   this.brazoder.position.z=2.5;
   this.brazoder.position.y=3.5;
   cuerpo.position.z=2.5;
