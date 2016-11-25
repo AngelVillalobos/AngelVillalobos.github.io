@@ -19,7 +19,7 @@ function setup()
 {
   pieza=new Pieza();
   pieza.rotateY(Math.PI/2);
-  pieza.piernaizq.rotateY(-Math.PI/6);
+  pieza.piernaizq.rotateX(-Math.PI/6);
   escena = new THREE.Scene();
   escena.add(pieza);
   camara = new THREE.PerspectiveCamera();
@@ -37,7 +37,7 @@ function loop()
   requestAnimationFrame(loop);
   a=a+1;
   //pieza.rotateY(0.1);
-  pieza.piernaizq.rotateY(0.01*b);
+  pieza.piernaizq.rotateX(0.01*b);
   if (a>=150)
   {
     b=-1;
