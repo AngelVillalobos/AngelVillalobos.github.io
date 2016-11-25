@@ -33,6 +33,7 @@ function setup()
   escena.add(pieza);
   camara = new THREE.PerspectiveCamera();
   camara.position.z=50;
+   camara.position.y=-50;
   renderizador = new THREE.WebGLRenderer();
   renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
   document.body.appendChild(renderizador.domElement);
@@ -50,10 +51,10 @@ function loop()
   pieza.piernader.rotateX(-0.05*b);
   pieza.brazoizq.rotateY(0.05*b);
   pieza.brazoder.rotateY(-0.05*b);
-  if (a>=100)
+  if (a>=50)
   {
     b=-1;
-    if(a>=200)
+    if(a>=100)
     {
       a=0;
     }
