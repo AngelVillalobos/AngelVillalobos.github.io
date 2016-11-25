@@ -42,6 +42,20 @@ function Agent(x=0,y=0)
   this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(5,1,1));
   var cuerpo=new THREE.Mesh(new THREE.BoxGeometry(5,10,5));
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,cuerpo);
+  this.piernaizq.position.z=2.5;
+  this.piernaizq.position.y=-5;
+  this.piernaizq.position.x=-1.8;
+  this.piernader.position.x=1.8;
+  this.piernader.position.z=2.5;
+  this.piernader.position.y=-5;
+  
+  this.brazoizq.position.z=2.5;
+  this.brazoizq.position.y=2;
+  this.brazoizq.position.x=-2.5;
+  this.brazoder.position.x=2.5;
+  this.brazoder.position.z=2.5;
+  this.brazoder.position.y=2;
+  cuerpo.position.z=2.5;
 }
 Agent.prototype=new THREE.Object3D();
 
