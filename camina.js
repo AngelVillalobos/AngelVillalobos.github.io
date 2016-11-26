@@ -96,12 +96,13 @@ Agent.prototype.operations.goStraightY=function(pieza,distance)
   b=Math.round(b);
   b= b/Math.pow(10,1);
   console.log(b);
-  if(b===0.5)
+  if(b===0.4)
     a=-0.1;
-  else if(b===-0.5)
+  else if(b===-0.4)
     a=0.1;
   pieza.piernader.rotation.x+=a;
-  console.log(pieza.piernader.rotation.x);
+  pieza.piernaizq.rotation.x+=-a;
+
     
 };
 
