@@ -568,8 +568,9 @@ function loop()
       case 111:
         X=environment.children[100].position.x;
         Y=environment.children[100].position.y;
-        if(seleccionF2==true)
-          environment.children[100].act();
+        if(seleccionF2==true){
+          environment.children[100].piernader.rotateX(0.05);
+          environment.children[100].act();}
       break;
       case 1100:
         X=environment.children[101].position.x;
