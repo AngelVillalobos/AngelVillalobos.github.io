@@ -1,22 +1,17 @@
-///////////////CONSTRUCTOR REY///////////////
-ReyGeometry=function()
+///////////////CONSTRUCTOR TORRE///////////////
+TorreGeometry=function()
 {
   THREE.Geometry.call(this);
-  var BaseRey1=new THREE.BoxGeometry(0.7,0.2,0.7);
-  var CuerpoRey1=new THREE.BoxGeometry(0.5,1.3,0.5);
-  var CoronaRey1=new THREE.BoxGeometry(0.3,0.3,0.3);
-  BaseRey1.translate(0,0,0);
-  CuerpoRey1.translate(0,0.5,0);
-  CoronaRey1.translate(0,1.3,0);
-  CoronaRey1.rotateY(Math.PI/4);
-  var BaseRey=new THREE.Mesh(BaseRey1);
-  var CuerpoRey=new THREE.Mesh(CuerpoRey1);
-  var CoronaRey=new THREE.Mesh(CoronaRey1);
-  this.merge(BaseRey.geometry,BaseRey.matrix);
-  this.merge(CuerpoRey.geometry,CuerpoRey.matrix);
-  this.merge(CoronaRey.geometry,CoronaRey.matrix);
+  var BaseTorre1=new THREE.BoxGeometry(0.7,0.2,0.7);
+  var CuerpoTorre1=new THREE.BoxGeometry(0.6,1.2,0.6);
+  BaseTorre1.translate(0,0,0);
+  CuerpoTorre1.translate(0,0.7,0);
+  var BaseTorre=new THREE.Mesh(BaseTorre1);
+  var CuerpoTorre=new THREE.Mesh(CuerpoTorre1);
+  this.merge(BaseTorre.geometry,BaseTorre.matrix);
+  this.merge(CuerpoTorre.geometry,CuerpoTorre.matrix);
 }
-ReyGeometry.prototype=new THREE.Geometry();
+TorreGeometry.prototype=new THREE.Geometry();
 ///////////////AGENTE///////////////
 function Agent(x=0,y=0)
 {
@@ -260,13 +255,13 @@ Environment.prototype.setMapPiezas=function(map)
   {
     for(var j=0;j<map.length;j++)
     {
-      if(map[i][j]==="r")
+      if(map[i][j]==="t")
       {
-        this.add(new Rey(true,(j*10)-45,(i*10)-45));
+        this.add(new Torre(true,(j*10)-45,(i*10)-45));
       }
-      if(map[i][j]==="R")
+      if(map[i][j]==="T")
       {
-        this.add(new Rey(false,(j*10)-45,(i*10)-45));
+        this.add(new Torre(false,(j*10)-45,(i*10)-45));
       }
     }
   }
@@ -278,8 +273,8 @@ function Sensor(position,direction)
 }
 Sensor.prototype = new THREE.Raycaster();
 
-///////////////REINA///////////////
-function Rey(sTP,x,y)
+///////////////TORRE///////////////
+function Torre(sTP,x,y)
 {
   cargador=new THREE.TextureLoader();
   Agent.call(this,x,y);
@@ -290,15 +285,15 @@ function Rey(sTP,x,y)
     textura=cargador.load('maderaB.jpg');
   this.position.set(x,y,4);
   this.sensor=new Sensor();
-  this.actuator=new THREE.Mesh(new ReyGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.actuator=new THREE.Mesh(new TorreGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,10),new THREE.MeshLambertMaterial({map:textura}));
   this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,10),new THREE.MeshLambertMaterial({map:textura}));
-  this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
-  this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
+  this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(1,6,1),new THREE.MeshLambertMaterial({map:textura}));
+  this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(1,6,1),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq.position.set(-1.8,0,0)
   this.piernader.position.set(1.8,0,0);
-  this.brazoder.position.set(1.8,0,4);
-  this.brazoizq.position.set(-1.8,0,4);
+  this.brazoder.position.set(0.4,1.4,4);
+  this.brazoizq.position.set(0.4,-1.4,4);
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
@@ -308,46 +303,34 @@ function Rey(sTP,x,y)
   this.brazoder.castShadow=true;
   this.brazoizq.castShadow=true;
 }
-Rey.prototype=new Agent();
+Torre.prototype=new Agent();
 
-Rey.prototype.sense=function(environment)
+Torre.prototype.sense=function(environment)
 {
   this.sensor.set(this.position,new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0));
   var obstaculo=this.sensor.intersectObjects(environment.children,true);
-  if((obstaculo.length>0 && (obstaculo[0].distance<=1)))
+  if((obstaculo.length>0 && (obstaculo[0].distance<=2)))
     this.sensor.colision=true;
   else
     this.sensor.colision=false;
 };
 
-Rey.prototype.plan=function(environment)
+Torre.prototype.plan=function(environment)
 {
-     this.actuator.commands=[];
-  //if(this.sensor.colision===true)
-  //{
-  //  this.actuator.commands.push('rotateCCW');
-  //}
-  //else
-  //{ 
-  // 
-    if( Math.abs(x-X)<=10 && Math.abs(y-Y)<=10 ){ 
-      if (x!==X && y!==Y && Math.abs(y-Y)===Math.abs(x-X))
-        this.actuator.commands.push('goDiagonal');
-      else if(x===X && y!==Y) 
-        this.actuator.commands.push('goStraightY');
-      else if(x!==X && y===Y)
-        this.actuator.commands.push('goStraightX');
-      else if(X===x&&Y===y)
-      {
-        this.actuator.commands.push('stop');
-        seleccionF2=false;
-        seleccionF1=false;
-      }
+    this.actuator.commands=[];
+    if(X!==x&&Y===y)
+      this.actuator.commands.push('goStraightX');
+     else if(Y!==y&&X===x) 
+      this.actuator.commands.push('goStraightY');
+     else if(X===x&&Y===y)
+    {
+      this.actuator.commands.push('stop');
+      seleccionF2=false;
+      seleccionF1=false;
     }
-  //}
 };
 
-Rey.prototype.operations.rotateCCW=function(pieza,angle)
+Torre.prototype.operations.rotateCCW=function(pieza,angle)
 {
   if(angle===undefined)
     angle=Math.PI/2;
