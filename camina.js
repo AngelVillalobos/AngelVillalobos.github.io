@@ -548,14 +548,14 @@ function setup()
   
   var Piezas=new Array();
   Piezas[0]="          ";
-  Piezas[1]="    p     ";
-  Piezas[2]="          ";
+  Piezas[1]="          ";
+  Piezas[2]=" pppppppp ";
   Piezas[3]="          ";
   Piezas[4]="          ";
   Piezas[5]="          ";
   Piezas[6]="          ";
-  Piezas[7]="          ";
-  Piezas[8]="     P    ";
+  Piezas[7]=" PPPPPPPP ";
+  Piezas[8]="          ";
   Piezas[9]="          ";
      
   environment=new Environment();
@@ -573,7 +573,7 @@ function setup()
   camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
   //120 -90
   camara.position.z=120;
-  //camara.position.y=-90;
+  camara.position.y=-90;
   camara.lookAt(new THREE.Vector3(0,0,0));
   /////RENDERIZADOR////
   renderizador = new THREE.WebGLRenderer();
