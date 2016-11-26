@@ -66,20 +66,11 @@ Agent.prototype.operations.goStraightX=function(pieza,distance)
       distance=-0.5; 
   }
   pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-  if (a>=2)
-  {
-    b=-1;
-    if(a>=4)
-    {
-      a=0;
-    }
-  }
-  else
-  {
-    b=1;
-  }
-  pieza.piernader.rotation.x+=0.01*b;
-  pieza.piernaizq.rotation.x+=-0.01*b;
+  if(pieza.piernader.rotation.x>0.1)
+    pieza.piernader.rotation.x+=-0.01;
+  else if(pieza.piernader.rotation.x<-0.1)
+    pieza.piernader.rotation.x+=0.01;
+  //pieza.piernaizq.rotation.x+=-0.01;
 };
 
 Agent.prototype.operations.goStraightY=function(pieza,distance)
@@ -94,20 +85,11 @@ Agent.prototype.operations.goStraightY=function(pieza,distance)
       distance=-0.5; 
   }
   pieza.position.y+=distance*Math.cos(pieza.rotation.z);
-  if (a>=2)
-  {
-    b=-1;
-    if(a>=4)
-    {
-      a=0;
-    }
-  }
-  else
-  {
-    b=1;
-  }
-  pieza.piernader.rotation.x+=0.01*b;
-  pieza.piernaizq.rotation.x+=-0.01*b;
+  if(pieza.piernader.rotation.x>0.1)
+    pieza.piernader.rotation.x+=-0.01;
+  else if(pieza.piernader.rotation.x<-0.1)
+    pieza.piernader.rotation.x+=0.01;
+  //pieza.piernaizq.rotation.x+=-0.01*b;
 };
 
 Agent.prototype.operations.goDiagonal=function(pieza,distance)
@@ -553,7 +535,7 @@ function setup()
   Piezas[5]="          ";
   Piezas[6]="          ";
   Piezas[7]="          ";
-  Piezas[8]="     P    ";
+  Piezas[8]="     C    ";
   Piezas[9]="          ";
      
   environment=new Environment();
