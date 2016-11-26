@@ -56,7 +56,6 @@ Agent.prototype.operations={};
 
 Agent.prototype.operations.goStraightX=function(pieza,distance)
 {
-  var a=b=0;
   if(distance===undefined)
   {
     if(X<x)
@@ -85,7 +84,6 @@ Agent.prototype.operations.goStraightX=function(pieza,distance)
 
 Agent.prototype.operations.goStraightY=function(pieza,distance)
 {
-  var a=b=0;
   if(distance===undefined)
    {
     if(Y<y)
@@ -633,7 +631,7 @@ function loop()
   renderizador.render(environment,camara);
 }
 
-var turno=false,sTC,id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
+var a=b=0,turno=false,sTC,id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
 
 setup();
 loop();
