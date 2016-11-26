@@ -595,7 +595,7 @@ function loop()
         X=environment.children[101].position.x;
         Y=environment.children[101].position.y;
         if(seleccionF2==true)
-        {
+        /*{
           if (a>=100)
           {
             b=-1;
@@ -608,7 +608,7 @@ function loop()
           {
             b=1;
           }
-          environment.children[101].piernader.rotation.x+=0.5*b;
+          environment.children[101].piernader.rotation.x+=0.5*b;*/
           environment.children[101].act(); }
       break;
       case 1000:
