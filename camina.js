@@ -330,11 +330,11 @@ function Peon(sTP,x,y)
   this.position.z=4;
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(5,8,5),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,7),new THREE.MeshLambertMaterial({map:textura}));
-  this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(8,5,5)),new THREE.MeshLambertMaterial({map:textura});
-  this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(8,5,5),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernaizq.position.set(-5,10,2.5)
+  //this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(5,8,5),new THREE.MeshLambertMaterial({map:textura}));
+  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,15));
+  //this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(8,5,5)),new THREE.MeshLambertMaterial({map:textura});
+  //this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(8,5,5),new THREE.MeshLambertMaterial({map:textura}));
+  //this.piernaizq.position.set(-5,10,2.5)
   this.piernader.position.set(2,0,-1);
   //this.piernader.rotateX(Math.PI/2);
   /*this.piernaizq.position.z=2.5;
@@ -428,7 +428,7 @@ function SeleccionD(event)
         turno=0;
       else
         turno=1;*/
-    
+    console.log(environment.children[101]);
     console.log(turno);
     //console.log(environment.children)
     if(seleccionF1==false)
