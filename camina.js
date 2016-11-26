@@ -368,12 +368,12 @@ function Peon(sTP,x,y)
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,10),new THREE.MeshLambertMaterial({map:textura}));
   this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,10),new THREE.MeshLambertMaterial({map:textura}));
-  this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(5,1,1),new THREE.MeshLambertMaterial({map:textura}));
-  this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(5,1,1),new THREE.MeshLambertMaterial({map:textura}));
+  this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(8,1,1),new THREE.MeshLambertMaterial({map:textura}));
+  this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(8,1,1),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq.position.set(-1.8,0,0)
   this.piernader.position.set(1.8,0,0);
-  this.brazoder.position.set(1.5,0,4);
-  this.brazoizq.position.set(-1.5,0,4);
+  this.brazoder.position.set(1.8,0,4);
+  this.brazoizq.position.set(-1.8,0,4);
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
