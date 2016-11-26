@@ -452,12 +452,12 @@ function setup()
   var Piezas=new Array();
   Piezas[0]="          ";
   Piezas[1]="          ";
-  Piezas[2]="  r       ";
+  Piezas[2]="  t       ";
   Piezas[3]="          ";
   Piezas[4]="          ";
   Piezas[5]="          ";
   Piezas[6]="          ";
-  Piezas[7]="       R  ";
+  Piezas[7]="       T  ";
   Piezas[8]="          ";
   Piezas[9]="          ";
      
