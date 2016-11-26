@@ -114,7 +114,7 @@ Agent.prototype.operations.goStraightY=function(pieza,distance)
     a=0.05;
   pieza.piernader.rotation.x+=a;
   pieza.piernaizq.rotation.x+=-a;
-  c=pieza.brazoder.rotation.x*Math.pow(10, 1);
+  c=pieza.brazoder.rotation.z*Math.pow(10, 1);
   c=Math.round(c);
   c= c/Math.pow(10,1);
   console.log(c);
@@ -122,8 +122,8 @@ Agent.prototype.operations.goStraightY=function(pieza,distance)
     d=-0.05;
   else if(c===-0.15)
     d=0.05;
-  pieza.brazoder.rotation.y+=d;
-  pieza.brazoizq.rotation.y+=d;    
+  pieza.brazoder.rotation.z+=d;
+  pieza.brazoizq.rotation.z+=d;    
 };
 
 Agent.prototype.operations.goDiagonal=function(pieza,distance)
@@ -573,7 +573,7 @@ function setup()
   camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
   //120 -90
   camara.position.z=120;
-  camara.position.y=-90;
+  //camara.position.y=-90;
   camara.lookAt(new THREE.Vector3(0,0,0));
   /////RENDERIZADOR////
   renderizador = new THREE.WebGLRenderer();
