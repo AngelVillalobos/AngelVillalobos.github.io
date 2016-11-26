@@ -58,6 +58,7 @@ Agent.prototype.operations.goStraightX=function(pieza,distance)
 {
   if(distance===undefined)
   {
+    var b;
     if(X<x)
       distance=0.5;
     else if(X===x)
@@ -66,11 +67,15 @@ Agent.prototype.operations.goStraightX=function(pieza,distance)
       distance=-0.5; 
   }
   pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-  if(pieza.piernader.rotation.x===0.5)
-    a=-0.1;
-  else if(pieza.piernader.rotation.x===-0.5)
-    a=0.1;
+  b=pieza.piernader.rotation.x*Math.pow(10, 1);
+  b=Math.round(b);
+  b= b/Math.pow(10,1);
+  if(b===0.5)
+    a=-0.2;
+  else if(b===-0.5)
+    a=0.2;
   pieza.piernader.rotation.x+=a;
+  console.log(pieza.piernader.rotation.x);
 };
 
 Agent.prototype.operations.goStraightY=function(pieza,distance)
