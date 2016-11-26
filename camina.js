@@ -571,7 +571,7 @@ function loop()
         if(seleccionF2==true)
           environment.children[100].act();
       break;
-      case 110:
+      case 115:
         X=environment.children[101].position.x;
         Y=environment.children[101].position.y;
         if(seleccionF2==true)
@@ -583,12 +583,12 @@ function loop()
   {
     switch(id){
       case 110:
-        X=environment.children[102].position.x;
-        Y=environment.children[102].position.y;
+        X=environment.children[100].position.x;
+        Y=environment.children[100].position.y;
         if(seleccionF2==true)
-          environment.children[102].act(); 
+          environment.children[100].act(); 
       break;
-      case 110:
+      case 115:
         X=environment.children[103].position.x;
         Y=environment.children[103].position.y;
         if(seleccionF2==true)
