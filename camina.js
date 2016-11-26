@@ -517,7 +517,7 @@ function setup()
   Piezas[1]="          ";
   Piezas[2]="          ";
   Piezas[3]="          ";
-  Piezas[4]="    P     ";
+  Piezas[4]="     P    ";
   Piezas[5]="          ";
   Piezas[6]="          ";
   Piezas[7]="          ";
