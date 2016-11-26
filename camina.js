@@ -97,9 +97,9 @@ Agent.prototype.operations.goStraightY=function(pieza,distance)
   b= b/Math.pow(10,1);
   console.log(b);
   if(b===0.5)
-    a=-0.2;
+    a=-0.1;
   else if(b===-0.5)
-    a=0.2;
+    a=0.1;
   pieza.piernader.rotation.x+=a;
   console.log(pieza.piernader.rotation.x);
     
