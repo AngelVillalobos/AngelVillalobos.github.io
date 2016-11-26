@@ -140,6 +140,26 @@ Agent.prototype.operations.goDiagonal=function(pieza,distance)
     else
       distance=-0.5; 
   }
+  b=pieza.piernader.rotation.x*Math.pow(10, 1);
+  b=Math.round(b);
+  b= b/Math.pow(10,1);
+  console.log(b);
+  if(b===0.3)
+    a=-0.05;
+  else if(b===-0.3)
+    a=0.05;
+  pieza.piernader.rotation.x+=a;
+  pieza.piernaizq.rotation.x+=-a;
+  c=pieza.brazoder.rotation.z*Math.pow(10, 1);
+  c=Math.round(c);
+  c= c/Math.pow(10,1);
+  console.log(c);
+  if(c===0.3)
+    d=-0.05;
+  else if(c===-0.3)
+    d=0.05;
+  pieza.brazoder.rotation.z+=d;
+  pieza.brazoizq.rotation.z+=d;
 };
 
 Agent.prototype.operations.stop=function(pieza,distance)
