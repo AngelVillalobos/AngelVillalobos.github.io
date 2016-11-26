@@ -268,9 +268,7 @@ function Alfil(sTP,x,y)
     textura=cargador.load('maderaN.jpg');
   else
     textura=cargador.load('maderaB.jpg');
-  this.position.x=x;
-  this.position.y=y;
-  this.position.z=0.4;
+  this.position.set(x,y,5);
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new AlfilGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,10),new THREE.MeshLambertMaterial({map:textura}));
@@ -504,7 +502,7 @@ function loop()
   else
   {
     switch(id){
-      case 113:
+      case 117:
         X=environment.children[101].position.x;
         Y=environment.children[101].position.y;
         if(seleccionF2==true)
