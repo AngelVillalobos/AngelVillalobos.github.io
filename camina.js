@@ -71,6 +71,7 @@ Agent.prototype.operations.goStraightX=function(pieza,distance)
 
 Agent.prototype.operations.goStraightY=function(pieza,distance)
 {
+  var a=b=0;
   if(distance===undefined)
    {
     if(Y<y)
@@ -81,7 +82,20 @@ Agent.prototype.operations.goStraightY=function(pieza,distance)
       distance=-0.5; 
   }
   pieza.position.y+=distance*Math.cos(pieza.rotation.z);
-  pieza.piernader.rotation.x+=0.1;
+  if (a>=100)
+  {
+    b=-1;
+    if(a>=200)
+    {
+      a=0;
+    }
+  }
+  else
+  {
+    b=1;
+  }
+  pieza.piernader.rotation.x+=0.1*b;
+  pieza.piernaizq.rotation.x+=-0.1*b;
 };
 
 Agent.prototype.operations.goDiagonal=function(pieza,distance)
@@ -259,6 +273,12 @@ function Caballo(sTP,x,y)
   this.cnt = 0;
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new CaballoGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,10));
+  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,10));
+  //this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(8,5,5)),new THREE.MeshLambertMaterial({map:textura});
+  //this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(8,5,5),new THREE.MeshLambertMaterial({map:textura}));
+  this.piernaizq.position.set(-1.8,0,0)
+  this.piernader.position.set(1.8,0,0);
   this.add(this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
@@ -322,7 +342,6 @@ function Peon(sTP,x,y)
   //this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(8,5,5),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq.position.set(-1.8,0,0)
   this.piernader.position.set(1.8,0,0);
-  //this.piernader.rotateX(Math.PI/2);
   /*this.piernaizq.position.z=2.5;
   this.piernaizq.position.y=10;
   this.piernaizq.position.x=-5;
