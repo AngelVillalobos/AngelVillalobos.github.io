@@ -1,18 +1,22 @@
-///////////////CONSTRUCTOR ALFIL///////////////
-AlfilGeometry=function()
+///////////////CONSTRUCTOR REINA///////////////
+ReyGeometry=function()
 {
   THREE.Geometry.call(this);
-  var BaseAlfil1=new THREE.BoxGeometry(0.7,0.2,0.7);
-  var CuerpoAlfil1=new THREE.ConeGeometry(0.45,1.2,4,1,false,Math.PI/4);
-  BaseAlfil1.translate(0,0,0);
-  CuerpoAlfil1.translate(0,0.7,0); 
-  var BaseAlfil=new THREE.Mesh(BaseAlfil1);
-  var CuerpoAlfil=new THREE.Mesh(CuerpoAlfil1);
-  var AlfilForma = new THREE.Geometry();
-  this.merge(BaseAlfil.geometry,BaseAlfil.matrix);
-  this.merge(CuerpoAlfil.geometry,CuerpoAlfil.matrix);
+  var BaseRey1=new THREE.BoxGeometry(0.7,0.2,0.7);
+  var CuerpoRey1=new THREE.BoxGeometry(0.5,1.3,0.5);
+  var CoronaRey1=new THREE.BoxGeometry(0.3,0.3,0.3);
+  BaseRey1.translate(0,0,0);
+  CuerpoRey1.translate(0,0.5,0);
+  CoronaRey1.translate(0,1.3,0);
+  CoronaRey1.rotateY(Math.PI/4);
+  var BaseRey=new THREE.Mesh(BaseRey1);
+  var CuerpoRey=new THREE.Mesh(CuerpoRey1);
+  var CoronaRey=new THREE.Mesh(CoronaRey1);
+  this.merge(BaseRey.geometry,BaseRey.matrix);
+  this.merge(CuerpoRey.geometry,CuerpoRey.matrix);
+  this.merge(CoronaRey.geometry,CoronaRey.matrix);
 }
-AlfilGeometry.prototype=new THREE.Geometry();
+ReyGeometry.prototype=new THREE.Geometry();
 ///////////////AGENTE///////////////
 function Agent(x=0,y=0)
 {
@@ -256,13 +260,13 @@ Environment.prototype.setMapPiezas=function(map)
   {
     for(var j=0;j<map.length;j++)
     {
-      if(map[i][j]==="a")
+      if(map[i][j]==="x")
       {
-        this.add(new Alfil(true,(j*10)-45,(i*10)-45));
+        this.add(new Reina(true,(j*10)-45,(i*10)-45));
       }
-      if(map[i][j]==="A")
+      if(map[i][j]==="X")
       {
-        this.add(new Alfil(false,(j*10)-45,(i*10)-45));
+        this.add(new Reina(false,(j*10)-45,(i*10)-45));
       }
     }
   }
@@ -274,8 +278,8 @@ function Sensor(position,direction)
 }
 Sensor.prototype = new THREE.Raycaster();
 
-///////////////ALFIL///////////////
-function Alfil(sTP,x,y)
+///////////////REINA///////////////
+function Reina(sTP,x,y)
 {
   cargador=new THREE.TextureLoader();
   Agent.call(this,x,y);
@@ -284,29 +288,19 @@ function Alfil(sTP,x,y)
     textura=cargador.load('maderaN.jpg');
   else
     textura=cargador.load('maderaB.jpg');
-  this.position.set(x,y,5);
+  this.position.x=x;
+  this.position.y=y;
+  this.position.z=0.4;
   this.sensor=new Sensor();
-  this.actuator=new THREE.Mesh(new AlfilGeometry(),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,8),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,8),new THREE.MeshLambertMaterial({map:textura}));
-  this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(5,1,1),new THREE.MeshLambertMaterial({map:textura}));
-  this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(5,1,1),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernaizq.position.set(-1.8,0,-1.3)
-  this.piernader.position.set(1.8,0,-1.3);
-  this.brazoder.position.set(2.5,0,4);
-  this.brazoizq.position.set(-2.5,0,4);
-  this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
+  this.actuator=new THREE.Mesh(new ReinaGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.add(this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
-  this.piernader.castShadow=true;
-  this.piernaizq.castShadow=true;
-  this.brazoder.castShadow=true;
-  this.brazoizq.castShadow=true;
 }
-Alfil.prototype=new Agent();
+Reina.prototype=new Agent();
 
-Alfil.prototype.sense=function(environment)
+Reina.prototype.sense=function(environment)
 {
   this.sensor.set(this.position,new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0));
   var obstaculo=this.sensor.intersectObjects(environment.children,true);
@@ -316,12 +310,15 @@ Alfil.prototype.sense=function(environment)
     this.sensor.colision=false;
 };
 
-Alfil.prototype.plan=function(environment)
+Reina.prototype.plan=function(environment)
 {
-    this.actuator.commands=[];
-    if(X!==x&&Y!==y&&Math.abs(y-Y)===Math.abs(x-X)){
+    this.actuator.commands=[]; 
+    if(X!==x&&Y===y)
+      this.actuator.commands.push('goStraightX');
+    else if(Y!==y&&X===x) 
+      this.actuator.commands.push('goStraightY');
+    else if(Y!==y&&X!==x&&Math.abs(y-Y)===Math.abs(x-X))
       this.actuator.commands.push('goDiagonal');
-    }
     else if(X===x&&Y===y)
     {
       this.actuator.commands.push('stop');
@@ -330,7 +327,7 @@ Alfil.prototype.plan=function(environment)
     }
 };
 
-Alfil.prototype.operations.rotateCCW=function(pieza,angle)
+Reina.prototype.operations.rotateCCW=function(pieza,angle)
 {
   if(angle===undefined)
     angle=Math.PI/2;
@@ -452,12 +449,12 @@ function setup()
   var Piezas=new Array();
   Piezas[0]="          ";
   Piezas[1]="          ";
-  Piezas[2]="  a       ";
+  Piezas[2]="  x       ";
   Piezas[3]="          ";
   Piezas[4]="          ";
   Piezas[5]="          ";
   Piezas[6]="          ";
-  Piezas[7]="       A  ";
+  Piezas[7]="       X  ";
   Piezas[8]="          ";
   Piezas[9]="          ";
      
