@@ -70,6 +70,7 @@ Agent.prototype.operations.goStraightX=function(pieza,distance)
   b=pieza.piernader.rotation.x*Math.pow(10, 1);
   b=Math.round(b);
   b= b/Math.pow(10,1);
+  console.log(b);
   if(b===0.5)
     a=-0.2;
   else if(b===-0.5)
@@ -91,11 +92,16 @@ Agent.prototype.operations.goStraightY=function(pieza,distance)
   }
   pieza.position.y+=distance*Math.cos(pieza.rotation.z);
   
-  if(pieza.piernader.rotation.x===0.5)
-    a=-0.1;
-  else if(pieza.piernader.rotation.x===-0.5)
-    a=0.1;
+  b=pieza.piernader.rotation.x*Math.pow(10, 1);
+  b=Math.round(b);
+  b= b/Math.pow(10,1);
+  console.log(b);
+  if(b===0.5)
+    a=-0.2;
+  else if(b===-0.5)
+    a=0.2;
   pieza.piernader.rotation.x+=a;
+  console.log(pieza.piernader.rotation.x);
     
 };
 
@@ -434,8 +440,8 @@ function SeleccionD(event)
         turno=0;
       else
         turno=1;*/
-    console.log(environment.children[101]);
-    console.log(turno);
+    //console.log(environment.children[101]);
+    //console.log(turno);
     //console.log(environment.children)
     if(seleccionF1==false)
       id=seleccion[0].object.id;
@@ -490,8 +496,8 @@ function SeleccionD(event)
       y=25;
     else if(30<y&&y<40)
       y=35;
-    console.log(x);
-    console.log(y);
+    //nsole.log(x);
+    //console.log(y);
   }
 }
 
