@@ -227,10 +227,10 @@ Peon.prototype.sense=function(environment)
   var obstaculo=this.sensor.intersectObjects(environment.children,true);
   //console.log(obstaculo[0].distance)
   if((obstaculo.length>0 && (obstaculo[0].distance<=0)))
-  {console.log(obstaculo[0])
+  {
     this.sensor.colision=true;}
   else
-  {console.log(obstaculo[0].distance);
+  {
     this.sensor.colision=false;}
 };
 
