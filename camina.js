@@ -94,8 +94,8 @@ Agent.prototype.operations.goStraightY=function(pieza,distance)
   {
     b=1;
   }
-  pieza.piernader.rotation.x+=0.1*b;
-  pieza.piernaizq.rotation.x+=-0.1*b;
+  pieza.piernader.rotation.x+=0.001*b;
+  pieza.piernaizq.rotation.x+=-0.001*b;
 };
 
 Agent.prototype.operations.goDiagonal=function(pieza,distance)
