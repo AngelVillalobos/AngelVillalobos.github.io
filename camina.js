@@ -600,8 +600,7 @@ function loop()
   else
   {
     switch(id){
-      case 115:
-        var a=b=0;
+      case 117:
         X=environment.children[101].position.x;
         Y=environment.children[101].position.y;
         if(seleccionF2==true)
