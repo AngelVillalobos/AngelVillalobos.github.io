@@ -190,7 +190,7 @@ function Peon(x,y)
   //
   this.position.x=x;
   this.position.y=y;
-  this.position.z=0.4;
+  this.position.z=5;
   this.texture=textura;
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
@@ -281,6 +281,20 @@ Peon.prototype.operations.goStraightX=function(pieza,distance)
       distance=-0.5; 
   }
   pieza.position.x+=distance*Math.cos(pieza.rotation.z);
+    if (a>=100)
+  {
+    b=-1;
+    if(a>=200)
+    {
+      a=0;
+    }
+  }
+  else
+  {
+    b=1;
+  }
+  pieza.piernader.rotation.x+=0.1*b;
+  pieza.piernaizq.rotation.x+=-0.1*b;
 };
 
 Peon.prototype.operations.goStraightY=function(pieza,distance)
@@ -295,6 +309,20 @@ Peon.prototype.operations.goStraightY=function(pieza,distance)
       distance=-0.5; 
   }
   pieza.position.y+=distance*Math.cos(pieza.rotation.z);
+    if (a>=100)
+  {
+    b=-1;
+    if(a>=200)
+    {
+      a=0;
+    }
+  }
+  else
+  {
+    b=1;
+  }
+  pieza.piernader.rotation.x+=0.1*b;
+  pieza.piernaizq.rotation.x+=-0.1*b;
 };
 
 Peon.prototype.operations.goStraight=function(pieza,distance)
@@ -476,7 +504,7 @@ function setup()
   var planoLejano=1000;
   camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
   camara.position.z=120;
-  //camara.position.y=-90;
+  camara.position.y=-90;
   camara.lookAt(new THREE.Vector3(0,0,0));
   /////RENDERIZADOR////
   renderizador = new THREE.WebGLRenderer();
