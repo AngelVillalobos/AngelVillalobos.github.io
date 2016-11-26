@@ -1,21 +1,22 @@
-///////////////CONSTRUCTOR REINA///////////////
-ReinaGeometry=function()
+///////////////CONSTRUCTOR REY///////////////
+ReyGeometry=function()
 {
   THREE.Geometry.call(this);
-  var BaseReina1=new THREE.BoxGeometry(0.7,0.2,0.7);
-  var CuerpoReina1=new THREE.CylinderGeometry(0.3,0.3,1.3,32);
-  var CoronaReina1=new THREE.SphereGeometry(0.23,32,32);
-  BaseReina1.translate(0,0,0);
-  CuerpoReina1.translate(0,0.5,0);
-  CoronaReina1.translate(0,1.3,0);
-  var BaseReina=new THREE.Mesh(BaseReina1);
-  var CuerpoReina=new THREE.Mesh(CuerpoReina1);
-  var CoronaReina=new THREE.Mesh(CoronaReina1);
-  this.merge(BaseReina.geometry,BaseReina.matrix);
-  this.merge(CuerpoReina.geometry,CuerpoReina.matrix);
-  this.merge(CoronaReina.geometry,CoronaReina.matrix);
+  var BaseRey1=new THREE.BoxGeometry(0.7,0.2,0.7);
+  var CuerpoRey1=new THREE.BoxGeometry(0.5,1.3,0.5);
+  var CoronaRey1=new THREE.BoxGeometry(0.3,0.3,0.3);
+  BaseRey1.translate(0,0,0);
+  CuerpoRey1.translate(0,0.5,0);
+  CoronaRey1.translate(0,1.3,0);
+  CoronaRey1.rotateY(Math.PI/4);
+  var BaseRey=new THREE.Mesh(BaseRey1);
+  var CuerpoRey=new THREE.Mesh(CuerpoRey1);
+  var CoronaRey=new THREE.Mesh(CoronaRey1);
+  this.merge(BaseRey.geometry,BaseRey.matrix);
+  this.merge(CuerpoRey.geometry,CuerpoRey.matrix);
+  this.merge(CoronaRey.geometry,CoronaRey.matrix);
 }
-ReinaGeometry.prototype=new THREE.Geometry();
+ReyGeometry.prototype=new THREE.Geometry();
 ///////////////AGENTE///////////////
 function Agent(x=0,y=0)
 {
@@ -278,7 +279,7 @@ function Sensor(position,direction)
 Sensor.prototype = new THREE.Raycaster();
 
 ///////////////REINA///////////////
-function Reina(sTP,x,y)
+function Rey(sTP,x,y)
 {
   cargador=new THREE.TextureLoader();
   Agent.call(this,x,y);
@@ -289,7 +290,7 @@ function Reina(sTP,x,y)
     textura=cargador.load('maderaB.jpg');
   this.position.set(x,y,4);
   this.sensor=new Sensor();
-  this.actuator=new THREE.Mesh(new ReinaGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.actuator=new THREE.Mesh(new ReyGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,10),new THREE.MeshLambertMaterial({map:textura}));
   this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,10),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
@@ -307,9 +308,9 @@ function Reina(sTP,x,y)
   this.brazoder.castShadow=true;
   this.brazoizq.castShadow=true;
 }
-Reina.prototype=new Agent();
+Rey.prototype=new Agent();
 
-Reina.prototype.sense=function(environment)
+Rey.prototype.sense=function(environment)
 {
   this.sensor.set(this.position,new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0));
   var obstaculo=this.sensor.intersectObjects(environment.children,true);
@@ -319,24 +320,34 @@ Reina.prototype.sense=function(environment)
     this.sensor.colision=false;
 };
 
-Reina.prototype.plan=function(environment)
+Rey.prototype.plan=function(environment)
 {
-    this.actuator.commands=[]; 
-    if(X!==x&&Y===y)
-      this.actuator.commands.push('goStraightX');
-    else if(Y!==y&&X===x) 
-      this.actuator.commands.push('goStraightY');
-    else if(Y!==y&&X!==x&&Math.abs(y-Y)===Math.abs(x-X))
-      this.actuator.commands.push('goDiagonal');
-    else if(X===x&&Y===y)
-    {
-      this.actuator.commands.push('stop');
-      seleccionF2=false;
-      seleccionF1=false;
+     this.actuator.commands=[];
+  //if(this.sensor.colision===true)
+  //{
+  //  this.actuator.commands.push('rotateCCW');
+  //}
+  //else
+  //{ 
+  // 
+    if( Math.abs(x-X)<=10 && Math.abs(y-Y)<=10 ){ 
+      if (x!==X && y!==Y && Math.abs(y-Y)===Math.abs(x-X))
+        this.actuator.commands.push('goDiagonal');
+      else if(x===X && y!==Y) 
+        this.actuator.commands.push('goStraightY');
+      else if(x!==X && y===Y)
+        this.actuator.commands.push('goStraightX');
+      else if(X===x&&Y===y)
+      {
+        this.actuator.commands.push('stop');
+        seleccionF2=false;
+        seleccionF1=false;
+      }
     }
+  //}
 };
 
-Reina.prototype.operations.rotateCCW=function(pieza,angle)
+Rey.prototype.operations.rotateCCW=function(pieza,angle)
 {
   if(angle===undefined)
     angle=Math.PI/2;
