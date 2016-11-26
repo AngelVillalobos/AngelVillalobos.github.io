@@ -514,14 +514,14 @@ function setup()
   
   var Piezas=new Array();
   Piezas[0]="          ";
-  Piezas[1]="          ";
+  Piezas[1]="    c     ";
   Piezas[2]="          ";
   Piezas[3]="          ";
-  Piezas[4]="     P    ";
+  Piezas[4]="          ";
   Piezas[5]="          ";
   Piezas[6]="          ";
   Piezas[7]="          ";
-  Piezas[8]="          ";
+  Piezas[8]="     P    ";
   Piezas[9]="          ";
      
   environment=new Environment();
