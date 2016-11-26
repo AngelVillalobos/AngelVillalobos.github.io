@@ -260,13 +260,13 @@ Environment.prototype.setMapPiezas=function(map)
   {
     for(var j=0;j<map.length;j++)
     {
-      if(map[i][j]==="x")
+      if(map[i][j]==="r")
       {
-        this.add(new Reina(true,(j*10)-45,(i*10)-45));
+        this.add(new Rey(true,(j*10)-45,(i*10)-45));
       }
-      if(map[i][j]==="X")
+      if(map[i][j]==="R")
       {
-        this.add(new Reina(false,(j*10)-45,(i*10)-45));
+        this.add(new Rey(false,(j*10)-45,(i*10)-45));
       }
     }
   }
@@ -469,12 +469,12 @@ function setup()
   var Piezas=new Array();
   Piezas[0]="          ";
   Piezas[1]="          ";
-  Piezas[2]="  x       ";
+  Piezas[2]="  r       ";
   Piezas[3]="          ";
   Piezas[4]="          ";
   Piezas[5]="          ";
   Piezas[6]="          ";
-  Piezas[7]="       X  ";
+  Piezas[7]="       R  ";
   Piezas[8]="          ";
   Piezas[9]="          ";
      
