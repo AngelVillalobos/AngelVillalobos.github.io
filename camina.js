@@ -85,10 +85,13 @@ Agent.prototype.operations.goStraightY=function(pieza,distance)
       distance=-0.5; 
   }
   pieza.position.y+=distance*Math.cos(pieza.rotation.z);
+  
   if(pieza.piernader.rotation.x===1)
-    pieza.piernader.rotation.x+=-0.01;
+    a=-0.01;
   else if(pieza.piernader.rotation.x===-1)
-    pieza.piernader.rotation.x+=0.01;
+    a=0.01;
+  pieza.piernader.rotation.x+=a;
+    
 };
 
 Agent.prototype.operations.goDiagonal=function(pieza,distance)
@@ -611,7 +614,7 @@ function loop()
   renderizador.render(environment,camara);
 }
 
-var a=b=0,turno=false,sTC,id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
+var a=0.01,turno=false,sTC,id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
 
 setup();
 loop();
