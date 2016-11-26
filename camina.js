@@ -584,10 +584,24 @@ function loop()
   {
     switch(id){
       case 115:
+        var a=b=0;
         X=environment.children[101].position.x;
         Y=environment.children[101].position.y;
-        if(seleccionF2==true){
-          environment.children[101].piernader.rotation.x+=2;
+        if(seleccionF2==true)
+        {
+          if (a>=100)
+          {
+            b=-1;
+            if(a>=200)
+            {
+              a=0;
+            }
+          }
+          else
+          {
+            b=1;
+          }
+          environment.children[101].piernader.rotation.x+=0.5*b;
           environment.children[101].act(); }
       break;
       case 1000:
