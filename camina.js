@@ -488,7 +488,7 @@ function setup()
  
   document.documentElement.style.overflow = 'hidden';
     
-  var tablero=new Array();
+  /*var tablero=new Array();
   tablero[0]="BBBBBBBBBB";
   tablero[1]="BbnbnbnbnB";
   tablero[2]="BnbnbnbnbB";
@@ -498,18 +498,30 @@ function setup()
   tablero[6]="BnbnbnbnbB";
   tablero[7]="BbnbnbnbnB";
   tablero[8]="BnbnbnbnbB";
-  tablero[9]="BBBBBBBBBB";
+  tablero[9]="BBBBBBBBBB";*/
+  
+  var tablero=new Array();
+  tablero[0]="          ";
+  tablero[1]="          ";
+  tablero[2]="          ";
+  tablero[3]="          ";
+  tablero[4]="          ";
+  tablero[5]="          ";
+  tablero[6]="          ";
+  tablero[7]="          ";
+  tablero[8]="          ";
+  tablero[9]="          ";
   
   var Piezas=new Array();
   Piezas[0]="          ";
-  Piezas[1]="    c     ";
+  Piezas[1]="          ";
   Piezas[2]="          ";
   Piezas[3]="          ";
-  Piezas[4]="          ";
+  Piezas[4]="    P     ";
   Piezas[5]="          ";
   Piezas[6]="          ";
   Piezas[7]="          ";
-  Piezas[8]="    P     ";
+  Piezas[8]="         ";
   Piezas[9]="          ";
      
   environment=new Environment();
@@ -526,8 +538,8 @@ function setup()
   var planoLejano=1000;
   camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
   //120 -90
-  camara.position.z=120;
-  camara.position.y=-90;
+  camara.position.z=40;
+  camara.position.y=-20;
   camara.lookAt(new THREE.Vector3(0,0,0));
   /////RENDERIZADOR////
   renderizador = new THREE.WebGLRenderer();
