@@ -115,25 +115,21 @@ Agent.prototype.operations.goDiagonal=function(pieza,distance)
       distance=0.5;
       pieza.position.x+=distance*Math.cos(pieza.rotation.z);
       pieza.position.y+=distance*Math.cos(pieza.rotation.z);
-      pieza.piernader.rotation.x+=0.5;
     }
      else if(Y<y&&X>x){
       distance=0.5;
       pieza.position.x-=distance*Math.cos(pieza.rotation.z);
       pieza.position.y+=distance*Math.cos(pieza.rotation.z);
-       pieza.piernader.rotation.x+=0.5;
      }
      else if(Y>y&&X<x){
       distance=0.5;
       pieza.position.x+=distance*Math.cos(pieza.rotation.z);
       pieza.position.y-=distance*Math.cos(pieza.rotation.z);
-       pieza.piernader.rotation.x+=0.5;
      }
      else if(Y>y&&X>x){
       distance=0.5;
       pieza.position.x-=distance*Math.cos(pieza.rotation.z);
       pieza.position.y-=distance*Math.cos(pieza.rotation.z);
-       pieza.piernader.rotation.x+=0.5;
      }
     else if(Y===y)
       distance=0;
