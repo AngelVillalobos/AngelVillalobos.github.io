@@ -313,15 +313,15 @@ function Peon(sTP,x,y)
     textura=cargador.load('maderaB.jpg');
   this.position.x=x;
   this.position.y=y;
-  this.position.z=4;
+  this.position.z=5;
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,10));
   this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,10));
   //this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(8,5,5)),new THREE.MeshLambertMaterial({map:textura});
   //this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(8,5,5),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernaizq.position.set(-1.8,0,-1)
-  this.piernader.position.set(1.8,0,-1);
+  this.piernaizq.position.set(-1.8,0,0)
+  this.piernader.position.set(1.8,0,0);
   //this.piernader.rotateX(Math.PI/2);
   /*this.piernaizq.position.z=2.5;
   this.piernaizq.position.y=10;
