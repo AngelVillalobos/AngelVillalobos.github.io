@@ -1,35 +1,18 @@
-///////////////CONSTRUCTOR CABALLO///////////////
-CaballoGeometry=function()
+///////////////CONSTRUCTOR ALFIL///////////////
+AlfilGeometry=function()
 {
   THREE.Geometry.call(this);
-  var BaseCaballo1=new THREE.BoxGeometry(0.7,0.2,0.7);
-  var CuerpoCaballo1=new THREE.BoxGeometry(0.5,1,0.5);
-  var CabezaCaballo1=new THREE.BoxGeometry(0.3,0.3,0.5);
-  BaseCaballo1.translate(0,0,0);
-  CuerpoCaballo1.translate(0,0.3,0);
-  CabezaCaballo1.translate(0.3,0.6,0);
-  var BaseCaballo=new THREE.Mesh(BaseCaballo1);
-  var CuerpoCaballo=new THREE.Mesh(CuerpoCaballo1);
-  var CabezaCaballo=new THREE.Mesh(CabezaCaballo1); 
-  this.merge(BaseCaballo.geometry,BaseCaballo.matrix);
-  this.merge(CuerpoCaballo.geometry,CuerpoCaballo.matrix);
-  this.merge(CabezaCaballo.geometry,CabezaCaballo.matrix);
+  var BaseAlfil1=new THREE.BoxGeometry(0.7,0.2,0.7);
+  var CuerpoAlfil1=new THREE.ConeGeometry(0.45,1.2,4,1,false,Math.PI/4);
+  BaseAlfil1.translate(0,0,0);
+  CuerpoAlfil1.translate(0,0.7,0); 
+  var BaseAlfil=new THREE.Mesh(BaseAlfil1);
+  var CuerpoAlfil=new THREE.Mesh(CuerpoAlfil1);
+  var AlfilForma = new THREE.Geometry();
+  this.merge(BaseAlfil.geometry,BaseAlfil.matrix);
+  this.merge(CuerpoAlfil.geometry,CuerpoAlfil.matrix);
 }
-CaballoGeometry.prototype=new THREE.Geometry();
-///////////////CONSTRUCTOR PEON///////////////
-PeonGeometry=function()
-{
-  THREE.Geometry.call(this);
-  var BasePeon1=new THREE.BoxGeometry(0.7,0.2,0.7);
-  var CuerpoPeon1=new THREE.BoxGeometry(0.5,0.8,0.5);
-  BasePeon1.translate(0,0,0);
-  CuerpoPeon1.translate(0,0.4,0);
-  var BasePeon=new THREE.Mesh(BasePeon1);
-  var CuerpoPeon=new THREE.Mesh(CuerpoPeon1);
-  this.merge(BasePeon.geometry,BasePeon.matrix);
-  this.merge(CuerpoPeon.geometry,CuerpoPeon.matrix);
-}
-PeonGeometry.prototype=new THREE.Geometry();
+AlfilGeometry.prototype=new THREE.Geometry();
 ///////////////AGENTE///////////////
 function Agent(x=0,y=0)
 {
@@ -107,7 +90,6 @@ Agent.prototype.operations.goStraightY=function(pieza,distance)
   b=pieza.piernader.rotation.x*Math.pow(10, 1);
   b=Math.round(b);
   b= b/Math.pow(10,1);
-  console.log(b);
   if(b===0.3)
     a=-0.05;
   else if(b===-0.3)
@@ -117,7 +99,6 @@ Agent.prototype.operations.goStraightY=function(pieza,distance)
   c=pieza.brazoder.rotation.z*Math.pow(10, 1);
   c=Math.round(c);
   c= c/Math.pow(10,1);
-  console.log(c);
   if(c===0.3)
     d=-0.05;
   else if(c===-0.3)
@@ -228,26 +209,13 @@ Environment.prototype.setMapCasilla=function(map)
   {
     for(var j=0;j<map.length;j++)
     {
-      if(map[i][j]==="n")
+      if(map[i][j]==="a")
       {
-        sTC=1;
-        Casilla=new Casillas(10,(i*10)-45,(j*10)-45);
-        Casilla.receiveShadow=true;
-        this.add(Casilla);
+        this.add(new Alfil(true,(j*10)-45,(i*10)-45));
       }
-      else if(map[i][j]==="b")
+      if(map[i][j]==="A")
       {
-        sTC=2;
-        Casilla=new Casillas(10,(i*10)-45,(j*10)-45);
-        Casilla.receiveShadow=true;
-        this.add(Casilla);
-      }
-      else if(map[i][j]==="B")
-      {
-        sTC=3;
-        Borde=new Casillas(10,(i*10)-45,(j*10)-45);
-        Borde.receiveShadow=true;
-        this.add(Borde);
+        this.add(new Alfil(false,(j*10)-45,(i*10)-45));
       }
     }
   }
@@ -285,8 +253,8 @@ function Sensor(position,direction)
 }
 Sensor.prototype = new THREE.Raycaster();
 
-///////////////CABALLO///////////////
-function Caballo(sTP,x,y)
+///////////////ALFIL///////////////
+function Alfil(sTP,x,y)
 {
   cargador=new THREE.TextureLoader();
   Agent.call(this,x,y);
@@ -297,30 +265,17 @@ function Caballo(sTP,x,y)
     textura=cargador.load('maderaB.jpg');
   this.position.x=x;
   this.position.y=y;
-  this.position.z=4;
-  this.cnt = 0;
+  this.position.z=0.4;
   this.sensor=new Sensor();
-  this.actuator=new THREE.Mesh(new CaballoGeometry(),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,10),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,10),new THREE.MeshLambertMaterial({map:textura}));
-  this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(1,6,1),new THREE.MeshLambertMaterial({map:textura}));
-  this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(1,6,1),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernaizq.position.set(-1.8,0,0)
-  this.piernader.position.set(1.8,0,0);
-  this.brazoder.position.set(0.4,1.4,4);
-  this.brazoizq.position.set(0.4,-1.4,4);
-  this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
+  this.actuator=new THREE.Mesh(new AlfilGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.add(this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
-  this.piernader.castShadow=true;
-  this.piernaizq.castShadow=true;
-  this.brazoder.castShadow=true;
-  this.brazoizq.castShadow=true;
 }
-Caballo.prototype=new Agent();
+Alfil.prototype=new Agent();
 
-Caballo.prototype.sense=function(environment)
+Alfil.prototype.sense=function(environment)
 {
   this.sensor.set(this.position,new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0));
   var obstaculo=this.sensor.intersectObjects(environment.children,true);
@@ -330,114 +285,21 @@ Caballo.prototype.sense=function(environment)
     this.sensor.colision=false;
 };
 
-Caballo.prototype.plan=function(environment)
+Alfil.prototype.plan=function(environment)
 {
-  this.actuator.commands=[];
-  if( ((Math.abs(x-X)<=20 && Math.abs(y-Y)<=10) || (Math.abs(x-X)<=10 && Math.abs(y-Y)<=20)) && Math.abs(x-X)!==Math.abs(y-Y) ){
-    if(X!==x&&Y!==y){
-      this.actuator.commands.push('goStraightX');
-      this.cnt = 1;}
-    else if (X===X&&Y!==y&&this.cnt!==0)
-      this.actuator.commands.push('goStraightY');
-  }
-  else if(X===x&&Y===y)
-    {
-      this.actuator.commands.push('stop');
-      this.cnt = 0;
-      seleccionF2=false;
-      seleccionF1=false;
+    this.actuator.commands=[];
+    if(X!==x&&Y!==y&&Math.abs(y-Y)===Math.abs(x-X)){
+      this.actuator.commands.push('goDiagonal');
     }
-};
-
-Caballo.prototype.operations.rotateCCW=function(pieza,angle)
-{
-  if(angle===undefined)
-    angle=Math.PI/2;
-  pieza.rotation.z+=angle;
-};
-///////////////PEON///////////////
-function Peon(sTP,x,y)
-{
-  cargador=new THREE.TextureLoader();
-  Agent.call(this,x,y);
-  this.sTP = sTP;
-  if(this.sTP===true)
-    textura=cargador.load('maderaN.jpg');
-  else
-    textura=cargador.load('maderaB.jpg');
-  this.position.x=x;
-  this.position.y=y;
-  this.position.z=5;
-  this.sensor=new Sensor();
-  this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,10),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,10),new THREE.MeshLambertMaterial({map:textura}));
-  this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
-  this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernaizq.position.set(-1.8,0,0)
-  this.piernader.position.set(1.8,0,0);
-  this.brazoder.position.set(1.8,0,4);
-  this.brazoizq.position.set(-1.8,0,4);
-  this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
-  this.actuator.scale.set(9.5,9.5,9.5);
-  this.actuator.rotateX(Math.PI/2);
-  this.actuator.castShadow=true;
-  this.piernader.castShadow=true;
-  this.piernaizq.castShadow=true;
-  this.brazoder.castShadow=true;
-  this.brazoizq.castShadow=true;
-}
-Peon.prototype=new Agent();
-
-Peon.prototype.sense=function(environment)
-{
-  this.sensor.set(this.position,new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0));
-  var obstaculo=this.sensor.intersectObjects(environment.children,true);
-  if((obstaculo.length>0 && (obstaculo[0].distance<=1)))
-    this.sensor.colision=true;
-  else
-    this.sensor.colision=false;
-};
-
-Peon.prototype.plan=function(environment)
-{
-     this.actuator.commands=[];
-  //if(this.sensor.colision===true)
-  //{
-  //  this.actuator.commands.push('rotateCCW');
-  //}
-  //else
-  //{
-  if (this.sTP===true){
-    if(Y>=-25 && Y<-15) {
-      if( y-Y<=20 && y-Y>0 && x===X ) 
-        this.actuator.commands.push('goStraightY');
-    }
-    else{ 
-      if(y-Y<=10 && y-Y>0 && x===X)
-        this.actuator.commands.push('goStraightY');
-    }
-  }
-  else{
-    if(Y<=25 && Y>15) {
-      if( Y-y<=20 && Y-y>0 && x===X ) 
-        this.actuator.commands.push('goStraightY');
-    }
-    else{ 
-      if(Y-y<=10 && Y-y>0 && x===X)
-        this.actuator.commands.push('goStraightY');
-    }
-  }
-  if(X===x&&Y===y)
+    else if(X===x&&Y===y)
     {
       this.actuator.commands.push('stop');
       seleccionF2=false;
       seleccionF1=false;
     }
-  //}
 };
 
-Peon.prototype.operations.rotateCCW=function(pieza,angle)
+Alfil.prototype.operations.rotateCCW=function(pieza,angle)
 {
   if(angle===undefined)
     angle=Math.PI/2;
@@ -559,12 +421,12 @@ function setup()
   var Piezas=new Array();
   Piezas[0]="          ";
   Piezas[1]="          ";
-  Piezas[2]="  c       ";
+  Piezas[2]="  a       ";
   Piezas[3]="          ";
   Piezas[4]="          ";
   Piezas[5]="          ";
   Piezas[6]="          ";
-  Piezas[7]="       C  ";
+  Piezas[7]="       A  ";
   Piezas[8]="          ";
   Piezas[9]="          ";
      
