@@ -279,7 +279,7 @@ function Caballo(sTP,x,y)
   //this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(8,5,5),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq.position.set(-1.8,0,0)
   this.piernader.position.set(1.8,0,0);
-  this.add(this.actuator);
+  this.add(/*this.brazoizq,this.brazoder,*/this.piernaizq,this.piernader,this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
