@@ -123,9 +123,7 @@ Agent.prototype.operations.goStraightY=function(pieza,distance)
   else if(c===-0.3)
     d=0.05;
   pieza.brazoder.rotation.y+=d;
-  pieza.brazoizq.rotation.y+=-d;
-
-    
+  pieza.brazoizq.rotation.y+=d;    
 };
 
 Agent.prototype.operations.goDiagonal=function(pieza,distance)
@@ -368,8 +366,8 @@ function Peon(sTP,x,y)
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,10),new THREE.MeshLambertMaterial({map:textura}));
   this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,10),new THREE.MeshLambertMaterial({map:textura}));
-  this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(8,1,1),new THREE.MeshLambertMaterial({map:textura}));
-  this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(8,1,1),new THREE.MeshLambertMaterial({map:textura}));
+  this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
+  this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq.position.set(-1.8,0,0)
   this.piernader.position.set(1.8,0,0);
   this.brazoder.position.set(1.8,0,4);
