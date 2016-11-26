@@ -356,12 +356,10 @@ function Peon(sTP,x,y)
   this.piernader.position.set(1.8,0,0);
   this.brazoder.position.set(1.5,0,4);
   this.brazoizq.position.set(-1.5,0,4);
-  
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
-  //PB(this.actuator);
 }
 Peon.prototype=new Agent();
 
@@ -601,7 +599,7 @@ function loop()
   else
   {
     switch(id){
-      case 116:
+      case 118:
         X=environment.children[101].position.x;
         Y=environment.children[101].position.y;
         if(seleccionF2==true)
