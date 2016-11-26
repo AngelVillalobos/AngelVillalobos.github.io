@@ -67,10 +67,10 @@ Agent.prototype.operations.goStraightX=function(pieza,distance)
       distance=-0.5; 
   }
   pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-  if (a>=100)
+  if (a>=10)
   {
     b=-1;
-    if(a>=200)
+    if(a>=20)
     {
       a=0;
     }
@@ -79,8 +79,8 @@ Agent.prototype.operations.goStraightX=function(pieza,distance)
   {
     b=1;
   }
-  pieza.piernader.rotation.x+=0.005*b;
-  pieza.piernaizq.rotation.x+=-0.005*b;
+  pieza.piernader.rotation.x+=0.1*b;
+  pieza.piernaizq.rotation.x+=-0.1*b;
 };
 
 Agent.prototype.operations.goStraightY=function(pieza,distance)
@@ -96,10 +96,10 @@ Agent.prototype.operations.goStraightY=function(pieza,distance)
       distance=-0.5; 
   }
   pieza.position.y+=distance*Math.cos(pieza.rotation.z);
-  if (a>=100)
+  if (a>=10)
   {
     b=-1;
-    if(a>=200)
+    if(a>=20)
     {
       a=0;
     }
@@ -108,8 +108,8 @@ Agent.prototype.operations.goStraightY=function(pieza,distance)
   {
     b=1;
   }
-  pieza.piernader.rotation.x+=0.005*b;
-  pieza.piernaizq.rotation.x+=-0.005*b;
+  pieza.piernader.rotation.x+=0.1*b;
+  pieza.piernaizq.rotation.x+=-0.1*b;
 };
 
 Agent.prototype.operations.goDiagonal=function(pieza,distance)
