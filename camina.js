@@ -78,8 +78,8 @@ Agent.prototype.operations.goStraightX=function(pieza,distance)
   {
     b=1;
   }
-  pieza.piernader.rotation.x+=0.1*b;
-  pieza.piernaizq.rotation.x+=-0.1*b;
+  pieza.piernader.rotation.x+=0.01*b;
+  pieza.piernaizq.rotation.x+=-0.01*b;
 };
 
 Agent.prototype.operations.goStraightY=function(pieza,distance)
@@ -106,8 +106,8 @@ Agent.prototype.operations.goStraightY=function(pieza,distance)
   {
     b=1;
   }
-  pieza.piernader.rotation.x+=0.1*b;
-  pieza.piernaizq.rotation.x+=-0.1*b;
+  pieza.piernader.rotation.x+=0.01*b;
+  pieza.piernaizq.rotation.x+=-0.01*b;
 };
 
 Agent.prototype.operations.goDiagonal=function(pieza,distance)
