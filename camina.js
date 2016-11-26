@@ -78,16 +78,16 @@ Agent.prototype.operations.goStraightX=function(pieza,distance)
     a=0.05;
   pieza.piernader.rotation.x+=a;
   pieza.piernaizq.rotation.x+=-a;
-  c=pieza.brazoder.rotation.x*Math.pow(10, 1);
+  c=pieza.brazoder.rotation.z*Math.pow(10, 1);
   c=Math.round(c);
   c= c/Math.pow(10,1);
   console.log(c);
-  if(c===0.7)
-    d=-0.1;
-  else if(c===-0.7)
-    d=0.1;
-  pieza.brazoder.rotation.x+=d;
-  pieza.brazoizq.rotation.x+=-d;
+  if(c===0.3)
+    d=-0.05;
+  else if(c===-0.3)
+    d=0.05;
+  pieza.brazoder.rotation.z+=d;
+  pieza.brazoizq.rotation.z+=d;
 };
 
 Agent.prototype.operations.goStraightY=function(pieza,distance)
