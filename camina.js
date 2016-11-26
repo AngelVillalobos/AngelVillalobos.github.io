@@ -118,12 +118,12 @@ Agent.prototype.operations.goStraightY=function(pieza,distance)
   c=Math.round(c);
   c= c/Math.pow(10,1);
   console.log(c);
-  if(c===0.7)
-    d=-0.1;
-  else if(c===-0.7)
-    d=0.1;
-  pieza.brazoder.rotation.x+=d;
-  pieza.brazoizq.rotation.x+=-d;
+  if(c===0.3)
+    d=-0.05;
+  else if(c===-0.3)
+    d=0.05;
+  pieza.brazoder.rotation.y+=d;
+  pieza.brazoizq.rotation.y+=-d;
 
     
 };
