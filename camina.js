@@ -87,6 +87,7 @@ Agent.prototype.operations.goStraightX=function(pieza,distance)
       distance=-0.5; 
   }
   pieza.position.x+=distance*Math.cos(pieza.rotation.z);
+  pieza.piernader.rotation.x+=0.5;
 };
 
 Agent.prototype.operations.goStraightY=function(pieza,distance)
@@ -101,6 +102,7 @@ Agent.prototype.operations.goStraightY=function(pieza,distance)
       distance=-0.5; 
   }
   pieza.position.y+=distance*Math.cos(pieza.rotation.z);
+  pieza.piernader.rotation.x+=0.5;
 };
 
 Agent.prototype.operations.goDiagonal=function(pieza,distance)
@@ -111,21 +113,25 @@ Agent.prototype.operations.goDiagonal=function(pieza,distance)
       distance=0.5;
       pieza.position.x+=distance*Math.cos(pieza.rotation.z);
       pieza.position.y+=distance*Math.cos(pieza.rotation.z);
+      pieza.piernader.rotation.x+=0.5;
     }
      else if(Y<y&&X>x){
       distance=0.5;
       pieza.position.x-=distance*Math.cos(pieza.rotation.z);
       pieza.position.y+=distance*Math.cos(pieza.rotation.z);
+       pieza.piernader.rotation.x+=0.5;
      }
      else if(Y>y&&X<x){
       distance=0.5;
       pieza.position.x+=distance*Math.cos(pieza.rotation.z);
       pieza.position.y-=distance*Math.cos(pieza.rotation.z);
+       pieza.piernader.rotation.x+=0.5;
      }
      else if(Y>y&&X>x){
       distance=0.5;
       pieza.position.x-=distance*Math.cos(pieza.rotation.z);
       pieza.position.y-=distance*Math.cos(pieza.rotation.z);
+       pieza.piernader.rotation.x+=0.5;
      }
     else if(Y===y)
       distance=0;
@@ -140,6 +146,7 @@ Agent.prototype.operations.stop=function(pieza,distance)
     distance=0;
   pieza.position.x+=distance*Math.cos(pieza.rotation.z);
   pieza.position.y+=distance*Math.cos(pieza.rotation.z);
+  pieza.piernader.rotation.x+=0;
 };
 
 function Environment()
