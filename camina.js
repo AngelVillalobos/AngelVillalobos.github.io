@@ -565,7 +565,7 @@ function setup()
   var planoLejano=1000;
   camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
   //120 -90
-  //camara.position.z=120;
+  camara.position.z=120;
   //camara.position.y=-90;
   camara.position.x=-40;
   camara.lookAt(new THREE.Vector3(0,0,0));
