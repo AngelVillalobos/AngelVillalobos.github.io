@@ -36,27 +36,6 @@ function Agent(x=0,y=0)
   THREE.Object3D.call(this);
   this.position.x=x;
   this.position.y=y;
-  /*this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
-  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
-  this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(5,1,1));
-  this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(5,1,1));
-  var cuerpo=new THREE.Mesh(new THREE.BoxGeometry(0.1,0.1,0.1));
-  this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,cuerpo);
-  this.piernaizq.position.z=2.5;
-  this.piernaizq.position.y=-5;
-  this.piernaizq.position.x=-1.8;
-  this.piernader.position.x=1.8;
-  this.piernader.position.z=2.5;
-  this.piernader.position.y=-5;
-  
-  this.brazoizq.position.z=2.5;
-  this.brazoizq.position.y=2;
-  this.brazoizq.position.x=-2.5;
-  this.brazoder.position.x=2.5;
-  this.brazoder.position.z=2.5;
-  this.brazoder.position.y=2;
-  cuerpo.position.z=2.5;
-  cuerpo.rotateZ(Math.PI/2);*/
 }
 Agent.prototype=new THREE.Object3D();
 
@@ -87,7 +66,7 @@ Agent.prototype.operations.goStraightX=function(pieza,distance)
       distance=-0.5; 
   }
   pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-  pieza.piernader.rotation.x+=0.5;
+  pieza.piernader.rotation.x+=0.1;
 };
 
 Agent.prototype.operations.goStraightY=function(pieza,distance)
@@ -102,7 +81,7 @@ Agent.prototype.operations.goStraightY=function(pieza,distance)
       distance=-0.5; 
   }
   pieza.position.y+=distance*Math.cos(pieza.rotation.z);
-  pieza.piernader.rotation.x+=0.5;
+  pieza.piernader.rotation.x+=0.1;
 };
 
 Agent.prototype.operations.goDiagonal=function(pieza,distance)
@@ -146,7 +125,7 @@ Agent.prototype.operations.stop=function(pieza,distance)
     distance=0;
   pieza.position.x+=distance*Math.cos(pieza.rotation.z);
   pieza.position.y+=distance*Math.cos(pieza.rotation.z);
-  pieza.piernader.rotation.x+=0;
+  pieza.piernader.rotation.x=0;
 };
 
 function Environment()
@@ -595,20 +574,6 @@ function loop()
         X=environment.children[101].position.x;
         Y=environment.children[101].position.y;
         if(seleccionF2==true)
-        /*{
-          if (a>=100)
-          {
-            b=-1;
-            if(a>=200)
-            {
-              a=0;
-            }
-          }
-          else
-          {
-            b=1;
-          }
-          environment.children[101].piernader.rotation.x+=0.5*b;*/
           environment.children[101].act(); 
       break;
       case 1000:
