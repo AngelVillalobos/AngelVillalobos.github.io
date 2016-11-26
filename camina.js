@@ -209,13 +209,26 @@ Environment.prototype.setMapCasilla=function(map)
   {
     for(var j=0;j<map.length;j++)
     {
-      if(map[i][j]==="a")
+      if(map[i][j]==="n")
       {
-        this.add(new Alfil(true,(j*10)-45,(i*10)-45));
+        sTC=1;
+        Casilla=new Casillas(10,(i*10)-45,(j*10)-45);
+        Casilla.receiveShadow=true;
+        this.add(Casilla);
       }
-      if(map[i][j]==="A")
+      else if(map[i][j]==="b")
       {
-        this.add(new Alfil(false,(j*10)-45,(i*10)-45));
+        sTC=2;
+        Casilla=new Casillas(10,(i*10)-45,(j*10)-45);
+        Casilla.receiveShadow=true;
+        this.add(Casilla);
+      }
+      else if(map[i][j]==="B")
+      {
+        sTC=3;
+        Borde=new Casillas(10,(i*10)-45,(j*10)-45);
+        Borde.receiveShadow=true;
+        this.add(Borde);
       }
     }
   }
@@ -227,21 +240,13 @@ Environment.prototype.setMapPiezas=function(map)
   {
     for(var j=0;j<map.length;j++)
     {
-      if(map[i][j]==="c")
+      if(map[i][j]==="a")
       {
-        this.add(new Caballo(true,(j*10)-45,(i*10)-45));
+        this.add(new Alfil(true,(j*10)-45,(i*10)-45));
       }
-      if(map[i][j]==="C")
+      if(map[i][j]==="A")
       {
-        this.add(new Caballo(false,(j*10)-45,(i*10)-45));
-      }
-      if(map[i][j]==="p")
-      {
-        this.add(new Peon(true,(j*10)-45,(i*10)-45));
-      }
-      if(map[i][j]==="P")
-      {
-        this.add(new Peon(false,(j*10)-45,(i*10)-45));
+        this.add(new Alfil(false,(j*10)-45,(i*10)-45));
       }
     }
   }
