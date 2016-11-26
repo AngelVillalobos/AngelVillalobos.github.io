@@ -577,7 +577,7 @@ function loop()
   if(turno==false)
   {
     switch(id){
-      case 111:
+      case 110:
         X=environment.children[100].position.x;
         Y=environment.children[100].position.y;
         if(seleccionF2==true){
@@ -595,7 +595,7 @@ function loop()
   else
   {
     switch(id){
-      case 117:
+      case 116:
         X=environment.children[101].position.x;
         Y=environment.children[101].position.y;
         if(seleccionF2==true)
