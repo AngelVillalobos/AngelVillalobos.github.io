@@ -67,10 +67,10 @@ Agent.prototype.operations.goStraightX=function(pieza,distance)
       distance=-0.5; 
   }
   pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-  if (a>=10)
+  if (a>=2)
   {
     b=-1;
-    if(a>=20)
+    if(a>=4)
     {
       a=0;
     }
@@ -96,10 +96,10 @@ Agent.prototype.operations.goStraightY=function(pieza,distance)
       distance=-0.5; 
   }
   pieza.position.y+=distance*Math.cos(pieza.rotation.z);
-  if (a>=10)
+  if (a>=2)
   {
     b=-1;
-    if(a>=20)
+    if(a>=4)
     {
       a=0;
     }
