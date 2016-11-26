@@ -609,7 +609,7 @@ function loop()
             b=1;
           }
           environment.children[101].piernader.rotation.x+=0.5*b;*/
-          environment.children[101].act(); }
+          environment.children[101].act(); 
       break;
       case 1000:
         X=environment.children[103].position.x;
