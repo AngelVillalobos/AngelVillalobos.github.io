@@ -66,9 +66,9 @@ Agent.prototype.operations.goStraightX=function(pieza,distance)
       distance=-0.5; 
   }
   pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-  if(pieza.piernader.rotation.x===1)
+  if(pieza.piernader.rotation.x===0.5)
     a=-0.1;
-  else if(pieza.piernader.rotation.x===-1)
+  else if(pieza.piernader.rotation.x===-0.5)
     a=0.1;
   pieza.piernader.rotation.x+=a;
 };
