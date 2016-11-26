@@ -313,6 +313,10 @@ function Caballo(sTP,x,y)
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
+  this.piernader.castShadow=true;
+  this.piernaizq.castShadow=true;
+  this.brazoder.castShadow=true;
+  this.brazoizq.castShadow=true;
 }
 Caballo.prototype=new Agent();
 
@@ -378,6 +382,10 @@ function Peon(sTP,x,y)
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
+  this.piernader.castShadow=true;
+  this.piernaizq.castShadow=true;
+  this.brazoder.castShadow=true;
+  this.brazoizq.castShadow=true;
 }
 Peon.prototype=new Agent();
 
