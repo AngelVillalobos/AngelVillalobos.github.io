@@ -194,7 +194,27 @@ function Peon(x,y)
   this.texture=textura;
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
-  this.add(this.actuator);
+  this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,10));
+  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,10));
+  //this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(8,5,5)),new THREE.MeshLambertMaterial({map:textura});
+  //this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(8,5,5),new THREE.MeshLambertMaterial({map:textura}));
+  this.piernaizq.position.set(-1.8,0,0)
+  this.piernader.position.set(1.8,0,0);
+  /*this.piernaizq.position.z=2.5;
+  this.piernaizq.position.y=10;
+  this.piernaizq.position.x=-5;
+  this.piernader.position.x=5;
+  this.piernader.position.z=2.5;
+  this.piernader.position.y=10;
+  
+  this.brazoizq.position.z=2.5;
+  this.brazoizq.position.y=2;
+  this.brazoizq.position.x=-2.5;
+  this.brazoder.position.x=2.5;
+  this.brazoder.position.z=2.5;
+  this.brazoder.position.y=2;*/
+  
+  this.add(/*this.brazoizq,this.brazoder,*/this.piernaizq,this.piernader,this.actuator);
   this.actuator.scale.set(7,7,7);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
