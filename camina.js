@@ -56,9 +56,9 @@ Agent.prototype.operations={};
 
 Agent.prototype.operations.goStraightX=function(pieza,distance)
 {
+  var b,c;
   if(distance===undefined)
-  {
-    var b;
+  {    
     if(X<x)
       distance=0.5;
     else if(X===x)
@@ -67,22 +67,32 @@ Agent.prototype.operations.goStraightX=function(pieza,distance)
       distance=-0.5; 
   }
   pieza.position.x+=distance*Math.cos(pieza.rotation.z);
+
   b=pieza.piernader.rotation.x*Math.pow(10, 1);
   b=Math.round(b);
   b= b/Math.pow(10,1);
   console.log(b);
-  if(b===0.5)
-    a=-0.2;
-  else if(b===-0.5)
-    a=0.2;
+  if(b===0.3)
+    a=-0.05;
+  else if(b===-0.3)
+    a=0.05;
   pieza.piernader.rotation.x+=a;
-  pieza.piernaizq.rotation.x+=a;
-  pieza.brazoder.rotation.x+=0.02+a;
-  pieza.brazoizq.rotation.x+=-0.02-a;
+  pieza.piernaizq.rotation.x+=-a;
+  c=pieza.brazoder.rotation.x*Math.pow(10, 1);
+  c=Math.round(c);
+  c= c/Math.pow(10,1);
+  console.log(c);
+  if(c===0.7)
+    d=-0.1;
+  else if(c===-0.7)
+    d=0.1;
+  pieza.brazoder.rotation.x+=d;
+  pieza.brazoizq.rotation.x+=-d;
 };
 
 Agent.prototype.operations.goStraightY=function(pieza,distance)
 {
+  var b,c;
   if(distance===undefined)
    {
     if(Y<y)
@@ -104,8 +114,16 @@ Agent.prototype.operations.goStraightY=function(pieza,distance)
     a=0.05;
   pieza.piernader.rotation.x+=a;
   pieza.piernaizq.rotation.x+=-a;
-  pieza.brazoder.rotation.x+=0.02+a;
-  pieza.brazoizq.rotation.x+=-0.02-a;
+  c=pieza.brazoder.rotation.x*Math.pow(10, 1);
+  c=Math.round(c);
+  c= c/Math.pow(10,1);
+  console.log(c);
+  if(c===0.7)
+    d=-0.1;
+  else if(c===-0.7)
+    d=0.1;
+  pieza.brazoder.rotation.x+=d;
+  pieza.brazoizq.rotation.x+=-d;
 
     
 };
@@ -617,7 +635,7 @@ function loop()
   renderizador.render(environment,camara);
 }
 
-var a=0.01,turno=false,sTC,id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
+var b,a=0.01,turno=false,sTC,id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
 
 setup();
 loop();
