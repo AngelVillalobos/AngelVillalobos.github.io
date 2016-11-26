@@ -133,8 +133,7 @@ Agent.prototype.operations.stop=function(pieza,distance)
     distance=0;
   pieza.position.x+=distance*Math.cos(pieza.rotation.z);
   pieza.position.y+=distance*Math.cos(pieza.rotation.z);
-  pieza.piernader.rotation.x=0;
-  pieza.piernaizq.rotation.x=0;
+
 };
 
 function Environment()
