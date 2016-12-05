@@ -403,8 +403,8 @@ function Caballo(sTP,x,y)
   this.cnt = 0;
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new CaballoGeometry(),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,8),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,8),new THREE.MeshLambertMaterial({map:textura}));
+  this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
+  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(1,6,1),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(1,6,1),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq.position.set(-1.8,0,-1.3);
@@ -451,8 +451,8 @@ function Alfil(sTP,x,y)
   this.position.set(x,y,0);
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new AlfilGeometry(),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,8),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,8),new THREE.MeshLambertMaterial({map:textura}));
+  this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
+  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(5,1,1),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(5,1,1),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq.position.set(-1.8,0,-1.3);
@@ -540,8 +540,8 @@ function Reina(sTP,x,y)
   this.position.set(x,y,0);
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new ReinaGeometry(),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,8),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,8),new THREE.MeshLambertMaterial({map:textura}));
+  this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
+  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq.position.set(-1.8,0,-1.3);
@@ -643,8 +643,8 @@ function Rey(sTP,x,y)
   this.position.set(x,y,0);
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new ReyGeometry(),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,8),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,8),new THREE.MeshLambertMaterial({map:textura}));
+  this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
+  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq.position.set(-1.8,0,-1.3);
@@ -754,8 +754,8 @@ function Torre(sTP,x,y)
   this.position.set(x,y,0);
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new TorreGeometry(),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,8),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,8),new THREE.MeshLambertMaterial({map:textura}));
+  this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
+  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq.position.set(-1.8,0,-1.3);
@@ -851,8 +851,8 @@ function Peon(sTP,x,y)
   this.position.set(x,y,0);
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,8),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,8),new THREE.MeshLambertMaterial({map:textura}));
+  this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
+  this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq.position.set(-1.8,0,-1.3);
@@ -1090,7 +1090,7 @@ function setup()
   var planoCercano=1;
   var planoLejano=1000;
   camara=new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
-  camara.position.z=120;
+  //camara.position.z=120;
   camara.position.y=-90;
   camara.lookAt(new THREE.Vector3(0,0,0));
   /////RENDERIZADOR////
