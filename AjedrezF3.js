@@ -485,12 +485,15 @@ Alfil.prototype.sense=function(environment){
       if (obstaculo[0].distance<=Math.sqrt(2))
         if (this.sTP === true){
           obstaculo[0].object.translate(50+bi,-50+bj,0);
-          console.log(obstaculo[0]);
+          obstaculo[0].object.parent.brazoder.translate(50+bi,-50+bj,0);
+          obstaculo[0].object.parent.brazoizq.translate(50+bi,-50+bj,0);
           //bi++;
           bj+=10;
         }
       else{
           obstaculo[0].object.translate(-50+ni,-50+nj,0);
+          obstaculo[0].object.parent.brazoder.translate(50+bi,-50+bj,0);
+          obstaculo[0].object.parent.brazoizq.translate(50+bi,-50+bj,0);
             console.log(obstaculo[0]);
           //ni-=10;
           nj+=10;
