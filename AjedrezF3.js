@@ -138,6 +138,24 @@ Agent.prototype.operations.goStraightX=function(pieza,distance)
       distance=-0.5; 
   }
   pieza.position.x+=distance*Math.cos(pieza.rotation.z);
+  b=pieza.piernader.rotation.x*Math.pow(10, 1);
+  b=Math.round(b);
+  b= b/Math.pow(10,1);
+  if(b===0.3)
+    a=-0.05;
+  else if(b===-0.3)
+    a=0.05;
+  pieza.piernader.rotation.x+=a;
+  pieza.piernaizq.rotation.x+=-a;
+  c=pieza.brazoder.rotation.z*Math.pow(10, 1);
+  c=Math.round(c);
+  c= c/Math.pow(10,1);
+  if(c===0.3)
+    d=-0.05;
+  else if(c===-0.3)
+    d=0.05;
+  pieza.brazoder.rotation.z+=d;
+  pieza.brazoizq.rotation.z+=d;
 };
 
 Agent.prototype.operations.goStraightY=function(pieza,distance)
@@ -152,6 +170,24 @@ Agent.prototype.operations.goStraightY=function(pieza,distance)
       distance=-0.5; 
   }
   pieza.position.y+=distance*Math.cos(pieza.rotation.z);
+  b=pieza.piernader.rotation.x*Math.pow(10, 1);
+  b=Math.round(b);
+  b= b/Math.pow(10,1);
+  if(b===0.3)
+    a=-0.05;
+  else if(b===-0.3)
+    a=0.05;
+  pieza.piernader.rotation.x+=a;
+  pieza.piernaizq.rotation.x+=-a;
+  c=pieza.brazoder.rotation.z*Math.pow(10, 1);
+  c=Math.round(c);
+  c= c/Math.pow(10,1);
+  if(c===0.3)
+    d=-0.05;
+  else if(c===-0.3)
+    d=0.05;
+  pieza.brazoder.rotation.z+=d;
+  pieza.brazoizq.rotation.z+=d;
 };
 
 Agent.prototype.operations.goDiagonal=function(pieza,distance)
@@ -182,6 +218,24 @@ Agent.prototype.operations.goDiagonal=function(pieza,distance)
       distance=0;
     else
       distance=-0.5;  
+  b=pieza.piernader.rotation.x*Math.pow(10, 1);
+  b=Math.round(b);
+  b= b/Math.pow(10,1);
+  if(b===0.3)
+    a=-0.05;
+  else if(b===-0.3)
+    a=0.05;
+  pieza.piernader.rotation.x+=a;
+  pieza.piernaizq.rotation.x+=-a;
+  c=pieza.brazoder.rotation.z*Math.pow(10, 1);
+  c=Math.round(c);
+  c= c/Math.pow(10,1);
+  if(c===0.3)
+    d=-0.05;
+  else if(c===-0.3)
+    d=0.05;
+  pieza.brazoder.rotation.z+=d;
+  pieza.brazoizq.rotation.z+=d;
  } 
 };
 
