@@ -296,7 +296,7 @@ function Torre(sTP,x,y)
   this.brazoder.position.set(1.8,0,4);
   this.brazoizq.position.set(-1.8,0,4);
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
-  this.position.z=0;
+  this.actuator.position.z=0;
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
