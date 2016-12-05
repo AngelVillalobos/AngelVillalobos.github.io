@@ -50,7 +50,7 @@ Agent.prototype.operations.goStraightX=function(pieza,distance)
       distance=-0.5; 
   }
   pieza.position.x+=distance*Math.cos(pieza.rotation.z);
-
+  pieza.rotation.y=MAth.PI/2;
   b=pieza.piernader.rotation.x*Math.pow(10, 1);
   b=Math.round(b);
   b= b/Math.pow(10,1);
@@ -284,7 +284,7 @@ function Torre(sTP,x,y)
     textura=cargador.load('maderaN.jpg');
   else
     textura=cargador.load('maderaB.jpg');
-  this.position.set(x,y,-5);
+  this.position.set(x,y,4);
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new TorreGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,10),new THREE.MeshLambertMaterial({map:textura}));
