@@ -296,6 +296,7 @@ function Torre(sTP,x,y)
   this.brazoder.position.set(1.8,0,4);
   this.brazoizq.position.set(-1.8,0,4);
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
+  this.position.z=0;
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
@@ -426,7 +427,7 @@ function setup()
  
   document.documentElement.style.overflow = 'hidden';
     
-  var tablero=new Array();
+  /*var tablero=new Array();
   tablero[0]="BBBBBBBBBB";
   tablero[1]="BbnbnbnbnB";
   tablero[2]="BnbnbnbnbB";
@@ -436,9 +437,9 @@ function setup()
   tablero[6]="BnbnbnbnbB";
   tablero[7]="BbnbnbnbnB";
   tablero[8]="BnbnbnbnbB";
-  tablero[9]="BBBBBBBBBB";
+  tablero[9]="BBBBBBBBBB";*/
   
-  /*var tablero=new Array();
+  var tablero=new Array();
   tablero[0]="          ";
   tablero[1]="          ";
   tablero[2]="          ";
@@ -448,7 +449,7 @@ function setup()
   tablero[6]="          ";
   tablero[7]="          ";
   tablero[8]="          ";
-  tablero[9]="          ";*/
+  tablero[9]="          ";
   
   var Piezas=new Array();
   Piezas[0]="          ";
