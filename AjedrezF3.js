@@ -407,8 +407,8 @@ function Caballo(sTP,x,y)
   this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(1,6,1),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(1,6,1),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernaizq.position.set(-1.8,0,-1.3);
-  this.piernader.position.set(1.8,0,-1.3);
+  this.piernaizq.position.set(-1.8,0,-3.1);
+  this.piernader.position.set(1.8,0,-3.1);
   this.brazoder.position.set(0.4,1.4,4);
   this.brazoizq.position.set(0.4,-1.4,4);
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
@@ -455,8 +455,8 @@ function Alfil(sTP,x,y)
   this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(5,1,1),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(5,1,1),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernaizq.position.set(-1.8,0,-1.3);
-  this.piernader.position.set(1.8,0,-1.3);
+  this.piernaizq.position.set(-1.8,0,-3.1);
+  this.piernader.position.set(1.8,0,-3.1);
   this.brazoder.position.set(2.5,0,4);
   this.brazoizq.position.set(-2.5,0,4);
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
@@ -544,8 +544,8 @@ function Reina(sTP,x,y)
   this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernaizq.position.set(-1.8,0,-1.3);
-  this.piernader.position.set(1.8,0,-1.3);
+  this.piernaizq.position.set(-1.8,0,-3.1);
+  this.piernader.position.set(1.8,0,-3.1);
   this.brazoder.position.set(1.8,0,4);
   this.brazoizq.position.set(-1.8,0,4);
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
@@ -647,8 +647,8 @@ function Rey(sTP,x,y)
   this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernaizq.position.set(-1.8,0,-1.3);
-  this.piernader.position.set(1.8,0,-1.3);
+  this.piernaizq.position.set(-1.8,0,-3.1);
+  this.piernader.position.set(1.8,0,-3.1);
   this.brazoder.position.set(1.8,0,4);
   this.brazoizq.position.set(-1.8,0,4);
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
@@ -758,8 +758,8 @@ function Torre(sTP,x,y)
   this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernaizq.position.set(-1.8,0,-1.3);
-  this.piernader.position.set(1.8,0,-1.3);
+  this.piernaizq.position.set(-1.8,0,-3.1);
+  this.piernader.position.set(1.8,0,-3.1);
   this.brazoder.position.set(1.8,0,4);
   this.brazoizq.position.set(-1.8,0,4);
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
@@ -855,8 +855,8 @@ function Peon(sTP,x,y)
   this.piernader=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoizq=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoder=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
-  this.piernaizq.position.set(-1.8,0,-1.3);
-  this.piernader.position.set(1.8,0,-1.3);
+  this.piernaizq.position.set(-1.8,0,-3.1);
+  this.piernader.position.set(1.8,0,-3.1);
   this.brazoder.position.set(1.8,0,4);
   this.brazoizq.position.set(-1.8,0,4);
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
