@@ -485,11 +485,13 @@ Alfil.prototype.sense=function(environment){
       if (obstaculo[0].distance<=Math.sqrt(2))
         if (this.sTP === true){
           obstaculo[0].object.translate(50+bi,-50+bj,0);
+          console.log(obstaculo[0]);
           //bi++;
           bj+=10;
         }
       else{
           obstaculo[0].object.translate(-50+ni,-50+nj,0);
+            console.log(obstaculo[0]);
           //ni-=10;
           nj+=10;
         }
@@ -503,7 +505,6 @@ Alfil.prototype.sense=function(environment){
   }
   else
     this.sensor.colision=false;
-  console.log(obstaculo[0])
 };
 
 Alfil.prototype.plan=function(environment)
