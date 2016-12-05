@@ -284,7 +284,7 @@ function Torre(sTP,x,y)
     textura=cargador.load('maderaN.jpg');
   else
     textura=cargador.load('maderaB.jpg');
-  this.position.set(x,y,4);
+  this.position.set(x,y,0);
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new TorreGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernaizq=new THREE.Mesh(new THREE.BoxGeometry(1,1,10),new THREE.MeshLambertMaterial({map:textura}));
@@ -296,7 +296,6 @@ function Torre(sTP,x,y)
   this.brazoder.position.set(1.8,0,4);
   this.brazoizq.position.set(-1.8,0,4);
   this.add(this.brazoizq,this.brazoder,this.piernaizq,this.piernader,this.actuator);
-  this.actuator.position.z=0;
   this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
