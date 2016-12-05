@@ -1309,7 +1309,7 @@ function loop()
   renderizador.render(environment,camara);
 }
 
-var bi=0,bj=0,nj=0,ni=0,turno=false,sTC,id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
+var a=d=0.01,c,b,bi=0,bj=0,nj=0,ni=0,turno=false,sTC,id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
 
 setup();
 loop();
