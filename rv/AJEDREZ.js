@@ -938,13 +938,15 @@ Peon.prototype.plan=function(environment)
 {
   this.actuator.commands=[];
   if (this.sensor.colision === false){
-      if(Y>=-25 && Y<-15) {
-        if( y-Y<=20 && y-Y>0 && x===X ) 
+    if (this.sTP===true){
+        if(Y>=-25 && Y<-15) {
+          if( y-Y<=20 && y-Y>0 && x===X ) 
+            this.actuator.commands.push('goStraightY');
+        }
+      else{ 
+        if(y-Y<=10 && y-Y>0 && x===X)
           this.actuator.commands.push('goStraightY');
       }
-      else if(y-Y<=10 && y-Y>0 && x===X)
-        this.actuator.commands.push('goStraightY');
-    if (this.sTP===true){
       if( y-Y<=10 && y-Y>0 && Math.abs(x-X)<=10 ){
         if(this.diagonal === true)
           this.actuator.commands.push('goDiagonal');
@@ -955,21 +957,22 @@ Peon.prototype.plan=function(environment)
         if( Y-y<=20 && Y-y>0 && x===X ) 
           this.actuator.commands.push('goStraightY');
       }
-      else if(Y-y<=10 && Y-y>0 && x===X)
-        this.actuator.commands.push('goStraightY');
+      else{ 
+        if(Y-y<=10 && Y-y>0 && x===X)
+          this.actuator.commands.push('goStraightY');
+      }
       if( Y-y<=10 && Y-y>0 && Math.abs(x-X)<=10 ){
         if(this.diagonal === true)
           this.actuator.commands.push('goDiagonal');
       }
     }
     if(X===x&&Y===y)
-      {
-        this.actuator.commands.push('stop');
-        seleccionF2=false;
-        seleccionF1=false;
-        this.diagonal=false;
-      }
-  }  
+    {
+      this.actuator.commands.push('stop');
+      seleccionF2=false;
+      seleccionF1=false;
+    }
+  }
 };
 ///////////////SELECCION DE POSICIONES///////////////
 function SeleccionD(event)
