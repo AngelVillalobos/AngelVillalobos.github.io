@@ -1324,7 +1324,7 @@ function loop()
           environment.children[128].act();
           environment.children[128].sense(environment);}
       break;
-      case 357:
+      case 353:
         X=environment.children[129].position.x;
         Y=environment.children[129].position.y;
         if(seleccionF2==true){
