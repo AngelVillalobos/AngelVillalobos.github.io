@@ -1119,42 +1119,42 @@ function loop()
   if(turno==false)
   {
     switch(id){
-      case 114:
+      case 116:
         X=environment.children[100].position.x;
         Y=environment.children[100].position.y;
         if(seleccionF2==true){
           environment.children[100].act();
           environment.children[100].sense(environment);}
       break;
-      case 123:
+      case 125:
         X=environment.children[101].position.x;
         Y=environment.children[101].position.y;
         if(seleccionF2==true){
           environment.children[101].act();
           environment.children[101].sense(environment);}
       break;
-      case 131:
+      case 133:
         X=environment.children[102].position.x;
         Y=environment.children[102].position.y;
         if(seleccionF2==true){
           environment.children[102].act();
           environment.children[102].sense(environment);}
       break;
-      case 140:
+      case 142:
         X=environment.children[103].position.x;
         Y=environment.children[103].position.y;
         if(seleccionF2==true){
           environment.children[103].act();
           environment.children[103].sense(environment);}
       break;
-      case 149:
+      case 151:
         X=environment.children[104].position.x;
         Y=environment.children[104].position.y;
         if(seleccionF2==true){
           environment.children[104].act();
           environment.children[104].sense(environment);}
       break;
-      case 157:
+      case 159:
         X=environment.children[105].position.x;
         Y=environment.children[105].position.y;
         if(seleccionF2==true){
