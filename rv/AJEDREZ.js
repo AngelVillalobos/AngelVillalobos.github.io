@@ -1,4 +1,4 @@
-
+}
 ///////////////CONSTRUCTOR CABALLO///////////////
 CaballoGeometry=function()
 {
